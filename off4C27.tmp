@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl7elae3id7j0"]
+
+[ext_resource type="Texture2D" uid="uid://itgc13ywu2sn" path="res://art/background_mockup.png" id="1_nfqou"]
+[ext_resource type="Texture2D" uid="uid://nruf0qtwf37h" path="res://art/telephone.svg" id="2_pbo1k"]
+[ext_resource type="Script" path="res://Phone.gd" id="3_0s1oo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ichjv"]
+
+[node name="Office" type="Node2D"]
+
+[node name="BackgroundMockup" type="Sprite2D" parent="."]
+position = Vector2(575.5, 319)
+scale = Vector2(0.925361, 0.879679)
+texture = ExtResource("1_nfqou")
+
+[node name="Phone" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ichjv")
+position = Vector2(623, 286)
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("2_pbo1k")
+script = ExtResource("3_0s1oo")
+
+[node name="Area2D" type="Area2D" parent="Phone"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Phone/Area2D"]
+polygon = PackedVector2Array(0, -48, 36.4445, -41.7778, 57.7778, -27.5556, 63.1111, -6.22223, 52.4445, 2.66666, 38.2222, 0.888885, 45.3334, 31.1111, 44.4445, 55.1111, 40, 60.4444, -41.7778, 59.5555, -45.3333, 55.1111, -44.4444, 27.5555, -39.1111, 0, -54.2222, 0, -62.2222, -8, -58.6667, -29.3333, -31.1111, -43.5556)
+
+[connection signal="mouse_entered" from="Phone/Area2D" to="Phone" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Phone/Area2D" to="Phone" method="_on_area_2d_mouse_exited"]

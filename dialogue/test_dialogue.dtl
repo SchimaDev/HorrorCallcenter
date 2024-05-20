@@ -1,0 +1,5 @@
+player: This is me speaking. This is how I sound like. I will speak many words to give you a good impression of what I sound like. Wow, that's a lot of words.
+test_character: I am another character. I will speak more words to give you time to hear the audio sample. Wow, I sound so good. Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words 
+"test_character 2": I am yet another test character. I use a folder of different samples for my speech. Don't I sound nice? I'm actually not sure if this sounds great but I figured it would be good to test it out.
+[voice path="res://audio/tts_test.wav" volume="-10.0"]
+[speed=1.5] I am yet another character.[pause=0.3] [speed=1.5] I am here to demonstrate how text-to-speech might sound.[pause=1] My voice has been tweaked to sound a bit unsettling, so I hope you are getting creeped out right now.[pause=1] That would make me very happy.
