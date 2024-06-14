@@ -23,11 +23,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Lucia": "res://dialogue/characters/Lucia.dch",
+"Male voice/test_character": "res://audio/Male voice/test_character.dch",
 "player": "res://dialogue/characters/player.dch",
 "test_character": "res://dialogue/characters/test_character.dch",
 "test_character 2": "res://dialogue/characters/test_character 2.dch"
 }
 directories/dtl_directory={
+"monster_test": "res://dialogue/monster_test.dtl",
 "test_dialogue": "res://dialogue/test_dialogue.dtl"
 }
 layout/style_list=["res://dialogue/dialogue_style.tres"]
@@ -50,7 +52,12 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
 variables={
+"informationKnown": {
+"Location": false
+},
 "location": "the park",
+"monster": "",
+"monsterState": "",
 "timer": 3
 }
 choices/def_false_behaviour=1

@@ -1,16 +1,4 @@
 player: This is me speaking. This is how I sound like. I will speak many words to give you a good impression of what I sound like. Wow, that's a lot of words.
-[signal arg="startEvent"]
-Lucia: i am current in the {location}
-label choice
-if {timer} <= 0:
-	Lucia: I'm sorry, we're out of time....
-else:
-	- well then try leaving the {location}. bye.
-		return
-	- more dialog!
-		set {timer} -= 1
-		Lucia: good choice, let's keep this going
-		jump choice
 test_character: I am another character. I will speak more words to give you time to hear the audio sample. Wow, I sound so good. Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
 "test_character 2": I am yet another test character. I use a folder of different samples for my speech. Don't I sound nice? I'm actually not sure if this sounds great but I figured it would be good to test it out.
 [voice path="res://audio/tts_test.wav" volume="-10.0"]

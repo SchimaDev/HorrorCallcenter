@@ -8,20 +8,17 @@ extends Node
 
 var timer : int
 
-func _ready():
-	Dialogic.signal_event.connect(eventFired)
-
 func startEvent():
 	var dE = DialogEvent.new()
 	dE.init(locations)
-	print(dE.location.locationName)
-	Dialogic.VAR.timer = 2
+	
+	Dialogic.start('monster_test')
+	
+	Dialogic.VAR.reset()
+	Dialogic.VAR.timer = 5
+	Dialogic.VAR.monster = " ".join(Monster.Type.find_key(dE.monster).split("_"))
+	Dialogic.VAR.monsterState = Monster.State.find_key(dE.monsterState)
 	Dialogic.VAR.location = dE.location.locationName
 
 func endEvent():
-	print("cut phone")
-
-func eventFired(st):
-	match (st):
-		"startEvent":
-			startEvent()
+	pass
