@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Horror Callcenter"
-run/main_scene="res://office.tscn"
+run/main_scene="res://scenes/office.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://art/icon.svg"
 
@@ -22,9 +22,10 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Lucia": "res://dialogue/characters/Lucia.dch",
 "player": "res://dialogue/characters/player.dch",
-"test_character": "res://audio/Male voice/test_character.dch",
-"test_character 2": "res://audio/test_character 2.dch"
+"test_character": "res://dialogue/characters/test_character.dch",
+"test_character 2": "res://dialogue/characters/test_character 2.dch"
 }
 directories/dtl_directory={
 "test_dialogue": "res://dialogue/test_dialogue.dtl"
@@ -48,7 +49,11 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"location": "the park",
+"timer": 3
+}
+choices/def_false_behaviour=1
 
 [editor_plugins]
 

@@ -1,24 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl7elae3id7j0"]
+[gd_scene load_steps=8 format=3 uid="uid://dl7elae3id7j0"]
 
-[ext_resource type="Texture2D" uid="uid://itgc13ywu2sn" path="res://art/background_mockup.png" id="1_nfqou"]
-[ext_resource type="Texture2D" uid="uid://nruf0qtwf37h" path="res://art/telephone.svg" id="2_pbo1k"]
-[ext_resource type="Script" path="res://Telephone.gd" id="4_sl1uq"]
+[ext_resource type="Script" path="res://scripts/DialogHandler.gd" id="1_psbh6"]
+[ext_resource type="Texture2D" uid="uid://itgc13ywu2sn" path="res://art/background_mockup.png" id="2_clsr2"]
+[ext_resource type="Resource" uid="uid://6euienvkcxvt" path="res://resources/Location1.tres" id="2_h0358"]
+[ext_resource type="Texture2D" uid="uid://nruf0qtwf37h" path="res://art/telephone.svg" id="3_2iu6p"]
+[ext_resource type="Resource" uid="uid://bbqy7ttf5n4n7" path="res://resources/Location2.tres" id="3_xbfww"]
+[ext_resource type="Script" path="res://scripts/Telephone.gd" id="4_8agtq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6tnyj"]
 
 [node name="Office" type="Node2D"]
+script = ExtResource("1_psbh6")
+locations = Array[Resource("res://scripts/Location.gd")]([ExtResource("2_h0358"), ExtResource("3_xbfww")])
 
 [node name="BackgroundMockup" type="Sprite2D" parent="."]
 position = Vector2(575.5, 319)
 scale = Vector2(0.925361, 0.879679)
-texture = ExtResource("1_nfqou")
+texture = ExtResource("2_clsr2")
 
 [node name="Telephone" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_6tnyj")
 position = Vector2(626, 294)
 scale = Vector2(1.0625, 1.0625)
-texture = ExtResource("2_pbo1k")
-script = ExtResource("4_sl1uq")
+texture = ExtResource("3_2iu6p")
+script = ExtResource("4_8agtq")
 
 [node name="Area2D" type="Area2D" parent="Telephone"]
 

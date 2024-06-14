@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Person" load_steps=3 format=3 uid="uid://bja8e15dbla7i"]
+
+[ext_resource type="Script" path="res://scripts/Person.gd" id="1_620qg"]
+[ext_resource type="Resource" path="res://dialogue/characters/Lucia.dch" id="2_jsnb5"]
+
+[resource]
+script = ExtResource("1_620qg")
+personName = "Lucia Garcia"
+voice = ExtResource("2_jsnb5")
+stressLevel = 2
+answerThreshold = 4

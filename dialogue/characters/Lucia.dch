@@ -1,0 +1,30 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.443344, 0.439453, 0.9375, 1),
+"custom_info": {
+"sound_mood_default": "Default",
+"sound_moods": {
+"Default": {
+"mode": 0,
+"name": "Default",
+"pitch_base": 1.5,
+"pitch_variance": 0.1,
+"skip_characters": 2.0,
+"sound_path": "res://audio/test_f.wav",
+"volume_base": -10.0,
+"volume_variance": 0.0
+}
+},
+"style": ""
+},
+"default_portrait": "",
+"description": "",
+"display_name": "Lucia Garcia",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}
