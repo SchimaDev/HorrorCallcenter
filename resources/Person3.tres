@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Person" load_steps=3 format=3 uid="uid://c2nnai60hla2j"]
+
+[ext_resource type="Script" path="res://scripts/Person.gd" id="1_eefkc"]
+[ext_resource type="Resource" path="res://dialogue/characters/test_character 2.dch" id="2_aikej"]
+
+[resource]
+script = ExtResource("1_eefkc")
+personName = "Jonny Smith"
+voice = ExtResource("2_aikej")
+stressLevel = 0
+answerThreshold = 8

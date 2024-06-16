@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Person" load_steps=2 format=3 uid="uid://ufusr6lvlkpq"]
+
+[ext_resource type="Script" path="res://scripts/Person.gd" id="1_iwoe1"]
+
+[resource]
+script = ExtResource("1_iwoe1")
+personName = "@Sincubus"
+voice = 2
+stressLevel = 0
+answerThreshold = 6

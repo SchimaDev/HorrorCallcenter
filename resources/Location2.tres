@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Location" load_steps=2 format=3 uid="uid://bbqy7ttf5n4n7"]
+
+[ext_resource type="Script" path="res://scripts/Location.gd" id="1_uyb63"]
+
+[resource]
+script = ExtResource("1_uyb63")
+locationName = "mall"
+noise = true
+light = true
+hidingSpots = Array[String](["spot1"])
