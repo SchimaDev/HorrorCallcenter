@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://y65udmqjmq6f"
-path="res://.godot/imported/Quicksand-Regular.ttf-63ff8e1893d35f7d16b150b5a9f46a85.fontdata"
+uid="uid://c5h3ou40dhn0g"
+path="res://.godot/imported/PlaywriteNGModern-Light.ttf-55d8cfed5d0d33a6f651a0a0a2634b4b.fontdata"
 
 [deps]
 
-source_file="res://dialogue/fonts/Quicksand-Regular.ttf"
-dest_files=["res://.godot/imported/Quicksand-Regular.ttf-63ff8e1893d35f7d16b150b5a9f46a85.fontdata"]
+source_file="res://dialogue/fonts/Playwrite_NG_Modern/static/PlaywriteNGModern-Light.ttf"
+dest_files=["res://.godot/imported/PlaywriteNGModern-Light.ttf-55d8cfed5d0d33a6f651a0a0a2634b4b.fontdata"]
 
 [params]
 

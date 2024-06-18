@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://braxngdwff12h"
-path="res://.godot/imported/Quicksand-Medium.ttf-e9646eeed01770573e7140c2c1f757d2.fontdata"
+uid="uid://bh8waeckhpn6a"
+path="res://.godot/imported/PlaywriteNGModern-VariableFont_wght.ttf-1dbbbb264fdd7602c955205b41dd57ea.fontdata"
 
 [deps]
 
-source_file="res://dialogue/fonts/Quicksand-Medium.ttf"
-dest_files=["res://.godot/imported/Quicksand-Medium.ttf-e9646eeed01770573e7140c2c1f757d2.fontdata"]
+source_file="res://dialogue/fonts/Playwrite_NG_Modern/PlaywriteNGModern-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/PlaywriteNGModern-VariableFont_wght.ttf-1dbbbb264fdd7602c955205b41dd57ea.fontdata"]
 
 [params]
 

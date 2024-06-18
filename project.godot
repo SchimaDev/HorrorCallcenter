@@ -32,7 +32,7 @@ directories/dtl_directory={
 "monster_test": "res://dialogue/monster_test.dtl",
 "test_dialogue": "res://dialogue/test_dialogue.dtl"
 }
-layout/style_list=["res://dialogue/dialogue_style.tres"]
+layout/style_list=["res://dialogue/dialogue_style.tres", "res://dialogue/custom_style.tres"]
 layout/default_style="res://dialogue/dialogue_style.tres"
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
@@ -61,6 +61,10 @@ variables={
 "timer": 3
 }
 choices/def_false_behaviour=1
+
+[dotnet]
+
+project/assembly_name="Horror Callcenter"
 
 [editor_plugins]
 

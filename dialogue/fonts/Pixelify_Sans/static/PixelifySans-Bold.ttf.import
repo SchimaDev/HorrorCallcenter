@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://r8xdcl2wj5u2"
-path="res://.godot/imported/Quicksand-Light.ttf-99cd03c11d6b86b88603d7c3d39b9a86.fontdata"
+uid="uid://bq77xfecqrhjm"
+path="res://.godot/imported/PixelifySans-Bold.ttf-88fb9f5f168f9e1b732af4968d5a53b1.fontdata"
 
 [deps]
 
-source_file="res://dialogue/fonts/Quicksand-Light.ttf"
-dest_files=["res://.godot/imported/Quicksand-Light.ttf-99cd03c11d6b86b88603d7c3d39b9a86.fontdata"]
+source_file="res://dialogue/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf"
+dest_files=["res://.godot/imported/PixelifySans-Bold.ttf-88fb9f5f168f9e1b732af4968d5a53b1.fontdata"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ccqwvr132i54f"
-path="res://.godot/imported/Quicksand-SemiBold.ttf-dcb7dafff2c8638a99c4a40017ef1c35.fontdata"
+uid="uid://y65udmqjmq6f"
+path="res://.godot/imported/Quicksand-Regular.ttf-c7864175be69a3c7183212ae7a0c717e.fontdata"
 
 [deps]
 
-source_file="res://dialogue/fonts/Quicksand-SemiBold.ttf"
-dest_files=["res://.godot/imported/Quicksand-SemiBold.ttf-dcb7dafff2c8638a99c4a40017ef1c35.fontdata"]
+source_file="res://dialogue/fonts/Quicksand/Quicksand-Regular.ttf"
+dest_files=["res://.godot/imported/Quicksand-Regular.ttf-c7864175be69a3c7183212ae7a0c717e.fontdata"]
 
 [params]
 
