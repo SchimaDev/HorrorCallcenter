@@ -10,5 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func handle_url_tag_clicked(name: String) -> void:
-	print(name)
+func handle_url_tag_clicked(meta: Variant) -> void:
+	print(str(meta))
