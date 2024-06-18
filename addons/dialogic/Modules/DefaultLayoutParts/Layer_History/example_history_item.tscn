@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuoywrmvda1yg"]
+[gd_scene load_steps=7 format=3 uid="uid://cuoywrmvda1yg"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.gd" id="1_dgoja"]
 [ext_resource type="Script" path="res://dialogue/BBCodes/Rain.gd" id="2_84mj8"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/option.gd" id="3_72ai4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upgjp"]
 content_margin_left = 5.0
@@ -16,6 +17,9 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_3yxem"]
 script = ExtResource("2_84mj8")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_mym1y"]
+script = ExtResource("3_72ai4")
 
 [node name="HistoryItem" type="PanelContainer"]
 offset_left = -37.0
@@ -48,6 +52,6 @@ size_flags_vertical = 4
 bbcode_enabled = true
 text = "Some tex"
 fit_content = true
-custom_effects = [SubResource("RichTextEffect_3yxem")]
+custom_effects = [SubResource("RichTextEffect_3yxem"), SubResource("RichTextEffect_mym1y")]
 
 [connection signal="meta_clicked" from="HBoxContainer/TextBox" to="." method="_on_text_box_meta_clicked"]

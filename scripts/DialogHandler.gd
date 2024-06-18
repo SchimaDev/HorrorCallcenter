@@ -12,7 +12,7 @@ func startEvent():
 	var dE = DialogEvent.new()
 	dE.init(locations)
 	
-	Dialogic.start('monster_test')
+	Dialogic.start('test_dialogue')
 	
 	Dialogic.VAR.reset()
 	Dialogic.VAR.timer = 5

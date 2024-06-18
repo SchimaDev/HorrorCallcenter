@@ -1,5 +1,7 @@
 extends Node
 
+var chosenWordDictionary: String
+var chosenWordDialogue: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,9 +12,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func handle_url_tag_clicked(meta: Variant) -> void:
-	print(str(meta))
+func handle_url_tag_clicked(name: String) -> void:
+	chosenWordDialogue = name
+	if chosenWordDialogue == chosenWordDictionary:
+		Dialogic.VAR.set(name, true)
 
 func handle_Encyclopedia_url_tag_clicked(name: String) -> void:
-	print(name)
+	chosenWordDictionary = name
+	if chosenWordDialogue == chosenWordDictionary:
+		Dialogic.VAR.set(name, true)
 

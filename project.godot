@@ -53,6 +53,7 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
 variables={
+"dizzy": false,
 "informationKnown": {
 "Location": false
 },
