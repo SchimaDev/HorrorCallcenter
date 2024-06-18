@@ -1,0 +1,21 @@
+Lucia: [shake] Hola! [pause = 0.5] Hello? [pause = 0.5] Is there someone?!
+player: Yes, I can hear you loud and clear. [pause = 0.5] What is your emergency?
+Lucia: [shake]I-I need help... [pause = 0.3] I... [pause = 1][/shake] Dios mío, [pause = 0.5] I don’t know what’s [cuss]fucking[/cuss] happening!
+Lucia: [shake] I...[pause = 0.3] I think, there is somebody in the other room.
+label Basic Questions
+- "Stay calm..." [if {callerDistressed} == true]
+	player: Please, remain calm, [pause = 0.5] I'm here with you!
+	Lucia: [nervous]You… [pause = 0.5] you are right… [pause = 0.5] but please stay with me!
+	player: Of course, I will. [pause = 0.5] Now please tell me…
+	set {callerDistressed} = false
+	jump Basic Questions
+- "Where are you?" [if {monsterIdentified} == false]
+	player: Where are you currently?
+	Lucia: [nervous]I-I am at home. [pause = 0.5] In my kitchen.
+	Lucia: I can't explain why, [pause = 0.3] b-[pause = 0.3]but something is really off…
+	Lucia: I also feel [pause = 0.3] so… [pause = 0.5] [url="dizzy"][rain] dizzy…
+	jump Basic Questions
+label Monster identified
+player: Help will be on your help shortly! [pause = 0.5] Now please, [pause = 0.5] listen carefully and follow my instructions…
+label Monster unidentified
+player: Alright, [pause = 0.3] please remain as you are, [pause = 0.3] we have send someone your way who'll be able to help. [pause = 0.5] I will close the line now!

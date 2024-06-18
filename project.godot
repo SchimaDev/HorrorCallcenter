@@ -31,9 +31,10 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "monster_test": "res://dialogue/monster_test.dtl",
+"second_dialogue": "res://dialogue/second_dialogue.dtl",
 "test_dialogue": "res://dialogue/test_dialogue.dtl"
 }
-layout/style_list=["res://dialogue/dialogue_style.tres"]
+layout/style_list=["res://dialogue/dialogue_style.tres", "res://dialogue/custom_style.tres"]
 layout/default_style="res://dialogue/dialogue_style.tres"
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
@@ -53,12 +54,12 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
 variables={
-"dizzy": false,
-"informationKnown": {
-"Location": false
-},
+"Location": false,
+"callerDistressed": true,
+"informationKnown": {},
 "location": "the park",
 "monster": "",
+"monsterIdentified": false,
 "monsterState": "",
 "timer": 3
 }

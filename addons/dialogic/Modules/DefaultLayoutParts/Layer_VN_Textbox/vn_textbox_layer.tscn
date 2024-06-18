@@ -284,6 +284,7 @@ theme_override_font_sizes/italics_font_size = 15
 theme_override_font_sizes/bold_italics_font_size = 15
 bbcode_enabled = true
 text = "Some default text"
+custom_effects = [null]
 visible_characters_behavior = 1
 script = ExtResource("3_4634k")
 textbox_root = NodePath("..")

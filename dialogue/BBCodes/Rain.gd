@@ -1,6 +1,6 @@
 @tool
 extends RichTextEffect
-class_name RainRichTextEffect
+class_name RichTextRain
 
 
 # Syntax: [rain][/rain]
