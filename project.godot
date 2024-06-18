@@ -56,6 +56,7 @@ glossary/default_case_sensitive=true
 variables={
 "Location": false,
 "callerDistressed": true,
+"dizzy": false,
 "informationKnown": {},
 "location": "the park",
 "monster": "",

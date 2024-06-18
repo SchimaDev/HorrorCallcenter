@@ -11,10 +11,12 @@ func _process_custom_fx(char_fx):
 	var name = char_fx.env.get("name", "dizzy")
 	var isDialogueElseDictionary = char_fx.env.get("isDialogue", true)
 	if isDialogueElseDictionary:
-		setActive = ClickTextEventHandler.get("chosenWordDialogue") == name
+		var temp = ClickTextEventHandler.chosenWordDialogue
+		var equal = ClickTextEventHandler.chosenWordDialogue == name
+		setActive = ClickTextEventHandler.chosenWordDialogue == name
 	else:
-		setActive = ClickTextEventHandler.get("chosenWordDictionary") == name
-	if true:
+		setActive = ClickTextEventHandler.chosenWordDictionary == name
+	if setActive:
 		char_fx.color = Color.CYAN
 	else:
 		char_fx.color = Color.WHITE

@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuoywrmvda1yg"]
+[gd_scene load_steps=17 format=3 uid="uid://cuoywrmvda1yg"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.gd" id="1_dgoja"]
 [ext_resource type="Script" path="res://dialogue/BBCodes/Rain.gd" id="2_84mj8"]
 [ext_resource type="Script" path="res://dialogue/BBCodes/option.gd" id="3_72ai4"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/ColorMod.gd" id="4_qe22v"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/Cuss.gd" id="5_1s4fe"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/Woo.gd" id="6_xcgmh"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/Nervous.gd" id="7_4h3pr"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/Sparkle.gd" id="8_d716g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upgjp"]
 content_margin_left = 5.0
@@ -20,6 +25,21 @@ script = ExtResource("2_84mj8")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_mym1y"]
 script = ExtResource("3_72ai4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qij5o"]
+script = ExtResource("4_qe22v")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_sipnx"]
+script = ExtResource("5_1s4fe")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_nv6bv"]
+script = ExtResource("6_xcgmh")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_p3k4q"]
+script = ExtResource("7_4h3pr")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ssouu"]
+script = ExtResource("8_d716g")
 
 [node name="HistoryItem" type="PanelContainer"]
 offset_left = -37.0
@@ -52,6 +72,6 @@ size_flags_vertical = 4
 bbcode_enabled = true
 text = "Some tex"
 fit_content = true
-custom_effects = [SubResource("RichTextEffect_3yxem"), SubResource("RichTextEffect_mym1y")]
+custom_effects = [SubResource("RichTextEffect_3yxem"), SubResource("RichTextEffect_mym1y"), SubResource("RichTextEffect_qij5o"), SubResource("RichTextEffect_sipnx"), SubResource("RichTextEffect_nv6bv"), SubResource("RichTextEffect_p3k4q"), SubResource("RichTextEffect_ssouu")]
 
 [connection signal="meta_clicked" from="HBoxContainer/TextBox" to="." method="_on_text_box_meta_clicked"]
