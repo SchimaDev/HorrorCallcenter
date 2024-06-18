@@ -64,11 +64,8 @@ variables={
 "timer": 3
 }
 choices/def_false_behaviour=1
-text/absolute_autopauses=false
-
-[dotnet]
-
-project/assembly_name="Horror Callcenter"
+history/simple_history_enabled=true
+history/full_history_enabled=false
 
 [editor_plugins]
 

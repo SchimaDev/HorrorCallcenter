@@ -1,4 +1,4 @@
-Lucia: I've encountered a strange [cuss]creature[/cuss]..
+Lucia: I've encountered a strange [url="creature"]creature[/url]..
 label choice
 if {timer} <= 0:
 	Lucia: I'm sorry, we're out of time....
