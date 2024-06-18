@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl7elae3id7j0"]
+[gd_scene load_steps=12 format=3 uid="uid://dl7elae3id7j0"]
 
 [ext_resource type="Script" path="res://scripts/DialogHandler.gd" id="1_psbh6"]
 [ext_resource type="Texture2D" uid="uid://itgc13ywu2sn" path="res://art/background_mockup.png" id="2_clsr2"]
@@ -6,8 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://nruf0qtwf37h" path="res://art/telephone.svg" id="3_2iu6p"]
 [ext_resource type="Resource" uid="uid://bbqy7ttf5n4n7" path="res://resources/Location2.tres" id="3_xbfww"]
 [ext_resource type="Script" path="res://scripts/Telephone.gd" id="4_8agtq"]
+[ext_resource type="Texture2D" uid="uid://dmmd3vuu5pb6e" path="res://art/book-52.png" id="7_btro3"]
+[ext_resource type="Script" path="res://scripts/Encyclopedia.gd" id="8_k6x25"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6tnyj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wshrs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvkm3"]
+size = Vector2(354.969, 413.961)
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_psbh6")
@@ -30,7 +37,63 @@ script = ExtResource("4_8agtq")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Telephone/Area2D"]
 polygon = PackedVector2Array(-0.941162, -48, 31.0588, -43.2941, 51.7647, -33.8823, 61.1765, -20.7059, 62.1177, -3.76468, 52.7059, 1.88235, 39.5294, 1.88235, 45.1765, 29.1765, 45.1765, 54.5883, 40.4706, 59.2941, -40.4706, 59.2941, -44.2353, 55.5294, -45.1765, 31.0588, -37.647, -0.941162, -52.7059, -0.941162, -61.1765, -5.64703, -60.2353, -19.7647, -54.5882, -31.0588, -37.647, -40.4706, -18.8235, -45.1765)
 
+[node name="Encyclopedia" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wshrs")
+position = Vector2(1049, 276)
+rotation = -0.349147
+scale = Vector2(0.368164, 0.383789)
+texture = ExtResource("7_btro3")
+script = ExtResource("8_k6x25")
+
+[node name="Area2D" type="Area2D" parent="Encyclopedia"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Encyclopedia/Area2D"]
+position = Vector2(0.422363, 2.11548)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wvkm3")
+
+[node name="Page" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 6.0
+offset_right = 1141.0
+offset_bottom = 634.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Page"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Tallys are weird creatures that are often found [url=\"lurking in corner\"]standing in dark corners[/url], [url=\"stares at nothing\"]staring blankly into the air[/url]. They are not very dangerous, but can get irritated by [url=\"bright light\"]bright light[/url] or [url=\"loud noise\"]loud noises[/url]. 
+If a Tally [url=\"stares at victim\"]stares directly at you[/url], [url=\"don't leave unobserved\"]do not turn your back[/url], since it might attack as soon as you do.  While holding the Tally's stare, [url=\"leave area\"]slowly back up until you are out of reach[/url]."
+
 [connection signal="startCall" from="Telephone" to="." method="startEvent"]
 [connection signal="input_event" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Encyclopedia/Area2D" to="Encyclopedia" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Encyclopedia/Area2D" to="Encyclopedia" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Encyclopedia/Area2D" to="Encyclopedia" method="_on_area_2d_mouse_exited"]
+[connection signal="meta_clicked" from="Page/Panel/RichTextLabel" to="Encyclopedia" method="_on_rich_text_label_meta_clicked"]

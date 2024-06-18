@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cj76xfdg4qcu1"]
+
+[node name="Encyclopedia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 271.0
+offset_bottom = 438.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Tallys are weird creatures that are often found [url=\"lurking in corner\"]standing in dark corners[/url], [url=\"stares at nothing\"]staring blankly into the air[/url]. They are not very dangerous, but can get irritated by [url=\"bright light\"]bright light[/url] or [url=\"loud noise\"]loud noises[/url]. 
+If a Tally [url=\"stares at victim\"]stares directly at you[/url], [url=\"don't leave unobserved\"]do not turn your back[/url], since it might attack as soon as you do.  While holding the Tally's stare, [url=\"leave area\"]slowly back up until you are out of reach[/url]."

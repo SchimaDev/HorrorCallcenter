@@ -1,4 +1,4 @@
-Lucia: I've encountered a strange creature..
+Lucia: I've encountered a strange [url="creature"]creature[/url]..
 label choice
 if {timer} <= 0:
 	Lucia: I'm sorry, we're out of time....
@@ -12,9 +12,9 @@ else:
 		Lucia: It could be a {monster}
 		jump choice
 	- What is the creature behaving?
-		if {monsterState} == "hunting" 
+		if {monsterState} == "hunting":
 			Lucia: It seems like it's {monsterState}
-		else
+		else:
 			Lucia: It seems {monsterState}
 		jump choice
 	- well maybe leaving it alone then. bye. [if {informationKnown.Location} == false][else="hide"]
