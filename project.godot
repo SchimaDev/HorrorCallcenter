@@ -62,6 +62,8 @@ variables={
 "timer": 3
 }
 choices/def_false_behaviour=1
+history/simple_history_enabled=true
+history/full_history_enabled=false
 
 [editor_plugins]
 

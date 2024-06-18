@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func handle_url_tag_clicked(name: String) -> void:
-	print("potato")
+	print(name)

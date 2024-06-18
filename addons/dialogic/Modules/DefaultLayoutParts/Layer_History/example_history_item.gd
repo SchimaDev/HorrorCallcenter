@@ -28,3 +28,6 @@ func load_info(text:String, character:String = "", character_color: Color =Color
 	else:
 		icon_node.show()
 		icon_node.texture = icon
+
+func _on_text_box_meta_clicked(meta: Variant) -> void:
+	ClickTextEventHandler.handle_url_tag_clicked(meta)
