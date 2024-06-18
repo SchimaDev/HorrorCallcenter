@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="6_ij67t"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="7_ewqnv"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="8_vcjpx"]
-[ext_resource type="PackedScene" uid="uid://w074n564e656" path="res://dialogue/VisualNovelTextbox/custom_vn_textbox_layer.tscn" id="9_shriu"]
+[ext_resource type="PackedScene" uid="uid://cxn2okj2wppy2" path="res://dialogue/VisualNovelTextbox/custom_vn_textbox_layer.tscn" id="9_shriu"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_kna42"]
 
 [sub_resource type="PackedScene" id="PackedScene_64hxj"]
@@ -74,4 +74,4 @@ base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
 layers = Array[ExtResource("3_ogeqm")]([SubResource("Resource_tjxur"), SubResource("Resource_srkxs"), SubResource("Resource_2dy1s"), SubResource("Resource_fy423"), SubResource("Resource_w0gpl"), SubResource("Resource_cbnpl"), SubResource("Resource_dlowh")])
-metadata/_latest_layer = 6
+metadata/_latest_layer = 5
