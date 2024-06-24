@@ -30,6 +30,7 @@ directories/dch_directory={
 "test_character 2": "res://dialogue/characters/test_character 2.dch"
 }
 directories/dtl_directory={
+"monster_dialogue": "res://dialogue/monster_dialogue.dtl",
 "monster_test": "res://dialogue/monster_test.dtl",
 "second_dialogue": "res://dialogue/second_dialogue.dtl",
 "test_dialogue": "res://dialogue/test_dialogue.dtl"

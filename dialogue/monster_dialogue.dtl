@@ -1,0 +1,22 @@
+Lucia: I've encountered a strange [url="creature"]creature[/url]..
+label choice
+if {timer} <= 0:
+	Lucia: I'm sorry, we're out of time....
+else:
+	set {timer} -= 1
+	- Where are you currently?
+		Lucia: I am current in the {location}
+		set {informationKnown.Location} = true
+		jump choice
+	- What kind of monster is it?
+		Lucia: It could be a {monster}
+		jump choice
+	- What is the creature behaving?
+		if {monsterState} == "hunting":
+			Lucia: It seems like it's {monsterState}
+		else:
+			Lucia: It seems {monsterState}
+		jump choice
+	- well maybe leaving it alone then. bye. [if {informationKnown.Location} == false][else="hide"]
+	- well maybe leave the {location} then. bye. [if {informationKnown.Location} == true][else="hide"]
+[end_timeline]

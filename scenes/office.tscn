@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl7elae3id7j0"]
+[gd_scene load_steps=13 format=3 uid="uid://dl7elae3id7j0"]
 
 [ext_resource type="Script" path="res://scripts/DialogHandler.gd" id="1_psbh6"]
 [ext_resource type="Texture2D" uid="uid://itgc13ywu2sn" path="res://art/background_mockup.png" id="2_clsr2"]
@@ -7,8 +7,15 @@
 [ext_resource type="Resource" uid="uid://bbqy7ttf5n4n7" path="res://resources/Location2.tres" id="3_xbfww"]
 [ext_resource type="Script" path="res://scripts/Telephone.gd" id="4_8agtq"]
 [ext_resource type="PackedScene" uid="uid://bw1s40h82u17d" path="res://scenes/encyclopedia.tscn" id="7_e78k0"]
+[ext_resource type="Texture2D" uid="uid://c8yhbutqfk6vy" path="res://art/computer.png" id="8_dgt51"]
+[ext_resource type="Script" path="res://scripts/Computer.gd" id="9_ujklm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6tnyj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rowxr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ockf"]
+size = Vector2(256, 196)
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_psbh6")
@@ -33,7 +40,21 @@ polygon = PackedVector2Array(-0.941162, -48, 31.0588, -43.2941, 51.7647, -33.882
 
 [node name="Encyclopedia" parent="." instance=ExtResource("7_e78k0")]
 
+[node name="Computer" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rowxr")
+position = Vector2(356, 221)
+texture = ExtResource("8_dgt51")
+script = ExtResource("9_ujklm")
+
+[node name="Area2D" type="Area2D" parent="Computer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/Area2D"]
+shape = SubResource("RectangleShape2D_5ockf")
+
 [connection signal="startCall" from="Telephone" to="." method="startEvent"]
 [connection signal="input_event" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Computer/Area2D" to="Computer" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Computer/Area2D" to="Computer" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Computer/Area2D" to="Computer" method="_on_area_2d_mouse_exited"]
