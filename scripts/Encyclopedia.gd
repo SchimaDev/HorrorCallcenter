@@ -1,16 +1,20 @@
 class_name Encyclopedia
-extends Sprite2D
+extends Node2D
 
 const outline  = preload("res://art/outline.gdshader")
-@onready var page = $"../Page"
+@onready var image = $Image
+@onready var page = $Page
 #signal openBook
 
+func _ready():
+	page.visible = false
+
 func _on_area_2d_mouse_entered() -> void:
-	self.material.shader = outline
+	image.material.shader = outline
 
 
 func _on_area_2d_mouse_exited() -> void:
-	self.material.shader = null
+	image.material.shader = null
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -22,3 +26,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func _on_rich_text_label_meta_clicked(meta):
 	ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
+
+
+func _on_button_pressed():
+	page.visible = false

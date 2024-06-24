@@ -14,7 +14,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wshrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvkm3"]
-size = Vector2(354.969, 413.961)
+size = Vector2(129.44, 153.014)
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_psbh6")
@@ -37,21 +37,22 @@ script = ExtResource("4_8agtq")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Telephone/Area2D"]
 polygon = PackedVector2Array(-0.941162, -48, 31.0588, -43.2941, 51.7647, -33.8823, 61.1765, -20.7059, 62.1177, -3.76468, 52.7059, 1.88235, 39.5294, 1.88235, 45.1765, 29.1765, 45.1765, 54.5883, 40.4706, 59.2941, -40.4706, 59.2941, -44.2353, 55.5294, -45.1765, 31.0588, -37.647, -0.941162, -52.7059, -0.941162, -61.1765, -5.64703, -60.2353, -19.7647, -54.5882, -31.0588, -37.647, -40.4706, -18.8235, -45.1765)
 
-[node name="Encyclopedia" type="Sprite2D" parent="."]
+[node name="Encyclopedia" type="Node2D" parent="."]
+script = ExtResource("8_k6x25")
+
+[node name="Image" type="Sprite2D" parent="Encyclopedia"]
 material = SubResource("ShaderMaterial_wshrs")
 position = Vector2(1049, 276)
 rotation = -0.349147
-scale = Vector2(0.368164, 0.383789)
 texture = ExtResource("7_btro3")
-script = ExtResource("8_k6x25")
 
-[node name="Area2D" type="Area2D" parent="Encyclopedia"]
+[node name="Area2D" type="Area2D" parent="Encyclopedia/Image"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Encyclopedia/Area2D"]
-position = Vector2(0.422363, 2.11548)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Encyclopedia/Image/Area2D"]
+position = Vector2(-0.134583, 0.896362)
 shape = SubResource("RectangleShape2D_wvkm3")
 
-[node name="Page" type="Control" parent="."]
+[node name="Page" type="Control" parent="Encyclopedia"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,7 +64,7 @@ offset_bottom = 634.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Page"]
+[node name="Panel" type="Panel" parent="Encyclopedia/Page"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -72,7 +73,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Page/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Encyclopedia/Page/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,11 +90,22 @@ text = "Tallys are weird creatures that are often found [url=\"lurking in corner
 If a Tally [url=\"stares at victim\"]stares directly at you[/url], [url=\"don't leave unobserved\"]do not turn your back[/url], since it might attack as soon as you do.  While holding the Tally's stare, [url=\"leave area\"]slowly back up until you are out of reach[/url].
 They make you [url=\"dizzy\"]feel dizzy[/url]"
 
+[node name="Button" type="Button" parent="Encyclopedia/Page"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "X"
+
 [connection signal="startCall" from="Telephone" to="." method="startEvent"]
 [connection signal="input_event" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Telephone/Area2D" to="Telephone" method="_on_area_2d_mouse_exited"]
-[connection signal="input_event" from="Encyclopedia/Area2D" to="Encyclopedia" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Encyclopedia/Area2D" to="Encyclopedia" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Encyclopedia/Area2D" to="Encyclopedia" method="_on_area_2d_mouse_exited"]
-[connection signal="meta_clicked" from="Page/Panel/RichTextLabel" to="Encyclopedia" method="_on_rich_text_label_meta_clicked"]
+[connection signal="input_event" from="Encyclopedia/Image/Area2D" to="Encyclopedia" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Encyclopedia/Image/Area2D" to="Encyclopedia" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Encyclopedia/Image/Area2D" to="Encyclopedia" method="_on_area_2d_mouse_exited"]
+[connection signal="meta_clicked" from="Encyclopedia/Page/Panel/RichTextLabel" to="Encyclopedia" method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="Encyclopedia/Page/Button" to="Encyclopedia" method="_on_button_pressed"]
