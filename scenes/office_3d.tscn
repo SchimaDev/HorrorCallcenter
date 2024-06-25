@@ -1,0 +1,100 @@
+[gd_scene load_steps=17 format=3 uid="uid://syhj0k5qflvo"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_o50q1"]
+[ext_resource type="PackedScene" uid="uid://cmfl5d2ott46l" path="res://art/3D/All_pack/scenes/Table_05.scn" id="1_rqf7g"]
+[ext_resource type="Texture2D" uid="uid://8c3tw2dgbv0n" path="res://art/common/crosshair.png" id="2_3tqhc"]
+[ext_resource type="PackedScene" uid="uid://b70uknqwj1a65" path="res://art/3D/Abandoned_House/scenes/monitor.tscn" id="2_ck4js"]
+[ext_resource type="PackedScene" uid="uid://bgbtpjdtisioa" path="res://art/3D/Abandoned_House/scenes/Keyboard.tscn" id="3_o4ktg"]
+[ext_resource type="PackedScene" uid="uid://bqp1jmdu80xf6" path="res://art/3D/Models pack psx/scenes/Ceiling_Ventilator_Light.scn" id="4_b5yjr"]
+[ext_resource type="PackedScene" uid="uid://3ob6uccm53ep" path="res://art/3D/Models pack psx/scenes/Office_Chair.scn" id="5_v318c"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7hp75"]
+load_path = "res://.godot/imported/Tiles_01.jpg-b436d756148837cc4a99240394146fd9.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
+albedo_texture = SubResource("CompressedTexture2D_7hp75")
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nvr4f"]
+material = SubResource("StandardMaterial3D_5jltx")
+size = Vector2(100, 100)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ydmsn"]
+load_path = "res://.godot/imported/Paper.jpg-7f4a4ad6e4a31826e57404440bfd7bb0.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1pp6"]
+albedo_texture = SubResource("CompressedTexture2D_ydmsn")
+uv1_scale = Vector3(8, 8, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7musy"]
+material = SubResource("StandardMaterial3D_k1pp6")
+flip_faces = true
+size = Vector3(10, 20, 10)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fxka4"]
+load_path = "res://.godot/imported/ceiling.png-898825f18fecead0f4cc9a1e25a8ba34.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88phg"]
+albedo_texture = SubResource("CompressedTexture2D_fxka4")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8wymt"]
+material = SubResource("StandardMaterial3D_88phg")
+size = Vector2(20, 20)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
+current = true
+fov = 60.0
+script = ExtResource("1_o50q1")
+
+[node name="Crosshair" type="TextureRect" parent="Camera3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 19.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3tqhc")
+
+[node name="Highlight Ray" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.072)
+mesh = SubResource("PlaneMesh_nvr4f")
+
+[node name="Walls" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.320179, -2.13873)
+mesh = SubResource("BoxMesh_7musy")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6.57994, 0)
+mesh = SubResource("PlaneMesh_8wymt")
+
+[node name="Table_05" parent="." instance=ExtResource("1_rqf7g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.747545, 1.517, 1.23677)
+
+[node name="Monitor" parent="." instance=ExtResource("2_ck4js")]
+transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
+
+[node name="Keyboard" parent="." instance=ExtResource("3_o4ktg")]
+transform = Transform3D(-0.033905, 0, 0.799281, 0, 0.8, 0, -0.799281, 0, -0.033905, -0.209564, 1.56808, 0.754749)
+
+[node name="Ceiling_Ventilator" parent="." instance=ExtResource("4_b5yjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0321267, 5.19305, 0.567421)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Ceiling_Ventilator"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.25904, 0)
+spot_angle = 60.0
+
+[node name="Chair" parent="." instance=ExtResource("5_v318c")]
+transform = Transform3D(-0.991738, 0, -0.128276, 0, 1, 0, 0.128276, 0, -0.991738, -0.763761, 1.01829, -0.312814)

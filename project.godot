@@ -17,7 +17,7 @@ config/icon="res://art/icon.svg"
 
 [autoload]
 
-ClickTextEventHandler="*res://click_text_event_handler.gd"
+ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
