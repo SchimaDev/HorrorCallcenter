@@ -1,29 +1,27 @@
-[gd_scene load_steps=17 format=3 uid="uid://syhj0k5qflvo"]
+[gd_scene load_steps=18 format=3 uid="uid://syhj0k5qflvo"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_o50q1"]
 [ext_resource type="PackedScene" uid="uid://cmfl5d2ott46l" path="res://art/3D/All_pack/scenes/Table_05.scn" id="1_rqf7g"]
 [ext_resource type="Texture2D" uid="uid://8c3tw2dgbv0n" path="res://art/common/crosshair.png" id="2_3tqhc"]
 [ext_resource type="PackedScene" uid="uid://b70uknqwj1a65" path="res://art/3D/Abandoned_House/scenes/monitor.tscn" id="2_ck4js"]
+[ext_resource type="Texture2D" uid="uid://bmq4p8k41l3wb" path="res://art/3D/Models pack psx/source/Tiles_01.jpg" id="3_f5b3j"]
 [ext_resource type="PackedScene" uid="uid://bgbtpjdtisioa" path="res://art/3D/Abandoned_House/scenes/Keyboard.tscn" id="3_o4ktg"]
+[ext_resource type="Texture2D" uid="uid://cqnu4214xps71" path="res://art/3D/Models pack psx/source/Asphalt.png" id="4_ahiun"]
 [ext_resource type="PackedScene" uid="uid://bqp1jmdu80xf6" path="res://art/3D/Models pack psx/scenes/Ceiling_Ventilator_Light.scn" id="4_b5yjr"]
 [ext_resource type="PackedScene" uid="uid://3ob6uccm53ep" path="res://art/3D/Models pack psx/scenes/Office_Chair.scn" id="5_v318c"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7hp75"]
-load_path = "res://.godot/imported/Tiles_01.jpg-b436d756148837cc4a99240394146fd9.s3tc.ctex"
+[ext_resource type="Texture2D" uid="uid://d0qqa5n5xd41v" path="res://art/3D/Models pack psx/source/ceiling.png" id="5_wwn6m"]
+[ext_resource type="PackedScene" uid="uid://ddctpt2uvr62o" path="res://art/3D/All_pack/scenes/Grape_01.scn" id="9_0nrbv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
-albedo_texture = SubResource("CompressedTexture2D_7hp75")
+albedo_texture = ExtResource("3_f5b3j")
 uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nvr4f"]
 material = SubResource("StandardMaterial3D_5jltx")
 size = Vector2(100, 100)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ydmsn"]
-load_path = "res://.godot/imported/Paper.jpg-7f4a4ad6e4a31826e57404440bfd7bb0.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1pp6"]
-albedo_texture = SubResource("CompressedTexture2D_ydmsn")
+albedo_texture = ExtResource("4_ahiun")
 uv1_scale = Vector3(8, 8, 8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7musy"]
@@ -31,11 +29,8 @@ material = SubResource("StandardMaterial3D_k1pp6")
 flip_faces = true
 size = Vector3(10, 20, 10)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fxka4"]
-load_path = "res://.godot/imported/ceiling.png-898825f18fecead0f4cc9a1e25a8ba34.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88phg"]
-albedo_texture = SubResource("CompressedTexture2D_fxka4")
+albedo_texture = ExtResource("5_wwn6m")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8wymt"]
@@ -98,3 +93,6 @@ spot_angle = 60.0
 
 [node name="Chair" parent="." instance=ExtResource("5_v318c")]
 transform = Transform3D(-0.991738, 0, -0.128276, 0, 1, 0, 0.128276, 0, -0.991738, -0.763761, 1.01829, -0.312814)
+
+[node name="Grape_01" parent="." instance=ExtResource("9_0nrbv")]
+transform = Transform3D(0.065068, 0.0586481, 0.0272173, 0, 0.038614, -0.0832057, -0.0646559, 0.0590219, 0.0273908, -0.658505, 1.65266, 1.4329)
