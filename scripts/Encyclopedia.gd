@@ -1,32 +1,22 @@
 class_name Encyclopedia
-extends Node2D
+extends Node3D
 
-const outline  = preload("res://art/outline.gdshader")
-@onready var image = $Image
-@onready var page = $Page
-#signal openBook
+@onready var animation_player = $AnimationPlayer
 
 func _ready():
-	page.visible = false
-
-func _on_area_2d_mouse_entered() -> void:
-	image.material.shader = outline
-
-
-func _on_area_2d_mouse_exited() -> void:
-	image.material.shader = null
-
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			page.visible = true
-			get_viewport().set_input_as_handled()
-
+	pass
 
 func _on_rich_text_label_meta_clicked(meta):
 	ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
 
-
-func _on_button_pressed():
-	page.visible = false
+func _process(delta):
+	if  Input.is_action_just_pressed("book_test"):
+		animation_player.play("Armature_001Action")
+	if  Input.is_action_just_pressed("book_test_2"):
+		animation_player.stop(false);
+		
+func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
+	print("CLICK!")
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			print("CLACK!")
