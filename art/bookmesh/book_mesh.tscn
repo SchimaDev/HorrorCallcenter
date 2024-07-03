@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dip08nqpje3j5"]
+
+[ext_resource type="PackedScene" uid="uid://ca6h4kdh4cdpq" path="res://art/bookmesh/BookMesh.blend" id="1_xh0t1"]
+[ext_resource type="Texture2D" uid="uid://dtyt46m8hmo1q" path="res://art/bookmesh/BookTexture_02.png" id="2_nurce"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2vqf"]
+albedo_texture = ExtResource("2_nurce")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vynq"]
+size = Vector3(0.578369, 0.0642395, 0.803223)
+
+[node name="BookMesh" instance=ExtResource("1_xh0t1")]
+
+[node name="Armature_001" parent="." index="0"]
+transform = Transform3D(0.04, 0, 0, 0, 0.025232, 0.0310379, 0, -0.0310379, 0.025232, -0.13061, 0.11458, 0.0247709)
+
+[node name="Skeleton3D" parent="Armature_001" index="0"]
+bones/0/rotation = Quaternion(0.788904, 0, 0, 0.614517)
+bones/1/rotation = Quaternion(4.15557e-08, 0.995062, 0.09926, -7.54462e-08)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.084471, 1.28106e-10, 8.08605e-09, 0.996426)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(8.34256e-08, 0.998455, -0.0555721, 5.50461e-07)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(-9.45015e-08, 0.990049, 0.140723, -1.60905e-06)
+bones/5/rotation = Quaternion(0.0532387, -5.94859e-07, 3.46329e-09, 0.998582)
+bones/6/rotation = Quaternion(0.0569148, -2.37909e-07, -3.19677e-08, 0.998379)
+bones/7/rotation = Quaternion(-0.0128163, -2.38399e-07, -4.99086e-09, 0.999918)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="Cube_003" parent="Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n2vqf")
+
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 1.5
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125366, 0.132797, 0.0222168)
+shape = SubResource("BoxShape3D_8vynq")
