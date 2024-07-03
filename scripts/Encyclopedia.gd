@@ -14,9 +14,3 @@ func _process(delta):
 		animation_player.play("Armature_001Action")
 	if  Input.is_action_just_pressed("book_test_2"):
 		animation_player.stop(false);
-		
-func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
-	print("CLICK!")
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			print("CLACK!")
