@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://6l06kn04vk1k"]
+
+[ext_resource type="Texture2D" uid="uid://h66e8vhjnvsv" path="res://art/bookmesh/page_03.png" id="1_vipi3"]
+
+[resource]
+albedo_texture = ExtResource("1_vipi3")

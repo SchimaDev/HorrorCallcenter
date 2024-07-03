@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dip08nqpje3j5"]
+
+[ext_resource type="PackedScene" uid="uid://bnnl0b03pf5l6" path="res://art/bookmesh/BookMesh.glb" id="1_2xijn"]
+[ext_resource type="Script" path="res://scripts/Encyclopedia.gd" id="2_4wt4e"]
+[ext_resource type="Material" uid="uid://d3gi7kyv2tjcg" path="res://art/bookmesh/page_01.tres" id="3_l4k4i"]
+
+[node name="BookMesh" instance=ExtResource("1_2xijn")]
+script = ExtResource("2_4wt4e")
+
+[node name="Armature_001" parent="." index="0"]
+transform = Transform3D(0.04, 0, 0, 0, 0.025232, 0.0310379, 0, -0.0310379, 0.025232, -0.13061, 0.11458, 0.0247709)
+
+[node name="Skeleton3D" parent="Armature_001" index="0"]
+bones/0/rotation = Quaternion(2.68399e-09, -3.46898e-34, -2.08139e-34, 1)
+bones/1/rotation = Quaternion(1.69863e-08, 0.974361, -0.22499, -7.35622e-08)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.0535092, 6.26235e-15, 8.07966e-09, 0.998567)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(2.21885e-08, 0.998471, 0.0552861, 5.5149e-07)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(8.97521e-08, 0.991029, -0.133651, -1.61064e-06)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0255822, -5.95851e-07, -4.3508e-08, 0.999673)
+bones/6/rotation = Quaternion(-0.0724951, -2.37791e-07, -6.27991e-08, 0.997369)
+bones/7/rotation = Quaternion(-0.0128163, -2.38399e-07, -4.99086e-09, 0.999918)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="Cube_001" parent="Armature_001/Skeleton3D" index="0"]
+surface_material_override/1 = ExtResource("3_l4k4i")
+
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 1.5
