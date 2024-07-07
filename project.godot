@@ -97,7 +97,6 @@ project/assembly_name="Horror Callcenter"
 
 enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/fmod/plugin.cfg")
 
-
 [file_customization]
 
 folder_colors={
