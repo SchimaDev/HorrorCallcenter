@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfpnfp6ihxj4p"]
+
+[ext_resource type="Script" path="res://addons/camera-shifter/global_camera_transition.gd" id="1_yteiv"]
+
+[node name="CameraShifter" type="Node"]
+script = ExtResource("1_yteiv")
+remove_last_transition_step_3d_on_back = true
+
+[node name="GlobalCameraTransition2D" type="Camera2D" parent="."]
+
+[node name="GlobalCameraTransition3D" type="Camera3D" parent="."]

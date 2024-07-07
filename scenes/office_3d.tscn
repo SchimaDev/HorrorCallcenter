@@ -1,0 +1,101 @@
+[gd_scene load_steps=22 format=3 uid="uid://syhj0k5qflvo"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_o50q1"]
+[ext_resource type="PackedScene" uid="uid://cmfl5d2ott46l" path="res://art/3D/All_pack/scenes/Table_05.scn" id="1_rqf7g"]
+[ext_resource type="PackedScene" uid="uid://b70uknqwj1a65" path="res://art/3D/Abandoned_House/scenes/monitor.tscn" id="2_ck4js"]
+[ext_resource type="Texture2D" uid="uid://bmq4p8k41l3wb" path="res://art/3D/Models pack psx/source/Tiles_01.jpg" id="3_f5b3j"]
+[ext_resource type="PackedScene" uid="uid://bgbtpjdtisioa" path="res://art/3D/Abandoned_House/scenes/Keyboard.tscn" id="3_o4ktg"]
+[ext_resource type="Texture2D" uid="uid://cqnu4214xps71" path="res://art/3D/Models pack psx/source/Asphalt.png" id="4_ahiun"]
+[ext_resource type="PackedScene" uid="uid://bqp1jmdu80xf6" path="res://art/3D/Models pack psx/scenes/Ceiling_Ventilator_Light.scn" id="4_b5yjr"]
+[ext_resource type="PackedScene" uid="uid://3ob6uccm53ep" path="res://art/3D/Models pack psx/scenes/Office_Chair.scn" id="5_v318c"]
+[ext_resource type="Texture2D" uid="uid://d0qqa5n5xd41v" path="res://art/3D/Models pack psx/source/ceiling.png" id="5_wwn6m"]
+[ext_resource type="PackedScene" uid="uid://bw1yqfjhc8xnb" path="res://ui/ui.tscn" id="11_j406q"]
+[ext_resource type="Script" path="res://scenes/static_camera.gd" id="11_wvnkj"]
+[ext_resource type="PackedScene" uid="uid://dip08nqpje3j5" path="res://art/bookmesh/book_mesh.tscn" id="12_l04is"]
+[ext_resource type="Material" uid="uid://d3gi7kyv2tjcg" path="res://art/bookmesh/page_01.tres" id="13_2psdp"]
+[ext_resource type="Material" uid="uid://dhoiyohy1wfrn" path="res://art/bookmesh/page_02.tres" id="14_s2fd4"]
+[ext_resource type="Material" uid="uid://6l06kn04vk1k" path="res://art/bookmesh/page_03.tres" id="15_wembk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
+albedo_texture = ExtResource("3_f5b3j")
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nvr4f"]
+material = SubResource("StandardMaterial3D_5jltx")
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1pp6"]
+albedo_texture = ExtResource("4_ahiun")
+uv1_scale = Vector3(8, 8, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7musy"]
+material = SubResource("StandardMaterial3D_k1pp6")
+flip_faces = true
+size = Vector3(10, 20, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88phg"]
+albedo_texture = ExtResource("5_wwn6m")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8wymt"]
+material = SubResource("StandardMaterial3D_88phg")
+size = Vector2(20, 20)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DeskCamera" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
+transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
+current = true
+fov = 60.0
+script = ExtResource("1_o50q1")
+targetCamera = NodePath("../ComputerView")
+
+[node name="Highlight Ray" type="RayCast3D" parent="DeskCamera"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.072)
+mesh = SubResource("PlaneMesh_nvr4f")
+
+[node name="Walls" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.320179, -2.13873)
+mesh = SubResource("BoxMesh_7musy")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6.57994, 0)
+mesh = SubResource("PlaneMesh_8wymt")
+
+[node name="Table_05" parent="." instance=ExtResource("1_rqf7g")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.747545, 1.517, 1.23677)
+
+[node name="Monitor" parent="." instance=ExtResource("2_ck4js")]
+transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
+
+[node name="Keyboard" parent="." instance=ExtResource("3_o4ktg")]
+transform = Transform3D(-0.033905, 0, 0.799281, 0, 0.8, 0, -0.799281, 0, -0.033905, -0.209564, 1.56808, 0.754749)
+
+[node name="CeilingVentilator" parent="." instance=ExtResource("4_b5yjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0321267, 5.19305, 0.567421)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CeilingVentilator"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.25904, 0)
+spot_angle = 60.0
+
+[node name="Chair" parent="." instance=ExtResource("5_v318c")]
+transform = Transform3D(-0.991738, 0, -0.128276, 0, 1, 0, 0.128276, 0, -0.991738, -0.763761, 1.01829, -0.312814)
+
+[node name="ComputerView" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
+transform = Transform3D(-0.981577, -0.0254524, -0.189363, -0.0260889, 0.999659, 0.000869182, 0.189276, 0.00579344, -0.981907, -0.639388, 1.97794, 0.480357)
+fov = 60.0
+script = ExtResource("11_wvnkj")
+targetCamera = NodePath("../DeskCamera")
+
+[node name="UI" parent="." instance=ExtResource("11_j406q")]
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+
+[node name="BookMesh" parent="." instance=ExtResource("12_l04is")]
+transform = Transform3D(0.410257, 0, 0.91197, 0, 1, 0, -0.91197, 0, 0.410257, -1.42068, 1.4581, 0.840111)
+tex = Array[StandardMaterial3D]([ExtResource("13_2psdp"), ExtResource("14_s2fd4"), ExtResource("15_wembk")])
