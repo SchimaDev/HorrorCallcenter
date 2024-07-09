@@ -10,8 +10,8 @@ var page = -1
 func _ready():
 	pass
 
-#func _on_rich_text_label_meta_clicked(meta):
-	#ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
+func _on_rich_text_label_meta_clicked(meta):
+	ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta.split("."))
 
 func _process(delta):
 	if  Input.is_action_just_pressed("book_test"):

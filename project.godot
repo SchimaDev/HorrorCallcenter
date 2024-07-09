@@ -18,12 +18,12 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
-CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"Jonny": "res://dialogue/characters/Jonny.dch",
 "Lucia": "res://dialogue/characters/Lucia.dch",
 "Male voice/test_character": "res://audio/Male voice/test_character.dch",
 "player": "res://dialogue/characters/player.dch",
@@ -31,6 +31,7 @@ directories/dch_directory={
 "test_character 2": "res://dialogue/characters/test_character 2.dch"
 }
 directories/dtl_directory={
+"Jonny_01": "res://dialogue/Jonny_01.dtl",
 "monster_dialogue": "res://dialogue/monster_dialogue.dtl",
 "monster_test": "res://dialogue/monster_test.dtl",
 "second_dialogue": "res://dialogue/second_dialogue.dtl",
@@ -56,14 +57,69 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
 variables={
+"Analogue": {
+"apartment": false
+},
+"Doppelganger": {
+"apartment": false,
+"mumbling": false,
+"person": false,
+"uncooridinated": false
+},
+"FearOfDeath": {
+"apartment": false
+},
 "Location": false,
+"Ooze": {
+"apartment": false
+},
+"Parasite": {
+"apartment": false,
+"coherent": false,
+"mumbling": false,
+"person": false,
+"uncooridinated": false
+},
+"Screamer": {
+"mumbling": false,
+"uncooridinated": false
+},
+"Tally": {
+"apartment": false,
+"person": false
+},
+"_MonsterSelect": {
+"Analogue": false,
+"Doppelganger": false,
+"FearofDeath": false,
+"Ooze": false,
+"Parasite": false,
+"Screamer": false,
+"Tally": false
+},
 "callerDistressed": true,
 "dizzy": false,
-"informationKnown": {},
 "location": "the park",
 "monster": "",
 "monsterIdentified": false,
 "monsterState": "",
+"questions": {
+"q01": false,
+"q02": false,
+"q03": false,
+"q04": false,
+"q05": false,
+"q06": false,
+"q07": false,
+"q08": false,
+"q09": false,
+"q10": false,
+"q11": false,
+"q12": false,
+"q13": false,
+"q14": false,
+"q15": false
+},
 "timer": 3
 }
 choices/def_false_behaviour=1
