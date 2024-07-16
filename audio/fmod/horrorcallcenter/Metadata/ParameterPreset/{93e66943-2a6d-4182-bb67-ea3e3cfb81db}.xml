@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{93e66943-2a6d-4182-bb67-ea3e3cfb81db}">
+		<property name="name">
+			<value>CRTOn</value>
+		</property>
+		<relationship name="folder">
+			<destination>{85e8f897-82cf-4ae8-940d-57712a3ba380}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f7c38884-dde1-4ab1-be02-81dc0a7a52e6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f7c38884-dde1-4ab1-be02-81dc0a7a52e6}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

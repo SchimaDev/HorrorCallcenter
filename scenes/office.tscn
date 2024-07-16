@@ -20,9 +20,6 @@ size = Vector2(256, 196)
 script = ExtResource("1_psbh6")
 locations = Array[Resource("res://scripts/Location.gd")]([ExtResource("2_h0358"), ExtResource("3_xbfww")])
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://audio/fmod/horrorcallcenter/Build/Desktop/Master.strings.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Master.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/SFX.bank"]
-
 [node name="BackgroundMockup" type="Sprite2D" parent="."]
 position = Vector2(575.5, 319)
 scale = Vector2(0.925361, 0.879679)

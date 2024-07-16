@@ -5,10 +5,13 @@ extends Node3D
 @export var tex : Array[StandardMaterial3D]
 @onready var cube = $Armature_001/Skeleton3D/Cube_001
 
+# FMOD events
+var pageTurn: FmodEvent = null
+
 var page = -1
 
 func _ready():
-	pass
+	loadSoundEvents()
 
 #func _on_rich_text_label_meta_clicked(meta):
 	#ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
@@ -22,6 +25,7 @@ func _process(delta):
 			animation_player.stop()
 			cube.set_surface_override_material(1, tex[page])
 			animation_player.play("Armature_001Action")
+			pageTurn.start()
 	if  Input.is_action_just_pressed("book_test_2"):
 		if page <= -1:
 			page = -1
@@ -30,3 +34,7 @@ func _process(delta):
 			cube.set_surface_override_material(1, tex[page])
 			animation_player.play_backwards("Armature_001Action")
 			page -= 1
+			pageTurn.start()
+
+func loadSoundEvents():
+	pageTurn = FmodServer.create_event_instance("event:/Glossary/TurnPage")

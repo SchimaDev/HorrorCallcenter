@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b70uknqwj1a65"]
+[gd_scene load_steps=8 format=3 uid="uid://b70uknqwj1a65"]
 
 [ext_resource type="Texture2D" uid="uid://c4xw1tduil7uy" path="res://art/3D/Abandoned_House/source/Monitores.jpg" id="1_frtje"]
+[ext_resource type="Script" path="res://scripts/ComputerAudio.gd" id="2_84hvs"]
+[ext_resource type="Script" path="res://scripts/MonitorAudio.gd" id="2_ce50o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10d8y"]
 resource_name = "Monitores"
@@ -74,3 +76,25 @@ shadow_mesh = SubResource("ArrayMesh_oxf34")
 transform = Transform3D(-6.43445, 0, -1.36923, 0, 6.57852, 0, 1.36923, 0, -6.43445, -7.40686, -4.99153, -5.34137)
 mesh = SubResource("ArrayMesh_iicc6")
 skeleton = NodePath("")
+
+[node name="MonitorAudio" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Computer/CRTAmbience"
+event_guid = "{c6554749-8ada-4924-bcfc-00d0b2571f78}"
+autoplay = true
+"event_parameter/CRT On/id" = 8286736963116042769
+"event_parameter/CRT On/value" = 0.0
+"event_parameter/CRT On/min_value" = 0.0
+"event_parameter/CRT On/max_value" = 1.0
+"event_parameter/CRT On/default_value" = 0.0
+script = ExtResource("2_ce50o")
+
+[node name="ComputerAudio" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Computer/ComputerAmbience"
+event_guid = "{0db6a099-e10e-4335-b14f-17819659930f}"
+autoplay = true
+event_parameter/ComputerOn/id = -4836201264362326226
+event_parameter/ComputerOn/value = 0.0
+event_parameter/ComputerOn/min_value = 0.0
+event_parameter/ComputerOn/max_value = 1.0
+event_parameter/ComputerOn/default_value = 0.0
+script = ExtResource("2_84hvs")
