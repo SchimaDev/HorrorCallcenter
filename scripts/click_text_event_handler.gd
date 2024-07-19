@@ -26,12 +26,13 @@ func handle_url_tag_clicked(name: String) -> void:
 		Dialogic.VAR.set_variable(v, true)
 
 func handle_Encyclopedia_url_tag_clicked(name: String) -> void:
-	var n = name.split(".")
+	print(name)
+	var n = name.split(",")
 	chosenMonster = n[0]
 	n.remove_at(0)
 	chosenWordDictionary = n
 	
-	if chosenWordDictionary.has(chosenWordDialogue):
-		var v = chosenMonster + "." + chosenWordDialogue
-		Dialogic.VAR.set_variable(v, true)
+	#if chosenWordDictionary.has(chosenWordDialogue):
+		#var v = chosenMonster + "." + chosenWordDialogue
+		#Dialogic.VAR.set_variable(v, true)
 

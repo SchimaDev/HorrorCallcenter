@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjgbj3e5uhnr7"]
+
+[ext_resource type="Texture2D" uid="uid://yn1xkdd6ckgo" path="res://art/bookmesh/page_02.png" id="1_svtrb"]
+[ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/bookmesh/BookMesh2_Untitled.png" id="2_ysri2"]
+[ext_resource type="Texture2D" uid="uid://bp6memi62eyhe" path="res://art/bookmesh/page_0.png" id="4_5sv21"]
+[ext_resource type="Texture2D" uid="uid://drh2r7q63rqlt" path="res://art/bookmesh/page_1.png" id="5_26t1w"]
+[ext_resource type="Texture2D" uid="uid://drkyxtview46u" path="res://art/bookmesh/page_2.png" id="6_cfxh8"]
+[ext_resource type="Texture2D" uid="uid://c7agrqtr23vyu" path="res://art/bookmesh/page_3.png" id="7_tsg3k"]
+
+[sub_resource type="GDScript" id="GDScript_wjkbp"]
+script/source = "extends Control
+
+func _on_rich_text_label_meta_clicked(meta):
+	ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_wjkbp")
+
+[node name="BookMesh2Untitled" type="Sprite2D" parent="."]
+position = Vector2(325.113, 324.113)
+scale = Vector2(0.632592, 0.632592)
+texture = ExtResource("2_ysri2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 661.0
+offset_bottom = 648.0
+texture = ExtResource("1_svtrb")
+expand_mode = 1
+
+[node name="Page0" type="Sprite2D" parent="."]
+position = Vector2(118.5, 162.106)
+scale = Vector2(0.634615, 0.634615)
+texture = ExtResource("4_5sv21")
+
+[node name="Page1" type="Sprite2D" parent="."]
+position = Vector2(347, 486)
+scale = Vector2(0.635989, 0.635989)
+texture = ExtResource("5_26t1w")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page1"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "DOPPELGÄNGER
+
+Doppelgängers like to take the place of recently deceased people. The modify their appearence to look just like the person they are tryingin to imitate, and manipulate the minds of their roommates to forget the reality about the persons death. 
+Doppelgänger are not 
+capable of imitating 
+human speech, 
+instead they 
+comunicate with 
+their roommates 
+telepathically."
+
+[node name="Page2" type="Sprite2D" parent="."]
+position = Vector2(120, 485.415)
+scale = Vector2(0.637, 0.637)
+texture = ExtResource("6_cfxh8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page2"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "                                                    PARASITE
+
+                                           Parasites infect 
+                                           [url=\"Parasite, person\"]people[/url], and slowly 
+                                           take over their 
+                                           body.       
+                                           Newly infected people may appear just slighlt off, they are usually still mostly [url=\"Parasite, coherent, mumbling\"]coherent[/url], and just a bit more [url=\"Parasite, clumsy, uncoordinated\"]clumsy[/url] than usual.  In more severe cases, the infected person experiences strong [url=\"Parasite, hallucinations\"]hallucinations[/url], and completely [url=\"Parasite, uncoordinated, mumbling\"]looses control over speech and movement.[/url]
+Can be found [url=\"Parasite, basement, apartment\"]whereever there are people.[/url]"
+
+[node name="Page3" type="Sprite2D" parent="."]
+position = Vector2(348, 162)
+scale = Vector2(0.634615, 0.634615)
+texture = ExtResource("7_tsg3k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page3"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "TALLY
+
+Tallys are weird 
+creatures that 
+are often found 
+[url=\"Tally, lurking in corner\"]standing in dark 
+corners[/url], [url=\"Tally, stares at nothing\"]staring 
+blankly into the 
+air[/url]. They are not 
+very dangerous, but can get irritated by [url=\"Tally, bright light\"]bright light[/url] or [url=\"Tally, loud noise\"]loud noises[/url]. They cause people to [url=\"Tally, dizzy\"]feel dizzy[/url]
+If a Tally [url=\"Tally, stares at victim\"]stares directly at you[/url], [url=\"Tally, don't leave unobserved\"]do not turn your back[/url], since it might attack as soon as you do.  While holding the Tally's stare, [url=\"Tally, leave area\"]slowly back up until you are out of reach[/url]."
+
+[connection signal="meta_clicked" from="Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]

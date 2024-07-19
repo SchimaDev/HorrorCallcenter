@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://syhj0k5qflvo"]
+[gd_scene load_steps=18 format=3 uid="uid://syhj0k5qflvo"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_o50q1"]
 [ext_resource type="PackedScene" uid="uid://cmfl5d2ott46l" path="res://art/3D/All_pack/scenes/Table_05.scn" id="1_rqf7g"]
@@ -11,10 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://d0qqa5n5xd41v" path="res://art/3D/Models pack psx/source/ceiling.png" id="5_wwn6m"]
 [ext_resource type="PackedScene" uid="uid://bw1yqfjhc8xnb" path="res://ui/ui.tscn" id="11_j406q"]
 [ext_resource type="Script" path="res://scenes/static_camera.gd" id="11_wvnkj"]
-[ext_resource type="PackedScene" uid="uid://dip08nqpje3j5" path="res://art/bookmesh/book_mesh.tscn" id="12_l04is"]
-[ext_resource type="Material" uid="uid://d3gi7kyv2tjcg" path="res://art/bookmesh/page_01.tres" id="13_2psdp"]
-[ext_resource type="Material" uid="uid://dhoiyohy1wfrn" path="res://art/bookmesh/page_02.tres" id="14_s2fd4"]
-[ext_resource type="Material" uid="uid://6l06kn04vk1k" path="res://art/bookmesh/page_03.tres" id="15_wembk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
 albedo_texture = ExtResource("3_f5b3j")
@@ -95,7 +91,3 @@ offset_left = 1.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = -1.0
-
-[node name="BookMesh" parent="." instance=ExtResource("12_l04is")]
-transform = Transform3D(0.410257, 0, 0.91197, 0, 1, 0, -0.91197, 0, 0.410257, -1.42068, 1.4581, 0.840111)
-tex = Array[StandardMaterial3D]([ExtResource("13_2psdp"), ExtResource("14_s2fd4"), ExtResource("15_wembk")])
