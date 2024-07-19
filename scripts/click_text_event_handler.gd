@@ -1,7 +1,8 @@
 extends Node
 
-var chosenWordDictionary: String
-var chosenWordDialogue: String
+var chosenWordDictionary
+var chosenWordDialogue
+var chosenMonster
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,12 +14,25 @@ func _process(delta: float) -> void:
 	pass
 
 func handle_url_tag_clicked(name: String) -> void:
+	
+	chosenMonster = "Parasite"
+	chosenWordDictionary = ["person"]
+	
 	chosenWordDialogue = name
-	if chosenWordDialogue == chosenWordDictionary:
-		Dialogic.VAR.set(name, true)
+	
+	if chosenWordDictionary.has(chosenWordDialogue):
+		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
+		var v = chosenMonster + "." + chosenWordDialogue
+		Dialogic.VAR.set_variable(v, true)
 
 func handle_Encyclopedia_url_tag_clicked(name: String) -> void:
-	chosenWordDictionary = name
-	if chosenWordDialogue == chosenWordDictionary:
-		Dialogic.VAR.set(name, true)
+	print(name)
+	var n = name.split(",")
+	chosenMonster = n[0]
+	n.remove_at(0)
+	chosenWordDictionary = n
+	
+	#if chosenWordDictionary.has(chosenWordDialogue):
+		#var v = chosenMonster + "." + chosenWordDialogue
+		#Dialogic.VAR.set_variable(v, true)
 
