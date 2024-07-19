@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ac1ad54a-4c61-4a1e-955f-313bab284204}">
+		<property name="assetPath">
+			<value>MonsterSounds/Ooze/432653__digpro120__squishy-gore.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>25.312653061224491</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{015a2ab1-959b-4272-abfe-7101c5b4e3af}</destination>
+		</relationship>
+	</object>
+</objects>

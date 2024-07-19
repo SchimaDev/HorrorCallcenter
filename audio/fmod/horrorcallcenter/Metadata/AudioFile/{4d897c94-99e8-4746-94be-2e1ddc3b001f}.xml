@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4d897c94-99e8-4746-94be-2e1ddc3b001f}">
+		<property name="assetPath">
+			<value>Ambience/Drone Sounds/4096__plagasul__rarexport-05.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>120</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{015a2ab1-959b-4272-abfe-7101c5b4e3af}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{a4ab3ffe-e4a2-40a8-b0c3-5748010cffbb}">
+		<property name="assetPath">
+			<value>MonsterSounds/Fear Of Death/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{015a2ab1-959b-4272-abfe-7101c5b4e3af}</destination>
+		</relationship>
+	</object>
+</objects>
