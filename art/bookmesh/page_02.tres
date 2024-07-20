@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dhoiyohy1wfrn"]
-
-[ext_resource type="Texture2D" uid="uid://yn1xkdd6ckgo" path="res://art/bookmesh/page_02.png" id="1_gotrg"]
-
-[resource]
-albedo_texture = ExtResource("1_gotrg")

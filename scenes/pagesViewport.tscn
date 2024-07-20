@@ -1,26 +1,45 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjgbj3e5uhnr7"]
+[gd_scene load_steps=11 format=3 uid="uid://bjgbj3e5uhnr7"]
 
-[ext_resource type="Texture2D" uid="uid://yn1xkdd6ckgo" path="res://art/bookmesh/page_02.png" id="1_svtrb"]
+[ext_resource type="Texture2D" uid="uid://bp6memi62eyhe" path="res://art/bookmesh/pages/page_0.png" id="2_oyvf3"]
 [ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/bookmesh/BookMesh2_Untitled.png" id="2_ysri2"]
-[ext_resource type="Texture2D" uid="uid://bp6memi62eyhe" path="res://art/bookmesh/page_0.png" id="4_5sv21"]
-[ext_resource type="Texture2D" uid="uid://drh2r7q63rqlt" path="res://art/bookmesh/page_1.png" id="5_26t1w"]
-[ext_resource type="Texture2D" uid="uid://drkyxtview46u" path="res://art/bookmesh/page_2.png" id="6_cfxh8"]
-[ext_resource type="Texture2D" uid="uid://c7agrqtr23vyu" path="res://art/bookmesh/page_3.png" id="7_tsg3k"]
+[ext_resource type="Texture2D" uid="uid://drh2r7q63rqlt" path="res://art/bookmesh/pages/page_1.png" id="3_yebuq"]
+[ext_resource type="Texture2D" uid="uid://drkyxtview46u" path="res://art/bookmesh/pages/page_2.png" id="4_hjb8a"]
+[ext_resource type="Texture2D" uid="uid://c7agrqtr23vyu" path="res://art/bookmesh/pages/page_3.png" id="5_ad31k"]
+[ext_resource type="Texture2D" uid="uid://fdrmdotahx5m" path="res://art/bookmesh/pages/page_4.png" id="6_bv0pb"]
+[ext_resource type="Texture2D" uid="uid://bry3ecx6l4i5d" path="res://art/bookmesh/pages/page_5.png" id="7_62pso"]
+[ext_resource type="Texture2D" uid="uid://r4gt8adbaeke" path="res://art/bookmesh/pages/page_6.png" id="8_i6xlb"]
+[ext_resource type="Texture2D" uid="uid://rqqalaeidx53" path="res://art/bookmesh/pages/page_7.png" id="9_c3rkf"]
 
 [sub_resource type="GDScript" id="GDScript_wjkbp"]
 script/source = "extends Control
+
+@onready var view_1 = $BookMesh2Untitled/View1
+@onready var view_2 = $BookMesh2Untitled/View2
+@onready var view_3 = $BookMesh2Untitled/View3
 
 func _on_rich_text_label_meta_clicked(meta):
 	ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	view_1.visible = true
+	view_2.visible = false
+	view_3.visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func showPages(p: int):
+	match p:
+		0, 1:
+			view_1.visible = true
+			view_2.visible = false
+			view_3.visible = false
+		2:
+			view_1.visible = false
+			view_2.visible = true
+			view_3.visible = false
+		3, 4:
+			view_1.visible = false
+			view_2.visible = false
+			view_3.visible = true
 "
 
 [node name="Control" type="Control"]
@@ -29,29 +48,24 @@ anchors_preset = 0
 script = SubResource("GDScript_wjkbp")
 
 [node name="BookMesh2Untitled" type="Sprite2D" parent="."]
-position = Vector2(325.113, 324.113)
-scale = Vector2(0.632592, 0.632592)
+position = Vector2(331.526, 324.509)
+scale = Vector2(0.64155, 0.629866)
 texture = ExtResource("2_ysri2")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="View1" type="Node2D" parent="BookMesh2Untitled"]
 visible = false
-layout_mode = 1
-offset_right = 661.0
-offset_bottom = 648.0
-texture = ExtResource("1_svtrb")
-expand_mode = 1
 
-[node name="Page0" type="Sprite2D" parent="."]
-position = Vector2(118.5, 162.106)
-scale = Vector2(0.634615, 0.634615)
-texture = ExtResource("4_5sv21")
+[node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View1"]
+position = Vector2(-327.373, -256.417)
+scale = Vector2(0.997755, 1.00372)
+texture = ExtResource("2_oyvf3")
 
-[node name="Page1" type="Sprite2D" parent="."]
-position = Vector2(347, 486)
-scale = Vector2(0.635989, 0.635989)
-texture = ExtResource("5_26t1w")
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View1"]
+position = Vector2(33.4714, -256.417)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("3_yebuq")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Page1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page1"]
 offset_left = -166.0
 offset_top = -235.0
 offset_right = 163.0
@@ -61,21 +75,22 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "DOPPELGÄNGER
 
-Doppelgängers like to take the place of recently deceased people. The modify their appearence to look just like the person they are tryingin to imitate, and manipulate the minds of their roommates to forget the reality about the persons death. 
-Doppelgänger are not 
-capable of imitating 
-human speech, 
+Doppelgängers like to take the place of recently deceased people. The modify their appearence to look just like the [url=\"Doppelgänger, person\"]person[/url] they are tryingin to imitate, and [url=\"Doppelgänger, mind manipulation\"]manipulate the minds[/url] of their roommates to forget the reality about the persons death. 
+Doppelgänger are [url=\"Doppelgänger, no talky\"]not 
+capable of imitating
+human speech,[/url]
 instead they 
 comunicate with 
 their roommates 
 telepathically."
+metadata/_edit_use_anchors_ = true
 
-[node name="Page2" type="Sprite2D" parent="."]
-position = Vector2(120, 485.415)
-scale = Vector2(0.637, 0.637)
-texture = ExtResource("6_cfxh8")
+[node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View1"]
+position = Vector2(-325.035, 254.802)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("4_hjb8a")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Page2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page2"]
 offset_left = -166.0
 offset_top = -222.441
 offset_right = 163.0
@@ -91,13 +106,14 @@ text = "                                                    PARASITE
                                            body.       
                                            Newly infected people may appear just slighlt off, they are usually still mostly [url=\"Parasite, coherent, mumbling\"]coherent[/url], and just a bit more [url=\"Parasite, clumsy, uncoordinated\"]clumsy[/url] than usual.  In more severe cases, the infected person experiences strong [url=\"Parasite, hallucinations\"]hallucinations[/url], and completely [url=\"Parasite, uncoordinated, mumbling\"]looses control over speech and movement.[/url]
 Can be found [url=\"Parasite, basement, apartment\"]whereever there are people.[/url]"
+metadata/_edit_use_anchors_ = true
 
-[node name="Page3" type="Sprite2D" parent="."]
-position = Vector2(348, 162)
-scale = Vector2(0.634615, 0.634615)
-texture = ExtResource("7_tsg3k")
+[node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View1"]
+position = Vector2(35.0301, 256.39)
+scale = Vector2(0.993473, 1.00572)
+texture = ExtResource("5_ad31k")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Page3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page3"]
 offset_left = -166.0
 offset_top = -235.0
 offset_right = 163.0
@@ -115,8 +131,215 @@ corners[/url], [url=\"Tally, stares at nothing\"]staring
 blankly into the 
 air[/url]. They are not 
 very dangerous, but can get irritated by [url=\"Tally, bright light\"]bright light[/url] or [url=\"Tally, loud noise\"]loud noises[/url]. They cause people to [url=\"Tally, dizzy\"]feel dizzy[/url]
-If a Tally [url=\"Tally, stares at victim\"]stares directly at you[/url], [url=\"Tally, don't leave unobserved\"]do not turn your back[/url], since it might attack as soon as you do.  While holding the Tally's stare, [url=\"Tally, leave area\"]slowly back up until you are out of reach[/url]."
+If a Tally [url=\"Tally, stares at victim\"]stares directly at you[/url], [url=\"Tally, don't leave unobserved\"]do not turn your back[/url], since it might attack as soon as you do.  While holding the Tally's stare, [url=\"Tally, leave area\"]slowly back up until you are out of reach[/url].
+[url=\"\"][/url]"
+metadata/_edit_use_anchors_ = true
 
-[connection signal="meta_clicked" from="Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
-[connection signal="meta_clicked" from="Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
-[connection signal="meta_clicked" from="Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[node name="View2" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
+
+[node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View2"]
+position = Vector2(-327.373, -256.417)
+scale = Vector2(0.997755, 1.00372)
+texture = ExtResource("4_hjb8a")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page0"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "                                                    PARASITE
+
+                                           Parasites infect 
+                                           [url=\"Parasite, person\"]people[/url], and slowly 
+                                           take over their 
+                                           body.       
+                                           Newly infected people may appear just slighlt off, they are usually still mostly [url=\"Parasite, coherent, mumbling\"]coherent[/url], and just a bit more [url=\"Parasite, clumsy, uncoordinated\"]clumsy[/url] than usual.  In more severe cases, the infected person experiences strong [url=\"Parasite, hallucinations\"]hallucinations[/url], and completely [url=\"Parasite, uncoordinated, mumbling\"]looses control over speech and movement.[/url]
+Can be found [url=\"Parasite, basement, apartment\"]whereever there are people.[/url]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View2"]
+position = Vector2(33.4714, -256.417)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("5_ad31k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page1"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "TALLY
+
+Tallys are weird 
+creatures that 
+are often found 
+[url=\"Tally, lurking in corner\"]standing in dark 
+corners[/url], [url=\"Tally, stares at nothing\"]staring 
+blankly into the 
+air[/url]. They are not 
+very dangerous, but can get irritated by [url=\"Tally, bright light\"]bright light[/url] or [url=\"Tally, loud noise\"]loud noises[/url]. They cause people to [url=\"Tally, dizzy\"]feel dizzy[/url]
+If a Tally [url=\"Tally, stares at victim\"]stares directly at you[/url], [url=\"Tally, don't leave unobserved\"]do not turn your back[/url], since it might attack as soon as you do.  While holding the Tally's stare, [url=\"Tally, leave area\"]slowly back up until you are out of reach[/url].
+[url=\"\"][/url]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View2"]
+position = Vector2(-325.035, 254.802)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("6_bv0pb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page2"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]ANALOGUE[/center]
+
+they posses electircal devices, so they can be found [url=\"Analogue, basement, apartment, outside\"]where ever there is electronics.[/url]
+cause the device to malfunction and glitch, but [url=\"Analogue, no movement, standing in corner\"]cannot move on it's own.[/url]
+being around an effected devise for longer periods can lead to [url=\"Analogue, hallucinations\"]strong hallucinations.[/url]
+[url=\"\"][/url]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View2"]
+position = Vector2(36.5892, 255.596)
+scale = Vector2(1.00204, 1.00888)
+texture = ExtResource("7_62pso")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page3"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]FEAR OF DEATH
+
+
+
+
+
+
+
+
+
+
+A very mysterious monster, who can appear [url=\"FearOfDeath, apartment, basement, outside\"]anywhere[/url] without a warning. It just suddently appears as a [url=\"FearOfDeath, quiet\"]silent,[/url] [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembeling a black hole, on a surface. Looking at it causes [url=\"FearOfDeath, very scared\"]extreme paranoia[/url] followed in most cases by a leathal heartattack within few minutes.[/center]
+[url=\"\"][/url]"
+metadata/_edit_use_anchors_ = true
+
+[node name="View3" type="Node2D" parent="BookMesh2Untitled"]
+
+[node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View3"]
+position = Vector2(-327.373, -256.417)
+scale = Vector2(0.997755, 1.00372)
+texture = ExtResource("6_bv0pb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page0"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]ANALOGUE[/center]
+
+they posses electircal devices, so they can be found [url=\"Analogue, basement, apartment, outside\"]where ever there is electronics.[/url]
+cause the device to malfunction and glitch, but [url=\"Analogue, no movement, standing in corner\"]cannot move on it's own.[/url]
+being around an effected devise for longer periods can lead to [url=\"Analogue, hallucinations\"]strong hallucinations.[/url]
+[url=\"\"][/url]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View3"]
+position = Vector2(33.4714, -256.417)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("7_62pso")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page1"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]FEAR OF DEATH
+
+
+
+
+
+
+
+
+
+
+A very mysterious monster, who can appear [url=\"FearOfDeath, apartment, basement, outside\"]anywhere[/url] without a warning. It just suddently appears as a [url=\"FearOfDeath, quiet\"]silent,[/url] [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembeling a black hole, on a surface. Looking at it causes [url=\"FearOfDeath, very scared\"]extreme paranoia[/url] followed in most cases by a leathal heartattack within few minutes.[/center]
+[url=\"\"][/url]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View3"]
+position = Vector2(-325.035, 254.802)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("8_i6xlb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page2"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "SCREAMER
+
+Goodest boi in 
+[url=\"Screamer, outside\"]town[/url]. look at his 
+face, adorable!
+Actually, no. 
+He is [url=\"Screamer, violent\"]extremly 
+violent,[/url] [url=\"Screamer, empty places, no people\"]do not 
+approch![/url] He is 
+extremly loud,[url=\"Screamer, mumbling, very loud\"]imitating all sorts of sounds[/url] . Try to stay as far away from him as possible. If he [url=\"Screamer, staring\"]stares at you directly[/url], you are already to close, get out of there asap!
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View3"]
+position = Vector2(36.5892, 255.596)
+scale = Vector2(1.00204, 1.00888)
+texture = ExtResource("9_c3rkf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page3"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]OOZE[/center]
+
+1 slimy boi. i do not want to write these damn texts anymore. Can be found [url=\"Ooze, apartment, basement\"]in buildings[/url]. usually just [url=\"Ooze, stands in corner\"]chills[/url]. Very destructive to non-organic objects, but pose only little treath to humans. Can cause minor burns when clinging to person. VERY sensitve to sunlight "
+metadata/_edit_use_anchors_ = true
+
+[connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]

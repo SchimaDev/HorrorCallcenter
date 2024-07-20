@@ -257,5 +257,5 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.959594, 0, 0.281387, 0, 1, 0, -0.281387, 0, 0.959594, 1.20437, -0.441085, 1.15824)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543471, -0.369069, 1.06599)
 current = true
