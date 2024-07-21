@@ -3,81 +3,87 @@ Jonny: Good day Sir...? Ma’am...? Hello!
 Jonny: I require some assistance in a most peculiar matter.
 Jonny: For you see. I have found myself in a rather odd situation.
 label question
-
-- What do you see? [if {questions.q01} == false][else="hide"]
-	Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
-	set {questions.q01} = true
-
-- What do you hear? [if {questions.q02} == false][else="hide"]
-	Jonny: [url="Tally.mumbling"]Mumbling[/url]. Rambling. The talks of a maniac.
-	set {questions.q02} = true
-	
-- Where are you right now? [if {questions.q03} == false][else="hide"]
-	Jonny: I am currently residing in my [url="apartment"]apartment[/url]. Which makes this especially peculiar.
-	set {questions.q03} = true
-
-- What does the Person do? [if ({Parasite.person} == true || {Doppelganger.person} == true || {Tally.person} == true) && {questions.q04} == false][else="hide"]
-	Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
-	Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
-	set {questions.q04} = true
-
-- How does the area look? [if ({Ooze.apartment} == true) && {questions.q05} == false][else="hide"]
-	Jonny: Like a hallway indeed. Some lights, white walls. A very normal hallway.
-	set {questions.q05} = true
-
-- Is there anyone else around? [if ({Doppelganger.person} == true || {Parasite.apartment} == true) && {questions.q06} == false][else="hide"]
-	Jonny: Well yes. There is a [url="person"]person[/url] in the hallway.
-	set {questions.q06} = true
-
-- How do you feel? [if ({FearOfDeath.apartment} == true) && {questions.q07} == false][else="hide"]
-	Jonny: I myself feel quite well. Thank you for your concern.
-	set {questions.q07} = true
-
-- Can you hear any static noise or electric buzzing? [if ({Analogue.apartment} == true) && {questions.q08} == false][else="hide"]
-	Jonny: Static noise? No. What a curious question though...
-	set {questions.q08} = true
-
-- Is there light? [if ({Tally.apartment} == true) && {questions.q09} == false][else="hide"]
-	Jonny: Well, yes of course. How am I to see without light?
-	set {questions.q09} = true
-
-- Ask them something. Do they respond? [if ({Parasite.mumbling} == true) && {questions.q10} == false][else="hide"]
-	Jonny: They most certainly [url="coherent"]respond[/url], yet it sounds as if they have a lisp.
-	Jonny: Their answers are also notably short.
-	set {questions.q10} = true
-
-- Can you make out what they are saying? [if ({Doppelganger.mumbling} == true) && {questions.q11} == false][else="hide"]
-	Jonny: Somewhat. It appears as if they are [url="coherent"]rambling about the door[/url] they try to open.
-	set {questions.q11} = true
-
-- Are there any other sounds? [if ({Screamer.mumbling} == true) && {questions.q12} == false][else="hide"]
-	Jonny: No. Just mumbling. Sounds like a [url="person"]person[/url].
-	set {questions.q12} = true
-
-- Have you ever seen this person before? [if ({Parasite.coherent} == true || {Parasite.uncooridinated} == true) && {questions.q13} == false][else="hide"]
-	Jonny: Yes. Now that I am looking closer, this is my neighbour. Bobby. He seemed very well yesterday.
-	set {questions.q13} = true
-
-- Are there any additional people? [if ({Doppelganger.uncooridinated} == true) && {questions.q14} == false][else="hide"]
-	Jonny: Indeed not. Me and this person are alone here.
-	set {questions.q14} = true
-
-- Are you outside? [if ({Screamer.uncooridinated} == true) && {questions.q15} == false][else="hide"]
-	Jonny: No. I am in my [url="apartment"]apartment[/url].
-	set {questions.q15} = true
-
-- I think i know what you're dealing with. It's a.. [if {_MonsterSelect.Parasite} == true || {_MonsterSelect.Doppelganger} == true || {_MonsterSelect.Tally} == true][else="hide"]
+if {timer} <= 0:
+	Jonny: I'm sorry, we're out of time....
+	set {_MonsterSelect.timeout} = true
 	jump MonsterChoice
+else:
+	set {timer} -= 1
+	- What do you see? [if !{questions.q01}][else="hide"]
+		Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
+		set {questions.q01} = true
+
+	- What do you hear? [if !{questions.q02}][else="hide"]
+		Jonny: [url="mumbling"]Mumbling[/url]. Rambling. The talks of a maniac.
+		set {questions.q02} = true
+
+	- Where are you right now? [if !{questions.q03}][else="hide"]
+		Jonny: I am currently residing in my [url="apartment"]apartment[/url]. Which makes this especially peculiar.
+		set {questions.q03} = true
+
+	- What does the Person do? [if ({Parasite.person} || {Doppelganger.person} || {Tally.person}) && !{questions.q04}][else="hide"]
+		Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
+		Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
+		set {questions.q04} = true
+
+	- How does the area look? [if ({Ooze.apartment}) && !{questions.q05}][else="hide"]
+		Jonny: Like a hallway indeed. Some lights, white walls. A very normal hallway.
+		set {questions.q05} = true
+
+	- Is there anyone else around? [if ({Doppelganger.person} || {Parasite.apartment}) && !{questions.q06}][else="hide"]
+		Jonny: Well yes. There is a [url="person"]person[/url] in the hallway.
+		set {questions.q06} = true
+
+	- How do you feel? [if ({FearOfDeath.apartment} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q07}][else="hide"]
+		Jonny: I myself feel quite well. Thank you for your concern.
+		set {questions.q07} = true
+
+	- Can you hear any static noise or electric buzzing? [if ({Analogue.apartment}) && !{questions.q08}][else="hide"]
+		Jonny: Static noise? No. What a curious question though...
+		set {questions.q08} = true
+
+	- Is there light? [if ({Tally.apartment}) && !{questions.q09}][else="hide"]
+		Jonny: Well, yes of course. How am I to see without light?
+		set {questions.q09} = true
+
+	- Ask them something. Do they respond? [if ({Parasite.mumbling}) && !{questions.q10}][else="hide"]
+		Jonny: They most certainly [url="coherent"]respond[/url], yet it sounds as if they have a lisp.
+		Jonny: Their answers are also notably short.
+		set {questions.q10} = true
+
+	- Can you make out what they are saying? [if ({Doppelganger.mumbling}) && !{questions.q11}][else="hide"]
+		Jonny: Somewhat. It appears as if they are [url="coherent"]rambling about the door[/url] they try to open.
+		set {questions.q11} = true
+
+	- Are there any other sounds? [if ({Screamer.mumbling}) && !{questions.q12}][else="hide"]
+		Jonny: No. Just mumbling. Sounds like a [url="person"]person[/url].
+		set {questions.q12} = true
+
+	- Have you ever seen this person before? [if ({Parasite.coherent} || {Parasite.uncooridinated}) && !{questions.q13}][else="hide"]
+		Jonny: Yes. Now that I am looking closer, this is my neighbour. Bobby. He seemed very well yesterday.
+		set {questions.q13} = true
+
+	- Are there any additional people? [if ({Doppelganger.uncooridinated}) && !{questions.q14}][else="hide"]
+		Jonny: Indeed not. Me and this person are alone here.
+		set {questions.q14} = true
+
+	- Are you outside? [if ({Screamer.uncooridinated}) && !{questions.q15}][else="hide"]
+		Jonny: No. I am in my [url="apartment"]apartment[/url].
+		set {questions.q15} = true
+
+	- I think i know what you're dealing with. It's a.. [if {_MonsterSelect.Doppelganger} || {_MonsterSelect.Parasite} || {_MonsterSelect.Tally} || {_MonsterSelect.Analogue} || {_MonsterSelect.FearofDeath} || {_MonsterSelect.Screamer} || {_MonsterSelect.Ooze} ][else="hide"]
+		jump MonsterChoice
 
 jump question
 
 label MonsterChoice
-- Doppelgänger [if {_MonsterSelect.Doppelganger} == true][else="hide"]
-- Parasite [if {_MonsterSelect.Parasite} == true][else="hide"]
-- Tally [if {_MonsterSelect.Tally} == true][else="hide"]
-- Analogue [if {_MonsterSelect.Analogue} == true][else="hide"]
-- Fear of Death [if {_MonsterSelect.FearofDeath} == true][else="hide"]
-- Screamer [if {_MonsterSelect.Screamer} == true][else="hide"]
-- Ooze [if {_MonsterSelect.Ooze} == true][else="hide"]
-- Actually, I'm not really sure yet.
+- Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
+- Parasite [if {_MonsterSelect.Parasite}][else="hide"]
+- Tally [if {_MonsterSelect.Tally}][else="hide"]
+- Analogue [if {_MonsterSelect.Analogue}][else="hide"]
+- Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]
+- Screamer [if {_MonsterSelect.Screamer}][else="hide"]
+- Ooze [if {_MonsterSelect.Ooze}][else="hide"]
+- Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
+	set {timer} += 1
 	jump question
