@@ -18,6 +18,7 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
+CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -125,6 +126,10 @@ variables={
 choices/def_false_behaviour=1
 history/simple_history_enabled=true
 history/full_history_enabled=false
+
+[display]
+
+window/size/mode=3
 
 [editor_plugins]
 

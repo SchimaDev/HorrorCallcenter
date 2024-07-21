@@ -39,7 +39,7 @@ overrides = {}
 script = ExtResource("2_4mvun")
 scene = ExtResource("9_pe453")
 overrides = {
-"box_size": "Vector2(800, 170)",
+"box_size": "Vector2(600, 170)",
 "name_label_box_offset": "Vector2(0, -20)"
 }
 
@@ -51,4 +51,4 @@ base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
 layers = Array[ExtResource("2_4mvun")]([SubResource("Resource_ilvuw"), SubResource("Resource_kgrle"), SubResource("Resource_64tu0"), SubResource("Resource_1ox3n"), SubResource("Resource_6205h"), SubResource("Resource_yfjuh")])
-metadata/_latest_layer = 4
+metadata/_latest_layer = 5
