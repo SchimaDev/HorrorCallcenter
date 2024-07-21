@@ -37,7 +37,9 @@ config/icon="res://art/icon.svg"
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
+CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+FmodEventMessenger="*res://scripts/FmodEventMessenger.gd"
 
 [dialogic]
 
@@ -151,7 +153,7 @@ project/assembly_name="Horror Callcenter"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/fmod/plugin.cfg")
+enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/fmod/plugin.cfg")
 
 [file_customization]
 

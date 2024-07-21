@@ -7,9 +7,6 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
-# FMOD events
-var pageTurn: FmodEvent = null
-
 var page = -1
 
 #func _on_rich_text_label_meta_clicked(meta):
@@ -24,7 +21,6 @@ var p2 = [3, 1.5, 1.84, 0.625]
 var UIscale = p1
 
 func _ready():
-	loadSoundEvents()
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
@@ -38,7 +34,7 @@ func _process(delta):
 			animation_player.stop()
 			#cube.set_surface_override_material(1, tex[page])
 			animation_player.play("Armature_001Action")
-			pageTurn.start()
+			FmodEventMessenger.pageTurn.start();
 			UIscale = p2
 	if  Input.is_action_just_pressed("book_test_2"):
 		#if page <= -1:
@@ -47,12 +43,9 @@ func _process(delta):
 			animation_player.seek(2,5)
 			#cube.set_surface_override_material(1, tex[page])
 			animation_player.play_backwards("Armature_001Action")
-			pageTurn.start()
+			FmodEventMessenger.pageTurn.start();
 			UIscale = p1
 			#page -= 1
-
-func loadSoundEvents():
-	pageTurn = FmodServer.create_event_instance("event:/Glossary/TurnPage")
 
 
 func _mouse_entered_area():

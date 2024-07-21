@@ -933,7 +933,7 @@
 			<value>20</value>
 		</property>
 		<property name="name">
-			<value>Agitation Mid</value>
+			<value>Intensity Mid</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{a647263c-932f-4f2f-bc6c-e30ceb35c5b7}</destination>
@@ -981,7 +981,7 @@
 			<value>0</value>
 		</property>
 		<property name="name">
-			<value>Agitation Low</value>
+			<value>Intensity Low</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{a647263c-932f-4f2f-bc6c-e30ceb35c5b7}</destination>
@@ -995,7 +995,7 @@
 			<value>42.969573748667536</value>
 		</property>
 		<property name="name">
-			<value>Agitation High</value>
+			<value>Intensity High</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{a647263c-932f-4f2f-bc6c-e30ceb35c5b7}</destination>
