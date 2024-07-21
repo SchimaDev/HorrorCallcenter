@@ -15,9 +15,11 @@ var page = -1
 @onready var node_quad = $Armature_001/Skeleton3D/Cube_001
 @onready var node_area = $Armature_001/Skeleton3D/Cube_001/Area3D
 @onready var animation_player = $AnimationPlayer
+@onready var view = $SubViewport/GUI/Control
 
-var p1 = [0.96, 0.50, 1.84, 0.625]
-var p2 = [3, 1.5, 1.84, 0.625]
+var page = 0
+var p1 = [0.92, 0.495, 1.68, 0.60]
+var p2 = [2.8, 1.48, 1.67, 0.60]
 var UIscale = p1
 
 func _ready():
@@ -26,26 +28,27 @@ func _ready():
 	node_area.input_event.connect(_mouse_input_event)
 
 func _process(delta):
-	if  Input.is_action_just_pressed("book_test"):
-		#if page >= tex.size()-1:
-			#page = tex.size()-1
-		#else:
-			#page += 1
+	if  Input.is_action_just_pressed("book_test_2"):
+		if page >= 3:
+			page = 3
+		else:
+			page += 1
+			view.showPages(page)
 			animation_player.stop()
-			#cube.set_surface_override_material(1, tex[page])
 			animation_player.play("Armature_001Action")
 			FmodEventMessenger.pageTurn.start();
 			UIscale = p2
-	if  Input.is_action_just_pressed("book_test_2"):
-		#if page <= -1:
-			#page = -1
-		#else:
+	if  Input.is_action_just_pressed("book_test"):
+		if page <= 0:
+			page = 0
+		else:
+			view.showPages(page)
 			animation_player.seek(2,5)
-			#cube.set_surface_override_material(1, tex[page])
 			animation_player.play_backwards("Armature_001Action")
 			FmodEventMessenger.pageTurn.start();
 			UIscale = p1
-			#page -= 1
+			page -= 1
+		
 
 
 func _mouse_entered_area():
