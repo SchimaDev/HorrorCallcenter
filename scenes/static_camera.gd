@@ -13,11 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _input(event: InputEvent) -> void:
-	if get_viewport().get_camera_3d() == self:
-		if event is InputEventMouseButton:
-			CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
-
 func _on_transition_3d_started(from: Camera3D, to: Camera3D, duration: float):
 	if to == self:
 		get_tree().current_scene.get_node("UI/Crosshair").visible = false
@@ -30,3 +25,6 @@ func _on_transition_3d_finished(from: Camera3D, to: Camera3D, duration: float):
 func _on_exit_button_pressed() -> void:
 		CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
 		ui.visible = false
+		
+func switchView():
+	CameraShifter.transition_to_requested_camera_3d(get_viewport().get_camera_3d(), self, 1)

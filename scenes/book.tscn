@@ -255,6 +255,7 @@ shape = SubResource("BoxShape3D_02ui4")
 libraries = {
 "": SubResource("AnimationLibrary_e75a2")
 }
+speed_scale = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543471, -0.369069, 1.06599)

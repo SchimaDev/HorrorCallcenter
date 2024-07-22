@@ -81,7 +81,7 @@ roughness = 0.0764706
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdg5j"]
 resource_local_to_scene = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0mi8h"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e06g8"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -107,7 +107,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_oku74"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yokcc"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -137,7 +137,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_0mi8h")
+shadow_mesh = SubResource("ArrayMesh_e06g8")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ynfrw"]
 viewport_path = NodePath("SubViewport")
@@ -260,7 +260,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_oku74")
+mesh = SubResource("ArrayMesh_yokcc")
 
 [node name="ScreenMesh" type="MeshInstance3D" parent="Monitor/Mesh"]
 transform = Transform3D(-0.00494321, -0.666461, -0.0158921, -0.000132648, 0.0158948, -0.666477, 0.666651, -0.00493896, -0.000250455, -0.220572, 0.0593781, 0.000352234)
