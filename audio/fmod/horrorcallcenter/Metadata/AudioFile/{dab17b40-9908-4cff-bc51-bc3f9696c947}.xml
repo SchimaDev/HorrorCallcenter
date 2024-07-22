@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dab17b40-9908-4cff-bc51-bc3f9696c947}">
+		<property name="assetPath">
+			<value>Computer/PC/crt_turn_on.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5935833333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{015a2ab1-959b-4272-abfe-7101c5b4e3af}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{46880bf3-2adc-456e-92a1-4479da8a919a}">
+		<property name="assetPath">
+			<value>Glossary/CloseBook/256472__kodack__closing-a-book3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.43412698412698414</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{015a2ab1-959b-4272-abfe-7101c5b4e3af}</destination>
+		</relationship>
+	</object>
+</objects>

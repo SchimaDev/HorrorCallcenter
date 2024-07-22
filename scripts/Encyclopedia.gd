@@ -7,6 +7,8 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
+#func _on_rich_text_label_meta_clicked(meta):
+	#ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $Armature_001/Skeleton3D/Cube_001
 @onready var node_area = $Armature_001/Skeleton3D/Cube_001/Area3D
@@ -32,6 +34,7 @@ func nextPage():
 		page += 1
 		view.showPages(page)
 		animation_player.play("Armature_001Action")
+		FmodEventMessenger.pageTurn.start();
 		UIscale = p2	
 
 func prevPage():
@@ -40,6 +43,7 @@ func prevPage():
 	else:
 		view.showPages(page)
 		animation_player.play_backwards("Armature_001Action")
+		FmodEventMessenger.pageTurn.start();
 		UIscale = p1
 		page -= 1	
 
@@ -125,4 +129,3 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
-

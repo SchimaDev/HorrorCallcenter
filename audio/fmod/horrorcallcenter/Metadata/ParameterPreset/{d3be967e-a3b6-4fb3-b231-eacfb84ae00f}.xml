@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d3be967e-a3b6-4fb3-b231-eacfb84ae00f}">
+		<property name="name">
+			<value>Focus</value>
+		</property>
+		<relationship name="folder">
+			<destination>{85e8f897-82cf-4ae8-940d-57712a3ba380}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{04613fb6-d8ad-446e-a8e9-3ece22aba816}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{04613fb6-d8ad-446e-a8e9-3ece22aba816}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

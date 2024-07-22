@@ -173,6 +173,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00274658, 0.0142212, 0)
 [node name="Book" parent="." instance=ExtResource("12_l04is")]
 transform = Transform3D(-0.298312, -0.0050976, -0.0313584, -0.00523568, 0.299953, 0.0010472, 0.0313355, 0.00158858, -0.298355, -0.544, 2.064, 0.986)
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://audio/fmod/horrorcallcenter/Build/Desktop/Master.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Master.strings.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/SFX.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Ambience.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Music.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Phone SFX.bank"]
+
 [node name="DeskCamera" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
 transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
 current = true
