@@ -14,6 +14,7 @@
 script = ExtResource("2_4mvun")
 scene = ExtResource("7_lmxvj")
 overrides = {
+"show_all_choices": "false",
 "show_close_button": "false",
 "show_open_button": "false"
 }
@@ -56,4 +57,4 @@ base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
 layers = Array[ExtResource("2_4mvun")]([SubResource("Resource_6205h"), SubResource("Resource_yfjuh"), SubResource("Resource_ilvuw"), SubResource("Resource_kgrle"), SubResource("Resource_64tu0"), SubResource("Resource_1ox3n")])
-metadata/_latest_layer = 1
+metadata/_latest_layer = 0

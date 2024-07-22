@@ -80,6 +80,7 @@ scale = Vector2(0.64155, 0.629866)
 texture = ExtResource("1_fyj0p")
 
 [node name="View1" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(-327.373, -256.417)
@@ -101,7 +102,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "DOPPELGANGER                              
 
-Doppelgangers are seemingly [url=\"Doppelgänger, person\"]human[/url]  and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelgänger, apartments\"]households[/url], since imitating a deceased is easier than a 
+Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url]  and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartments\"]households[/url], since imitating a deceased is easier than a 
 living human.To 
 achieve the 
 perfect disguise, 
@@ -152,7 +153,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
-Overall Doppelgangers act as human as a monster could. They communicate in [url=\"Doppelgänger, muttering\"]incoherent muttering[/url] and their [url=\"Doppelgänger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url]. 
+Overall Doppelgangers act as human as a monster could. They communicate in [url=\"Doppelganger, muttering\"]incoherent muttering[/url] and their [url=\"Doppelganger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url]. 
 To get rid of one, let the caller separate it from its victims, and send authorities. "
 metadata/_edit_use_anchors_ = true
 
@@ -190,7 +191,7 @@ text = "                                                    PARASITE
 
 
 
-Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and hallucinations. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or [url=\"Parasite, coherent\"][/url]slurred speech. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. "
+Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and hallucinations. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or [url=\"Parasite, coherent\"]slurred speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. "
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View1/Page3"]
 offset_left = 114.842
@@ -234,7 +235,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
-Overall Doppelgangers act as human as a monster could. They communicate in [url=\"Doppelgänger, muttering\"]incoherent muttering[/url] and their [url=\"Doppelgänger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url]. 
+Overall Doppelgangers act as human as a monster could. They communicate in [url=\"Doppelganger, muttering\"]incoherent muttering[/url] and their [url=\"Doppelganger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url]. 
 To get rid of one, let the caller separate it from its victims, and send authorities. "
 metadata/_edit_use_anchors_ = true
 
@@ -272,7 +273,7 @@ text = "                                                    PARASITE
 
 
 
-Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and hallucinations. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or [url=\"Parasite, coherent\"][/url]slurred speech. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. "
+Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and hallucinations. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or [url=\"Parasite, coherent\"]slurred speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. "
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View2/Page1"]
@@ -354,7 +355,7 @@ text = "          TALLY
 
 
 
-This large, humanoid creature, with void as skin and eyes over theirbody, prefers the darker, [url=\"Tally, no people\"]less 
+This large, [url=\"Tally, person\"]humanoid creature[/url] , with void as skin and eyes over theirbody, prefers the darker, [url=\"Tally, no people\"]less 
 frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
 It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corners\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
 "
@@ -385,7 +386,6 @@ text = "[center]Danger Rating:
  ★★☆☆☆"
 
 [node name="View3" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(-327.373, -256.417)
@@ -442,7 +442,7 @@ text = "          TALLY
 
 
 
-This large, humanoid creature, with void as skin and eyes over theirbody, prefers the darker, [url=\"Tally, no people\"]less 
+This large, [url=\"Tally, person\"]humanoid creature[/url] , with void as skin and eyes over theirbody, prefers the darker, [url=\"Tally, no people\"]less 
 frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
 It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corners\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
 "

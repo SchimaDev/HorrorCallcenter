@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://syhj0k5qflvo"]
+[gd_scene load_steps=38 format=3 uid="uid://syhj0k5qflvo"]
 
 [ext_resource type="Script" path="res://scenes/office_3d.gd" id="1_4mcyp"]
 [ext_resource type="Shader" path="res://resources/shaders/pixelation.gdshader" id="1_fkef8"]
@@ -19,6 +19,7 @@
 [ext_resource type="Shader" path="res://resources/shaders/vignette.gdshader" id="13_ysvcp"]
 [ext_resource type="Script" path="res://scenes/View.gd" id="14_mn5km"]
 [ext_resource type="Shader" path="res://resources/shaders/interact.gdshader" id="18_t7u8g"]
+[ext_resource type="PackedScene" uid="uid://cqpdhfjujoeti" path="res://art/3D/telephone model/telephone.tscn" id="21_uf1ls"]
 [ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://gui_in_3d/gui_panel_3d.tscn" id="22_mxmrp"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4ifuj"]
@@ -92,7 +93,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_65xfl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4eouc"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -118,7 +119,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_k8esh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_u7hhf"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -147,7 +148,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_65xfl")
+shadow_mesh = SubResource("ArrayMesh_4eouc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -170,7 +171,7 @@ collision_layer = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00274658, 0.0142212, 0)
 
 [node name="Book" parent="." instance=ExtResource("12_l04is")]
-transform = Transform3D(-0.294691, 0.00112931, -0.056173, -0.00104642, 0.299777, 0.0115163, 0.0561744, 0.0115086, -0.294469, -0.57111, 2.088, 0.996)
+transform = Transform3D(-0.298372, 0.000157291, -0.0312054, 7.53431e-05, 0.299999, 0.000791542, 0.0312056, 0.000779547, -0.298372, -0.543859, 2.06405, 1.08555)
 
 [node name="DeskCamera" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
 transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
@@ -266,7 +267,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_k8esh")
+mesh = SubResource("ArrayMesh_u7hhf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
@@ -286,6 +287,9 @@ offset_top = -309.0
 offset_right = -554.0
 offset_bottom = -301.0
 text = "Exit Computer View"
+
+[node name="Telephone" parent="." instance=ExtResource("21_uf1ls")]
+transform = Transform3D(-1.4124, 0, 0.970858, 0, 1.71389, 0, -0.970858, 0, -1.4124, -1.55176, 1.54589, 1.27106)
 
 [connection signal="view_entered" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_entered"]
 [connection signal="view_exited" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_exited"]
