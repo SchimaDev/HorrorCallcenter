@@ -1001,6 +1001,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/test buttons"]
+layout_mode = 0
 offset_left = -498.0
 offset_top = -503.0
 offset_right = -411.0
@@ -1040,6 +1041,7 @@ icon = ExtResource("11_gfscp")
 expand_icon = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/test buttons"]
+layout_mode = 0
 offset_left = -133.956
 offset_top = -499.206
 offset_right = -46.9564
@@ -1079,6 +1081,7 @@ icon = ExtResource("11_gfscp")
 expand_icon = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/test buttons"]
+layout_mode = 0
 offset_left = -492.212
 offset_top = 11.9047
 offset_right = -405.212
@@ -1118,6 +1121,7 @@ icon = ExtResource("11_gfscp")
 expand_icon = true
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/test buttons"]
+layout_mode = 0
 offset_left = -133.178
 offset_top = 11.9047
 offset_right = -46.1776

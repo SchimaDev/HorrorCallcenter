@@ -93,7 +93,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4eouc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bsu4c"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -119,7 +119,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_u7hhf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ngcso"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -148,7 +148,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4eouc")
+shadow_mesh = SubResource("ArrayMesh_bsu4c")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -171,7 +171,7 @@ collision_layer = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00274658, 0.0142212, 0)
 
 [node name="Book" parent="." instance=ExtResource("12_l04is")]
-transform = Transform3D(-0.298372, 0.000157291, -0.0312054, 7.53431e-05, 0.299999, 0.000791542, 0.0312056, 0.000779547, -0.298372, -0.543859, 2.06405, 1.08555)
+transform = Transform3D(-0.298312, -0.0050976, -0.0313584, -0.00523568, 0.299953, 0.0010472, 0.0313355, 0.00158858, -0.298355, -0.544, 2.064, 0.986)
 
 [node name="DeskCamera" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
 transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
@@ -267,7 +267,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_u7hhf")
+mesh = SubResource("ArrayMesh_ngcso")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
