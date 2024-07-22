@@ -7,8 +7,6 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
-var page = -1
-
 #func _on_rich_text_label_meta_clicked(meta):
 	#ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
 @onready var node_viewport = $SubViewport
