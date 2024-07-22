@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba1q2ikxp18v7"
-path.s3tc="res://.godot/imported/BookMesh2_Untitled.png-5f1d64c3b32eb3fa1975aa7f35624f0a.s3tc.ctex"
+uid="uid://bvphugifpwqvf"
+path.s3tc="res://.godot/imported/tel_fijo_normal map.jpg-24e3de59d808d45ddec9932e0b10e004.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "ec5a9b7cecbb66dec004bcddeecae61c"
-}
 
 [deps]
 
-source_file="res://art/bookmesh/BookMesh2_Untitled.png"
-dest_files=["res://.godot/imported/BookMesh2_Untitled.png-5f1d64c3b32eb3fa1975aa7f35624f0a.s3tc.ctex"]
+source_file="res://art/3D/telephone model/texture/tel fijo/tel_fijo_normal map.jpg"
+dest_files=["res://.godot/imported/tel_fijo_normal map.jpg-24e3de59d808d45ddec9932e0b10e004.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://art/3D/uploads_files_4398240_landline+phone/texture/tel fijo/tel_fijo_normal map.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

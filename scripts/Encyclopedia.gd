@@ -26,8 +26,8 @@ func _ready():
 	view.turnPrevPage.connect(prevPage)
 
 func nextPage():
-	if page >= 3:
-		page = 3
+	if page >= 7:
+		page = 7
 	else:
 		page += 1
 		view.showPages(page)
