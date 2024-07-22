@@ -63,6 +63,7 @@ func _started() -> void:
 	var newParent = currentScene.find_child("ScreenViewport")
 	reparent(newParent)
 	Dialogic.History.open_requested.emit()
+	pass
 
 func _apply_export_overrides() -> void:
 	var history_subsystem: Node = DialogicUtil.autoload().get(&'History')

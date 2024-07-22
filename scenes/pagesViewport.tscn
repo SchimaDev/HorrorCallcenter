@@ -131,17 +131,17 @@ Can be found [url=\"Parasite, basement, apartment\"]whereever there are people.[
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View1/Page2"]
-offset_left = -214.0
-offset_top = 185.0
-offset_right = 1105.0
-offset_bottom = 1488.0
+offset_left = -183.292
+offset_top = 185.372
+offset_right = 730.708
+offset_bottom = 1079.37
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("10_6kn4q")
 flat = true
 clip_text = true
-icon_alignment = 1
+vertical_icon_alignment = 2
 
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(35.0301, 256.39)
@@ -210,17 +210,17 @@ Can be found [url=\"Parasite, basement, apartment\"]whereever there are people.[
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View2/Page0"]
-offset_left = -212.0
-offset_top = 183.0
-offset_right = 1088.0
-offset_bottom = 1497.0
+offset_left = -182.527
+offset_top = 183.481
+offset_right = 731.473
+offset_bottom = 1077.48
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("10_6kn4q")
 flat = true
 clip_text = true
-icon_alignment = 1
+vertical_icon_alignment = 2
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(33.4714, -256.417)
@@ -280,21 +280,22 @@ text = "[center]ANALOGUE[/center]
 
 they posses electircal devices, so they can be found [url=\"Analogue, basement, apartment, outside\"]where ever there is electronics.[/url]
 cause the device to malfunction and glitch, but [url=\"Analogue, no movement, standing in corner\"]cannot move on it's own.[/url]
-being around an effected devise for longer periods can lead to [url=\"Analogue, hallucinations\"]strong hallucinations.[/url]"
+being around an effected devise for longer periods can lead to [url=\"Analogue, hallucinations\"]strong hallucinations.[/url]
+[url=\"\"][/url]"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View2/Page2"]
-offset_left = -214.0
-offset_top = 185.0
-offset_right = 1105.0
-offset_bottom = 1467.0
+offset_left = -183.292
+offset_top = 185.372
+offset_right = 730.708
+offset_bottom = 1079.37
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("10_6kn4q")
 flat = true
 clip_text = true
-icon_alignment = 1
+vertical_icon_alignment = 2
 
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(36.5892, 255.596)
@@ -358,21 +359,22 @@ text = "[center]ANALOGUE[/center]
 
 they posses electircal devices, so they can be found [url=\"Analogue, basement, apartment, outside\"]where ever there is electronics.[/url]
 cause the device to malfunction and glitch, but [url=\"Analogue, no movement, standing in corner\"]cannot move on it's own.[/url]
-being around an effected devise for longer periods can lead to [url=\"Analogue, hallucinations\"]strong hallucinations.[/url]"
+being around an effected devise for longer periods can lead to [url=\"Analogue, hallucinations\"]strong hallucinations.[/url]
+[url=\"\"][/url]"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View3/Page0"]
-offset_left = -213.0
-offset_top = 183.0
-offset_right = 1111.0
-offset_bottom = 1533.0
+offset_left = -182.527
+offset_top = 183.481
+offset_right = 731.473
+offset_bottom = 1077.48
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("10_6kn4q")
 flat = true
 clip_text = true
-icon_alignment = 1
+vertical_icon_alignment = 2
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(33.4714, -256.417)
@@ -443,17 +445,17 @@ extremly loud,[url=\"Screamer, mumbling, very loud\"]imitating all sorts of soun
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View3/Page2"]
-offset_left = -215.0
-offset_top = 185.0
-offset_right = 1125.0
-offset_bottom = 1488.0
+offset_left = -183.292
+offset_top = 185.372
+offset_right = 730.708
+offset_bottom = 1079.37
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("10_6kn4q")
 flat = true
 clip_text = true
-icon_alignment = 1
+vertical_icon_alignment = 2
 
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(36.5892, 255.596)
