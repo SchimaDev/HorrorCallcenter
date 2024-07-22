@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://bjgbj3e5uhnr7"]
 
-[ext_resource type="Texture2D" uid="uid://bp6memi62eyhe" path="res://art/bookmesh/pages/page_0.png" id="2_oyvf3"]
-[ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/bookmesh/BookMesh2_Untitled.png" id="2_ysri2"]
-[ext_resource type="Texture2D" uid="uid://drh2r7q63rqlt" path="res://art/bookmesh/pages/page_1.png" id="3_yebuq"]
-[ext_resource type="Texture2D" uid="uid://drkyxtview46u" path="res://art/bookmesh/pages/page_2.png" id="4_hjb8a"]
-[ext_resource type="Texture2D" uid="uid://c7agrqtr23vyu" path="res://art/bookmesh/pages/page_3.png" id="5_ad31k"]
-[ext_resource type="Texture2D" uid="uid://fdrmdotahx5m" path="res://art/bookmesh/pages/page_4.png" id="6_bv0pb"]
-[ext_resource type="Texture2D" uid="uid://bry3ecx6l4i5d" path="res://art/bookmesh/pages/page_5.png" id="7_62pso"]
-[ext_resource type="Texture2D" uid="uid://r4gt8adbaeke" path="res://art/bookmesh/pages/page_6.png" id="8_i6xlb"]
-[ext_resource type="Texture2D" uid="uid://rqqalaeidx53" path="res://art/bookmesh/pages/page_7.png" id="9_c3rkf"]
-[ext_resource type="Texture2D" uid="uid://phhoeyufqtkn" path="res://art/bookmesh/book_corner.png" id="10_6kn4q"]
+[ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/3D/bookmesh/BookMesh2_Untitled.png" id="1_fyj0p"]
+[ext_resource type="Texture2D" uid="uid://bp6memi62eyhe" path="res://art/3D/bookmesh/pages/page_0.png" id="2_rq13e"]
+[ext_resource type="Texture2D" uid="uid://drh2r7q63rqlt" path="res://art/3D/bookmesh/pages/page_1.png" id="3_xh315"]
+[ext_resource type="Texture2D" uid="uid://phhoeyufqtkn" path="res://art/3D/bookmesh/book_corner.png" id="4_fmkdm"]
+[ext_resource type="Texture2D" uid="uid://drkyxtview46u" path="res://art/3D/bookmesh/pages/page_2.png" id="5_puh8e"]
+[ext_resource type="Texture2D" uid="uid://c7agrqtr23vyu" path="res://art/3D/bookmesh/pages/page_3.png" id="6_8gkeg"]
+[ext_resource type="Texture2D" uid="uid://fdrmdotahx5m" path="res://art/3D/bookmesh/pages/page_4.png" id="7_lji1r"]
+[ext_resource type="Texture2D" uid="uid://bry3ecx6l4i5d" path="res://art/3D/bookmesh/pages/page_5.png" id="8_5wa22"]
+[ext_resource type="Texture2D" uid="uid://r4gt8adbaeke" path="res://art/3D/bookmesh/pages/page_6.png" id="9_ygebt"]
+[ext_resource type="Texture2D" uid="uid://rqqalaeidx53" path="res://art/3D/bookmesh/pages/page_7.png" id="10_fj7s6"]
 
 [sub_resource type="GDScript" id="GDScript_wjkbp"]
 script/source = "extends Control
@@ -58,7 +58,7 @@ script = SubResource("GDScript_wjkbp")
 [node name="BookMesh2Untitled" type="Sprite2D" parent="."]
 position = Vector2(331.526, 324.509)
 scale = Vector2(0.64155, 0.629866)
-texture = ExtResource("2_ysri2")
+texture = ExtResource("1_fyj0p")
 
 [node name="View1" type="Node2D" parent="BookMesh2Untitled"]
 visible = false
@@ -66,12 +66,12 @@ visible = false
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(-327.373, -256.417)
 scale = Vector2(0.997755, 1.00372)
-texture = ExtResource("2_oyvf3")
+texture = ExtResource("2_rq13e")
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(33.4714, -256.417)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("3_yebuq")
+texture = ExtResource("3_xh315")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page1"]
 offset_left = -166.0
@@ -102,7 +102,7 @@ rotation = -1.5708
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 vertical_icon_alignment = 2
@@ -110,7 +110,7 @@ vertical_icon_alignment = 2
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(-325.035, 254.802)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("4_hjb8a")
+texture = ExtResource("5_puh8e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page2"]
 offset_left = -166.0
@@ -138,7 +138,7 @@ offset_bottom = 1488.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 icon_alignment = 1
@@ -146,7 +146,7 @@ icon_alignment = 1
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(35.0301, 256.39)
 scale = Vector2(0.993473, 1.00572)
-texture = ExtResource("5_ad31k")
+texture = ExtResource("6_8gkeg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page3"]
 offset_left = -166.0
@@ -179,7 +179,7 @@ rotation = -1.5708
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 vertical_icon_alignment = 2
@@ -189,7 +189,7 @@ vertical_icon_alignment = 2
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(-327.373, -256.417)
 scale = Vector2(0.997755, 1.00372)
-texture = ExtResource("4_hjb8a")
+texture = ExtResource("5_puh8e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page0"]
 offset_left = -166.0
@@ -217,7 +217,7 @@ offset_bottom = 1497.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 icon_alignment = 1
@@ -225,7 +225,7 @@ icon_alignment = 1
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(33.4714, -256.417)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("5_ad31k")
+texture = ExtResource("6_8gkeg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page1"]
 offset_left = -166.0
@@ -258,7 +258,7 @@ rotation = -1.5708
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 vertical_icon_alignment = 2
@@ -266,7 +266,7 @@ vertical_icon_alignment = 2
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(-325.035, 254.802)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("6_bv0pb")
+texture = ExtResource("7_lji1r")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page2"]
 offset_left = -166.0
@@ -291,7 +291,7 @@ offset_bottom = 1467.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 icon_alignment = 1
@@ -299,7 +299,7 @@ icon_alignment = 1
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(36.5892, 255.596)
 scale = Vector2(1.00204, 1.00888)
-texture = ExtResource("7_62pso")
+texture = ExtResource("8_5wa22")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page3"]
 offset_left = -166.0
@@ -333,7 +333,7 @@ rotation = -1.5708
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 vertical_icon_alignment = 2
@@ -344,7 +344,7 @@ visible = false
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(-327.373, -256.417)
 scale = Vector2(0.997755, 1.00372)
-texture = ExtResource("6_bv0pb")
+texture = ExtResource("7_lji1r")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page0"]
 offset_left = -166.0
@@ -369,7 +369,7 @@ offset_bottom = 1533.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 icon_alignment = 1
@@ -377,7 +377,7 @@ icon_alignment = 1
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(33.4714, -256.417)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("7_62pso")
+texture = ExtResource("8_5wa22")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page1"]
 offset_left = -166.0
@@ -411,7 +411,7 @@ rotation = -1.5708
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 vertical_icon_alignment = 2
@@ -419,7 +419,7 @@ vertical_icon_alignment = 2
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(-325.035, 254.802)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("8_i6xlb")
+texture = ExtResource("9_ygebt")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page2"]
 offset_left = -166.0
@@ -450,7 +450,7 @@ offset_bottom = 1488.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("10_6kn4q")
+icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 icon_alignment = 1
@@ -458,7 +458,7 @@ icon_alignment = 1
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(36.5892, 255.596)
 scale = Vector2(1.00204, 1.00888)
-texture = ExtResource("9_c3rkf")
+texture = ExtResource("10_fj7s6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page3"]
 offset_left = -166.0

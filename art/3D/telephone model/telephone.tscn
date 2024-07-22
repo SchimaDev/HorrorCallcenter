@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqpdhfjujoeti"]
+
+[ext_resource type="PackedScene" uid="uid://bu3hfjavc55gc" path="res://art/3D/telephone model/tel fijo -fbx.fbx" id="1_f0e11"]
+[ext_resource type="Texture2D" uid="uid://c8rm7vnnjk8hk" path="res://art/3D/telephone model/texture/tel fijo/tel_fijo_color.jpg" id="2_hrxoa"]
+[ext_resource type="Texture2D" uid="uid://bvphugifpwqvf" path="res://art/3D/telephone model/texture/tel fijo/tel_fijo_normal map.jpg" id="3_ydsap"]
+[ext_resource type="Texture2D" uid="uid://baa803367nw4p" path="res://art/3D/telephone model/texture/tel fijo/tel_fijo_roughness.jpg" id="4_i4njv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fffvc"]
+albedo_texture = ExtResource("2_hrxoa")
+roughness_texture = ExtResource("4_i4njv")
+normal_enabled = true
+normal_texture = ExtResource("3_ydsap")
+
+[node name="Telephone" instance=ExtResource("1_f0e11")]
+
+[node name="tel fijo" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fffvc")
