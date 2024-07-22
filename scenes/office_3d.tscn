@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://syhj0k5qflvo"]
+[gd_scene load_steps=39 format=3 uid="uid://syhj0k5qflvo"]
 
 [ext_resource type="Script" path="res://scenes/office_3d.gd" id="1_4mcyp"]
 [ext_resource type="Shader" path="res://resources/shaders/pixelation.gdshader" id="1_fkef8"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c6eik6vr2b2ap" path="res://scenes/book.tscn" id="12_l04is"]
 [ext_resource type="Shader" path="res://resources/shaders/vignette.gdshader" id="13_ysvcp"]
 [ext_resource type="Script" path="res://scenes/View.gd" id="14_mn5km"]
+[ext_resource type="Script" path="res://scenes/Screen.gd" id="16_oyalg"]
 [ext_resource type="Shader" path="res://resources/shaders/interact.gdshader" id="18_t7u8g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
@@ -65,6 +66,19 @@ shader_parameter/threshold_g = 0.7
 shader_parameter/threshold_b = 0.7
 shader_parameter/threshold_color = Vector3(1, 1, 1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ynfrw"]
+viewport_path = NodePath("Monitor/Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g82dr"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ynfrw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4lxuw"]
+size = Vector2(0.578, 0.439)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efhea"]
+size = Vector3(0.595, 0.055, 0.455)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ie15"]
 render_priority = 0
 shader = ExtResource("18_t7u8g")
@@ -81,7 +95,7 @@ roughness = 0.0764706
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdg5j"]
 resource_local_to_scene = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_byo67"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_im4dp"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -107,7 +121,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_olkrh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yl6fq"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -137,17 +151,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_byo67")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_ynfrw"]
-viewport_path = NodePath("Screen/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g82dr"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ynfrw")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_4lxuw"]
-size = Vector2(0.578, 0.439)
+shadow_mesh = SubResource("ArrayMesh_im4dp")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -241,6 +245,32 @@ color = Color(1, 1, 1, 0)
 collision_layer = 2
 script = ExtResource("14_mn5km")
 
+[node name="Screen" type="Node3D" parent="Monitor"]
+script = ExtResource("16_oyalg")
+
+[node name="ScreenMesh" type="MeshInstance3D" parent="Monitor/Screen"]
+transform = Transform3D(-0.952847, -0.303375, -0.00704495, -0.000198972, 0.0238422, -0.999716, 0.303458, -0.952574, -0.0227764, -0.0691566, 1.96222, 1.16012)
+material_override = SubResource("StandardMaterial3D_g82dr")
+mesh = SubResource("PlaneMesh_4lxuw")
+skeleton = NodePath("../../..")
+
+[node name="Area3D" type="Area3D" parent="Monitor/Screen/ScreenMesh"]
+transform = Transform3D(1, 0, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/Screen/ScreenMesh/Area3D"]
+transform = Transform3D(1, 0, 0, 5.96046e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_efhea")
+
+[node name="SubViewport" type="SubViewport" parent="Monitor/Screen"]
+size = Vector2i(576, 440)
+size_2d_override = Vector2i(576, 440)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="Monitor/Screen/SubViewport"]
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.341055, 0.918702, 0.109139, 1)
+
 [node name="Camera" type="Camera3D" parent="Monitor" node_paths=PackedStringArray("targetCamera", "ui")]
 transform = Transform3D(-0.981577, -0.0254524, -0.189363, -0.0260889, 0.999659, 0.00086918, 0.189276, 0.00579343, -0.981907, -0.639388, 1.97794, 0.480357)
 fov = 60.0
@@ -250,13 +280,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_olkrh")
-
-[node name="ScreenMesh" type="MeshInstance3D" parent="Monitor/Mesh"]
-transform = Transform3D(-0.00494321, -0.666461, -0.0158921, -0.000132648, 0.0158948, -0.666477, 0.666651, -0.00493896, -0.000250455, -0.220572, 0.0593781, 0.000352234)
-material_override = SubResource("StandardMaterial3D_g82dr")
-mesh = SubResource("PlaneMesh_4lxuw")
-skeleton = NodePath("../../..")
+mesh = SubResource("ArrayMesh_yl6fq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
@@ -276,18 +300,6 @@ offset_top = -309.0
 offset_right = -554.0
 offset_bottom = -301.0
 text = "Exit Computer View"
-
-[node name="Screen" type="Node3D" parent="."]
-
-[node name="SubViewport" type="SubViewport" parent="Screen"]
-size = Vector2i(576, 440)
-size_2d_override = Vector2i(576, 440)
-render_target_update_mode = 4
-
-[node name="ColorRect" type="ColorRect" parent="Screen/SubViewport"]
-offset_right = 10.0
-offset_bottom = 10.0
-color = Color(0.341055, 0.918702, 0.109139, 1)
 
 [connection signal="view_entered" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_entered"]
 [connection signal="view_exited" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_exited"]
