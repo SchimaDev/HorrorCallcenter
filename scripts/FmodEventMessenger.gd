@@ -11,6 +11,7 @@ var drone2: FmodEvent = null
 var monsterAnalogue: FmodEvent = null
 var monsterOoze: FmodEvent = null
 var monsterScreamer: FmodEvent = null
+var monsterMumbling: FmodEvent = null
 
 
 func _ready():
@@ -26,3 +27,17 @@ func loadSoundEvents():
 	monsterAnalogue = FmodServer.create_event_instance("event:/Monster/Analogue")
 	monsterOoze = FmodServer.create_event_instance("event:/Monster/Ooze")
 	monsterScreamer = FmodServer.create_event_instance("event:/Monster/Screamer")
+	monsterMumbling = FmodServer.create_event_instance("event:/Monster/Mumbling")
+	
+func setAmbienceIntensity(level: int):
+	drone1.set_parameter_by_name("DroneAmbienceLevel", level)
+	drone2.set_parameter_by_name("DroneAmbienceLevel", level)
+
+func setAmbienceIntensityLow():
+	setAmbienceIntensity(0)
+
+func setAmbienceIntensityMid():
+	setAmbienceIntensity(1)
+
+func setAmbienceIntensityHigh():
+	setAmbienceIntensity(2)
