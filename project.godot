@@ -43,7 +43,7 @@ layout/style_list=["res://dialogue/dialogue_style.tres", "res://dialogue/custom_
 layout/default_style="res://dialogue/dialogue_style.tres"
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
-text/text_reveal_skip_delay=0.1
+text/text_reveal_skip_delay=0.5
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
 animations/join_default_length=0.5
@@ -145,6 +145,7 @@ variables={
 choices/def_false_behaviour=1
 history/simple_history_enabled=true
 history/full_history_enabled=false
+text/autocolor_names=false
 
 [editor_plugins]
 

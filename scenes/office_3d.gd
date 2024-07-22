@@ -3,9 +3,13 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var layout := Dialogic.start('test_dialogue')
-	$Monitor/Screen/SubViewport.add_child(layout)
+	var layout = Dialogic.start('test_dialogue')
+	#add_child(layout)
 	Dialogic.History.open_requested.emit()
+	#var layout_copy = layout.duplicate()
+	#$Screen/SubViewport.add_child(layout_copy)
+	#var layout = Dialogic.get_layout_node()
+	#layout.get_parent().remove_child(layout)
 	pass
 	
 

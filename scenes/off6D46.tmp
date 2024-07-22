@@ -68,7 +68,7 @@ shader_parameter/threshold_b = 0.7
 shader_parameter/threshold_color = Vector3(1, 1, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ynfrw"]
-viewport_path = NodePath("Screen/ScreenViewport")
+viewport_path = NodePath("Screen/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g82dr"]
 resource_local_to_scene = true
@@ -93,7 +93,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4encn"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_33trg"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -119,7 +119,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jowxp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_7mlib"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -148,7 +148,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4encn")
+shadow_mesh = SubResource("ArrayMesh_33trg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -255,14 +255,14 @@ transform = Transform3D(1, 0, 0, 5.96046e-08, 1, 0, 0, 0, 1, -0.0113974, 0.03577
 transform = Transform3D(1, 0, 0, 5.96046e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_efhea")
 
-[node name="ScreenViewport" type="SubViewport" parent="Screen"]
+[node name="SubViewport" type="SubViewport" parent="Screen"]
 gui_embed_subwindows = true
 size = Vector2i(576, 440)
 size_2d_override = Vector2i(576, 440)
 render_target_update_mode = 4
 script = ExtResource("16_8oair")
 
-[node name="ColorRect" type="ColorRect" parent="Screen/ScreenViewport"]
+[node name="ColorRect" type="ColorRect" parent="Screen/SubViewport"]
 offset_right = 10.0
 offset_bottom = 10.0
 color = Color(0.341055, 0.918702, 0.109139, 1)
@@ -280,7 +280,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_jowxp")
+mesh = SubResource("ArrayMesh_7mlib")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)

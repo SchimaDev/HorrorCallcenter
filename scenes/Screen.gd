@@ -7,7 +7,7 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
-@onready var node_viewport = $SubViewport
+@onready var node_viewport = $ScreenViewport
 @onready var node_quad = $ScreenMesh
 @onready var node_area = $ScreenMesh/Area3D
 

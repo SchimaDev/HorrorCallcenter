@@ -53,9 +53,16 @@ func get_history_log() -> VBoxContainer:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	Dialogic.Text.text_finished.connect(_on_text_finished)
 	Dialogic.History.open_requested.connect(_on_show_history_pressed)
 	Dialogic.History.close_requested.connect(_on_hide_history_pressed)
+	self.call_deferred("_started")
 
+func _started() -> void:
+	var currentScene = get_tree().current_scene
+	var newParent = currentScene.find_child("ScreenViewport")
+	reparent(newParent)
+	Dialogic.History.open_requested.emit()
 
 func _apply_export_overrides() -> void:
 	var history_subsystem: Node = DialogicUtil.autoload().get(&'History')
@@ -93,8 +100,8 @@ func _process(_delta : float) -> void:
 
 
 func _on_show_history_pressed() -> void:
-	DialogicUtil.autoload().paused = true
-	Dialogic.Text.hide_textbox()
+	#DialogicUtil.autoload().paused = true
+	#Dialogic.Text.hide_textbox()
 	show_history()
 
 
@@ -145,9 +152,13 @@ func show_history() -> void:
 
 
 func _on_hide_history_pressed() -> void:
-	DialogicUtil.autoload().paused = false
+	#DialogicUtil.autoload().paused = false
 	get_history_box().hide()
 	get_hide_history_button().hide()
 	var history_subsystem: Node = DialogicUtil.autoload().get(&'History')
 	get_show_history_button().visible = show_open_button and history_subsystem.get(&'simple_history_enabled')
-	Dialogic.Text.show_textbox()
+	#Dialogic.Text.show_textbox()
+
+func _on_text_finished(dict: Dictionary) -> void:
+	show_history()
+	pass
