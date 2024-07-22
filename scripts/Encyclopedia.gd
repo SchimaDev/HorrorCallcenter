@@ -22,27 +22,26 @@ func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
+	view.turnNextPage.connect(nextPage)
+	view.turnPrevPage.connect(prevPage)
 
-func _process(delta):
-	if  Input.is_action_just_pressed("book_test_2"):
-		if page >= 3:
-			page = 3
-		else:
-			page += 1
-			view.showPages(page)
-			animation_player.stop()
-			animation_player.play("Armature_001Action")
-			UIscale = p2
-	if  Input.is_action_just_pressed("book_test"):
-		if page <= 0:
-			page = 0
-		else:
-			view.showPages(page)
-			animation_player.seek(2,5)
-			animation_player.play_backwards("Armature_001Action")
-			UIscale = p1
-			page -= 1
-		
+func nextPage():
+	if page >= 3:
+		page = 3
+	else:
+		page += 1
+		view.showPages(page)
+		animation_player.play("Armature_001Action")
+		UIscale = p2	
+
+func prevPage():
+	if page <= 0:
+		page = 0
+	else:
+		view.showPages(page)
+		animation_player.play_backwards("Armature_001Action")
+		UIscale = p1
+		page -= 1	
 
 func _mouse_entered_area():
 	is_mouse_inside = true

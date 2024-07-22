@@ -81,7 +81,7 @@ roughness = 0.0764706
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdg5j"]
 resource_local_to_scene = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_shs6u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0mi8h"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -107,7 +107,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p6pbp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_oku74"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -137,7 +137,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_shs6u")
+shadow_mesh = SubResource("ArrayMesh_0mi8h")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ynfrw"]
 viewport_path = NodePath("SubViewport")
@@ -155,7 +155,7 @@ size = Vector2(0.578, 0.439)
 script = ExtResource("1_4mcyp")
 
 [node name="Book" parent="." instance=ExtResource("12_l04is")]
-transform = Transform3D(-0.299189, -0.00188781, 0.0219553, -0.00104642, 0.299777, 0.0115163, -0.0220114, 0.0114087, -0.298974, -0.544, 2.088, 0.996)
+transform = Transform3D(-0.294691, 0.00112931, -0.056173, -0.00104642, 0.299777, 0.0115163, 0.0561744, 0.0115086, -0.294469, -0.57111, 2.088, 0.996)
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(576, 440)
@@ -260,7 +260,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_p6pbp")
+mesh = SubResource("ArrayMesh_oku74")
 
 [node name="ScreenMesh" type="MeshInstance3D" parent="Monitor/Mesh"]
 transform = Transform3D(-0.00494321, -0.666461, -0.0158921, -0.000132648, 0.0158948, -0.666477, 0.666651, -0.00493896, -0.000250455, -0.220572, 0.0593781, 0.000352234)
