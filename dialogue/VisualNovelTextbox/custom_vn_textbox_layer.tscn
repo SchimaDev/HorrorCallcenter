@@ -235,12 +235,14 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 163.0
+offset_right = 163.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_bpydr")
 box_panel = "res://dialogue/VisualNovelTextbox/vn_textbox_default_panel.tres"
-box_size = Vector2(550, 150)
+box_size = Vector2(200, 150)
 name_label_box_panel = "res://dialogue/VisualNovelTextbox/vn_textbox_name_label_panel.tres"
 name_label_box_modulate = Color(0, 0, 0, 1)
 

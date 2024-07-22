@@ -33,13 +33,16 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_6205h"]
 script = ExtResource("2_4mvun")
 scene = ExtResource("7_lmxvj")
-overrides = {}
+overrides = {
+"show_close_button": "false",
+"show_open_button": "false"
+}
 
 [sub_resource type="Resource" id="Resource_yfjuh"]
 script = ExtResource("2_4mvun")
 scene = ExtResource("9_pe453")
 overrides = {
-"box_size": "Vector2(800, 170)",
+"box_size": "Vector2(600, 170)",
 "name_label_box_offset": "Vector2(0, -20)"
 }
 

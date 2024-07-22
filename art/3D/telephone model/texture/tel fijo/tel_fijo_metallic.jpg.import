@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rqqalaeidx53"
-path="res://.godot/imported/page_7.png-54ae1df4b5a9786cac99632454570f44.ctex"
+uid="uid://d0aocd1rd8fq3"
+path="res://.godot/imported/tel_fijo_metallic.jpg-8f07e213b3d82b330c45a7797e240d3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bookmesh/pages/page_7.png"
-dest_files=["res://.godot/imported/page_7.png-54ae1df4b5a9786cac99632454570f44.ctex"]
+source_file="res://art/3D/telephone model/texture/tel fijo/tel_fijo_metallic.jpg"
+dest_files=["res://.godot/imported/tel_fijo_metallic.jpg-8f07e213b3d82b330c45a7797e240d3c.ctex"]
 
 [params]
 

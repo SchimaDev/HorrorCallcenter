@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/Encyclopedia.gd" id="1_34cn1"]
 [ext_resource type="PackedScene" uid="uid://bjgbj3e5uhnr7" path="res://scenes/pagesViewport.tscn" id="2_ix6g0"]
-[ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/bookmesh/BookMesh2_Untitled.png" id="3_ixbep"]
-[ext_resource type="Texture2D" uid="uid://cicslr1w7sg5k" path="res://art/bookmesh/BookMesh_BookMesh_BookTexture.png" id="3_y7akj"]
+[ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/3D/bookmesh/BookMesh2_Untitled.png" id="3_ixbep"]
+[ext_resource type="Texture2D" uid="uid://cicslr1w7sg5k" path="res://art/3D/bookmesh/BookMesh_BookMesh_BookTexture.png" id="3_y7akj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uyssu"]
 resource_name = "Material"
@@ -255,6 +255,7 @@ shape = SubResource("BoxShape3D_02ui4")
 libraries = {
 "": SubResource("AnimationLibrary_e75a2")
 }
+speed_scale = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543471, -0.369069, 1.06599)

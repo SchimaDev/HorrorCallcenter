@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ca6h4kdh4cdpq"
-path="res://.godot/imported/BookMesh.blend-021bb57442bea6041870d070515e1d50.scn"
+uid="uid://b1kt47nwrf7w7"
+path="res://.godot/imported/BookMesh.blend-03ef47a571ef4e3d362817f4eacb6c2f.scn"
 
 [deps]
 
-source_file="res://art/bookmesh/BookMesh.blend"
-dest_files=["res://.godot/imported/BookMesh.blend-021bb57442bea6041870d070515e1d50.scn"]
+source_file="res://art/3D/bookmesh/BookMesh.blend"
+dest_files=["res://.godot/imported/BookMesh.blend-03ef47a571ef4e3d362817f4eacb6c2f.scn"]
 
 [params]
 

@@ -25,10 +25,10 @@ func _input(event: InputEvent) -> void:
 	if get_viewport().get_camera_3d() == self:
 		if event is InputEventMouseMotion:
 			lookAngle -= event.relative / mouseSpeed
-		if event is InputEventMouseButton:
-			CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
-			rotation = defaultRotation
-			lookAngle = Vector2(defaultRotation.y, defaultRotation.x)
+		#if event is InputEventMouseButton:
+			#CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
+			#rotation = defaultRotation
+			#lookAngle = Vector2(defaultRotation.y, defaultRotation.x)
 
 func _on_transition_3d_started(from: Camera3D, to: Camera3D, duration: float):
 	if to == self:

@@ -79,6 +79,8 @@ jump question
 label MonsterChoice
 - Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
 - Parasite [if {_MonsterSelect.Parasite}][else="hide"]
+	- You are infected.
+	- The person you are seeing is infected.
 - Tally [if {_MonsterSelect.Tally}][else="hide"]
 - Analogue [if {_MonsterSelect.Analogue}][else="hide"]
 - Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]

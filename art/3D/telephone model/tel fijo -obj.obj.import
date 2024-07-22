@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cdehbt7pepqnx"
+path="res://.godot/imported/tel fijo -obj.obj-b400f224dd3470822afb310704d0db9c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tel fijo -obj.obj-b400f224dd3470822afb310704d0db9c.mesh"]
+
+source_file="res://art/3D/telephone model/tel fijo -obj.obj"
+dest_files=["res://.godot/imported/tel fijo -obj.obj-b400f224dd3470822afb310704d0db9c.mesh", "res://.godot/imported/tel fijo -obj.obj-b400f224dd3470822afb310704d0db9c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
