@@ -14,3 +14,12 @@ func _process(delta: float) -> void:
 		if lookingAt != null and "targeted" in lookingAt:
 			lookingAt.targeted = false
 		lookingAt = coll
+
+
+func _on_camera_view_entered() -> void:
+	get_collider().targeted = false
+	enabled = false
+
+
+func _on_camera_view_exited() -> void:
+	enabled = true

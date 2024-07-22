@@ -4,6 +4,9 @@ extends Camera3D
 @export var ui: Control
 var deskCameraDefaultRotation: Vector3
 
+signal view_entered
+signal view_exited
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CameraShifter.transition_3d_started.connect(_on_transition_3d_started)
@@ -25,6 +28,8 @@ func _on_transition_3d_finished(from: Camera3D, to: Camera3D, duration: float):
 func _on_exit_button_pressed() -> void:
 		CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
 		ui.visible = false
+		emit_signal("view_exited")
 		
 func switchView():
 	CameraShifter.transition_to_requested_camera_3d(get_viewport().get_camera_3d(), self, 1)
+	emit_signal("view_entered")
