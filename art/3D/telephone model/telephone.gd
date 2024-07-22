@@ -1,8 +1,6 @@
-extends StaticBody3D
+extends Node3D
 
-@onready var shader = $Mesh.mesh.surface_get_material(0).next_pass
-@onready var camera = $Camera
-@onready var ui = $UI
+@onready var shader = $"RootNode/tel fijo".get_surface_override_material(0).next_pass
 var targeted = false: 
 	set(val):
 		targeted = val
@@ -20,7 +18,6 @@ func _process(delta: float) -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
-	if targeted and get_viewport().get_camera_3d() != camera:
+	if targeted:
 		if event is InputEventMouseButton:
-			camera.switchView()
-			$"../AnimationPlayer".play("pickup_book")
+			Dialogic.start('Jonny_01')

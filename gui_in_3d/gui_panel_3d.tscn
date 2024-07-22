@@ -27,6 +27,14 @@ gui_embed_subwindows = true
 size = Vector2i(560, 360)
 render_target_update_mode = 4
 
+[node name="ColorRect" type="ColorRect" parent="ScreenViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Quad" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261031, 0, 0)
 mesh = SubResource("1")
