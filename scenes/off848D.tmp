@@ -1,13 +1,13 @@
 [gd_scene load_steps=37 format=3 uid="uid://syhj0k5qflvo"]
 
 [ext_resource type="Script" path="res://scenes/office_3d.gd" id="1_4mcyp"]
+[ext_resource type="Script" path="res://scenes/Monitor.gd" id="1_ah3yd"]
 [ext_resource type="Shader" path="res://resources/shaders/pixelation.gdshader" id="1_fkef8"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_o50q1"]
 [ext_resource type="PackedScene" uid="uid://cmfl5d2ott46l" path="res://art/3D/All_pack/scenes/Table_05.scn" id="1_rqf7g"]
 [ext_resource type="PackedScene" uid="uid://b70uknqwj1a65" path="res://art/3D/Abandoned_House/scenes/monitor.tscn" id="2_ck4js"]
 [ext_resource type="Texture2D" uid="uid://bmq4p8k41l3wb" path="res://art/3D/Models pack psx/source/Tiles_01.jpg" id="3_f5b3j"]
 [ext_resource type="PackedScene" uid="uid://bgbtpjdtisioa" path="res://art/3D/Abandoned_House/scenes/Keyboard.tscn" id="3_o4ktg"]
-[ext_resource type="Script" path="res://scenes/Highlight Ray.gd" id="4_0upqq"]
 [ext_resource type="Texture2D" uid="uid://cqnu4214xps71" path="res://art/3D/Models pack psx/source/Asphalt.png" id="4_ahiun"]
 [ext_resource type="PackedScene" uid="uid://bqp1jmdu80xf6" path="res://art/3D/Models pack psx/scenes/Ceiling_Ventilator_Light.scn" id="4_b5yjr"]
 [ext_resource type="PackedScene" uid="uid://3ob6uccm53ep" path="res://art/3D/Models pack psx/scenes/Office_Chair.scn" id="5_v318c"]
@@ -15,10 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://c4xw1tduil7uy" path="res://art/3D/Abandoned_House/source/Monitores.jpg" id="7_0cfwb"]
 [ext_resource type="PackedScene" uid="uid://bw1yqfjhc8xnb" path="res://ui/ui.tscn" id="11_j406q"]
 [ext_resource type="Script" path="res://scenes/static_camera.gd" id="11_wvnkj"]
-[ext_resource type="PackedScene" uid="uid://c6eik6vr2b2ap" path="res://scenes/book.tscn" id="12_l04is"]
+[ext_resource type="PackedScene" uid="uid://dip08nqpje3j5" path="res://art/bookmesh/book_mesh.tscn" id="12_l04is"]
+[ext_resource type="Material" uid="uid://d3gi7kyv2tjcg" path="res://art/bookmesh/page_01.tres" id="13_2psdp"]
 [ext_resource type="Shader" path="res://resources/shaders/vignette.gdshader" id="13_ysvcp"]
-[ext_resource type="Script" path="res://scenes/View.gd" id="14_mn5km"]
-[ext_resource type="Shader" path="res://resources/shaders/interact.gdshader" id="18_t7u8g"]
+[ext_resource type="Material" uid="uid://dhoiyohy1wfrn" path="res://art/bookmesh/page_02.tres" id="14_s2fd4"]
+[ext_resource type="Material" uid="uid://6l06kn04vk1k" path="res://art/bookmesh/page_03.tres" id="15_wembk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
 albedo_texture = ExtResource("3_f5b3j")
@@ -45,43 +46,21 @@ uv1_scale = Vector3(10, 10, 10)
 material = SubResource("StandardMaterial3D_88phg")
 size = Vector2(20, 20)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rr78k"]
-shader = ExtResource("13_ysvcp")
-shader_parameter/alpha = 1.0
-shader_parameter/inner_radius = 0.2
-shader_parameter/outer_radius = 2.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_snmr1"]
-shader = ExtResource("1_fkef8")
-shader_parameter/bits_per_channel = 4.0
-shader_parameter/dither_strength = 0.0
-shader_parameter/bloom_threshold = 0.5
-shader_parameter/bloom_intensity = 2.0
-shader_parameter/pixelation = 258.272
-shader_parameter/color_relaxation = 0.0
-shader_parameter/relaxation_color = Vector3(1, 1, 1)
-shader_parameter/threshold_r = 0.7
-shader_parameter/threshold_g = 0.7
-shader_parameter/threshold_b = 0.7
-shader_parameter/threshold_color = Vector3(1, 1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ie15"]
-render_priority = 0
-shader = ExtResource("18_t7u8g")
-shader_parameter/strength = null
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10d8y"]
 resource_local_to_scene = true
 resource_name = "Monitores"
-next_pass = SubResource("ShaderMaterial_7ie15")
 cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_nwinp"]
+viewport_path = NodePath("SubViewport")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdg5j"]
 resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_nwinp")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_shs6u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_oxf34"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -107,7 +86,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p6pbp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_oclxa"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -137,7 +116,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_shs6u")
+shadow_mesh = SubResource("ArrayMesh_oxf34")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ynfrw"]
 viewport_path = NodePath("SubViewport")
@@ -149,37 +128,55 @@ albedo_texture = SubResource("ViewportTexture_ynfrw")
 [sub_resource type="PlaneMesh" id="PlaneMesh_4lxuw"]
 size = Vector2(0.578, 0.439)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rr78k"]
+shader = ExtResource("13_ysvcp")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_snmr1"]
+shader = ExtResource("1_fkef8")
+shader_parameter/bits_per_channel = 4.0
+shader_parameter/dither_strength = 0.0
+shader_parameter/bloom_threshold = 0.5
+shader_parameter/bloom_intensity = 2.0
+shader_parameter/pixelation = 258.272
+shader_parameter/color_relaxation = 0.0
+shader_parameter/relaxation_color = Vector3(1, 1, 1)
+shader_parameter/threshold_r = 0.7
+shader_parameter/threshold_g = 0.7
+shader_parameter/threshold_b = 0.7
+shader_parameter/threshold_color = Vector3(1, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_4mcyp")
-
-[node name="Book" parent="." instance=ExtResource("12_l04is")]
-transform = Transform3D(-0.299189, -0.00188781, 0.0219553, -0.00104642, 0.299777, 0.0115163, -0.0220114, 0.0114087, -0.298974, -0.544, 2.088, 0.996)
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(576, 440)
 size_2d_override = Vector2i(576, 440)
 render_target_update_mode = 4
+script = ExtResource("1_ah3yd")
 
 [node name="ColorRect" type="ColorRect" parent="SubViewport"]
 offset_right = 10.0
 offset_bottom = 10.0
 color = Color(0.341055, 0.918702, 0.109139, 1)
 
+[node name="Label" type="Label" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hallo mein name ist peter
+"
+
 [node name="DeskCamera" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
 transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
 current = true
 fov = 60.0
 script = ExtResource("1_o50q1")
-targetCamera = NodePath("../Monitor/Camera")
+targetCamera = NodePath("../ComputerView")
 
 [node name="Highlight Ray" type="RayCast3D" parent="DeskCamera"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
-target_position = Vector3(0, -3, 0)
-collision_mask = 2
-collide_with_areas = true
-script = ExtResource("4_0upqq")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.072)
@@ -196,6 +193,16 @@ mesh = SubResource("PlaneMesh_8wymt")
 [node name="Table_05" parent="." instance=ExtResource("1_rqf7g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.747545, 1.517, 1.23677)
 
+[node name="Monitor" parent="." instance=ExtResource("2_ck4js")]
+transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
+mesh = SubResource("ArrayMesh_oclxa")
+
+[node name="Screen" type="MeshInstance3D" parent="Monitor"]
+transform = Transform3D(-0.00494321, -0.666461, -0.0158921, -0.000132648, 0.0158948, -0.666477, 0.666651, -0.00493896, -0.000250455, -0.220572, 0.0593781, 0.000352234)
+material_override = SubResource("StandardMaterial3D_g82dr")
+mesh = SubResource("PlaneMesh_4lxuw")
+skeleton = NodePath("../..")
+
 [node name="Keyboard" parent="." instance=ExtResource("3_o4ktg")]
 transform = Transform3D(-0.033905, 0, 0.799281, 0, 0.8, 0, -0.799281, 0, -0.033905, -0.209564, 1.56808, 0.754749)
 
@@ -209,14 +216,20 @@ spot_angle = 60.0
 [node name="Chair" parent="." instance=ExtResource("5_v318c")]
 transform = Transform3D(-0.991738, 0, -0.128276, 0, 1, 0, 0.128276, 0, -0.991738, -0.763761, 1.01829, -0.312814)
 
+[node name="ComputerView" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
+transform = Transform3D(-0.981577, -0.0254524, -0.189363, -0.0260889, 0.999659, 0.000869182, 0.189276, 0.00579344, -0.981907, -0.639388, 1.97794, 0.480357)
+fov = 60.0
+script = ExtResource("11_wvnkj")
+targetCamera = NodePath("../DeskCamera")
+
 [node name="UI" parent="." instance=ExtResource("11_j406q")]
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = -1.0
-mouse_filter = 2
 
 [node name="Vignette" type="ColorRect" parent="UI"]
+visible = false
 material = SubResource("ShaderMaterial_rr78k")
 layout_mode = 1
 anchors_preset = 15
@@ -228,7 +241,6 @@ offset_right = -576.0
 offset_bottom = -321.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Pixelation" type="ColorRect" parent="UI"]
@@ -244,47 +256,8 @@ offset_right = -576.0
 offset_bottom = -321.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Monitor" type="StaticBody3D" parent="."]
-collision_layer = 2
-script = ExtResource("14_mn5km")
-
-[node name="Camera" type="Camera3D" parent="Monitor" node_paths=PackedStringArray("targetCamera", "ui")]
-transform = Transform3D(-0.981577, -0.0254524, -0.189363, -0.0260889, 0.999659, 0.00086918, 0.189276, 0.00579343, -0.981907, -0.639388, 1.97794, 0.480357)
-fov = 60.0
-script = ExtResource("11_wvnkj")
-targetCamera = NodePath("../../DeskCamera")
-ui = NodePath("../UI")
-
-[node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
-transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_p6pbp")
-
-[node name="ScreenMesh" type="MeshInstance3D" parent="Monitor/Mesh"]
-transform = Transform3D(-0.00494321, -0.666461, -0.0158921, -0.000132648, 0.0158948, -0.666477, 0.666651, -0.00493896, -0.000250455, -0.220572, 0.0593781, 0.000352234)
-material_override = SubResource("StandardMaterial3D_g82dr")
-mesh = SubResource("PlaneMesh_4lxuw")
-skeleton = NodePath("../../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
-transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
-shape = SubResource("BoxShape3D_td1q7")
-
-[node name="UI" type="Control" parent="Monitor"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button" type="Button" parent="Monitor/UI"]
-layout_mode = 0
-offset_left = -562.0
-offset_top = -309.0
-offset_right = -554.0
-offset_bottom = -301.0
-text = "Exit Computer View"
-
-[connection signal="pressed" from="Monitor/UI/Button" to="Monitor/Camera" method="_on_exit_button_pressed"]
+[node name="BookMesh" parent="." instance=ExtResource("12_l04is")]
+transform = Transform3D(0.410257, 0, 0.91197, 0, 1, 0, -0.91197, 0, 0.410257, -1.42068, 1.4581, 0.840111)
+tex = Array[StandardMaterial3D]([ExtResource("13_2psdp"), ExtResource("14_s2fd4"), ExtResource("15_wembk")])
