@@ -29,7 +29,9 @@ func handle_Encyclopedia_url_tag_clicked(name: String) -> void:
 	compareWords()
 
 func compareWords():
-	if chosenWordDictionary.has(chosenWordDialogue) || chosenWordDictionary.has("hallucinations"):
+	if chosenWordDictionary.has("hallucinations"):
+		chosenWordDialogue = "hallucinations"
+	if chosenWordDictionary.has(chosenWordDialogue):
 		var v = chosenMonster + "." + chosenWordDialogue
 		Dialogic.VAR.set_variable(v, true)
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
