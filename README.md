@@ -4,4 +4,6 @@ Video game for a university course
 ## Credits
 Monster portraits by [Molomoot](https://molomoot.itch.io/weird-lil-guys)
 
-Book 3d model + animation by [alexalphagame1-9-9-5](https://www.cgtrader.com/free-3d-models/furniture/other/model-anim-low-poly-book)
+Book 3D model + animation by [alexalphagame1-9-9-5](https://www.cgtrader.com/free-3d-models/furniture/other/model-anim-low-poly-book)
+
+Phone 3D model by [shahab](https://www.cgtrader.com/items/105481/download-page)
