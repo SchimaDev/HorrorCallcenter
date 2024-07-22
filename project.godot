@@ -89,7 +89,6 @@ variables={
 "apartment": false,
 "mumbling": false,
 "person": false,
-"quiet": false,
 "uncooridinated": false
 },
 "FearOfDeath": {
@@ -122,7 +121,6 @@ variables={
 "Tally": {
 "apartment": false,
 "basement": false,
-"many eyes": false,
 "no people": false,
 "person": false,
 "quiet": false,

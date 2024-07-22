@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvl383ispakmn"]
+
+[ext_resource type="Script" path="res://gui_in_3d/gui_3d.gd" id="1"]
+
+[sub_resource type="QuadMesh" id="1"]
+resource_local_to_scene = true
+size = Vector2(0.578, 0.439)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fak45"]
+viewport_path = NodePath("ScreenViewport")
+
+[sub_resource type="StandardMaterial3D" id="3"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_fak45")
+
+[sub_resource type="BoxShape3D" id="4"]
+size = Vector3(0.564209, 0.44519, 0.1)
+
+[node name="GUIPanel3D" type="Node3D"]
+process_mode = 3
+script = ExtResource("1")
+
+[node name="ScreenViewport" type="SubViewport" parent="."]
+gui_embed_subwindows = true
+size = Vector2i(560, 360)
+render_target_update_mode = 4
+
+[node name="Quad" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261031, 0, 0)
+mesh = SubResource("1")
+surface_material_override/0 = SubResource("3")
+
+[node name="Area3D" type="Area3D" parent="Quad"]
+collision_layer = 2
+input_capture_on_drag = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00640869, 0.0142212, 0)
+shape = SubResource("4")

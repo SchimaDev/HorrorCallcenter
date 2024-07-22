@@ -10,7 +10,7 @@ if {timer} <= 0:
 else:
 	set {timer} -= 1
 	- What do you see? [if !{questions.q01}][else="hide"]
-		Lucia: A [url="person"]person.[/url] He... [url="many eyes"]looks wrong.[/url] Long, with stretched out arms. And no clothes or... anything.
+		Lucia: A [url="person"]person.[/url] He... looks wrong. Long, with stretched out arms. And no clothes or... anything.
 		Lucia: ... Dios mío...
 		set {questions.q01} = true
 	
@@ -49,8 +49,8 @@ else:
 	- Is there any sound at all? [if ({Tally.quiet}) && !{questions.q09}][else="hide"]
 		Lucia: No. [url="quiet"]There is absolutely nothing.[/url]
 		set {questions.q09} = true
-	
-	- Are there any additional people? [if ({Doppelganger.quiet}) && !{questions.q10}][else="hide"]
+
+	- Are there any additional people? [if ({Doppelganger.person}) && !{questions.q10}][else="hide"]
 		Lucia: Not really. I'm the only one here. I've [url="no people"]never seen anyone else down here.[/url]
 		set {questions.q10} = true
 	
@@ -70,6 +70,8 @@ jump question
 label MonsterChoice
 - Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
 - Parasite [if {_MonsterSelect.Parasite}][else="hide"]
+	- You are infected.
+	- The person you are seeing is infected.
 - Tally [if {_MonsterSelect.Tally}][else="hide"]
 - Analogue [if {_MonsterSelect.Analogue}][else="hide"]
 - Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]

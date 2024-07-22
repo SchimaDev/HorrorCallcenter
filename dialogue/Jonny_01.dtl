@@ -1,3 +1,4 @@
+do FmodEventMessenger.playDroneSound()
 player: AID Abomination Inquiry Desk, how can I help you?
 Jonny: Good day Sir...? Ma’am...? Hello!
 Jonny: I require some assistance in a most peculiar matter.
@@ -10,13 +11,18 @@ if {timer} <= 0:
 else:
 	set {timer} -= 1
 	- What do you see? [if !{questions.q01}][else="hide"]
+		do FmodEventMessenger.playFootsteps()
 		Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
 		set {questions.q01} = true
 	
 	- What do you hear? [if !{questions.q02}][else="hide"]
-		Jonny: [url="mumbling"]Mumbling[/url]. Rambling. The talks of a maniac.
-		Jonny: I am not certain if you can hear this on your end, as he is rather quite. Maybe this will help...
-		[signal arg="mumbling_sound"]
+		Jonny: Well, he walks, or rather stomps, around the house aimlessly. I think even you might be able to hear it.
+		Jonny: Despite this he also appears to be saying... something?
+		Jonny: However to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense. 
+		Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
+		do FmodEventMessenger.playMumbling()
+		[wait time="2.0"]
+		Jonny: I have never hear someone speak like that before, may it be a different language perhaps?
 		set {questions.q02} = true
 	
 	- Where are you right now? [if !{questions.q03}][else="hide"]
@@ -24,6 +30,7 @@ else:
 		set {questions.q03} = true
 	
 	- What does the Person do? [if ({Parasite.person} || {Doppelganger.person} || {Tally.person}) && !{questions.q04}][else="hide"]
+		do FmodEventMessenger.playFootsteps()
 		Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
 		Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
 		set {questions.q04} = true

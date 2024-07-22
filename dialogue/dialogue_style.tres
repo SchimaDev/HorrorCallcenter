@@ -10,10 +10,29 @@
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="9_3mmhx"]
 [ext_resource type="PackedScene" uid="uid://cxn2okj2wppy2" path="res://dialogue/VisualNovelTextbox/custom_vn_textbox_layer.tscn" id="9_pe453"]
 
+[sub_resource type="Resource" id="Resource_6205h"]
+script = ExtResource("2_4mvun")
+scene = ExtResource("7_lmxvj")
+overrides = {
+"show_all_choices": "false",
+"show_close_button": "false",
+"show_open_button": "false"
+}
+
+[sub_resource type="Resource" id="Resource_yfjuh"]
+script = ExtResource("2_4mvun")
+scene = ExtResource("9_pe453")
+overrides = {
+"box_size": "Vector2(200, 100)",
+"name_label_box_offset": "Vector2(0, -20)"
+}
+
 [sub_resource type="Resource" id="Resource_ilvuw"]
 script = ExtResource("2_4mvun")
 scene = ExtResource("1_sbmts")
-overrides = {}
+overrides = {
+"disabled": "true"
+}
 
 [sub_resource type="Resource" id="Resource_kgrle"]
 script = ExtResource("2_4mvun")
@@ -30,22 +49,6 @@ script = ExtResource("2_4mvun")
 scene = ExtResource("7_myo5x")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_6205h"]
-script = ExtResource("2_4mvun")
-scene = ExtResource("7_lmxvj")
-overrides = {
-"show_close_button": "false",
-"show_open_button": "false"
-}
-
-[sub_resource type="Resource" id="Resource_yfjuh"]
-script = ExtResource("2_4mvun")
-scene = ExtResource("9_pe453")
-overrides = {
-"box_size": "Vector2(600, 170)",
-"name_label_box_offset": "Vector2(0, -20)"
-}
-
 [resource]
 script = ExtResource("9_3mmhx")
 name = "dialogue_style"
@@ -53,5 +56,5 @@ base_scene = ExtResource("1_ftaqf")
 base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
-layers = Array[ExtResource("2_4mvun")]([SubResource("Resource_ilvuw"), SubResource("Resource_kgrle"), SubResource("Resource_64tu0"), SubResource("Resource_1ox3n"), SubResource("Resource_6205h"), SubResource("Resource_yfjuh")])
-metadata/_latest_layer = 4
+layers = Array[ExtResource("2_4mvun")]([SubResource("Resource_6205h"), SubResource("Resource_yfjuh"), SubResource("Resource_ilvuw"), SubResource("Resource_kgrle"), SubResource("Resource_64tu0"), SubResource("Resource_1ox3n")])
+metadata/_latest_layer = 0

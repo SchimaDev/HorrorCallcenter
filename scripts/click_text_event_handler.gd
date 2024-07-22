@@ -14,17 +14,17 @@ func _process(delta: float) -> void:
 	pass
 
 func handle_url_tag_clicked(name: String) -> void:
+	print(name)
 	chosenWordDialogue = name
 	compareWords()
 
 func handle_Encyclopedia_url_tag_clicked(name: String) -> void:
+	print(name)
 	var n = name.split(", ")
 	chosenMonster = n[0]
-	print(chosenMonster)
 	
 	n.remove_at(0)
 	chosenWordDictionary = n
-	print(chosenWordDictionary)
 	
 	compareWords()
 
