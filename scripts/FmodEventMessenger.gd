@@ -1,8 +1,16 @@
 extends Node
 
-# sound effects
-var pageTurn: FmodEvent = null
+# ambience
 var ceilingLightAmbience: FmodEvent = null
+
+# book effects
+var openBook: FmodEvent = null
+var closeBook: FmodEvent = null
+var turnPage: FmodEvent = null
+
+# phone effects
+var pickupPhone: FmodEvent = null
+var hangupPhone: FmodEvent = null
 var handOnPhone: FmodEvent = null
 
 # snapshots
@@ -22,13 +30,30 @@ var monsterScreamerHigh: FmodEvent = null
 var monsterMumbling: FmodEvent = null
 var monsterParasiteFootsteps: FmodEvent = null
 
+var prev_timer = 0;
 
 func _ready():
 	loadSoundEvents()
+	
+func _process(delta):
+	if prev_timer != Dialogic.VAR.timer :
+		prev_timer = Dialogic.VAR.timer
+		if(prev_timer == 10):
+			setAmbienceIntensityLow()
+		if(prev_timer == 6):
+			setAmbienceIntensityMid()
+		if(prev_timer == 3):
+			setAmbienceIntensityHigh()
 
 func loadSoundEvents():
-	pageTurn = FmodServer.create_event_instance("event:/Glossary/TurnPage")
 	ceilingLightAmbience = FmodServer.create_event_instance("event:/Ambience/CeilingLightAmbience")
+	
+	turnPage = FmodServer.create_event_instance("event:/Glossary/TurnPage")
+	openBook = FmodServer.create_event_instance("event:/Glossary/OpenBook")
+	closeBook = FmodServer.create_event_instance("event:/Glossary/CloseBook")
+	
+	pickupPhone = FmodServer.create_event_instance("event:/Phone/PickupPhone")
+	hangupPhone = FmodServer.create_event_instance("event:/Phone/HangupPhone")
 	handOnPhone = FmodServer.create_event_instance("event:/Phone/HandOnPhone")
 	
 	focus = FmodServer.create_event_instance("snapshot:/Focus")

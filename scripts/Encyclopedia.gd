@@ -34,7 +34,7 @@ func nextPage():
 		page += 1
 		view.showPages(page)
 		animation_player.play("Armature_001Action")
-		FmodEventMessenger.pageTurn.start();
+		FmodEventMessenger.turnPage.start();
 		UIscale = p2	
 
 func prevPage():
@@ -43,7 +43,7 @@ func prevPage():
 	else:
 		view.showPages(page)
 		animation_player.play_backwards("Armature_001Action")
-		FmodEventMessenger.pageTurn.start();
+		FmodEventMessenger.turnPage.start();
 		UIscale = p1
 		page -= 1	
 

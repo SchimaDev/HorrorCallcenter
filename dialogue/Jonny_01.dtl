@@ -1,7 +1,6 @@
 player: AID Abomination Inquiry Desk, how can I help you?
 Jonny: Good day Sir...? Ma’am...? Hello!
 do FmodEventMessenger.playFootsteps()
-do FmodEventMessenger.setAmbienceIntensityLow()
 Jonny: For you see. I have found myself in a rather odd situation.
 label question
 if {timer} <= 0:
@@ -10,10 +9,9 @@ if {timer} <= 0:
 	jump MonsterChoice
 else:
 	do FmodEventMessenger.playFootsteps()
+	do FmodEventMessenger.playDroneSound()
 	set {timer} -= 1
-	if {timer} == 6:
-		do FmodEventMessenger.setAmbienceIntensityMid()
-		
+	
 	- What do you see? [if !{questions.q01}][else="hide"]
 		Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
 		set {questions.q01} = true
