@@ -35,4 +35,6 @@ func compareWords():
 		var v = chosenMonster + "." + chosenWordDialogue
 		Dialogic.VAR.set_variable(v, true)
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
+		Dialogic.start_timeline("Jonny_01", "question")
+		Dialogic.VAR.timer += 1
 

@@ -7,7 +7,7 @@ label question
 if {timer} <= 0:
 	Jonny: I'm sorry, we're out of time....
 	set {_MonsterSelect.timeout} = true
-	jump MonsterChoice
+	jump question
 else:
 	set {timer} -= 1
 	- What do you see? [if !{questions.q01}][else="hide"]
@@ -18,7 +18,7 @@ else:
 	- What do you hear? [if !{questions.q02}][else="hide"]
 		Jonny: Well, he walks, or rather stomps, around the house aimlessly. I think even you might be able to hear it.
 		Jonny: Despite this he also appears to be saying... something?
-		Jonny: However to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense. 
+		Jonny: However to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense.
 		Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
 		do FmodEventMessenger.playMumbling()
 		[wait time="2.0"]
@@ -29,7 +29,7 @@ else:
 		Jonny: I am currently residing in my [url="apartment"]apartment[/url]. Which makes this especially peculiar.
 		set {questions.q03} = true
 	
-	- What does the Person do? [if ({Parasite.person} || {Doppelganger.person} || {Tally.person}) && !{questions.q04}][else="hide"]
+	- What does the Person do? [if ({Parasite.person} || {Tally.person}) && !{questions.q04}][else="hide"]
 		do FmodEventMessenger.playFootsteps()
 		Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
 		Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
@@ -87,14 +87,49 @@ jump question
 
 label MonsterChoice
 - Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
+	player: [instruction on how to deal with a Doppelganger]
+	jump failedAction
 - Parasite [if {_MonsterSelect.Parasite}][else="hide"]
 	- You are infected.
+		player: [instruction on how to deal with a Parasite infection]
+		jump failedAction
 	- The person you are seeing is infected.
+		player: [instruction on how to deal with someone who is infected by a Parasite]
+		jump solution
 - Tally [if {_MonsterSelect.Tally}][else="hide"]
+	player: [instruction on how to deal with a Tally]
+	jump failedAction
 - Analogue [if {_MonsterSelect.Analogue}][else="hide"]
+	player: [instruction on how to deal with a Analogue]
+	jump failedAction
 - Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]
+	player: [instruction on how to deal with a Fear Of Death]
+	jump failedAction
 - Screamer [if {_MonsterSelect.Screamer}][else="hide"]
+	player: [instruction on how to deal with a Screamer]
+	jump failedAction
 - Ooze [if {_MonsterSelect.Ooze}][else="hide"]
+	player: [instruction on how to deal with a Ooze]
+	jump failedAction
 - Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
 	set {timer} += 1
 	jump question
+
+label failedAction
+Jonny: Of course! I shall do so.
+Jonny: .....
+Jonny: That... appeared to have caused a quite interesting yet probably dangerous outcome.
+Jonny: Well. It seems I am hunted.
+Jonny: AAAH.
+Jonny: <Empty Text Event>
+Jonny: ............
+[i]beep beep beep beep[/i] (it seems the call got disconnected)
+
+label solution
+Jonny: Of course! I shall do so.
+Jonny: .....
+Jonny: Oh... very interesting.
+Jonny: It appears to have worked. My friend over here has collapsed onto the ground.
+Jonny: And I have stomped onto the worm.
+Jonny: Jonny Smith thanks you and A.I.D.  kindly for your service!
+Jonny: I wish you the best regards.

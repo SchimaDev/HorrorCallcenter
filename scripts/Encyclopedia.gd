@@ -16,8 +16,8 @@ var last_event_time: float = -1.0
 @onready var view = $SubViewport/GUI/Control
 
 var page = 0
-var p1 = [0.852, 0.49, 1.68, 0.60]
-var p2 = [2.6, 1.48, 1.7, 0.60]
+var p1 = [0.88, 0.48, 1.85, 0.63]
+var p2 = [2.75, 1.48, 1.85, 0.63]
 var UIscale = p1
 
 func _ready():
