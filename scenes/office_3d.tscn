@@ -105,7 +105,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bsf7n"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6x74f"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -131,7 +131,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_sdm0l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_dsplt"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -160,28 +160,12 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_bsf7n")
+shadow_mesh = SubResource("ArrayMesh_6x74f")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6de2t"]
 size = Vector3(0.191406, 0.101563, 0.234375)
-
-[sub_resource type="Animation" id="Animation_1l3gn"]
-resource_name = "fade_in"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FadeIn/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.615686), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_jf0ib"]
 length = 0.001
@@ -220,6 +204,22 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-1.5708, -3.61283, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1l3gn"]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.615686), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_8itpd"]
@@ -288,10 +288,10 @@ collision_layer = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00274658, 0.0142212, 0)
 
 [node name="Book" parent="." instance=ExtResource("12_l04is")]
-transform = Transform3D(-0.267301, -0.136198, -5.95337e-09, 0, -1.31134e-08, 0.3, -0.136197, 0.267303, 1.16842e-08, -0.757, 1.558, 1.391)
+transform = Transform3D(-0.267301, -0.136197, -4.93031e-07, 0, -1.086e-06, 0.3, -0.136196, 0.267303, 9.67631e-07, -0.757, 1.558, 1.391)
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://audio/fmod/horrorcallcenter/Build/Desktop/Master.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Master.strings.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/SFX.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Ambience.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Music.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Phone SFX.bank"]
+bank_paths = ["res://audio/fmod/horrorcallcenter/Build/Desktop/Master.strings.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Master.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/SFX.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Ambience.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Music.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Phone SFX.bank"]
 
 [node name="DeskCamera" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
 transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
@@ -388,7 +388,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_sdm0l")
+mesh = SubResource("ArrayMesh_dsplt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)

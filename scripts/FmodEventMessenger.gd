@@ -82,6 +82,9 @@ func playMumbling():
 	
 func playHandOnPhone():
 	handOnPhone.start()
+	
+func playPickupPhone():
+	pickupPhone.start()
 
 func setAmbienceIntensityLow():
 	setAmbienceIntensity(0)
