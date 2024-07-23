@@ -28,6 +28,7 @@ func _on_transition_3d_finished(from: Camera3D, to: Camera3D, duration: float):
 func _on_exit_button_pressed() -> void:
 		CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
 		ui.visible = false
+		$"../../AnimationPlayer".play_backwards("pickup_book")
 		emit_signal("view_exited")
 		
 func switchView():

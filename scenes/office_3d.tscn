@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://syhj0k5qflvo"]
+[gd_scene load_steps=55 format=3 uid="uid://syhj0k5qflvo"]
 
 [ext_resource type="Script" path="res://scenes/office_3d.gd" id="1_4mcyp"]
 [ext_resource type="Shader" path="res://resources/shaders/pixelation.gdshader" id="1_fkef8"]
@@ -20,20 +20,32 @@
 [ext_resource type="Script" path="res://scenes/View.gd" id="14_mn5km"]
 [ext_resource type="Shader" path="res://resources/shaders/interact.gdshader" id="18_t7u8g"]
 [ext_resource type="PackedScene" uid="uid://cqpdhfjujoeti" path="res://art/3D/telephone model/telephone.tscn" id="21_uf1ls"]
+[ext_resource type="Script" path="res://art/3D/telephone model/telephone.gd" id="22_csw6m"]
 [ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://gui_in_3d/gui_panel_3d.tscn" id="22_mxmrp"]
+[ext_resource type="PackedScene" uid="uid://dom58wb2hrqoh" path="res://art/3D/All_pack/scenes/Paintings.scn" id="23_3annu"]
+[ext_resource type="PackedScene" uid="uid://bmjxeiqyl8nfo" path="res://art/3D/Models pack psx/scenes/Cube_075.scn" id="24_nxdhs"]
+[ext_resource type="PackedScene" uid="uid://c8kpqt8i3hi0e" path="res://art/3D/Models pack psx/scenes/Cube_147.scn" id="25_avk7n"]
+[ext_resource type="PackedScene" uid="uid://bxlhmblfo1h6o" path="res://art/3D/Models pack psx/scenes/Librero.scn" id="26_ppeow"]
+[ext_resource type="PackedScene" uid="uid://d2cqe8uga0sgu" path="res://art/3D/Models pack psx/scenes/bote_001.scn" id="27_nefgw"]
+[ext_resource type="PackedScene" uid="uid://dh3hha4qjnb7h" path="res://art/3D/Models pack psx/scenes/Cube_004.scn" id="28_jx5w1"]
+[ext_resource type="PackedScene" uid="uid://dguislsp4lwlk" path="res://art/3D/Models pack psx/scenes/Cube_003.scn" id="29_xtrfn"]
+[ext_resource type="PackedScene" uid="uid://bybfxi0bmksnp" path="res://art/3D/Models pack psx/scenes/Cube_236.scn" id="30_he6go"]
+[ext_resource type="PackedScene" uid="uid://hm6a51axjw87" path="res://art/3D/All_pack/scenes/Book_01.scn" id="31_b7lp1"]
+[ext_resource type="PackedScene" uid="uid://bx035mu8bb2jc" path="res://art/3D/All_pack/scenes/Book_02.scn" id="32_sxrlq"]
+[ext_resource type="PackedScene" uid="uid://byi76v6c7usc7" path="res://art/3D/All_pack/scenes/Book_03.scn" id="33_agrkp"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4ifuj"]
 resource_local_to_scene = true
 size = Vector2(0.578, 0.439)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tmdcn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_drlk4"]
 viewport_path = NodePath("GUIPanel3D/ScreenViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jmgf"]
 resource_local_to_scene = true
 transparency = 1
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_tmdcn")
+albedo_texture = SubResource("ViewportTexture_drlk4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
 albedo_texture = ExtResource("3_f5b3j")
@@ -93,7 +105,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_57wsc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bsf7n"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -119,7 +131,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qql08"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_sdm0l"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -148,12 +160,117 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_57wsc")
+shadow_mesh = SubResource("ArrayMesh_bsf7n")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6de2t"]
+size = Vector3(0.191406, 0.101563, 0.234375)
+
+[sub_resource type="Animation" id="Animation_1l3gn"]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.615686), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jf0ib"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Book:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.757, 1.558, 1.391)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Book:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.61283, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8itpd"]
+resource_name = "pickup_book"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Book:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.757119, 1.55841, 1.39062), Vector3(-0.544, 2.064, 0.986)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Book:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.61283, 0), Vector3(-0.00349064, -3.03687, -0.0174533)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iudar"]
+_data = {
+"RESET": SubResource("Animation_jf0ib"),
+"fade_in": SubResource("Animation_1l3gn"),
+"pickup_book": SubResource("Animation_8itpd")
+}
+
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0.000279502, 0.000144524, -0.000279523, 1, 0.000151104, -0.000144482, -0.000151144, 1, 0, 0, 0)
 script = ExtResource("1_4mcyp")
+
+[node name="FadeIn" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FadeIn"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="GUIPanel3D" parent="." instance=ExtResource("22_mxmrp")]
 transform = Transform3D(-0.951766, 0, -0.306825, 0, 1, 0, 0.306825, 0, -0.951766, -0.0657591, 1.96376, 1.13925)
@@ -171,10 +288,10 @@ collision_layer = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00274658, 0.0142212, 0)
 
 [node name="Book" parent="." instance=ExtResource("12_l04is")]
-transform = Transform3D(-0.298312, -0.0050976, -0.0313584, -0.00523568, 0.299953, 0.0010472, 0.0313355, 0.00158858, -0.298355, -0.544, 2.064, 0.986)
+transform = Transform3D(-0.267301, -0.136198, -5.95337e-09, 0, -1.31134e-08, 0.3, -0.136197, 0.267303, 1.16842e-08, -0.757, 1.558, 1.391)
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://audio/fmod/horrorcallcenter/Build/Desktop/Master.strings.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Master.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Ambience.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Phone SFX.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/SFX.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Music.bank"]
+bank_paths = ["res://audio/fmod/horrorcallcenter/Build/Desktop/Master.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Master.strings.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/SFX.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Ambience.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Music.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Phone SFX.bank"]
 
 [node name="DeskCamera" type="Camera3D" parent="." node_paths=PackedStringArray("targetCamera")]
 transform = Transform3D(-0.978867, -0.0199553, 0.20352, 0, 0.995227, 0.0975829, -0.204496, 0.0955207, -0.974196, -0.702621, 2.42698, -0.266604)
@@ -185,6 +302,7 @@ targetCamera = NodePath("../Monitor/Camera")
 
 [node name="Highlight Ray" type="RayCast3D" parent="DeskCamera"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+enabled = false
 target_position = Vector3(0, -3, 0)
 collision_mask = 2
 collide_with_areas = true
@@ -270,7 +388,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_qql08")
+mesh = SubResource("ArrayMesh_sdm0l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
@@ -293,9 +411,56 @@ text = "Exit Computer View"
 
 [node name="Telephone" parent="." instance=ExtResource("21_uf1ls")]
 transform = Transform3D(-1.4124, 0, 0.970858, 0, 1.71389, 0, -0.970858, 0, -1.4124, -1.55176, 1.54589, 1.27106)
+script = ExtResource("22_csw6m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Telephone"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_6de2t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iudar")
+}
+
+[node name="Painting" parent="." instance=ExtResource("23_3annu")]
+transform = Transform3D(1.013, -2.59448e-10, 1.45519e-10, 2.75158e-12, 1.013, 1.45519e-10, -1.45519e-10, -1.45519e-10, 1.013, -2.25963, 2.48328, 2.80886)
+
+[node name="Door" parent="." instance=ExtResource("24_nxdhs")]
+transform = Transform3D(-1, -3.10525e-10, 3.26007e-07, -3.09873e-10, 1, 0, -3.25846e-07, 0, -1, 4.04036, 2.14455, -7.17688)
+
+[node name="Coatrack" parent="." instance=ExtResource("25_avk7n")]
+transform = Transform3D(-4.34375e-08, -5.43354e-10, 1, 0, 1, 1.09328e-09, -1, 0, -4.34375e-08, 4.89733, 3.50722, -4.45574)
+
+[node name="Bookshelf2" parent="." instance=ExtResource("26_ppeow")]
+transform = Transform3D(-4.38595e-08, -2.81418e-10, -1, 0, 1, -3.27205e-12, 1, 0, -4.3714e-08, -4.66403, 1.87897, -2.39375)
+
+[node name="Bookshelf1" parent="." instance=ExtResource("26_ppeow")]
+transform = Transform3D(-4.37114e-08, -1.65004e-10, -1, 0, 1, -1.65004e-10, 1, -7.21255e-18, -4.37114e-08, -4.66433, 1.87935, 0.318723)
+
+[node name="TrashCan" parent="." instance=ExtResource("27_nefgw")]
+transform = Transform3D(0.575, -1.0361e-10, 0, 1.00274e-10, 0.575, 0, -5.09317e-11, 0, 0.575, 1.01761, 0.463491, 1.05926)
+
+[node name="Cube_004" parent="." instance=ExtResource("28_jx5w1")]
+transform = Transform3D(-3.14612e-08, -3.56874e-10, 0.72, 0, 0.72, 3.32014e-10, -0.72, 7.27596e-12, -3.14903e-08, 4.94479, 5.23345, 1.11835)
+
+[node name="Cube_003" parent="." instance=ExtResource("29_xtrfn")]
+transform = Transform3D(-3.13375e-08, -2.40458e-10, 0.72, -1.23691e-10, 0.72, -2.66454e-12, -0.720001, 0, -3.15995e-08, 5.11243, 5.24064, 1.14771)
+
+[node name="Cube_236" parent="." instance=ExtResource("30_he6go")]
+transform = Transform3D(0.75005, -2.24476e-10, -5.45697e-11, 1.97673e-10, 0.750052, -7.27596e-12, 0, 7.27596e-12, 0.404224, 2.86991, 3.07315, 2.70758)
+
+[node name="Book_01" parent="." instance=ExtResource("31_b7lp1")]
+transform = Transform3D(6.69934e-09, 0.171729, -7.50452e-09, 0, -7.50461e-09, -0.171729, 0.153601, -7.49242e-09, 1.45519e-11, 2.81453, 3.31147, 2.69247)
+
+[node name="Book_02" parent="." instance=ExtResource("32_sxrlq")]
+transform = Transform3D(6.68297e-09, 0.171729, 7.50578e-09, 0, 7.56755e-09, -0.171729, 0.153601, -7.53789e-09, 0, 2.73777, 3.31488, 2.70766)
+
+[node name="Book_03" parent="." instance=ExtResource("33_agrkp")]
+transform = Transform3D(-1.97979e-08, -0.167191, 0.0392144, 3.06682e-09, 0.0392144, 0.167191, 0.153601, -2.23081e-08, 1.69894e-09, 2.64118, 3.31445, 2.71768)
 
 [connection signal="view_entered" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_entered"]
 [connection signal="view_exited" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_exited"]
 [connection signal="pressed" from="Monitor/UI/Button" to="Monitor/Camera" method="_on_exit_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="GUIPanel3D"]
