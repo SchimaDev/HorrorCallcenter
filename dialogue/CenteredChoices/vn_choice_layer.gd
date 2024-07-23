@@ -39,7 +39,7 @@ extends DialogicLayoutLayer
 @export_file("*.wav", "*.ogg", "*.mp3") var sounds_focus: String = "res://addons/dialogic/Example Assets/sound-effects/typing4.wav"
 
 func get_choices() -> VBoxContainer:
-	return $Choices
+	return $ScrollContainer/Choices
 
 
 func get_button_sound() -> DialogicNode_ButtonSound:
@@ -101,6 +101,16 @@ func _apply_export_overrides() -> void:
 		if not child is DialogicNode_ChoiceButton:
 			continue
 		var choice: DialogicNode_ChoiceButton = child as DialogicNode_ChoiceButton
+		#var text: RichTextLabel = RichTextLabel.new()
+		#choice.add_child(text)
+		#text.anchor_left = 0.0
+		#text.anchor_top = 0.0
+		#text.anchor_right = 1.0
+		#text.anchor_bottom = 1.0
+		#text.mouse_filter =Control.MOUSE_FILTER_IGNORE
+		##text.text = choice.text
+		#choice.text = ""
+		
 
 		if boxes_fill_width:
 			choice.size_flags_horizontal = Control.SIZE_FILL

@@ -2,8 +2,9 @@ do FmodEventMessenger.playPickupPhone()
 player: AID Abomination Inquiry Desk, how can I help you?
 Lucia: Hola? Hello? Is there someone?!
 Lucia: I need help... I... Dios mío, I don’t know what’s happening...
-Lucia: There is [url="person"]somebody[/url][url="basement"]in my basement[/url] .
+Lucia: There is [url="person"]somebody[/url] [url="basement"]in my basement[/url] .
 label question
+[signal arg="ask"]
 if {timer} <= 0:
 	Lucia: I'm sorry, we're out of time....
 	set {_MonsterSelect.timeout} = true
@@ -11,65 +12,78 @@ if {timer} <= 0:
 else:
 	set {timer} -= 1
 	- What do you see? [if !{questions.q01}][else="hide"]
+		[signal arg="answer"]
 		Lucia: A [url="person"]person.[/url] He... looks wrong. Long, with stretched out arms. And no clothes or... anything.
 		Lucia: ... Dios mío...
 		set {questions.q01} = true
 	
 	- What do you hear? [if !{questions.q02}][else="hide"]
+		[signal arg="answer"]
 		Lucia: N... nothing. It is [url="quiet"]dead quiet...[/url]
 		set {questions.q02} = true
 	
 	- Where are you right now? [if !{questions.q03}][else="hide"]
+		[signal arg="answer"]
 		Lucia: I told you I'm [url="basement]in my basement.[/url]
 		set {questions.q03} = true
 	
-	- What does the Person do? [if ({Parasite.person} || {Doppelganger.person} || {Tally.person}) && !{questions.q04}][else="hide"]
+	- What does the Person do? [if ({Parasite.person} || {Tally.person}) && !{questions.q04}][else="hide"]
+		[signal arg="answer"]
 		Lucia: It is just [url="standing in corner"]standing there in the corner....[/url]
 		Lucia: It doesn’t move. It doesn’t talk. It's just... [url="staring"]staring at me...[/url]
 		Lucia: Ooh dios mío, these eyes... [url="many eyes"]so many eyes...[/url]
 		set {questions.q04} = true
 	
 	- How do you feel [if ({FearOfDeath.basement} || {FearOfDeath.quiet} || {FearOfDeath.standing in corner} || {FearOfDeath.scared} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q05}][else="hide"]
+		[signal arg="answer"]
 		Lucia: I... I am scared. [url="scared"]VERY scared.[/url] Please help me.
 		- Try to take deep, even breaths. We will figure this out together.
 		Lucia: You... you are right... I need to... stay calm... even if it’s hard...
 		set {questions.q05} = true
 	
 	- How does the area look? [if ({Ooze.basement} || {Ooze.standing in corner}) && !{questions.q06}][else="hide"]
+		[signal arg="answer"]
 		Lucia: As always? Dusty boxes left and right, a flickering ceiling lamp at the top and an old rug on the ground. It is a [url="basement"]basement[/url] after all...
 		set {questions.q06} = true
 	
 	- Can you hear any static noise or electric buzzing? [if ({Analogue.basement}) && !{questions.q07}][else="hide"]
+		[signal arg="answer"]
 		Lucia: No. Not that I can hear... it's [url="quiet"]very quiet.[/url]
 		set {questions.q07} = true
 	
 	- Is there light? [if ({Tally.basement} || {Tally.standing in corner} || {Tally.staring}) && !{questions.q08}][else="hide"]
+		[signal arg="answer"]
 		Lucia: Sí, the ceiling light is on.
 		set {questions.q08} = true
 	
 	- Is there any sound at all? [if ({Tally.quiet}) && !{questions.q09}][else="hide"]
+		[signal arg="answer"]
 		Lucia: No. [url="quiet"]There is absolutely nothing.[/url]
 		set {questions.q09} = true
 	
 	- Are there any additional people? [if ({Doppelganger.person}) && !{questions.q10}][else="hide"]
+		[signal arg="answer"]
 		Lucia: Not really. I'm the only one here. I've [url="no people"]never seen anyone else down here.[/url]
 		set {questions.q10} = true
 	
 	- Is there a flickering screen of any sort? [if ({Analogue.standing in corner}) && !{questions.q11}][else="hide"]
+		[signal arg="answer"]
 		Lucia: A screen...? No. Again, there is a [url="person"]person[/url] in front of me.
 		set {questions.q11} = true
 	
 	- Are you outside? [if ({Screamer.staring} || {Screamer.no people}) && !{questions.q12}][else="hide"]
+		[signal arg="answer"]
 		Lucia: No...? I told you I'm in my [url="basement"]basement.[/url]
 		set {questions.q12} = true
 	
 	- I think i know what you're dealing with. It's a.. [if {_MonsterSelect.Doppelganger} || {_MonsterSelect.Parasite} || {_MonsterSelect.Tally} || {_MonsterSelect.Analogue} || {_MonsterSelect.FearofDeath} || {_MonsterSelect.Screamer} || {_MonsterSelect.Ooze} ][else="hide"]
+		[signal arg="answer"]
 		jump MonsterChoice
 
 jump question
 
 label MonsterChoice
-- Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
+- Doppelganger [if {_MonsterSelect.Doppelganger}][else="hide"]
 	player: [instruction on how to deal with a Doppelganger]
 	jump failedAction
 - Parasite [if {_MonsterSelect.Parasite}][else="hide"]
@@ -105,6 +119,7 @@ Lucia: I... oh god... It's coming toward me... WHY IS IT COMING TOWARD ME?!
 Lucia: What do I do, oh dios mío, what do I do?!?!
 Lucia: AAAAAAAAAAAAAAAAH!
 [i]beep beep beep beep[/i] (it seems the call got disconnected)
+[end_timeline]
 
 label solution
 Lucia: Okay. Give me a moment.

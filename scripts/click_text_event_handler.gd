@@ -4,6 +4,7 @@ var chosenWordDictionary = []
 var chosenWordDialogue = ""
 var chosenMonster = ""
 var reloadQuestions = false
+var dialog = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,6 +44,6 @@ func compareWords():
 		Dialogic.VAR.set_variable(v, true)
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
 		if reloadQuestions:
-			Dialogic.start_timeline("Jonny_01", "question")
+			Dialogic.start_timeline(dialog, "question")
 			Dialogic.VAR.timer += 1
 
