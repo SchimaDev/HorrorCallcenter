@@ -3,10 +3,17 @@ extends Node
 var chosenWordDictionary = []
 var chosenWordDialogue = ""
 var chosenMonster = ""
+var reloadQuestions = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+func _on_dialogic_signal(argument:String):
+	if argument == "ask":
+		reloadQuestions = true
+	elif argument == "answer":
+		reloadQuestions = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,4 +42,7 @@ func compareWords():
 		var v = chosenMonster + "." + chosenWordDialogue
 		Dialogic.VAR.set_variable(v, true)
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
+		if reloadQuestions:
+			Dialogic.start_timeline("Jonny_01", "question")
+			Dialogic.VAR.timer += 1
 

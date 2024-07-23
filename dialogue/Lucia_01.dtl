@@ -69,14 +69,47 @@ jump question
 
 label MonsterChoice
 - Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
+	player: [instruction on how to deal with a Doppelganger]
+	jump failedAction
 - Parasite [if {_MonsterSelect.Parasite}][else="hide"]
 	- You are infected.
+		player: [instruction on how to deal with a Parasite infection]
+		jump failedAction
 	- The person you are seeing is infected.
+		player: [instruction on how to deal with someone who is infected by a Parasite]
+		jump failedAction
 - Tally [if {_MonsterSelect.Tally}][else="hide"]
+	player: [instruction on how to deal with a Tally]
+	jump solution
 - Analogue [if {_MonsterSelect.Analogue}][else="hide"]
+	player: [instruction on how to deal with a Analogue]
+	jump failedAction
 - Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]
+	player: [instruction on how to deal with a Fear Of Death]
+	jump failedAction
 - Screamer [if {_MonsterSelect.Screamer}][else="hide"]
+	player: [instruction on how to deal with a Screamer]
+	jump failedAction
 - Ooze [if {_MonsterSelect.Ooze}][else="hide"]
+	player: [instruction on how to deal with a Ooze]
+	jump failedAction
 - Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
 	set {timer} += 1
 	jump question
+
+label failedAction
+Lucia: Okay. Give me a moment.
+Lucia: .....
+Lucia: I... oh god... It's coming toward me... WHY IS IT COMING TOWARD ME?!
+Lucia: What do I do, oh dios mío, what do I do?!?!
+Lucia: AAAAAAAAAAAAAAAAH!
+[i]beep beep beep beep[/i] (it seems the call got disconnected)
+
+label solution
+Lucia: Okay. Give me a moment.
+Lucia: .....
+Lucia: That... seemed to have worked.
+Lucia: Oh muchas gracias, thank you SO MUCH!
+Lucia: I don’t know how I can thank you. You saved me!
+Lucia: Just... Gracias! I... I’m Lucia. Lucia Garcia.
+Lucia: You saved my life. Again, thank you.  Adiós

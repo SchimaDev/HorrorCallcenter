@@ -534,7 +534,6 @@ text = "[center]Danger Rating:
 ★★★★☆"
 
 [node name="View4" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View4"]
 position = Vector2(-327.373, -256.417)
@@ -673,7 +672,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-It appears as a[url=\"FearOfDeath, quiet\"]silent [/url], [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembling a black hole. 
+It appears as a [url=\"FearOfDeath, quiet\"]silent[/url], [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembling a black hole. 
 Exposure to the creature causes [url=\"FearOfDeath, scared\"]paranoia[/url] and extreme panic attacks that lead to lethal heart attacks within just a few minutes. 
 No method against the monster has been found so far. Send the caller away from it and calm them down. "
 metadata/_edit_use_anchors_ = true
@@ -853,6 +852,7 @@ text = "[center]Danger Rating:
 ★★★★☆"
 
 [node name="View6" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View6"]
 position = Vector2(-327.373, -259.592)
