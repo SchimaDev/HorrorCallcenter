@@ -1,3 +1,4 @@
+do FmodEventMessenger.playPickupPhone()
 player: AID Abomination Inquiry Desk, how can I help you?
 Jonny: Good day Sir...? Ma’am...? Hello!
 do FmodEventMessenger.playFootsteps()

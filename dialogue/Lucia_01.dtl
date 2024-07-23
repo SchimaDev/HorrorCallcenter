@@ -1,3 +1,4 @@
+do FmodEventMessenger.playPickupPhone()
 player: AID Abomination Inquiry Desk, how can I help you?
 Lucia: Hola? Hello? Is there someone?!
 Lucia: I need help... I... Dios mío, I don’t know what’s happening...
@@ -49,7 +50,7 @@ else:
 	- Is there any sound at all? [if ({Tally.quiet}) && !{questions.q09}][else="hide"]
 		Lucia: No. [url="quiet"]There is absolutely nothing.[/url]
 		set {questions.q09} = true
-
+	
 	- Are there any additional people? [if ({Doppelganger.person}) && !{questions.q10}][else="hide"]
 		Lucia: Not really. I'm the only one here. I've [url="no people"]never seen anyone else down here.[/url]
 		set {questions.q10} = true

@@ -22,5 +22,6 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if targeted and get_viewport().get_camera_3d() != camera:
 		if event is InputEventMouseButton:
+			FmodEventMessenger.openBook.start()
 			camera.switchView()
 			$"../AnimationPlayer".play("pickup_book")

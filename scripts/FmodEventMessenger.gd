@@ -12,6 +12,7 @@ var turnPage: FmodEvent = null
 var pickupPhone: FmodEvent = null
 var hangupPhone: FmodEvent = null
 var handOnPhone: FmodEvent = null
+var ringingPhone: FmodEvent = null
 
 # snapshots
 var focus: FmodEvent = null
@@ -55,6 +56,7 @@ func loadSoundEvents():
 	pickupPhone = FmodServer.create_event_instance("event:/Phone/PickupPhone")
 	hangupPhone = FmodServer.create_event_instance("event:/Phone/HangupPhone")
 	handOnPhone = FmodServer.create_event_instance("event:/Phone/HandOnPhone")
+	ringingPhone = FmodServer.create_event_instance("event:/Phone/RingingPhone")
 	
 	focus = FmodServer.create_event_instance("snapshot:/Focus")
 	
@@ -85,6 +87,12 @@ func playHandOnPhone():
 	
 func playPickupPhone():
 	pickupPhone.start()
+	
+func playRingingPhone():
+	ringingPhone.start()
+	
+func stopRingingPhone():
+	ringingPhone.stop(0)
 
 func setAmbienceIntensityLow():
 	setAmbienceIntensity(0)
