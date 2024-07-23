@@ -1,7 +1,12 @@
 extends Node
 
+# sound effects
 var pageTurn: FmodEvent = null
 var ceilingLightAmbience: FmodEvent = null
+var handOnPhone: FmodEvent = null
+
+# snapshots
+var focus: FmodEvent = null
 
 # drone sounds
 var drone1: FmodEvent = null
@@ -24,6 +29,9 @@ func _ready():
 func loadSoundEvents():
 	pageTurn = FmodServer.create_event_instance("event:/Glossary/TurnPage")
 	ceilingLightAmbience = FmodServer.create_event_instance("event:/Ambience/CeilingLightAmbience")
+	handOnPhone = FmodServer.create_event_instance("event:/Phone/HandOnPhone")
+	
+	focus = FmodServer.create_event_instance("snapshot:/Focus")
 	
 	drone1 = FmodServer.create_event_instance("event:/Ambience/DroneSounds/Drone1")
 	drone2 = FmodServer.create_event_instance("event:/Ambience/DroneSounds/Drone2")
@@ -46,6 +54,9 @@ func playFootsteps():
 
 func playMumbling():
 	monsterMumbling.start()
+	
+func playHandOnPhone():
+	handOnPhone.start()
 
 func setAmbienceIntensityLow():
 	setAmbienceIntensity(0)
@@ -60,4 +71,10 @@ func playDroneSound():
 	drone1.start()
 	
 func stopDroneSound():
-	drone1.stop(0);
+	drone1.stop(0)
+	
+func startFocus():
+	focus.start()
+
+func stopFocus():
+	focus.stop(0)

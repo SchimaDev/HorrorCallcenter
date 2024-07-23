@@ -1,7 +1,7 @@
-do FmodEventMessenger.playDroneSound()
 player: AID Abomination Inquiry Desk, how can I help you?
 Jonny: Good day Sir...? Ma’am...? Hello!
-Jonny: I require some assistance in a most peculiar matter.
+do FmodEventMessenger.playFootsteps()
+do FmodEventMessenger.setAmbienceIntensityLow()
 Jonny: For you see. I have found myself in a rather odd situation.
 label question
 if {timer} <= 0:
@@ -9,19 +9,26 @@ if {timer} <= 0:
 	set {_MonsterSelect.timeout} = true
 	jump MonsterChoice
 else:
+	do FmodEventMessenger.playFootsteps()
 	set {timer} -= 1
+	if {timer} == 6:
+		do FmodEventMessenger.setAmbienceIntensityMid()
+		
 	- What do you see? [if !{questions.q01}][else="hide"]
-		do FmodEventMessenger.playFootsteps()
 		Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
 		set {questions.q01} = true
 	
 	- What do you hear? [if !{questions.q02}][else="hide"]
-		Jonny: Well, he walks, or rather stomps, around the house aimlessly. I think even you might be able to hear it.
-		Jonny: Despite this he also appears to be saying... something?
-		Jonny: However to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense. 
+		Jonny: Well, he walks (or rather stomps...) around the house aimlessly. It would not surprise me if even you were to hear it.
+		Jonny: Despite that, he also appears to be saying... something?
+		Jonny: However to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense.
 		Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
+		do FmodEventMessenger.startFocus()
+		do FmodEventMessenger.playHandOnPhone()
 		do FmodEventMessenger.playMumbling()
-		[wait time="2.0"]
+		[wait time="8.0"]
+		do FmodEventMessenger.playHandOnPhone()
+		do FmodEventMessenger.stopFocus()
 		Jonny: I have never hear someone speak like that before, may it be a different language perhaps?
 		set {questions.q02} = true
 	
@@ -30,7 +37,6 @@ else:
 		set {questions.q03} = true
 	
 	- What does the Person do? [if ({Parasite.person} || {Doppelganger.person} || {Tally.person}) && !{questions.q04}][else="hide"]
-		do FmodEventMessenger.playFootsteps()
 		Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
 		Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
 		set {questions.q04} = true
@@ -57,12 +63,18 @@ else:
 	
 	- Ask them something. Do they respond? [if ({Parasite.mumbling}) && !{questions.q10}][else="hide"]
 		Jonny: They most certainly [url="coherent"]respond[/url], yet it sounds as if they have a lisp.
-		Jonny: Their answers are also notably short.
+		Jonny: I don't think that he reacts to me in any way
 		set {questions.q10} = true
 	
 	- Can you make out what they are saying? [if ({Doppelganger.mumbling}) && !{questions.q11}][else="hide"]
 		Jonny: Somewhat. It appears as if they are [url="coherent"]rambling about the door[/url] they try to open.
-		set {questions.q11} = true
+		Jonny: Maybe you can figure out what he is rambling about...
+		do FmodEventMessenger.startFocus()
+		do FmodEventMessenger.playHandOnPhone()
+		do FmodEventMessenger.playMumbling()
+		[wait time="8.0"]
+		do FmodEventMessenger.playHandOnPhone()
+		do FmodEventMessenger.stopFocus()
 	
 	- Are there any other sounds? [if ({Screamer.mumbling}) && !{questions.q12}][else="hide"]
 		Jonny: No. Just mumbling. Sounds like a [url="person"]person[/url].
@@ -82,19 +94,19 @@ else:
 	
 	- I think i know what you're dealing with. It's a.. [if {_MonsterSelect.Doppelganger} || {_MonsterSelect.Parasite} || {_MonsterSelect.Tally} || {_MonsterSelect.Analogue} || {_MonsterSelect.FearofDeath} || {_MonsterSelect.Screamer} || {_MonsterSelect.Ooze} ][else="hide"]
 		jump MonsterChoice
-
-jump question
-
-label MonsterChoice
-- Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
-- Parasite [if {_MonsterSelect.Parasite}][else="hide"]
-	- You are infected.
-	- The person you are seeing is infected.
-- Tally [if {_MonsterSelect.Tally}][else="hide"]
-- Analogue [if {_MonsterSelect.Analogue}][else="hide"]
-- Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]
-- Screamer [if {_MonsterSelect.Screamer}][else="hide"]
-- Ooze [if {_MonsterSelect.Ooze}][else="hide"]
-- Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
-	set {timer} += 1
+	
 	jump question
+	
+	label MonsterChoice
+	- Doppelgänger [if {_MonsterSelect.Doppelganger}][else="hide"]
+	- Parasite [if {_MonsterSelect.Parasite}][else="hide"]
+		- You are infected.
+		- The person you are seeing is infected.
+	- Tally [if {_MonsterSelect.Tally}][else="hide"]
+	- Analogue [if {_MonsterSelect.Analogue}][else="hide"]
+	- Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]
+	- Screamer [if {_MonsterSelect.Screamer}][else="hide"]
+	- Ooze [if {_MonsterSelect.Ooze}][else="hide"]
+	- Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
+		set {timer} += 1
+		jump question
