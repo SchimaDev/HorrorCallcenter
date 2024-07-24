@@ -27,7 +27,11 @@ func _on_exit_button_pressed() -> void:
 		ui.visible = false
 		$"../../AnimationPlayer".play_backwards("pickup_book")
 		emit_signal("view_exited")
-		
+
+func _input(_event):
+	if Input.is_action_just_pressed("exit_view") && ui.visible:
+		_on_exit_button_pressed()
+
 func switchView():
 	CameraShifter.transition_to_requested_camera_3d(get_viewport().get_camera_3d(), self, 1)
 	emit_signal("view_entered")
