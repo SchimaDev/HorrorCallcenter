@@ -227,19 +227,6 @@ position = Vector2(-327.373, -259.592)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("5_hphtm")
 
-[node name="Button" type="Button" parent="BookMesh2Untitled/View2/Page0"]
-offset_left = -212.0
-offset_top = 183.0
-offset_right = 1088.0
-offset_bottom = 1497.0
-scale = Vector2(0.075, 0.075)
-focus_mode = 0
-theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("4_fmkdm")
-flat = true
-clip_text = true
-icon_alignment = 1
-
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page0"]
 offset_left = -166.0
 offset_top = -222.441
@@ -255,6 +242,19 @@ Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/
 Parasites try to stay where humans are and are often to be found around [url=\"Parasite, apartment\"]houses[/url] or other frequently populated buildings.
 
 "
+
+[node name="Button" type="Button" parent="BookMesh2Untitled/View2/Page0"]
+offset_left = -212.0
+offset_top = 183.0
+offset_right = 1088.0
+offset_bottom = 1497.0
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+icon_alignment = 1
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(33.4714, -259.592)
@@ -383,19 +383,6 @@ position = Vector2(-327.373, -259.592)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("6_8gkeg")
 
-[node name="Button" type="Button" parent="BookMesh2Untitled/View3/Page0"]
-offset_left = -213.0
-offset_top = 183.0
-offset_right = 1111.0
-offset_bottom = 1533.0
-scale = Vector2(0.075, 0.075)
-focus_mode = 0
-theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("4_fmkdm")
-flat = true
-clip_text = true
-icon_alignment = 1
-
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page0"]
 offset_left = -166.0
 offset_top = -222.441
@@ -425,6 +412,19 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
  ★★☆☆☆"
+
+[node name="Button" type="Button" parent="BookMesh2Untitled/View3/Page0"]
+offset_left = -213.0
+offset_top = 183.0
+offset_right = 1111.0
+offset_bottom = 1533.0
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+icon_alignment = 1
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(33.4714, -259.592)
@@ -509,6 +509,16 @@ text = "
 The best way to remove an Analogue is to turn off or unplug the infected device it currently resides in as quickly as possible. Trapped in the device, the Analogue can no longer move. The appliance should then be buried in the ground to avoid any more spreading.
 Callers might be hesitant about their own devices. Encourage them that this is the only way to stop the creature. "
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page3"]
+offset_left = -186.666
+offset_top = 189.626
+offset_right = 25.3341
+offset_bottom = 243.626
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+★★★★☆"
+
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View3/Page3"]
 offset_left = 113.556
 offset_top = 250.999
@@ -523,35 +533,13 @@ flat = true
 clip_text = true
 vertical_icon_alignment = 2
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page3"]
-offset_left = -186.666
-offset_top = 189.626
-offset_right = 25.3341
-offset_bottom = 243.626
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center]Danger Rating:
-★★★★☆"
-
 [node name="View4" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View4"]
 position = Vector2(-327.373, -256.417)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("5_hphtm")
-
-[node name="Button" type="Button" parent="BookMesh2Untitled/View4/Page0"]
-offset_left = -213.0
-offset_top = 183.0
-offset_right = 1111.0
-offset_bottom = 1533.0
-scale = Vector2(0.075, 0.075)
-focus_mode = 0
-theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("4_fmkdm")
-flat = true
-clip_text = true
-icon_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page0"]
 offset_left = -166.0
@@ -570,24 +558,23 @@ Being in the immediate area of an infected device can lead to dizziness,[url=\"A
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View4"]
-position = Vector2(33.4714, -256.417)
-scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("7_lji1r")
-
-[node name="Button2" type="Button" parent="BookMesh2Untitled/View4/Page1"]
-offset_left = 114.886
-offset_top = 251.602
-offset_right = 1028.89
-offset_bottom = 1145.6
-rotation = -1.5708
+[node name="Button" type="Button" parent="BookMesh2Untitled/View4/Page0"]
+offset_left = -213.0
+offset_top = 183.0
+offset_right = 1111.0
+offset_bottom = 1533.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
-vertical_icon_alignment = 2
+icon_alignment = 1
+
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View4"]
+position = Vector2(33.4714, -256.417)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("7_lji1r")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page1"]
 offset_left = -166.0
@@ -610,6 +597,20 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
 ★★★★☆"
+
+[node name="Button2" type="Button" parent="BookMesh2Untitled/View4/Page1"]
+offset_left = 114.886
+offset_top = 251.602
+offset_right = 1028.89
+offset_bottom = 1145.6
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
 
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View4"]
 position = Vector2(-325.035, 254.802)
@@ -699,19 +700,6 @@ position = Vector2(-327.373, -259.592)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("8_5wa22")
 
-[node name="Button" type="Button" parent="BookMesh2Untitled/View5/Page0"]
-offset_left = -213.0
-offset_top = 183.0
-offset_right = 1111.0
-offset_bottom = 1533.0
-scale = Vector2(0.075, 0.075)
-focus_mode = 0
-theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("4_fmkdm")
-flat = true
-clip_text = true
-icon_alignment = 1
-
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page0"]
 anchors_preset = -1
 anchor_top = -0.0190418
@@ -741,24 +729,23 @@ A very mysterious creature about which not much is known. It can appear [url=\"F
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View5"]
-position = Vector2(33.4714, -259.592)
-scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("5_hphtm")
-
-[node name="Button2" type="Button" parent="BookMesh2Untitled/View5/Page1"]
-offset_left = 114.886
-offset_top = 251.602
-offset_right = 1028.89
-offset_bottom = 1145.6
-rotation = -1.5708
+[node name="Button" type="Button" parent="BookMesh2Untitled/View5/Page0"]
+offset_left = -213.0
+offset_top = 183.0
+offset_right = 1111.0
+offset_bottom = 1533.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
-vertical_icon_alignment = 2
+icon_alignment = 1
+
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View5"]
+position = Vector2(33.4714, -259.592)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("5_hphtm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page1"]
 offset_left = -166.0
@@ -773,6 +760,20 @@ It appears as a [url=\"FearOfDeath, quiet\"]silent[/url], [url=\"FearOfDeath, st
 Exposure to the creature causes [url=\"FearOfDeath, scared\"]paranoia[/url] and extreme panic attacks that lead to lethal heart attacks within just a few minutes. 
 No method against the monster has been found so far. Send the caller away from it and calm them down. "
 metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="BookMesh2Untitled/View5/Page1"]
+offset_left = 114.886
+offset_top = 251.602
+offset_right = 1028.89
+offset_bottom = 1145.6
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
 
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View5"]
 position = Vector2(-325.035, 254.802)
@@ -827,6 +828,16 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "Should a Screamer become agitated, it will give a very clear warning [url=\"Screamer, staring\"]making direct eye contact[/url] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible."
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page3"]
+offset_left = -220.888
+offset_top = -155.006
+offset_right = -8.88803
+offset_bottom = -59.0064
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+★★★★☆"
+
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View5/Page3"]
 offset_left = 113.556
 offset_top = 250.999
@@ -841,36 +852,12 @@ flat = true
 clip_text = true
 vertical_icon_alignment = 2
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page3"]
-offset_left = -220.888
-offset_top = -155.006
-offset_right = -8.88803
-offset_bottom = -59.0064
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center]Danger Rating:
-★★★★☆"
-
 [node name="View6" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View6"]
 position = Vector2(-327.373, -259.592)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("5_hphtm")
-
-[node name="Button" type="Button" parent="BookMesh2Untitled/View6/Page0"]
-offset_left = -213.0
-offset_top = 183.0
-offset_right = 1111.0
-offset_bottom = 1533.0
-scale = Vector2(0.075, 0.075)
-focus_mode = 0
-theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("4_fmkdm")
-flat = true
-clip_text = true
-icon_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page0"]
 offset_left = -166.0
@@ -889,24 +876,23 @@ When encountering a Screamer, it’s best to calmly retreat, without drawing its
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View6"]
-position = Vector2(33.4714, -259.592)
-scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("9_ygebt")
-
-[node name="Button2" type="Button" parent="BookMesh2Untitled/View6/Page1"]
-offset_left = 114.886
-offset_top = 251.602
-offset_right = 1028.89
-offset_bottom = 1145.6
-rotation = -1.5708
+[node name="Button" type="Button" parent="BookMesh2Untitled/View6/Page0"]
+offset_left = -213.0
+offset_top = 183.0
+offset_right = 1111.0
+offset_bottom = 1533.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
 icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
-vertical_icon_alignment = 2
+icon_alignment = 1
+
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View6"]
+position = Vector2(33.4714, -259.592)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("9_ygebt")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page1"]
 anchors_preset = -1
@@ -931,6 +917,20 @@ bbcode_enabled = true
 text = "[center]Danger Rating:
 ★★★★☆"
 
+[node name="Button2" type="Button" parent="BookMesh2Untitled/View6/Page1"]
+offset_left = 114.886
+offset_top = 251.602
+offset_right = 1028.89
+offset_bottom = 1145.6
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
+
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View6"]
 position = Vector2(-325.035, 254.802)
 scale = Vector2(0.984909, 1.00372)
@@ -952,6 +952,16 @@ It is highly corrosive to non-organic materials, often [url=\"Ooze, standing in 
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page2"]
+offset_left = 7.16323
+offset_top = 170.053
+offset_right = 219.163
+offset_bottom = 266.052
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+★☆☆☆☆"
+
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View6/Page2"]
 offset_left = -215.0
 offset_top = 185.0
@@ -964,16 +974,6 @@ icon = ExtResource("4_fmkdm")
 flat = true
 clip_text = true
 icon_alignment = 1
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page2"]
-offset_left = 7.16323
-offset_top = 170.053
-offset_right = 219.163
-offset_bottom = 266.052
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center]Danger Rating:
-★☆☆☆☆"
 
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View6"]
 position = Vector2(36.5892, 255.596)
@@ -1167,42 +1167,42 @@ expand_icon = true
 [connection signal="pressed" from="BookMesh2Untitled/View1/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View1/Page3/Button4" to="." method="nextPage"]
-[connection signal="pressed" from="BookMesh2Untitled/View2/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View2/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page1/RichTextLabel3" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View2/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View2/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View2/Page3/Button4" to="." method="nextPage"]
-[connection signal="pressed" from="BookMesh2Untitled/View3/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View3/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View3/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View3/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View3/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View3/Page3/Button4" to="." method="nextPage"]
-[connection signal="pressed" from="BookMesh2Untitled/View4/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
-[connection signal="pressed" from="BookMesh2Untitled/View4/Page1/Button2" to="." method="nextPage"]
+[connection signal="pressed" from="BookMesh2Untitled/View4/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View4/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View4/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View4/Page3/Button4" to="." method="nextPage"]
-[connection signal="pressed" from="BookMesh2Untitled/View5/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View5/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
-[connection signal="pressed" from="BookMesh2Untitled/View5/Page1/Button2" to="." method="nextPage"]
+[connection signal="pressed" from="BookMesh2Untitled/View5/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View5/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View5/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View5/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View5/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View5/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View5/Page3/Button4" to="." method="nextPage"]
-[connection signal="pressed" from="BookMesh2Untitled/View6/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View6/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
-[connection signal="pressed" from="BookMesh2Untitled/View6/Page1/Button2" to="." method="nextPage"]
+[connection signal="pressed" from="BookMesh2Untitled/View6/Page0/Button" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View6/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View6/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View6/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View6/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View6/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
