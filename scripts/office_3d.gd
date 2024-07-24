@@ -11,14 +11,7 @@ func _ready() -> void:
 	#$Screen/SubViewport.add_child(layout_copy)
 	#var layout = Dialogic.get_layout_node()
 	#layout.get_parent().remove_child(layout)
-	pass
-	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	$"DeskCamera/Highlight Ray".enabled = true

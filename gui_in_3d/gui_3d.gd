@@ -12,6 +12,7 @@ var last_event_time: float = -1.0
 @onready var node_area = $Quad/Area3D
 
 func _ready():
+	node_quad.get_surface_override_material(0).set("albedo_texture", node_viewport.get_texture())
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)

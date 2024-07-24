@@ -160,6 +160,6 @@ func _on_hide_history_pressed() -> void:
 	get_show_history_button().visible = show_open_button and history_subsystem.get(&'simple_history_enabled')
 	#Dialogic.Text.show_textbox()
 
-func _on_text_finished(dict: Dictionary) -> void:
+func _on_text_finished(_dict: Dictionary) -> void:
 	show_history()
 	pass

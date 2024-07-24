@@ -11,8 +11,8 @@ func _process_custom_fx(char_fx):
 	var name = char_fx.env.get("name", "dizzy")
 	var isDialogueElseDictionary = char_fx.env.get("isDialogue", true)
 	if isDialogueElseDictionary:
-		var temp = ClickTextEventHandler.chosenWordDialogue
-		var equal = ClickTextEventHandler.chosenWordDialogue == name
+		var _temp = ClickTextEventHandler.chosenWordDialogue
+		var _equal = ClickTextEventHandler.chosenWordDialogue == name
 		setActive = ClickTextEventHandler.chosenWordDialogue == name
 	else:
 		setActive = ClickTextEventHandler.chosenWordDictionary == name

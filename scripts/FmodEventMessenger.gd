@@ -36,7 +36,7 @@ var prev_timer = 0;
 func _ready():
 	loadSoundEvents()
 	
-func _process(delta):
+func _process(_delta):
 	if prev_timer != Dialogic.VAR.timer :
 		prev_timer = Dialogic.VAR.timer
 		if(prev_timer == 10):

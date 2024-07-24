@@ -16,19 +16,14 @@ func _on_dialogic_signal(argument:String):
 	elif argument == "answer":
 		reloadQuestions = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func handle_url_tag_clicked(name: String) -> void:
-	print(name)
-	chosenWordDialogue = name
+func handle_url_tag_clicked(clue: String) -> void:
+	print(clue)
+	chosenWordDialogue = clue
 	compareWords()
 
-func handle_Encyclopedia_url_tag_clicked(name: String) -> void:
-	print(name)
-	var n = name.split(", ")
+func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
+	print(clue)
+	var n = clue.split(", ")
 	chosenMonster = n[0]
 	
 	n.remove_at(0)

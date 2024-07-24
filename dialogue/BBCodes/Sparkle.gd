@@ -41,5 +41,5 @@ func _process_custom_fx(char_fx):
 
 	if len(colors) != 0:
 		var t = sin(char_fx.elapsed_time * freq + get_rand_unclamped(char_fx)) * .5 + .5
-		char_fx.color = lerp_list(colors, t)
+		char_fx.color.lerp_list(colors, t)
 	return true

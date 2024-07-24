@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if get_viewport().get_camera_3d() == self:
 		lookAngle.y = clamp(lookAngle.y, PI / -4, PI / 4)
 		lookAngle.x = clamp(lookAngle.x, PI + PI / -1.5, PI + PI / 1.5)
@@ -30,10 +30,10 @@ func _input(event: InputEvent) -> void:
 			#rotation = defaultRotation
 			#lookAngle = Vector2(defaultRotation.y, defaultRotation.x)
 
-func _on_transition_3d_started(from: Camera3D, to: Camera3D, duration: float):
+func _on_transition_3d_started(_from: Camera3D, to: Camera3D, _duration: float):
 	if to == self:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _on_transition_3d_finished(from: Camera3D, to: Camera3D, duration: float):
+func _on_transition_3d_finished(_from: Camera3D, to: Camera3D, _duration: float):
 	if to == self:
 		get_parent().get_node("UI/Crosshair").visible = true
