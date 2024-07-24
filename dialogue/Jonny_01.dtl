@@ -156,11 +156,11 @@ Jonny: Of course! I shall do so.
 Jonny: .....
 Jonny: That... appeared to have caused a quite interesting yet probably dangerous outcome.
 Jonny: Well. It seems I am hunted.
-Jonny: AAAH.
+Jonny: Aaah.
 Jonny: <Empty Text Event>
 Jonny: ............
 [i]beep beep beep beep[/i] (it seems the call got disconnected)
-[end_timeline]
+jump end
 
 label solution
 Jonny: Of course! I shall do so.
@@ -171,3 +171,6 @@ Jonny: And I have stomped onto the worm.
 Jonny: Jonny Smith thanks you and A.I.D.  kindly for your service!
 Jonny: I wish you the best regards.
 
+
+label end
+[signal arg="callEnded"]
