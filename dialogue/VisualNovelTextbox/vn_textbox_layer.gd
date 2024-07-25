@@ -224,3 +224,9 @@ func _apply_export_overrides() -> void:
 
 func _on_dialogic_node_dialog_text_meta_clicked(meta: Variant) -> void:
 	ClickTextEventHandler.handle_url_tag_clicked(meta)
+
+
+func _on_button_pressed():
+	Input.action_press("dialogic_default_action")
+	await get_tree().create_timer(0.1).timeout
+	Input.action_release("dialogic_default_action")
