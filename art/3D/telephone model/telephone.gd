@@ -3,6 +3,7 @@ extends Node3D
 var incomingCall = ""
 var callQueue = ["Lucia_01", "Jonny_01"]
 
+@onready var animation_player = $AnimationPlayer
 @onready var shader = $"RootNode/tel fijo".get_surface_override_material(0).next_pass
 var targeted = false: 
 	set(val):
@@ -26,6 +27,7 @@ func setupRingingPhone() -> void:
 func _input(event: InputEvent) -> void:
 	if targeted && incomingCall != "":
 		if event is InputEventMouseButton:
+			animation_player.play("pickup_phone")
 			Dialogic.VAR.reset()
 			FmodEventMessenger.stopRingingPhone()
 			Dialogic.start(incomingCall)
@@ -34,6 +36,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_dialogic_signal(argument):
 	if argument == "callEnded":
+		animation_player.play_backwards("pickup_phone")
 		await get_tree().create_timer(5).timeout
 		if callQueue.size() > 0:
 			incomingCall = callQueue.pop_front()
