@@ -46,9 +46,7 @@ directories/dch_directory={
 "Jonny": "res://dialogue/characters/Jonny.dch",
 "Lucia": "res://dialogue/characters/Lucia.dch",
 "Male voice/test_character": "res://audio/Male voice/test_character.dch",
-"player": "res://dialogue/characters/player.dch",
-"test_character": "res://dialogue/characters/test_character.dch",
-"test_character 2": "res://dialogue/characters/test_character 2.dch"
+"player": "res://dialogue/characters/player.dch"
 }
 directories/dtl_directory={
 "Jonny_01": "res://dialogue/Jonny_01.dtl",
@@ -88,7 +86,7 @@ variables={
 "apartment": false,
 "mumbling": false,
 "person": false,
-"uncooridinated": false
+"uncoordinated": false
 },
 "FearOfDeath": {
 "apartment": false,
@@ -109,13 +107,13 @@ variables={
 "hallucinations": false,
 "mumbling": false,
 "person": false,
-"uncooridinated": false
+"uncoordinated": false
 },
 "Screamer": {
 "mumbling": false,
 "no people": false,
 "staring": false,
-"uncooridinated": false
+"uncoordinated": false
 },
 "Tally": {
 "apartment": false,

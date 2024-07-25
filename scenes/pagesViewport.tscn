@@ -80,7 +80,6 @@ scale = Vector2(1.284, 1.26)
 texture = ExtResource("1_fyj0p")
 
 [node name="View1" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(-327.373, -258.004)
@@ -99,7 +98,7 @@ text = "
 [center][b]DOPPELGANGER[/b][/center]
 
 
-Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartments\"]households[/url], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
+Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartment\"]households[/url], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
 
 "
 metadata/_edit_use_anchors_ = true
@@ -376,6 +375,7 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View3" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(-327.373, -259.592)
