@@ -329,17 +329,40 @@ unique_name_in_owner = true
 script = ExtResource("4_ma5mw")
 play_every_character = 0
 
-[node name="NextIndicator" type="Button" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+[node name="NextIndicator" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-focus_mode = 0
 script = ExtResource("5_40a50")
 texture = ExtResource("6_uch03")
 texture_size = Vector2(24, 24)
+
+[node name="Control" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/Control"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_mode = 0
 
 [node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
 unique_name_in_owner = true
@@ -380,4 +403,4 @@ script = ExtResource("7_bi7sh")
 name_label_root = NodePath("..")
 
 [connection signal="meta_clicked" from="Anchor/AnimationParent/Sizer/DialogTextPanel/DialogicNode_DialogText" to="." method="_on_dialogic_node_dialog_text_meta_clicked"]
-[connection signal="pressed" from="Anchor/AnimationParent/Sizer/DialogTextPanel/NextIndicator" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Anchor/AnimationParent/Sizer/DialogTextPanel/Control/Button" to="." method="_on_button_pressed"]
