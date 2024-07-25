@@ -318,7 +318,7 @@ text = "
 
 
 This large, [url=\"Tally, person\"]humanoid[/url] creature, with void as skin and eyes over their body, prefers the darker, less [url=\"Tally, no people\"]frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
-It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corners\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
+It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corner\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
 "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page2"]
@@ -376,7 +376,6 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View3" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(-327.373, -259.592)
@@ -400,7 +399,7 @@ text = "
 
 
 This large, [url=\"Tally, person\"]humanoid[/url] creature, with void as skin and eyes over their body, prefers the darker, less [url=\"Tally, no people\"]frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
-It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corners\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
+It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corner\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
 "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page0"]
@@ -474,7 +473,7 @@ text = "
 [center][b]ANALOGUE[/b][/center]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity. 
-It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corners\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
+It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
 Being in the immediate area of an infected device can lead to dizziness,[url=\"Analogue, hallucinations\"]hallucinations[/url], and eventually strong suicidal thoughts. 
 "
 metadata/_edit_use_anchors_ = true
@@ -553,7 +552,7 @@ text = "
 [center][b]ANALOGUE[/b][/center]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity. 
-It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corners\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
+It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
 Being in the immediate area of an infected device can lead to dizziness,[url=\"Analogue, hallucinations\"]hallucinations[/url], and eventually strong suicidal thoughts. 
 "
 metadata/_edit_use_anchors_ = true
@@ -853,6 +852,7 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View6" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View6"]
 position = Vector2(-327.373, -259.592)

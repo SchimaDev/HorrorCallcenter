@@ -6,111 +6,136 @@ Lucia: There is [url="person"]somebody[/url] [url="basement"]in my basement[/url
 label question
 [signal arg="ask"]
 if {timer} <= 0:
-	Lucia: I'm sorry, we're out of time....
+	[signal arg="answer"]
+	Lucia: Oh no it's coming towards me! What is that thing?!!!
 	set {_MonsterSelect.timeout} = true
-	jump MonsterChoice
+	jump MonsterSelect
 else:
 	set {timer} -= 1
-	- What do you see? [if !{questions.q01}][else="hide"]
+	
+	if !{questions.q01}
 		[signal arg="answer"]
+		player: What do you see?
 		Lucia: A [url="person"]person.[/url] He... looks wrong. Long, with stretched out arms. And no clothes or... anything.
 		Lucia: ... Dios mío...
 		set {questions.q01} = true
-	
-	- What do you hear? [if !{questions.q02}][else="hide"]
+		jump question
+		
+	if !{questions.q02}
 		[signal arg="answer"]
+		player: What do you hear?
 		Lucia: N... nothing. It is [url="quiet"]dead quiet...[/url]
 		set {questions.q02} = true
+		jump question
 	
-	- Where are you right now? [if !{questions.q03}][else="hide"]
+	if !{questions.q03}]
 		[signal arg="answer"]
-		Lucia: I told you I'm [url="basement]in my basement.[/url]
+		player: Where are you right now?
+		Lucia: I told you I'm [url="basement"]in my basement.[/url]
 		set {questions.q03} = true
+		jump question
 	
-	- What does the Person do? [if ({Parasite.person} || {Tally.person}) && !{questions.q04}][else="hide"]
+	if (({Parasite.person} || {Tally.person}) && !{questions.q04})
 		[signal arg="answer"]
+		player: What does the Person do?
 		Lucia: It is just [url="standing in corner"]standing there in the corner....[/url]
 		Lucia: It doesn’t move. It doesn’t talk. It's just... [url="staring"]staring at me...[/url]
-		Lucia: Ooh dios mío, these eyes... [url="many eyes"]so many eyes...[/url]
+		Lucia: Ooh dios mío, these eyes... so many eyes...
 		set {questions.q04} = true
-	
-	- How do you feel [if ({FearOfDeath.basement} || {FearOfDeath.quiet} || {FearOfDeath.standing in corner} || {FearOfDeath.scared} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q05}][else="hide"]
+		jump question
+		
+	if (({FearOfDeath.basement} || {FearOfDeath.quiet} || {FearOfDeath.standing in corner} || {FearOfDeath.scared} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q05})
 		[signal arg="answer"]
-		Lucia: I... I am scared. [url="scared"]VERY scared.[/url] Please help me.
-		- Try to take deep, even breaths. We will figure this out together.
+		player: How do you feel
+		Lucia: I... I am scared. VERY scared. Please help me.
+		player: Try to take deep, even breaths. We will figure this out together.
 		Lucia: You... you are right... I need to... stay calm... even if it’s hard...
 		set {questions.q05} = true
-	
-	- How does the area look? [if ({Ooze.basement} || {Ooze.standing in corner}) && !{questions.q06}][else="hide"]
+		jump question
+
+	if (({Ooze.basement} || {Ooze.standing in corner}) && !{questions.q06})
 		[signal arg="answer"]
+		player: How does the area look?
 		Lucia: As always? Dusty boxes left and right, a flickering ceiling lamp at the top and an old rug on the ground. It is a [url="basement"]basement[/url] after all...
 		set {questions.q06} = true
+		jump question
 	
-	- Can you hear any static noise or electric buzzing? [if ({Analogue.basement}) && !{questions.q07}][else="hide"]
+	if (({Analogue.basement}) && !{questions.q07})
 		[signal arg="answer"]
+		player: Can you hear any static noise or electric buzzing?
 		Lucia: No. Not that I can hear... it's [url="quiet"]very quiet.[/url]
 		set {questions.q07} = true
+		jump question
 	
-	- Is there light? [if ({Tally.basement} || {Tally.standing in corner} || {Tally.staring}) && !{questions.q08}][else="hide"]
+	if (({Tally.basement} || {Tally.standing in corner} || {Tally.staring}) && !{questions.q08})
 		[signal arg="answer"]
+		player: Is there light?
 		Lucia: Sí, the ceiling light is on.
 		set {questions.q08} = true
+		jump question
 	
-	- Is there any sound at all? [if ({Tally.quiet}) && !{questions.q09}][else="hide"]
+	if (({Tally.quiet}) && !{questions.q09})
 		[signal arg="answer"]
+		player: Is there any sound at all?
 		Lucia: No. [url="quiet"]There is absolutely nothing.[/url]
 		set {questions.q09} = true
+		jump question
 	
-	- Are there any additional people? [if ({Doppelganger.person}) && !{questions.q10}][else="hide"]
+	if ({Doppelganger.person} && !{questions.q10})
 		[signal arg="answer"]
+		player: Are there any additional people?
 		Lucia: Not really. I'm the only one here. I've [url="no people"]never seen anyone else down here.[/url]
 		set {questions.q10} = true
+		jump question
 	
-	- Is there a flickering screen of any sort? [if ({Analogue.standing in corner}) && !{questions.q11}][else="hide"]
+	if ({Analogue.standing in corner} && !{questions.q11})
 		[signal arg="answer"]
+		player: Is there a flickering screen of any sort?
 		Lucia: A screen...? No. Again, there is a [url="person"]person[/url] in front of me.
 		set {questions.q11} = true
+		jump question
 	
-	- Are you outside? [if ({Screamer.staring} || {Screamer.no people}) && !{questions.q12}][else="hide"]
+	if (({Screamer.staring} || {Screamer.no people}) && !{questions.q12})
 		[signal arg="answer"]
+		player: Are you outside?
 		Lucia: No...? I told you I'm in my [url="basement"]basement.[/url]
 		set {questions.q12} = true
-	
-	- I think i know what you're dealing with. It's a.. [if {_MonsterSelect.Doppelganger} || {_MonsterSelect.Parasite} || {_MonsterSelect.Tally} || {_MonsterSelect.Analogue} || {_MonsterSelect.FearofDeath} || {_MonsterSelect.Screamer} || {_MonsterSelect.Ooze} ][else="hide"]
-		[signal arg="answer"]
-		jump MonsterChoice
+		jump question
 
-jump question
-
-label MonsterChoice
-- Doppelganger [if {_MonsterSelect.Doppelganger}][else="hide"]
-	player: [instruction on how to deal with a Doppelganger]
-	jump failedAction
-- Parasite [if {_MonsterSelect.Parasite}][else="hide"]
-	- You are infected.
-		player: [instruction on how to deal with a Parasite infection]
-		jump failedAction
-	- The person you are seeing is infected.
-		player: [instruction on how to deal with someone who is infected by a Parasite]
-		jump failedAction
-- Tally [if {_MonsterSelect.Tally}][else="hide"]
-	player: [instruction on how to deal with a Tally]
-	jump solution
-- Analogue [if {_MonsterSelect.Analogue}][else="hide"]
-	player: [instruction on how to deal with a Analogue]
-	jump failedAction
-- Fear of Death [if {_MonsterSelect.FearofDeath}][else="hide"]
-	player: [instruction on how to deal with a Fear Of Death]
-	jump failedAction
-- Screamer [if {_MonsterSelect.Screamer}][else="hide"]
-	player: [instruction on how to deal with a Screamer]
-	jump failedAction
-- Ooze [if {_MonsterSelect.Ooze}][else="hide"]
-	player: [instruction on how to deal with a Ooze]
-	jump failedAction
-- Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
-	set {timer} += 1
-	jump question
+	[signal arg="ask"]
+	player: <Empty Text Event>
+	- end call
+		label MonsterSelect
+		- Doppelganger [if {_MonsterSelect.Doppelganger}][else="hide"]
+			player: [instruction on how to deal with a Doppelganger]
+			jump failedAction
+		- Parasite [if {_MonsterSelect.Parasite}][else="hide"]
+			- You are infected.
+				player: [instruction on how to deal with a Parasite infection]
+				jump failedAction
+			- The person you are seeing is infected.
+				player: [instruction on how to deal with someone who is infected by a Parasite]
+				jump failedAction
+		- Tally [if {_MonsterSelect.Tally}][else="hide"]
+			player: [instruction on how to deal with a Tally]
+			jump solution
+		- Analogue [if {_MonsterSelect.Analogue}][else="hide"]
+			player: [instruction on how to deal with a Analogue]
+			jump failedAction
+		- Fear of Death [if {_MonsterSelect.FearOfDeath}][else="hide"]
+			player: [instruction on how to deal with a Fear Of Death]
+			jump failedAction
+		- Screamer [if {_MonsterSelect.Screamer}][else="hide"]
+			player: [instruction on how to deal with a Screamer]
+			jump failedAction
+		- Ooze [if {_MonsterSelect.Ooze}][else="hide"]
+			player: [instruction on how to deal with a Ooze]
+			jump failedAction
+		- Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
+			set {timer} += 1
+			jump question
+		- I have no idea, soo.... good luck?
+			jump end
 
 label failedAction
 Lucia: Okay. Give me a moment.
@@ -132,4 +157,3 @@ Lucia: You saved my life. Again, thank you.  Adiós
 
 label end
 [signal arg="callEnded"]
-

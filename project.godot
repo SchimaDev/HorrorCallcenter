@@ -38,7 +38,6 @@ config/icon="res://art/icon.svg"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
 FmodEventMessenger="*res://scripts/FmodEventMessenger.gd"
-CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -130,7 +129,7 @@ variables={
 "_MonsterSelect": {
 "Analogue": false,
 "Doppelganger": false,
-"FearofDeath": false,
+"FearOfDeath": false,
 "Ooze": false,
 "Parasite": false,
 "Screamer": false,
@@ -167,7 +166,6 @@ text/autocolor_names=false
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
