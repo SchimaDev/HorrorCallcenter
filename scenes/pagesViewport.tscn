@@ -105,20 +105,6 @@ scale = Vector2(0.984909, 1.00372)
 texture = ExtResource("5_hphtm")
 flip_v = true
 
-[node name="Button2" type="Button" parent="BookMesh2Untitled/View1/Page1"]
-offset_left = 114.886
-offset_top = 251.602
-offset_right = 1028.89
-offset_bottom = 1145.6
-rotation = -1.5708
-scale = Vector2(0.075, 0.075)
-focus_mode = 0
-theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
-icon = ExtResource("4_fmkdm")
-flat = true
-clip_text = true
-vertical_icon_alignment = 2
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page1"]
 anchors_preset = -1
 anchor_left = 0.000475286
@@ -155,6 +141,20 @@ text = "
 
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="BookMesh2Untitled/View1/Page1"]
+offset_left = 114.886
+offset_top = 251.602
+offset_right = 1028.89
+offset_bottom = 1145.6
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
 
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(-325.035, 254.802)
@@ -247,7 +247,6 @@ visible = false
 position = Vector2(-327.373, -258.004)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("5_hphtm")
-flip_v = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page0"]
 offset_left = -166.173
@@ -295,6 +294,7 @@ icon_alignment = 1
 position = Vector2(33.4714, -258.004)
 scale = Vector2(0.984909, 1.00372)
 texture = ExtResource("5_hphtm")
+flip_v = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View2/Page1"]
 offset_left = 114.886
@@ -341,7 +341,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]DOPPELGANGER[/b][/center]
+[url=\"_MonsterSelect, Doppelganger\"][center][b]DOPPELGANGER[/b][/center][/url]
 
 
 Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartment\"]households[/url], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
@@ -420,7 +420,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]DOPPELGANGER[/b][/center]
+[url=\"_MonsterSelect, Doppelganger\"][center][b]DOPPELGANGER[/b][/center][/url]
 
 
 Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartment\"]households[/url], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
@@ -496,7 +496,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]PARASITE[/b][/center]
+[url=\"_MonsterSelect, Parasite\"][center][b]PARASITE[/b][/center][/url]
 
 Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and [url=\"Parasite, hallucinations\"]hallucinations[/url]. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or slurred [url=\"Parasite, coherent\"]speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. 
 Parasites try to stay where humans are and are often to be found around [url=\"Parasite, apartment\"]houses[/url] or other frequently populated buildings.
@@ -573,7 +573,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]PARASITE[/b][/center]
+[url=\"_MonsterSelect, Parasite\"][center][b]PARASITE[/b][/center][/url]
 
 Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and [url=\"Parasite, hallucinations\"]hallucinations[/url]. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or slurred [url=\"Parasite, coherent\"]speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. 
 Parasites try to stay where humans are and are often to be found around [url=\"Parasite, apartment\"]houses[/url] or other frequently populated buildings.
@@ -647,7 +647,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-         [b]TALLY[/b]
+         [url=\"_MonsterSelect, Tally\"][b]TALLY[/b][/url]
 
 
 
@@ -729,7 +729,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-         [b]TALLY[/b]
+         [url=\"_MonsterSelect, Tally\"][b]TALLY[/b][/url]
 
 
 
@@ -808,7 +808,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]ANALOGUE[/b][/center]
+[url=\"_MonsterSelect, Analogue\"][center][b]ANALOGUE[/b][/center][/url]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity. 
 It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
@@ -887,7 +887,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]ANALOGUE[/b][/center]
+[url=\"_MonsterSelect, Analogue\"][center][b]ANALOGUE[/b][/center][/url]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity. 
 It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
@@ -965,7 +965,7 @@ offset_bottom = 246.559
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center][b]FEAR OF DEATH[/b][/center]
+text = "[url=\"_MonsterSelect, FearOfDeath\"][center][b]FEAR OF DEATH[/b][/center][/url]
 
 
 
@@ -1048,7 +1048,7 @@ offset_bottom = 246.559
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center][b]FEAR OF DEATH[/b][/center]
+text = "[url=\"_MonsterSelect, FearOfDeath\"][center][b]FEAR OF DEATH[/b][/center][/url]
 
 
 
@@ -1126,7 +1126,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]SCREAMER[/b][/center]
+[url=\"_MonsterSelect, Screamer\"][center][b]SCREAMER[/b][/center][/url]
+
 
 Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [url=\"Screamer, no people\"]deserted[/url] spaces outdoors,  scurrying the area with seemingly [url=\"Screamer, uncoordinated\"]no purpose[/url]. 
 They are imitating all sorts of sounds, running from [url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
@@ -1206,7 +1207,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]SCREAMER[/b][/center]
+[url=\"_MonsterSelect, Screamer\"][center][b]SCREAMER[/b][/center][/url]
 
 Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [url=\"Screamer, no people\"]deserted[/url] spaces outdoors,  scurrying the area with seemingly [url=\"Screamer, uncoordinated\"]no purpose[/url]. 
 They are imitating all sorts of sounds, running from [url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
@@ -1283,7 +1284,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]OOZE[/b][/center]
+[url=\"_MonsterSelect, Ooze\"][center][b]OOZE[/b][/center][/url]
+
 
 A small creature that can be found in [url=\"Ooze, apartment, basement\"]dark buildings[/url].
 It is highly corrosive to non-organic materials, often [url=\"Ooze, standing in corner\"]sitting motionless in some corner[/url], consuming its surroundings with a sharp, sizzling sound.
@@ -1498,8 +1500,8 @@ theme_override_colors/icon_hover_color = Color(0, 1, 0, 1)
 icon = ExtResource("11_gfscp")
 expand_icon = true
 
-[connection signal="pressed" from="BookMesh2Untitled/View1/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page1/RichTextLabel2" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View1/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View1/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]

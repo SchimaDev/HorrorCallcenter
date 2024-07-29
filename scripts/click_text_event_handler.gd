@@ -5,6 +5,7 @@ var chosenWordDialogue = ""
 var chosenMonster = ""
 var reloadQuestions = false
 var dialog = ""
+var monsterSelect = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,15 +35,31 @@ func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
 func compareWords():
 	if chosenWordDictionary.has("hallucinations"):
 		chosenWordDialogue = "hallucinations"
-		
+	
 	if chosenMonster == "_Basic":
 		chosenWordDialogue = chosenWordDictionary[0]
-		
-	if chosenWordDictionary.has(chosenWordDialogue):
+	
+	if chosenMonster == "_MonsterSelect" && monsterSelect:
+		Dialogic.start_timeline(dialog, chosenWordDictionary[0])
+		return
+	
+	if chosenWordDictionary.has("monsterSelect"):
+		monsterSelect = !monsterSelect
+		Dialogic.VAR._Basic.monsterSelect = monsterSelect
+		flushClues()
+	elif chosenWordDictionary.has(chosenWordDialogue):
 		var v = chosenMonster + "." + chosenWordDialogue
 		Dialogic.VAR.set_variable(v, true)
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
-		if reloadQuestions:
+		flushClues()
+	
+	if reloadQuestions:
 			Dialogic.start_timeline(dialog, "question")
 			Dialogic.VAR.timer += 1
+
+func flushClues():
+	chosenWordDialogue = ""
+	chosenWordDictionary.clear()
+	chosenWordDictionary.append("")
+	chosenMonster = ""
 
