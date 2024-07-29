@@ -84,6 +84,9 @@ func playMumbling():
 	
 func playHandOnPhone():
 	handOnPhone.start()
+		
+func playHangUpPhone():
+	hangupPhone.start()
 	
 func playPickupPhone():
 	pickupPhone.start()

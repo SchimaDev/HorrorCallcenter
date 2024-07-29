@@ -25,19 +25,34 @@ func setupRingingPhone() -> void:
 	FmodEventMessenger.playRingingPhone()
 
 func _input(event: InputEvent) -> void:
-	if targeted && incomingCall != "":
-		if event is InputEventMouseButton:
+	if targeted and event.is_action_released("left_mouse"):
+		if incomingCall == "end":
+			incomingCall = ""
+			Dialogic.end_timeline()
+			animation_player.play_backwards("pickup_phone")
+			# TODO stop phone beeping
+			FmodEventMessenger.playHangUpPhone()
+			# queue next call after short delay
+			await get_tree().create_timer(5).timeout
+			if callQueue.size() > 0:
+				incomingCall = callQueue.pop_front()
+				FmodEventMessenger.playRingingPhone()
+		elif incomingCall == "inCall":
+			# TODO popou message ask player if they really want to end call now
+			# click phone again to confirm
+			incomingCall = "end"
+			print("u sure you wanna end the call now?")
+			await get_tree().create_timer(5).timeout
+			incomingCall = "inCall"
+		elif incomingCall != "":
 			animation_player.play("pickup_phone")
 			Dialogic.VAR.reset()
 			FmodEventMessenger.stopRingingPhone()
 			Dialogic.start(incomingCall)
 			ClickTextEventHandler.dialog = incomingCall
-			incomingCall = ""
+			await get_tree().create_timer(1).timeout
+			incomingCall = "inCall"
 
 func _on_dialogic_signal(argument):
 	if argument == "callEnded":
-		animation_player.play_backwards("pickup_phone")
-		await get_tree().create_timer(5).timeout
-		if callQueue.size() > 0:
-			incomingCall = callQueue.pop_front()
-			setupRingingPhone()
+		incomingCall = "end"
