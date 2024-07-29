@@ -105,7 +105,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dgkfu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_gh1qh"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -131,7 +131,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xo7f4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nnsdf"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -160,7 +160,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_dgkfu")
+shadow_mesh = SubResource("ArrayMesh_gh1qh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -287,8 +287,10 @@ collision_layer = 1
 [node name="CollisionShape3D" parent="GUIPanel3D/Quad/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00274658, 0.0142212, 0)
 
-[node name="Book" parent="." instance=ExtResource("12_l04is")]
+[node name="Book" parent="." node_paths=PackedStringArray("camera", "ui") instance=ExtResource("12_l04is")]
 transform = Transform3D(-0.267301, -0.136197, -4.93031e-07, 0, -1.086e-06, 0.3, -0.136196, 0.267303, 9.67631e-07, -0.757, 1.558, 1.391)
+camera = NodePath("../Monitor/Camera")
+ui = NodePath("../Monitor/UI")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://audio/fmod/horrorcallcenter/Build/Desktop/Master.strings.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Master.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/SFX.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Ambience.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Music.bank", "res://audio/fmod/horrorcallcenter/Build/Desktop/Phone SFX.bank"]
@@ -379,7 +381,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_xo7f4")
+mesh = SubResource("ArrayMesh_nnsdf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)

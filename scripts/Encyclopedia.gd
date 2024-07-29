@@ -14,7 +14,17 @@ var last_event_time: float = -1.0
 @onready var node_area = $Armature_001/Skeleton3D/Cube_001/Area3D
 @onready var animation_player = $AnimationPlayer
 @onready var view = $SubViewport/GUI/Control
+@onready var shader = $Armature_001/Skeleton3D/Cube_001.get_surface_override_material(1).next_pass
+@export var camera: Camera3D
+@export var ui: Control
 
+var targeted = false: 
+	set(val):
+		targeted = val
+		if targeted:
+			shader.set_shader_parameter("strength", 0.2)
+		else:
+			shader.set_shader_parameter("strength", 0)
 var page = 0
 var p1 = [0.88, 0.48, 1.85, 0.63]
 var p2 = [2.75, 1.48, 1.85, 0.63]
@@ -54,6 +64,12 @@ func _mouse_entered_area():
 func _mouse_exited_area():
 	is_mouse_inside = false
 
+func _input(event: InputEvent) -> void:
+	if targeted and get_viewport().get_camera_3d() != camera:
+		if event is InputEventMouseButton:
+			FmodEventMessenger.openBook.start()
+			camera.switchView()
+			$"../AnimationPlayer".play("pickup_book")
 
 func _unhandled_input(event):
 	# Check if the event is a non-mouse/non-touch event
