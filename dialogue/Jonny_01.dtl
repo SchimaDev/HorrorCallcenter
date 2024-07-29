@@ -15,14 +15,14 @@ else:
 	do FmodEventMessenger.playFootsteps()
 	set {timer} -= 1
 	
-	if !{questions.q01}
+	if ({_Basic.sight}  && !{questions.q01})
 		[signal arg="answer"]
 		player: What do you see?
 		Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
 		set {questions.q01} = true
 		jump question
 	
-	if !{questions.q02}
+	if ({_Basic.sound}  && !{questions.q02})
 		[signal arg="answer"]
 		player: What do you hear?
 		Jonny: Well, he walks (or rather stomps...) around the house aimlessly. It would not surprise me if even you were to hear it.
@@ -39,7 +39,7 @@ else:
 		set {questions.q02} = true
 		jump question
 	
-	if !{questions.q03}
+	if ({_Basic.location}  && !{questions.q03})
 		[signal arg="answer"]
 		player: Where are you right now?
 		Jonny: I am currently residing in my [url="apartment"]apartment[/url]. Which makes this especially peculiar.
@@ -198,4 +198,3 @@ Jonny: I wish you the best regards.
 
 label end
 [signal arg="callEnded"]
-

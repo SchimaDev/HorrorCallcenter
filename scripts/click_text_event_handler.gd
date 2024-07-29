@@ -34,6 +34,10 @@ func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
 func compareWords():
 	if chosenWordDictionary.has("hallucinations"):
 		chosenWordDialogue = "hallucinations"
+		
+	if chosenMonster == "_Basic":
+		chosenWordDialogue = chosenWordDictionary[0]
+		
 	if chosenWordDictionary.has(chosenWordDialogue):
 		var v = chosenMonster + "." + chosenWordDialogue
 		Dialogic.VAR.set_variable(v, true)

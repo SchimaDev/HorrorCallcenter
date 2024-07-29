@@ -12,8 +12,9 @@ if {timer} <= 0:
 	jump MonsterSelect
 else:
 	set {timer} -= 1
+	player: <Empty Text Event>
 	
-	if !{questions.q01}
+	if (({_Basic.sight}) && !{questions.q01})
 		[signal arg="answer"]
 		player: What do you see?
 		Lucia: A [url="person"]person.[/url] He... looks wrong. Long, with stretched out arms. And no clothes or... anything.
@@ -21,20 +22,20 @@ else:
 		set {questions.q01} = true
 		jump question
 		
-	if !{questions.q02}
+	if ({_Basic.sound}  && !{questions.q02})
 		[signal arg="answer"]
 		player: What do you hear?
 		Lucia: N... nothing. It is [url="quiet"]dead quiet...[/url]
 		set {questions.q02} = true
 		jump question
-	
-	if !{questions.q03}]
+    
+	if ({_Basic.location}  && !{questions.q03})
 		[signal arg="answer"]
 		player: Where are you right now?
 		Lucia: I told you I'm [url="basement"]in my basement.[/url]
 		set {questions.q03} = true
 		jump question
-	
+
 	if (({Parasite.person} || {Tally.person}) && !{questions.q04})
 		[signal arg="answer"]
 		player: What does the Person do?

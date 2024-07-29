@@ -125,6 +125,11 @@ variables={
 "standing in corner": false,
 "staring": false
 },
+"_Basic": {
+"location": false,
+"sight": false,
+"sound": false
+},
 "_MonsterSelect": {
 "Analogue": false,
 "Doppelganger": false,
@@ -173,7 +178,7 @@ project/assembly_name="Horror Callcenter"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/fmod/plugin.cfg")
+enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [file_customization]
 

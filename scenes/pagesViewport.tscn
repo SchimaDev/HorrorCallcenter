@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjgbj3e5uhnr7"]
+[gd_scene load_steps=14 format=3 uid="uid://bjgbj3e5uhnr7"]
 
 [ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/3D/bookmesh/BookMesh2_Untitled.png" id="1_fyj0p"]
+[ext_resource type="Texture2D" uid="uid://bp6memi62eyhe" path="res://art/3D/bookmesh/pages/page_0.png" id="2_ars2c"]
 [ext_resource type="Texture2D" uid="uid://drh2r7q63rqlt" path="res://art/3D/bookmesh/pages/page_1.png" id="3_xh315"]
 [ext_resource type="Texture2D" uid="uid://phhoeyufqtkn" path="res://art/3D/bookmesh/book_corner.png" id="4_fmkdm"]
 [ext_resource type="Texture2D" uid="uid://dnyh0tt53dv2k" path="res://art/3D/bookmesh/pages/page_empty.png" id="5_hphtm"]
@@ -21,6 +22,8 @@ script/source = "extends Control
 @onready var view_4 = $BookMesh2Untitled/View4
 @onready var view_5 = $BookMesh2Untitled/View5
 @onready var view_6 = $BookMesh2Untitled/View6
+@onready var view_7 = $BookMesh2Untitled/View7
+@onready var view_8 = $BookMesh2Untitled/View7
 
 signal turnNextPage
 signal turnPrevPage
@@ -36,6 +39,8 @@ func _ready():
 	view_4.visible = false
 	view_5.visible = false
 	view_6.visible = false
+	view_7.visible = false
+	view_8.visible = false
 
 func showPages(p: int):
 	match p:
@@ -58,9 +63,17 @@ func showPages(p: int):
 			view_4.visible = false
 			view_5.visible = true
 			view_6.visible = false
-		6,7:
+		6:
 			view_5.visible = false
 			view_6.visible = true
+			view_7.visible = false
+		7:
+			view_6.visible = false
+			view_7.visible = true
+			view_8.visible = false
+		8,9:
+			view_7.visible = false
+			view_8.visible = true
 
 func nextPage():
 	turnNextPage.emit()
@@ -84,51 +97,13 @@ texture = ExtResource("1_fyj0p")
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(-327.373, -258.004)
 scale = Vector2(0.997755, 1.00372)
-texture = ExtResource("5_hphtm")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page0"]
-offset_left = -166.173
-offset_top = -235.683
-offset_right = 162.827
-offset_bottom = 233.317
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "
-[center][b]DOPPELGANGER[/b][/center]
-
-
-Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartment\"]households[/url], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
-
-"
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_ars2c")
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(33.4714, -258.004)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("3_xh315")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page1"]
-offset_left = -166.173
-offset_top = -235.683
-offset_right = 162.827
-offset_bottom = 233.317
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "
-Overall Doppelgangers act as human as a monster could. They communicate in [url=\"Doppelganger, mumbling\"]incoherent muttering[/url] and their [url=\"Doppelganger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url]. 
-To get rid of one, let the caller separate it from its victims, and send authorities. 
-"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page1"]
-offset_left = -169.0
-offset_top = 213.0
-offset_right = 47.0
-offset_bottom = 250.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "Danger Rating: ★☆☆☆☆"
+texture = ExtResource("5_hphtm")
+flip_v = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View1/Page1"]
 offset_left = 114.886
@@ -144,26 +119,76 @@ flat = true
 clip_text = true
 vertical_icon_alignment = 2
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page1"]
+anchors_preset = -1
+anchor_left = 0.000475286
+anchor_top = -0.000630221
+anchor_right = 0.000475286
+anchor_bottom = -0.000630221
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "
+[center][b]A.I.D. Instruction Handbook[/b][/center]
+
+•  To answer calls or hang up on callers, 
+   use the phone
+•  To learn more about the situation of the 
+   caller and figure out what monster they 
+   are dealing with, find clues in their 
+   responses:
+	•  To find clues, click on curious words 
+        the caller uses. If they could be a 
+        clue, they will light up
+	•  Afterwards, find the underlined 
+        information in the monster manual 
+        that could align with the information 
+        of the caller
+	•  Be warned, for connecting clues 
+        incorrectly could bring consequences 
+        and waste your callers precious time
+
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(-325.035, 254.802)
 scale = Vector2(0.984909, 1.00372)
 texture = ExtResource("5_hphtm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page2"]
-offset_left = -166.0
-offset_top = -222.441
-offset_right = 163.0
-offset_bottom = 246.559
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]PARASITE[/b][/center]
+•  Each call starts with the same three 
+   questions. You can use them for more 
+   information from the caller or instead 
+   deduct new clues from what the caller 
+   said already
 
-Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and [url=\"Parasite, hallucinations\"]hallucinations[/url]. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or slurred [url=\"Parasite, coherent\"]speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. 
-Parasites try to stay where humans are and are often to be found around [url=\"Parasite, apartment\"]houses[/url] or other frequently populated buildings.
+•  Review previous conversations on the 
+   computer
+
+•  Once you know what monster it might 
+   be, select the dialogue option in the 
+   book and click on the monster title you 
+   think is correct. Whether or not your 
+   caller survives, depends on 
+   YOUR choices
+
 
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View1/Page2"]
 offset_left = -214.0
@@ -181,28 +206,25 @@ icon_alignment = 1
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View1"]
 position = Vector2(35.0301, 256.39)
 scale = Vector2(0.993473, 1.00572)
-texture = ExtResource("5_puh8e")
+texture = ExtResource("5_hphtm")
+flip_v = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page3"]
-offset_left = -166.0
-offset_top = -42.0
-offset_right = 163.0
-offset_bottom = 234.0
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "To remove them from their host, a certain pitch is required to drive them out. Once removed from the body, they can be easily squashed like a bug, for example by stepping on them.
-Should the caller be infected, caution is advised! Increased influence of the parasite can disable the caller's abilities to act. Calm the caller and advise them to act quickly. "
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View1/Page3"]
-offset_left = -20.3959
-offset_top = -162.597
-offset_right = 191.604
-offset_bottom = -108.597
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center]Danger Rating:
- ★★★☆☆"
+text = "
+Try to learn about your caller. It is important to know the basic information about their location and current circumstances. For that reason, it is advisable to ask one of the following questions at the beginning of each call:
+•  [url=\"_Basic, sight\"]What do you see?[/url]
+•  [url=\"_Basic, sound\"]What do you hear?[/url]
+•  [url=\"_Basic, location\"]Where are you right now?[/url]
+Once you are sure of the situation the caller described and are aware of the type of monster you have to handle, inform them what they have to do.
+•  [url=\"_Basic, monsterSelect\"]I think I know what you are dealing[/url]
+	[url=\"_Basic, monsterSelect\"]with. It is a …[/url]"
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View1/Page3"]
 offset_left = 114.842
@@ -222,25 +244,39 @@ vertical_icon_alignment = 2
 visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View2"]
-position = Vector2(-327.373, -259.592)
+position = Vector2(-327.373, -258.004)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("5_hphtm")
+flip_v = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page0"]
-offset_left = -166.0
-offset_top = -222.441
-offset_right = 163.0
-offset_bottom = 246.559
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]PARASITE[/b][/center]
+•  Each call starts with the same three 
+   questions. You can use them for more 
+   information from the caller or instead 
+   deduct new clues from what the caller 
+   said already
 
-Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and [url=\"Parasite, hallucinations\"]hallucinations[/url]. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or slurred [url=\"Parasite, coherent\"]speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. 
-Parasites try to stay where humans are and are often to be found around [url=\"Parasite, apartment\"]houses[/url] or other frequently populated buildings.
+•  Review previous conversations on the 
+   computer
+
+•  Once you know what monster it might 
+   be, select the dialogue option in the 
+   book and click on the monster title you 
+   think is correct. Whether or not your 
+   caller survives, depends on 
+   YOUR choices
+
 
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View2/Page0"]
 offset_left = -212.0
@@ -256,30 +292,9 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View2"]
-position = Vector2(33.4714, -259.592)
+position = Vector2(33.4714, -258.004)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("5_puh8e")
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page1"]
-offset_left = -166.0
-offset_top = -42.0
-offset_right = 163.0
-offset_bottom = 234.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "To remove them from their host, a certain pitch is required to drive them out. Once removed from the body, they can be easily squashed like a bug, for example by stepping on them.
-Should the caller be infected, caution is advised! Increased influence of the parasite can disable the caller's abilities to act. Calm the caller and advise them to act quickly. "
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page1"]
-offset_left = -20.3959
-offset_top = -162.597
-offset_right = 191.604
-offset_bottom = -108.597
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center]Danger Rating:
- ★★★☆☆"
+texture = ExtResource("5_hphtm")
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View2/Page1"]
 offset_left = 114.886
@@ -295,46 +310,50 @@ flat = true
 clip_text = true
 vertical_icon_alignment = 2
 
-[node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View2"]
-position = Vector2(-325.035, 254.802)
-scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("6_8gkeg")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page2"]
-offset_left = -166.0
-offset_top = -222.441
-offset_right = 163.0
-offset_bottom = 246.559
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page1"]
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-         [b]TALLY[/b]
+Try to learn about your caller. It is important to know the basic information about their location and current circumstances. For that reason, it is advisable to ask one of the following questions at the beginning of each call:
+•  [url=\"_Basic, sight\"]What do you see?[/url]
+•  [url=\"_Basic, sound\"]What do you hear?[/url]
+•  [url=\"_Basic, location\"]Where are you right now?[/url]
+Once you are sure of the situation the caller described and are aware of the type of monster you have to handle, inform them what they have to do.
+•  [url=\"_Basic, monsterSelect\"]I think I know what you are dealing[/url]
+	[url=\"_Basic, monsterSelect\"]with. It is a …[/url]"
 
+[node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View2"]
+position = Vector2(-325.035, 254.802)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("5_hphtm")
 
-
-
-
-
-This large, [url=\"Tally, person\"]humanoid[/url] creature, with void as skin and eyes over their body, prefers the darker, less [url=\"Tally, no people\"]frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
-It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corner\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
-"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page2"]
-offset_left = -209.654
-offset_top = -146.298
-offset_right = 2.34575
-offset_bottom = -92.2983
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page2"]
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center]Danger Rating:
- ★★☆☆☆"
+text = "
+[center][b]DOPPELGANGER[/b][/center]
+
+
+Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartment\"]households[/url], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
+
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View2/Page2"]
 offset_left = -214.0
 offset_top = 185.0
 offset_right = 1105.0
-offset_bottom = 1467.0
+offset_bottom = 1488.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
@@ -344,27 +363,37 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View2"]
-position = Vector2(36.5892, 255.596)
-scale = Vector2(1.00204, 1.00888)
-texture = ExtResource("5_hphtm")
+position = Vector2(35.0301, 256.39)
+scale = Vector2(0.993473, 1.00572)
+texture = ExtResource("3_xh315")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page3"]
-offset_left = -166.0
-offset_top = -235.0
-offset_right = 163.0
-offset_bottom = 234.0
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-To remove it from spaces, let the caller place their phone near them and play them a tune to lure it towards the device. Send authorities, while the Tally is distracted."
-metadata/_edit_use_anchors_ = true
+Overall Doppelgangers act as human as a monster could. They communicate in [url=\"Doppelganger, mumbling\"]incoherent muttering[/url] and their [url=\"Doppelganger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url]. 
+To get rid of one, let the caller separate it from its victims, and send authorities. 
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page3"]
+offset_left = -169.0
+offset_top = 213.0
+offset_right = 47.0
+offset_bottom = 250.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Danger Rating: ★☆☆☆☆"
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View2/Page3"]
-offset_left = 113.556
-offset_top = 250.999
-offset_right = 1027.56
-offset_bottom = 1145.0
+offset_left = 114.842
+offset_top = 251.123
+offset_right = 1028.84
+offset_bottom = 1145.12
 rotation = -1.5708
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
@@ -378,45 +407,32 @@ vertical_icon_alignment = 2
 visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View3"]
-position = Vector2(-327.373, -259.592)
+position = Vector2(-327.373, -258.004)
 scale = Vector2(0.997755, 1.00372)
-texture = ExtResource("6_8gkeg")
+texture = ExtResource("5_hphtm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page0"]
-offset_left = -166.0
-offset_top = -222.441
-offset_right = 163.0
-offset_bottom = 246.559
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-         [b]TALLY[/b]
+[center][b]DOPPELGANGER[/b][/center]
 
 
+Doppelgangers are seemingly [url=\"Doppelganger, person\"]human[/url] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [url=\"Doppelganger, apartment\"]households[/url], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened. 
 
-
-
-
-This large, [url=\"Tally, person\"]humanoid[/url] creature, with void as skin and eyes over their body, prefers the darker, less [url=\"Tally, no people\"]frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
-It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corner\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
 "
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page0"]
-offset_left = -209.613
-offset_top = -146.298
-offset_right = 2.38652
-offset_bottom = -92.2983
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center]Danger Rating:
- ★★☆☆☆"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View3/Page0"]
-offset_left = -213.0
+offset_left = -212.0
 offset_top = 183.0
-offset_right = 1111.0
-offset_bottom = 1533.0
+offset_right = 1088.0
+offset_bottom = 1497.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
@@ -426,21 +442,31 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View3"]
-position = Vector2(33.4714, -259.592)
+position = Vector2(33.4714, -258.004)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("5_hphtm")
+texture = ExtResource("3_xh315")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page1"]
-offset_left = -166.0
-offset_top = -235.0
-offset_right = 163.0
-offset_bottom = 234.0
+offset_left = -166.173
+offset_top = -235.683
+offset_right = 162.827
+offset_bottom = 233.317
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-To remove it from spaces, let the caller place their phone near them and play them a tune to lure it towards the device. Send authorities, while the Tally is distracted."
-metadata/_edit_use_anchors_ = true
+Overall Doppelgangers act as human as a monster could. They communicate in [url=\"Doppelganger, mumbling\"]incoherent muttering[/url] and their [url=\"Doppelganger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url]. 
+To get rid of one, let the caller separate it from its victims, and send authorities. 
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page1"]
+offset_left = -169.0
+offset_top = 213.0
+offset_right = 47.0
+offset_bottom = 250.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Danger Rating: ★☆☆☆☆"
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View3/Page1"]
 offset_left = 114.886
@@ -470,18 +496,17 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]ANALOGUE[/b][/center]
+[center][b]PARASITE[/b][/center]
 
-Analogues are very elusive creatures that appear to be made entirely of electricity. 
-It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
-Being in the immediate area of an infected device can lead to dizziness,[url=\"Analogue, hallucinations\"]hallucinations[/url], and eventually strong suicidal thoughts. 
+Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and [url=\"Parasite, hallucinations\"]hallucinations[/url]. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or slurred [url=\"Parasite, coherent\"]speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. 
+Parasites try to stay where humans are and are often to be found around [url=\"Parasite, apartment\"]houses[/url] or other frequently populated buildings.
+
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View3/Page2"]
-offset_left = -215.0
+offset_left = -214.0
 offset_top = 185.0
-offset_right = 1125.0
+offset_right = 1105.0
 offset_bottom = 1488.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
@@ -492,37 +517,36 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View3"]
-position = Vector2(36.5892, 255.596)
-scale = Vector2(1.00204, 1.00888)
-texture = ExtResource("7_lji1r")
+position = Vector2(35.0301, 256.39)
+scale = Vector2(0.993473, 1.00572)
+texture = ExtResource("5_puh8e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page3"]
 offset_left = -166.0
-offset_top = -235.0
+offset_top = -42.0
 offset_right = 163.0
 offset_bottom = 234.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "
-The best way to remove an Analogue is to turn off or unplug the infected device it currently resides in as quickly as possible. Trapped in the device, the Analogue can no longer move. The appliance should then be buried in the ground to avoid any more spreading.
-Callers might be hesitant about their own devices. Encourage them that this is the only way to stop the creature. "
+text = "To remove them from their host, a certain pitch is required to drive them out. Once removed from the body, they can be easily squashed like a bug, for example by stepping on them.
+Should the caller be infected, caution is advised! Increased influence of the parasite can disable the caller's abilities to act. Calm the caller and advise them to act quickly. "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page3"]
-offset_left = -186.666
-offset_top = 189.626
-offset_right = 25.3341
-offset_bottom = 243.626
+offset_left = -20.3959
+offset_top = -162.597
+offset_right = 191.604
+offset_bottom = -108.597
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
-★★★★☆"
+ ★★★☆☆"
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View3/Page3"]
-offset_left = 113.556
-offset_top = 250.999
-offset_right = 1027.56
-offset_bottom = 1145.0
+offset_left = 114.842
+offset_top = 251.123
+offset_right = 1028.84
+offset_bottom = 1145.12
 rotation = -1.5708
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
@@ -536,7 +560,7 @@ vertical_icon_alignment = 2
 visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View4"]
-position = Vector2(-327.373, -256.417)
+position = Vector2(-327.373, -259.592)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("5_hphtm")
 
@@ -549,19 +573,18 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]ANALOGUE[/b][/center]
+[center][b]PARASITE[/b][/center]
 
-Analogues are very elusive creatures that appear to be made entirely of electricity. 
-It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
-Being in the immediate area of an infected device can lead to dizziness,[url=\"Analogue, hallucinations\"]hallucinations[/url], and eventually strong suicidal thoughts. 
+Parasites are worm-like creatures that infect [url=\"Parasite, person\"]humans[/url] and take over their bodily functions. An infection begins with general confusion and [url=\"Parasite, hallucinations\"]hallucinations[/url]. A victim in this phase will exhibit [url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url], and slightly [url=\"Parasite, mumbling\"]mumbled[/url] or slurred [url=\"Parasite, coherent\"]speech[/url]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself. 
+Parasites try to stay where humans are and are often to be found around [url=\"Parasite, apartment\"]houses[/url] or other frequently populated buildings.
+
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View4/Page0"]
-offset_left = -213.0
+offset_left = -212.0
 offset_top = 183.0
-offset_right = 1111.0
-offset_bottom = 1533.0
+offset_right = 1088.0
+offset_bottom = 1497.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
@@ -571,31 +594,30 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View4"]
-position = Vector2(33.4714, -256.417)
+position = Vector2(33.4714, -259.592)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("7_lji1r")
+texture = ExtResource("5_puh8e")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page1"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page1"]
 offset_left = -166.0
-offset_top = -235.0
+offset_top = -42.0
 offset_right = 163.0
 offset_bottom = 234.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "
-The best way to remove an Analogue is to turn off or unplug the infected device it currently resides in as quickly as possible. Trapped in the device, the Analogue can no longer move. The appliance should then be buried in the ground to avoid any more spreading.
-Callers might be hesitant about their own devices. Encourage them that this is the only way to stop the creature. "
+text = "To remove them from their host, a certain pitch is required to drive them out. Once removed from the body, they can be easily squashed like a bug, for example by stepping on them.
+Should the caller be infected, caution is advised! Increased influence of the parasite can disable the caller's abilities to act. Calm the caller and advise them to act quickly. "
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page1"]
-offset_left = -186.666
-offset_top = 189.626
-offset_right = 25.3341
-offset_bottom = 243.626
+[node name="RichTextLabel4" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page1"]
+offset_left = -20.3959
+offset_top = -162.597
+offset_right = 191.604
+offset_bottom = -108.597
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
-★★★★☆"
+ ★★★☆☆"
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View4/Page1"]
 offset_left = 114.886
@@ -614,12 +636,9 @@ vertical_icon_alignment = 2
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View4"]
 position = Vector2(-325.035, 254.802)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("8_5wa22")
+texture = ExtResource("6_8gkeg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page2"]
-anchors_preset = -1
-anchor_top = -0.0190418
-anchor_bottom = -0.00111356
 offset_left = -166.0
 offset_top = -222.441
 offset_right = 163.0
@@ -627,29 +646,33 @@ offset_bottom = 246.559
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center][b]FEAR OF DEATH[/b][/center]
+text = "
+         [b]TALLY[/b]
 
 
 
 
 
 
-
-
-
-
-[center]Danger Rating: ★★★★★[/center]
-
-A very mysterious creature about which not much is known. It can appear [url=\"FearOfDeath, apartment, basement\"]anywhere[/url] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
-
+This large, [url=\"Tally, person\"]humanoid[/url] creature, with void as skin and eyes over their body, prefers the darker, less [url=\"Tally, no people\"]frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
+It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corner\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
 "
-metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page2"]
+offset_left = -209.654
+offset_top = -146.298
+offset_right = 2.34575
+offset_bottom = -92.2983
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+ ★★☆☆☆"
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View4/Page2"]
-offset_left = -215.0
+offset_left = -214.0
 offset_top = 185.0
-offset_right = 1125.0
-offset_bottom = 1488.0
+offset_right = 1105.0
+offset_bottom = 1467.0
 scale = Vector2(0.075, 0.075)
 focus_mode = 0
 theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
@@ -672,9 +695,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-It appears as a [url=\"FearOfDeath, quiet\"]silent[/url], [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembling a black hole. 
-Exposure to the creature causes [url=\"FearOfDeath, scared\"]paranoia[/url] and extreme panic attacks that lead to lethal heart attacks within just a few minutes. 
-No method against the monster has been found so far. Send the caller away from it and calm them down. "
+To remove it from spaces, let the caller place their phone near them and play them a tune to lure it towards the device. Send authorities, while the Tally is distracted."
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View4/Page3"]
@@ -697,12 +718,9 @@ visible = false
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View5"]
 position = Vector2(-327.373, -259.592)
 scale = Vector2(0.997755, 1.00372)
-texture = ExtResource("8_5wa22")
+texture = ExtResource("6_8gkeg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page0"]
-anchors_preset = -1
-anchor_top = -0.0190418
-anchor_bottom = -0.00111356
 offset_left = -166.0
 offset_top = -222.441
 offset_right = 163.0
@@ -710,23 +728,27 @@ offset_bottom = 246.559
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center][b]FEAR OF DEATH[/b][/center]
+text = "
+         [b]TALLY[/b]
 
 
 
 
 
 
-
-
-
-
-[center]Danger Rating: ★★★★★[/center]
-
-A very mysterious creature about which not much is known. It can appear [url=\"FearOfDeath, apartment, basement\"]anywhere[/url] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
-
+This large, [url=\"Tally, person\"]humanoid[/url] creature, with void as skin and eyes over their body, prefers the darker, less [url=\"Tally, no people\"]frequented[/url]  places in [url=\"Tally, apartment, basement\"]urban areas[/url]. 
+It’s a mostly [url=\"Tally, quiet\"]quiet[/url] and harmless creature that spends most of its time motionless [url=\"Tally, standing in corner\"]in corners[/url], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [url=\"Tally, staring\"]staring intently at the intruder[/url] or slowly following them around.
 "
-metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page0"]
+offset_left = -209.613
+offset_top = -146.298
+offset_right = 2.38652
+offset_bottom = -92.2983
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+ ★★☆☆☆"
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View5/Page0"]
 offset_left = -213.0
@@ -755,9 +777,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-It appears as a [url=\"FearOfDeath, quiet\"]silent[/url], [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembling a black hole. 
-Exposure to the creature causes [url=\"FearOfDeath, scared\"]paranoia[/url] and extreme panic attacks that lead to lethal heart attacks within just a few minutes. 
-No method against the monster has been found so far. Send the caller away from it and calm them down. "
+To remove it from spaces, let the caller place their phone near them and play them a tune to lure it towards the device. Send authorities, while the Tally is distracted."
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View5/Page1"]
@@ -788,11 +808,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]SCREAMER[/b][/center]
+[center][b]ANALOGUE[/b][/center]
 
-Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [url=\"Screamer, no people\"]deserted[/url] spaces outdoors,  scurrying the area with seemingly [url=\"Screamer, uncoordinated\"]no purpose[/url]. 
-They are imitating all sorts of sounds, running from [url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
-When encountering a Screamer, it’s best to calmly retreat, without drawing its attention. 
+Analogues are very elusive creatures that appear to be made entirely of electricity. 
+It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
+Being in the immediate area of an infected device can lead to dizziness,[url=\"Analogue, hallucinations\"]hallucinations[/url], and eventually strong suicidal thoughts. 
 "
 metadata/_edit_use_anchors_ = true
 
@@ -812,12 +832,9 @@ icon_alignment = 1
 [node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View5"]
 position = Vector2(36.5892, 255.596)
 scale = Vector2(1.00204, 1.00888)
-texture = ExtResource("9_ygebt")
+texture = ExtResource("7_lji1r")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page3"]
-anchors_preset = -1
-anchor_top = 0.457256
-anchor_bottom = 0.457256
 offset_left = -166.0
 offset_top = -235.0
 offset_right = 163.0
@@ -825,13 +842,15 @@ offset_bottom = 234.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "Should a Screamer become agitated, it will give a very clear warning [url=\"Screamer, staring\"]making direct eye contact[/url] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible."
+text = "
+The best way to remove an Analogue is to turn off or unplug the infected device it currently resides in as quickly as possible. Trapped in the device, the Analogue can no longer move. The appliance should then be buried in the ground to avoid any more spreading.
+Callers might be hesitant about their own devices. Encourage them that this is the only way to stop the creature. "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page3"]
-offset_left = -220.888
-offset_top = -155.006
-offset_right = -8.88803
-offset_bottom = -59.0064
+offset_left = -186.666
+offset_top = 189.626
+offset_right = 25.3341
+offset_bottom = 243.626
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
@@ -855,7 +874,7 @@ vertical_icon_alignment = 2
 visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View6"]
-position = Vector2(-327.373, -259.592)
+position = Vector2(-327.373, -256.417)
 scale = Vector2(0.997755, 1.00372)
 texture = ExtResource("5_hphtm")
 
@@ -868,11 +887,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][b]SCREAMER[/b][/center]
+[center][b]ANALOGUE[/b][/center]
 
-Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [url=\"Screamer, no people\"]deserted[/url] spaces outdoors,  scurrying the area with seemingly [url=\"Screamer, uncoordinated\"]no purpose[/url]. 
-They are imitating all sorts of sounds, running from [url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
-When encountering a Screamer, it’s best to calmly retreat, without drawing its attention. 
+Analogues are very elusive creatures that appear to be made entirely of electricity. 
+It can appear wherever [url=\"Analogue, apartment, basement\"]electronics are nearby[/url], [url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
+Being in the immediate area of an infected device can lead to dizziness,[url=\"Analogue, hallucinations\"]hallucinations[/url], and eventually strong suicidal thoughts. 
 "
 metadata/_edit_use_anchors_ = true
 
@@ -890,28 +909,27 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View6"]
-position = Vector2(33.4714, -259.592)
+position = Vector2(33.4714, -256.417)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("9_ygebt")
+texture = ExtResource("7_lji1r")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page1"]
-anchors_preset = -1
-anchor_top = 0.457256
-anchor_bottom = 0.457256
 offset_left = -166.0
 offset_top = -235.0
 offset_right = 163.0
-offset_bottom = 4.0
+offset_bottom = 234.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "Should a Screamer become agitated, it will give a very clear warning [url=\"Screamer, staring\"]making direct eye contact[/url] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible."
+text = "
+The best way to remove an Analogue is to turn off or unplug the infected device it currently resides in as quickly as possible. Trapped in the device, the Analogue can no longer move. The appliance should then be buried in the ground to avoid any more spreading.
+Callers might be hesitant about their own devices. Encourage them that this is the only way to stop the creature. "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page1"]
-offset_left = -220.888
-offset_top = -155.006
-offset_right = -8.88803
-offset_bottom = -59.0064
+offset_left = -186.666
+offset_top = 189.626
+offset_right = 25.3341
+offset_bottom = 243.626
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
@@ -934,9 +952,12 @@ vertical_icon_alignment = 2
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View6"]
 position = Vector2(-325.035, 254.802)
 scale = Vector2(0.984909, 1.00372)
-texture = ExtResource("10_fj7s6")
+texture = ExtResource("8_5wa22")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page2"]
+anchors_preset = -1
+anchor_top = -0.0190418
+anchor_bottom = -0.00111356
 offset_left = -166.0
 offset_top = -222.441
 offset_right = 163.0
@@ -944,23 +965,23 @@ offset_bottom = 246.559
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "
-[center][b]OOZE[/b][/center]
+text = "[center][b]FEAR OF DEATH[/b][/center]
 
-A small creature that can be found in [url=\"Ooze, apartment, basement\"]dark buildings[/url].
-It is highly corrosive to non-organic materials, often [url=\"Ooze, standing in corner\"]sitting motionless in some corner[/url], consuming its surroundings with a sharp, sizzling sound.
+
+
+
+
+
+
+
+
+
+[center]Danger Rating: ★★★★★[/center]
+
+A very mysterious creature about which not much is known. It can appear [url=\"FearOfDeath, apartment, basement\"]anywhere[/url] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
+
 "
 metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page2"]
-offset_left = 7.16323
-offset_top = 170.053
-offset_right = 219.163
-offset_bottom = 266.052
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center]Danger Rating:
-★☆☆☆☆"
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View6/Page2"]
 offset_left = -215.0
@@ -981,6 +1002,323 @@ scale = Vector2(1.00204, 1.00888)
 texture = ExtResource("5_hphtm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page3"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "
+It appears as a [url=\"FearOfDeath, quiet\"]silent[/url], [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembling a black hole. 
+Exposure to the creature causes [url=\"FearOfDeath, scared\"]paranoia[/url] and extreme panic attacks that lead to lethal heart attacks within just a few minutes. 
+No method against the monster has been found so far. Send the caller away from it and calm them down. "
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="BookMesh2Untitled/View6/Page3"]
+offset_left = 113.556
+offset_top = 250.999
+offset_right = 1027.56
+offset_bottom = 1145.0
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
+
+[node name="View7" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
+
+[node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View7"]
+position = Vector2(-327.373, -259.592)
+scale = Vector2(0.997755, 1.00372)
+texture = ExtResource("8_5wa22")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View7/Page0"]
+anchors_preset = -1
+anchor_top = -0.0190418
+anchor_bottom = -0.00111356
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b]FEAR OF DEATH[/b][/center]
+
+
+
+
+
+
+
+
+
+
+[center]Danger Rating: ★★★★★[/center]
+
+A very mysterious creature about which not much is known. It can appear [url=\"FearOfDeath, apartment, basement\"]anywhere[/url] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="BookMesh2Untitled/View7/Page0"]
+offset_left = -213.0
+offset_top = 183.0
+offset_right = 1111.0
+offset_bottom = 1533.0
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View7"]
+position = Vector2(33.4714, -259.592)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("5_hphtm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View7/Page1"]
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "
+It appears as a [url=\"FearOfDeath, quiet\"]silent[/url], [url=\"FearOfDeath, standing in corner\"]motionless[/url] shape, resembling a black hole. 
+Exposure to the creature causes [url=\"FearOfDeath, scared\"]paranoia[/url] and extreme panic attacks that lead to lethal heart attacks within just a few minutes. 
+No method against the monster has been found so far. Send the caller away from it and calm them down. "
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="BookMesh2Untitled/View7/Page1"]
+offset_left = 114.886
+offset_top = 251.602
+offset_right = 1028.89
+offset_bottom = 1145.6
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
+
+[node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View7"]
+position = Vector2(-325.035, 254.802)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("5_hphtm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View7/Page2"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "
+[center][b]SCREAMER[/b][/center]
+
+Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [url=\"Screamer, no people\"]deserted[/url] spaces outdoors,  scurrying the area with seemingly [url=\"Screamer, uncoordinated\"]no purpose[/url]. 
+They are imitating all sorts of sounds, running from [url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
+When encountering a Screamer, it’s best to calmly retreat, without drawing its attention. 
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="BookMesh2Untitled/View7/Page2"]
+offset_left = -215.0
+offset_top = 185.0
+offset_right = 1125.0
+offset_bottom = 1488.0
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View7"]
+position = Vector2(36.5892, 255.596)
+scale = Vector2(1.00204, 1.00888)
+texture = ExtResource("9_ygebt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View7/Page3"]
+anchors_preset = -1
+anchor_top = 0.457256
+anchor_bottom = 0.457256
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Should a Screamer become agitated, it will give a very clear warning [url=\"Screamer, staring\"]making direct eye contact[/url] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View7/Page3"]
+offset_left = -220.888
+offset_top = -155.006
+offset_right = -8.88803
+offset_bottom = -59.0064
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+★★★★☆"
+
+[node name="Button4" type="Button" parent="BookMesh2Untitled/View7/Page3"]
+offset_left = 113.556
+offset_top = 250.999
+offset_right = 1027.56
+offset_bottom = 1145.0
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
+
+[node name="View8" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
+
+[node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View8"]
+position = Vector2(-327.373, -259.592)
+scale = Vector2(0.997755, 1.00372)
+texture = ExtResource("5_hphtm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page0"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "
+[center][b]SCREAMER[/b][/center]
+
+Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [url=\"Screamer, no people\"]deserted[/url] spaces outdoors,  scurrying the area with seemingly [url=\"Screamer, uncoordinated\"]no purpose[/url]. 
+They are imitating all sorts of sounds, running from [url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
+When encountering a Screamer, it’s best to calmly retreat, without drawing its attention. 
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="BookMesh2Untitled/View8/Page0"]
+offset_left = -213.0
+offset_top = 183.0
+offset_right = 1111.0
+offset_bottom = 1533.0
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[node name="Page1" type="Sprite2D" parent="BookMesh2Untitled/View8"]
+position = Vector2(33.4714, -259.592)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("9_ygebt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page1"]
+anchors_preset = -1
+anchor_top = 0.457256
+anchor_bottom = 0.457256
+offset_left = -166.0
+offset_top = -235.0
+offset_right = 163.0
+offset_bottom = 4.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Should a Screamer become agitated, it will give a very clear warning [url=\"Screamer, staring\"]making direct eye contact[/url] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page1"]
+offset_left = -220.888
+offset_top = -155.006
+offset_right = -8.88803
+offset_bottom = -59.0064
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+★★★★☆"
+
+[node name="Button2" type="Button" parent="BookMesh2Untitled/View8/Page1"]
+offset_left = 114.886
+offset_top = 251.602
+offset_right = 1028.89
+offset_bottom = 1145.6
+rotation = -1.5708
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+vertical_icon_alignment = 2
+
+[node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View8"]
+position = Vector2(-325.035, 254.802)
+scale = Vector2(0.984909, 1.00372)
+texture = ExtResource("10_fj7s6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page2"]
+offset_left = -166.0
+offset_top = -222.441
+offset_right = 163.0
+offset_bottom = 246.559
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "
+[center][b]OOZE[/b][/center]
+
+A small creature that can be found in [url=\"Ooze, apartment, basement\"]dark buildings[/url].
+It is highly corrosive to non-organic materials, often [url=\"Ooze, standing in corner\"]sitting motionless in some corner[/url], consuming its surroundings with a sharp, sizzling sound.
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page2"]
+offset_left = 7.16323
+offset_top = 170.053
+offset_right = 219.163
+offset_bottom = 266.052
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Danger Rating:
+★☆☆☆☆"
+
+[node name="Button3" type="Button" parent="BookMesh2Untitled/View8/Page2"]
+offset_left = -215.0
+offset_top = 185.0
+offset_right = 1125.0
+offset_bottom = 1488.0
+scale = Vector2(0.075, 0.075)
+focus_mode = 0
+theme_override_colors/icon_hover_color = Color(1, 0.869333, 0.51, 1)
+icon = ExtResource("4_fmkdm")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[node name="Page3" type="Sprite2D" parent="BookMesh2Untitled/View8"]
+position = Vector2(36.5892, 255.596)
+scale = Vector2(1.00204, 1.00888)
+texture = ExtResource("5_hphtm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page3"]
 offset_left = -162.889
 offset_top = -235.0
 offset_right = 166.111
@@ -1160,17 +1498,16 @@ theme_override_colors/icon_hover_color = Color(0, 1, 0, 1)
 icon = ExtResource("11_gfscp")
 expand_icon = true
 
-[connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
-[connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View1/Page1/Button2" to="." method="nextPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page1/RichTextLabel2" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View1/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View1/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View1/Page3/Button4" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View2/Page0/Button" to="." method="prevPage"]
-[connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page1/RichTextLabel3" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View2/Page1/Button2" to="." method="nextPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View2/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View2/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
@@ -1185,7 +1522,7 @@ expand_icon = true
 [connection signal="pressed" from="BookMesh2Untitled/View3/Page3/Button4" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View4/Page0/Button" to="." method="prevPage"]
-[connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page1/RichTextLabel3" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View4/Page1/Button2" to="." method="nextPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View4/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View4/Page2/Button3" to="." method="prevPage"]
@@ -1206,3 +1543,19 @@ expand_icon = true
 [connection signal="meta_clicked" from="BookMesh2Untitled/View6/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="BookMesh2Untitled/View6/Page2/Button3" to="." method="prevPage"]
 [connection signal="meta_clicked" from="BookMesh2Untitled/View6/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View6/Page3/Button4" to="." method="nextPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View7/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View7/Page0/Button" to="." method="prevPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View7/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View7/Page1/Button2" to="." method="nextPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View7/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View7/Page2/Button3" to="." method="prevPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View7/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View7/Page3/Button4" to="." method="nextPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View8/Page0/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View8/Page0/Button" to="." method="prevPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View8/Page1/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View8/Page1/Button2" to="." method="nextPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View8/Page2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="BookMesh2Untitled/View8/Page2/Button3" to="." method="prevPage"]
+[connection signal="meta_clicked" from="BookMesh2Untitled/View8/Page3/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
