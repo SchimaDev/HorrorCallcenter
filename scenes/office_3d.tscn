@@ -105,7 +105,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_gh1qh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qn6sg"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -131,7 +131,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_nnsdf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_x2agw"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -160,7 +160,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_gh1qh")
+shadow_mesh = SubResource("ArrayMesh_qn6sg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -310,6 +310,8 @@ collision_mask = 2
 collide_with_areas = true
 script = ExtResource("4_0upqq")
 
+[node name="FmodListener3D" type="FmodListener3D" parent="DeskCamera"]
+
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.072)
 mesh = SubResource("PlaneMesh_nvr4f")
@@ -381,7 +383,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_nnsdf")
+mesh = SubResource("ArrayMesh_x2agw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)

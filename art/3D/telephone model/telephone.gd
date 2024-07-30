@@ -31,7 +31,7 @@ func _input(event: InputEvent) -> void:
 			Dialogic.end_timeline()
 			animation_player.play_backwards("pickup_phone")
 			# TODO stop phone beeping
-			FmodEventMessenger.playHangUpPhone()
+			FmodEventMessenger.playHangUpPhonePlayer()
 			# queue next call after short delay
 			await get_tree().create_timer(5).timeout
 			if callQueue.size() > 0:

@@ -3,6 +3,7 @@ player: AID Abomination Inquiry Desk, how can I help you?
 Lucia: Hola? Hello? Is there someone?!
 Lucia: I need help... I... Dios mío, I don’t know what’s happening...
 Lucia: There is [url="person"]somebody[/url] [url="basement"]in my basement[/url] .
+do FmodEventMessenger.playDroneSound()
 label question
 [signal arg="ask"]
 if {timer} <= 0:
@@ -126,7 +127,9 @@ Lucia: .....
 Lucia: I... oh god... It's coming toward me... WHY IS IT COMING TOWARD ME?!
 Lucia: What do I do, oh dios mío, what do I do?!?!
 Lucia: AAAAAAAAAAAAAAAAH!
-[i]beep beep beep beep[/i] (it seems the call got disconnected)
+do FmodEventMessenger.playHangUpPhoneCaller()
+[wait time="2.0" hide_text="false"]
+(it seems the call got disconnected)
 jump end
 
 label solution

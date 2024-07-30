@@ -10,7 +10,8 @@ var turnPage: FmodEvent = null
 
 # phone effects
 var pickupPhone: FmodEvent = null
-var hangupPhone: FmodEvent = null
+var hangupPhonePlayer: FmodEvent = null
+var hangupPhoneCaller: FmodEvent = null
 var handOnPhone: FmodEvent = null
 var ringingPhone: FmodEvent = null
 
@@ -54,7 +55,8 @@ func loadSoundEvents():
 	closeBook = FmodServer.create_event_instance("event:/Glossary/CloseBook")
 	
 	pickupPhone = FmodServer.create_event_instance("event:/Phone/PickupPhone")
-	hangupPhone = FmodServer.create_event_instance("event:/Phone/HangupPhone")
+	hangupPhonePlayer = FmodServer.create_event_instance("event:/Phone/HangupPhonePlayer")
+	hangupPhoneCaller = FmodServer.create_event_instance("event:/Phone/HangupPhoneCaller")
 	handOnPhone = FmodServer.create_event_instance("event:/Phone/HandOnPhone")
 	ringingPhone = FmodServer.create_event_instance("event:/Phone/RingingPhone")
 	
@@ -82,11 +84,15 @@ func playFootsteps():
 func playMumbling():
 	monsterMumbling.start()
 	
+# phone funcs
 func playHandOnPhone():
 	handOnPhone.start()
 		
-func playHangUpPhone():
-	hangupPhone.start()
+func playHangUpPhonePlayer():
+	hangupPhonePlayer.start()
+	
+func playHangUpPhoneCaller():
+	hangupPhoneCaller.start()
 	
 func playPickupPhone():
 	pickupPhone.start()
@@ -107,10 +113,14 @@ func setAmbienceIntensityHigh():
 	setAmbienceIntensity(2)
 	
 func playDroneSound():
-	drone1.start()
+	if randi() % 2 == 0:
+		drone1.start()
+	else:
+		drone2.start()
 	
 func stopDroneSound():
 	drone1.stop(0)
+	drone2.stop(0)
 	
 func startFocus():
 	focus.start()
