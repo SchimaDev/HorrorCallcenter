@@ -24,7 +24,7 @@ else:
 		if (({_Basic.sight}) && !{questions.q01}):
 			[signal arg="answer"]
 			player: What do you see?
-			Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
+			Jonny: A [hint name=person][url="person"]person[/url][/hint]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
 			set {questions.q01} = true
 			jump question
 
@@ -33,7 +33,7 @@ else:
 			player: What do you hear?
 			Jonny: Well, he walks (or rather stomps...) around the house aimlessly. It would not surprise me if even you were to hear it.
 			Jonny: Despite that, he also appears to be saying... something?
-			Jonny: However, to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense.
+			Jonny: However, to me, he's just [hint name=mumbling][url="mumbling"]mumbling[/url][/hint] and rambling utter nonsense.
 			Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
 			do FmodEventMessenger.startFocus()
 			do FmodEventMessenger.playHandOnPhone()
@@ -48,7 +48,7 @@ else:
 		if ({_Basic.location}  && !{questions.q03}):
 			[signal arg="answer"]
 			player: Where are you right now?
-			Jonny: I am currently residing in my [url="apartment"]apartment[/url]. Which makes this especially peculiar.
+			Jonny: I am currently residing in my [hint name=apartment][url="apartment"]apartment[/url][/hint]. Which makes this especially peculiar.
 			set {questions.q03} = true
 			jump question
 
@@ -56,7 +56,7 @@ else:
 			[signal arg="answer"]
 			player: What does the Person do?
 			Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
-			Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
+			Jonny: They seem rather [hint name=uncoordinated][url="uncoordinated"]uncoordinated[/url][/hint] though. They miss the door handles and such.
 			set {questions.q04} = true
 			jump question
 
@@ -70,7 +70,7 @@ else:
 		if (({Doppelganger.apartment} || {Parasite.apartment}) && !{questions.q06}):
 			[signal arg="answer"]
 			player: Is there anyone else around?
-			Jonny: Well yes. There is a [url="person"]person[/url] in the hallway.
+			Jonny: Well yes. There is a [hint name=person][url="person"]person[/url][/hint] in the hallway.
 			set {questions.q06} = true
 			jump question
 
@@ -98,7 +98,7 @@ else:
 		if ({Parasite.mumbling} && !{questions.q10}):
 			[signal arg="answer"]
 			player: Ask them something. Do they respond?
-			Jonny: They most certainly [url="coherent"]respond[/url], yet it sounds as if they have a lisp.
+			Jonny: They most certainly [hint name=coherent][url="coherent"]respond[/url][/hint], yet it sounds as if they have a lisp.
 			Jonny: I don't think that he reacts to me in any way
 			set {questions.q10} = true
 			jump question
@@ -110,7 +110,7 @@ else:
 			do FmodEventMessenger.startFocus()
 			do FmodEventMessenger.playHandOnPhone()
 			do FmodEventMessenger.playMumbling()
-			Jonny: It appears as if they are [url="coherent"]rambling about the door[/url] they try to open.
+			Jonny: It appears as if they are [hint name=coherent][url="coherent"]rambling about the door[/url][/hint] they try to open.
 			Jonny: Can you hear it on your end?
 			[wait time="4.0"]
 			do FmodEventMessenger.playHandOnPhone()
@@ -121,7 +121,7 @@ else:
 		if ({Screamer.mumbling} && !{questions.q12}):
 			[signal arg="answer"]
 			player: Are there any other sounds?
-			Jonny: No. Just mumbling. Sounds like a [url="person"]person[/url].
+			Jonny: No. Just mumbling. Sounds like a [hint name=person][url="person"]person[/url][/hint].
 			set {questions.q12} = true
 			jump question
 
@@ -142,7 +142,7 @@ else:
 		if ({Screamer.uncoordinated} && !{questions.q15}):
 			[signal arg="answer"]
 			player: Are you outside?
-			Jonny: No. I am in my [url="apartment"]apartment[/url].
+			Jonny: No. I am in my [hint name=apartment][url="apartment"]apartment[/url][/hint].
 			set {questions.q15} = true
 			jump question
 	else:
@@ -230,3 +230,4 @@ player: Ok stay calm, I think I know what it is...
 	Jonny: …Hello?
 [wait time="10" hide_text="false"]
 	jump failedAction_timeout
+
