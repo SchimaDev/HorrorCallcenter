@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c6eik6vr2b2ap"]
+[gd_scene load_steps=16 format=3 uid="uid://c6eik6vr2b2ap"]
 
 [ext_resource type="Script" path="res://scripts/Encyclopedia.gd" id="1_34cn1"]
 [ext_resource type="PackedScene" uid="uid://bjgbj3e5uhnr7" path="res://scenes/pagesViewport.tscn" id="2_ix6g0"]
@@ -154,9 +154,6 @@ _data = {
 "Armature_001Action": SubResource("Animation_kexsm")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cc4gd"]
-size = Vector3(1.81, 1.425, 0.175)
-
 [node name="Book" type="StaticBody3D"]
 process_mode = 3
 collision_layer = 2
@@ -266,7 +263,3 @@ speed_scale = 3.0
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543471, -0.369069, 1.06599)
 current = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.631585, -0.411312, 0.102198)
-shape = SubResource("BoxShape3D_cc4gd")
