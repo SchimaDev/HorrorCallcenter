@@ -7,6 +7,9 @@ var reloadQuestions = false
 var dialog = ""
 var monsterSelect = false
 
+signal chosenWordDialogueChanged(word)
+signal chosenWordDictionaryChanged(monster, dictionary)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -20,6 +23,7 @@ func _on_dialogic_signal(argument:String):
 func handle_url_tag_clicked(clue: String) -> void:
 	print(clue)
 	chosenWordDialogue = clue
+	chosenWordDialogueChanged.emit(chosenWordDialogue)
 	compareWords()
 
 func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
@@ -30,6 +34,7 @@ func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
 	n.remove_at(0)
 	chosenWordDictionary = n
 	
+	chosenWordDictionaryChanged.emit(chosenMonster, chosenWordDictionary)
 	compareWords()
 
 func compareWords():
