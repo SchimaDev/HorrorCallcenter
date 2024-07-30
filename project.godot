@@ -62,7 +62,7 @@ layout/default_style="res://dialogue/dialogue_style.tres"
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
-text/autoadvance_per_character_delay=0.1
+text/autoadvance_per_character_delay=0
 text/autoadvance_ignored_characters_enabled=true
 animations/join_default_length=0.5
 animations/leave_default_length=0.5
@@ -169,6 +169,8 @@ choices/def_false_behaviour=1
 history/simple_history_enabled=true
 history/full_history_enabled=false
 text/autocolor_names=false
+text/autoadvance_per_word_delay=0
+text/autoadvance_enabled=true
 
 [display]
 

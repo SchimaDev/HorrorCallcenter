@@ -2,7 +2,7 @@ do FmodEventMessenger.playPickupPhone()
 player: AID Abomination Inquiry Desk, how can I help you?
 Lucia: Hola? Hello? Is there someone?!
 Lucia: I need help... I... Dios mío, I don’t know what’s happening...
-Lucia: There is [url="person"]somebody[/url] [url="basement"]in my basement[/url] .
+Lucia: There is [hint name=person][url="person"]somebody[/url][/hint] [url="basement"]in my basement[/url].
 do FmodEventMessenger.playDroneSound()
 label question
 [signal arg="ask"]
@@ -10,18 +10,16 @@ if {timer} <= 0:
 	[signal arg="answer"]
 	Lucia: Oh no it's coming towards me! What is that thing?!!!
 	set {_MonsterSelect.timeout} = true
-	jump MonsterSelect
+	jump timeout
 else:
 	set {timer} -= 1
-	player: <Empty Text Event>
 	
 	if !{_Basic.monsterSelect}:
 		if ({questions.q00}):
 			[signal arg="answer"]
-			player: nvm lol
 			set {questions.q00} = !true
 			jump question
-		
+
 		if (({_Basic.sight}) && !{questions.q01}):
 			[signal arg="answer"]
 			player: What do you see?
@@ -29,21 +27,21 @@ else:
 			Lucia: ... Dios mío...
 			set {questions.q01} = true
 			jump question
-		
+
 		if ({_Basic.sound}  && !{questions.q02}):
 			[signal arg="answer"]
 			player: What do you hear?
 			Lucia: N... nothing. It is [url="quiet"]dead quiet...[/url]
 			set {questions.q02} = true
 			jump question
-		
+
 		if ({_Basic.location}  && !{questions.q03}):
 			[signal arg="answer"]
 			player: Where are you right now?
 			Lucia: I told you I'm [url="basement"]in my basement.[/url]
 			set {questions.q03} = true
 			jump question
-		
+
 		if (({Parasite.person} || {Tally.person}) && !{questions.q04}):
 			[signal arg="answer"]
 			player: What does the Person do?
@@ -52,7 +50,7 @@ else:
 			Lucia: Ooh dios mío, these eyes... so many eyes...
 			set {questions.q04} = true
 			jump question
-		
+
 		if (({FearOfDeath.basement} || {FearOfDeath.quiet} || {FearOfDeath.standing in corner} || {FearOfDeath.scared} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q05}):
 			[signal arg="answer"]
 			player: How do you feel
@@ -61,49 +59,49 @@ else:
 			Lucia: You... you are right... I need to... stay calm... even if it’s hard...
 			set {questions.q05} = true
 			jump question
-		
+
 		if (({Ooze.basement} || {Ooze.standing in corner}) && !{questions.q06}):
 			[signal arg="answer"]
 			player: How does the area look?
 			Lucia: As always? Dusty boxes left and right, a flickering ceiling lamp at the top and an old rug on the ground. It is a [url="basement"]basement[/url] after all...
 			set {questions.q06} = true
 			jump question
-		
+
 		if (({Analogue.basement}) && !{questions.q07}):
 			[signal arg="answer"]
 			player: Can you hear any static noise or electric buzzing?
 			Lucia: No. Not that I can hear... it's [url="quiet"]very quiet.[/url]
 			set {questions.q07} = true
 			jump question
-		
+
 		if (({Tally.basement} || {Tally.standing in corner} || {Tally.staring}) && !{questions.q08}):
 			[signal arg="answer"]
 			player: Is there light?
 			Lucia: Sí, the ceiling light is on.
 			set {questions.q08} = true
 			jump question
-		
+
 		if (({Tally.quiet}) && !{questions.q09}):
 			[signal arg="answer"]
 			player: Is there any sound at all?
 			Lucia: No. [url="quiet"]There is absolutely nothing.[/url]
 			set {questions.q09} = true
 			jump question
-		
+
 		if ({Doppelganger.person} && !{questions.q10}):
 			[signal arg="answer"]
 			player: Are there any additional people?
 			Lucia: Not really. I'm the only one here. I've [url="no people"]never seen anyone else down here.[/url]
 			set {questions.q10} = true
 			jump question
-		
+
 		if ({Analogue.standing in corner} && !{questions.q11}):
 			[signal arg="answer"]
 			player: Is there a flickering screen of any sort?
 			Lucia: A screen...? No. Again, there is a [url="person"]person[/url] in front of me.
 			set {questions.q11} = true
 			jump question
-		
+
 		if (({Screamer.staring} || {Screamer.no people}) && !{questions.q12}):
 			[signal arg="answer"]
 			player: Are you outside?
@@ -113,17 +111,19 @@ else:
 	else:
 		if {questions.q00} == false:
 			[signal arg="answer"]
-			player: I think I know what it is...
 			set {questions.q00} = true
 	
 	[signal arg="ask"]
-	player: <Empty Text Event>
-	[wait_input hide_text="false"]
-
+	player:
+	[wait time="15" hide_text="false"]
+		# Lucia: Hello? Anyone still there???
+		set {timer} += 1
+		jump question
 
 label failedAction
 Lucia: Okay. Give me a moment.
 Lucia: .....
+label failedAction_timeout
 Lucia: I... oh god... It's coming toward me... WHY IS IT COMING TOWARD ME?!
 Lucia: What do I do, oh dios mío, what do I do?!?!
 Lucia: AAAAAAAAAAAAAAAAH!
@@ -146,29 +146,49 @@ label end
 [end_timeline]
 
 label Doppelganger
-heehoo here should be text
-jump end
+player: It's a Doppelganger.
+player: Try to stay away from it. And although this will be hard, try to stay away from your acquaintances as well. They will be fine, the creature is currently not harmful.
+player: Lock yourself into a room or closet if nothing else is available. Help is on the way.
+jump failedAction
 
 label Parasite
-here should be a different text
-jump end
+player: It's a Parasite.
+player: Please put your phone on speaker. Afterwards, I will play a sound from your phone. The person infront of you will look in pain once I do. Do not worry, they will be fine.
+player: You will see a little worm coming from the nose or mouth of the person. Once it drops to the floor, squeeze it like a bug.
+jump failedAction
 
 label Tally
-different text
-jump end
+player: It's a Tally.
+player: Stay away from the creature and try to make the area as calm and quiet as possible. Turn off any lights or machines causing noise and carefully leave the area.
+jump solution
 
 label Analogue
-another text
-jump end
+player: It's a Analogue.
+player: Okay. Although it might be hard, please turn off and unplug the device it currently resides on. Be quick about it. Afterwards, try to find a spot outside to bury it, so no electricity can pass through it anymore.
+jump failedAction
 
 label FearOfDeath
-text 2 electric boogaloo
-jump end
+player: It's a Fear Of Death.
+player: Everything will be all right. Remain calm. I am here with you.
+player: I will play a sound for you, okay?
+player: Just stay with me. Deep breaths. In and out.
+player: It will be over in a moment. The creature will disappear shortly.
+jump failedAction
 
 label Screamer
-text 3 oh weeee!
-jump end
+player: It's a Screamer.
+player: Slowly and quietly move away from your current location. Try to avoid the creature. Stay away from its noise. We will handle the rest.
+jump failedAction
 
 label Ooze
-final text
-jump end
+player: It's a Ooze.
+player: Make your way carefully toward the sun or another source of light. Ensure the creature follows you slowly.
+jump failedAction
+
+label timeout
+[signal arg="timeout"]
+player: Ok stay calm, I think I know what it is...
+[wait time="10" hide_text="false"]
+	Lucia: PLease!!! Somebody!!
+[wait time="10" hide_text="false"]
+	jump failedAction_timeout

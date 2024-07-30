@@ -23,7 +23,7 @@ script/source = "extends Control
 @onready var view_5 = $BookMesh2Untitled/View5
 @onready var view_6 = $BookMesh2Untitled/View6
 @onready var view_7 = $BookMesh2Untitled/View7
-@onready var view_8 = $BookMesh2Untitled/View7
+@onready var view_8 = $BookMesh2Untitled/View8
 
 signal turnNextPage
 signal turnPrevPage

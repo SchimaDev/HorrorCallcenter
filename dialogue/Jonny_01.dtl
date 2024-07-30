@@ -8,172 +8,154 @@ label question
 [signal arg="ask"]
 if {timer} <= 0:
 	[signal arg="answer"]
-	Jonny: Oh my, he seems to be aproching me rapidly now. What should I do?
+	Jonny: Oh my, he seems to be approaching me rapidly now. What should I do?
 	set {_MonsterSelect.timeout} = true
-	jump MonsterSelect
+	jump timeout
 else:
 	do FmodEventMessenger.playFootsteps()
 	set {timer} -= 1
-	
-	if ({_Basic.sight}  && !{questions.q01}):
-		[signal arg="answer"]
-		player: What do you see?
-		Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
-		set {questions.q01} = true
-		jump question
-	
-	if ({_Basic.sound}  && !{questions.q02}):
-		[signal arg="answer"]
-		player: What do you hear?
-		Jonny: Well, he walks (or rather stomps...) around the house aimlessly. It would not surprise me if even you were to hear it.
-		Jonny: Despite that, he also appears to be saying... something?
-		Jonny: However to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense.
-		Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
-		do FmodEventMessenger.startFocus()
-		do FmodEventMessenger.playHandOnPhone()
-		do FmodEventMessenger.playMumbling()
-		# [wait time="6.0"]
-		do FmodEventMessenger.playHandOnPhone()
-		do FmodEventMessenger.stopFocus()
-		Jonny: I have never hear someone speak like that before, may it be a different language perhaps?
-		set {questions.q02} = true
-		jump question
-	
-	if ({_Basic.location}  && !{questions.q03}):
-		[signal arg="answer"]
-		player: Where are you right now?
-		Jonny: I am currently residing in my [url="apartment"]apartment[/url]. Which makes this especially peculiar.
-		set {questions.q03} = true
-		jump question
-	
-	if (({Doppelganger.person} || {Parasite.person} || {Tally.person}) && !{questions.q04}):
-		[signal arg="answer"]
-		player: What does the Person do?
-		Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
-		Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
-		set {questions.q04} = true
-		jump question
-	
-	if ({Ooze.apartment} && !{questions.q05}):
-		[signal arg="answer"]
-		player: How does the area look?
-		Jonny: Like a hallway indeed. Some lights, white walls. A very normal hallway.
-		set {questions.q05} = true
-		jump question
-	
-	if (({Doppelganger.apartment} || {Parasite.apartment}) && !{questions.q06}):
-		[signal arg="answer"]
-		player: Is there anyone else around?
-		Jonny: Well yes. There is a [url="person"]person[/url] in the hallway.
-		set {questions.q06} = true
-		jump question
-	
-	if (({FearOfDeath.apartment} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q07}):
-		[signal arg="answer"]
-		player: How do you feel?
-		Jonny: I myself feel quite well. Thank you for your concern.
-		set {questions.q07} = true
-		jump question
-	
-	if ({Analogue.apartment} && !{questions.q08}):
-		[signal arg="answer"]
-		player: Can you hear any static noise or electric buzzing?
-		Jonny: Static noise? No. What a curious question though...
-		set {questions.q08} = true
-		jump question
-	
-	if ({Tally.apartment} && !{questions.q09}):
-		[signal arg="answer"]
-		player: Is there light?
-		Jonny: Well, yes of course. How am I to see without light?
-		set {questions.q09} = true
-		jump question
-	
-	if ({Parasite.mumbling} && !{questions.q10}):
-		[signal arg="answer"]
-		player: Ask them something. Do they respond?
-		Jonny: They most certainly [url="coherent"]respond[/url], yet it sounds as if they have a lisp.
-		Jonny: I don't think that he reacts to me in any way
-		set {questions.q10} = true
-		jump question
-	
-	if ({Doppelganger.mumbling} && !{questions.q11}):
-		[signal arg="answer"]
-		player: Can you make out what they are saying?
-		Jonny: Maybe...
-		do FmodEventMessenger.startFocus()
-		do FmodEventMessenger.playHandOnPhone()
-		do FmodEventMessenger.playMumbling()
-		Jonny: It appears as if they are [url="coherent"]rambling about the door[/url] they try to open.
-		Jonny: Can you hear it on your end?
-		[wait time="4.0"]
-		do FmodEventMessenger.playHandOnPhone()
-		do FmodEventMessenger.stopFocus()
-		set {questions.q11} = true
-		jump question
-	
-	if ({Screamer.mumbling} && !{questions.q12}):
-		[signal arg="answer"]
-		player: Are there any other sounds?
-		Jonny: No. Just mumbling. Sounds like a [url="person"]person[/url].
-		set {questions.q12} = true
-		jump question
-	
-	if (({Parasite.coherent} || {Parasite.uncoordinated}) && !{questions.q13}):
-		[signal arg="answer"]
-		player: Have you ever seen this person before?
-		Jonny: Yes. Now that I am looking closer, this is my neighbour. Bobby. He seemed very well yesterday.
-		set {questions.q13} = true
-		jump question
-	
-	if ({Doppelganger.uncoordinated} && !{questions.q14}):
-		[signal arg="answer"]
-		player: Are there any additional people?
-		Jonny: Indeed not. Me and this person are alone here.
-		set {questions.q14} = true
-		jump question
-	
-	if ({Screamer.uncoordinated} && !{questions.q15}):
-		[signal arg="answer"]
-		player: Are you outside?
-		Jonny: No. I am in my [url="apartment"]apartment[/url].
-		set {questions.q15} = true
-		jump question
+
+	if !{_Basic.monsterSelect}:
+		if ({questions.q00}):
+			[signal arg="answer"]
+			set {questions.q00} = !true
+			jump question
+
+		if (({_Basic.sight}) && !{questions.q01}):
+			[signal arg="answer"]
+			player: What do you see?
+			Jonny: A [url="person"]person[/url]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
+			set {questions.q01} = true
+			jump question
+
+		if ({_Basic.sound}  && !{questions.q02}):
+			[signal arg="answer"]
+			player: What do you hear?
+			Jonny: Well, he walks (or rather stomps...) around the house aimlessly. It would not surprise me if even you were to hear it.
+			Jonny: Despite that, he also appears to be saying... something?
+			Jonny: However, to me, he's just [url="mumbling"]mumbling[/url] and rambling utter nonsense.
+			Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
+			do FmodEventMessenger.startFocus()
+			do FmodEventMessenger.playHandOnPhone()
+			do FmodEventMessenger.playMumbling()
+			# [wait time="6.0"]
+			do FmodEventMessenger.playHandOnPhone()
+			do FmodEventMessenger.stopFocus()
+			Jonny: I have never heard someone speak like that before, may it be a different language perhaps?
+			set {questions.q02} = true
+			jump question
+
+		if ({_Basic.location}  && !{questions.q03}):
+			[signal arg="answer"]
+			player: Where are you right now?
+			Jonny: I am currently residing in my [url="apartment"]apartment[/url]. Which makes this especially peculiar.
+			set {questions.q03} = true
+			jump question
+
+		if (({Doppelganger.person} || {Parasite.person} || {Tally.person}) && !{questions.q04}):
+			[signal arg="answer"]
+			player: What does the Person do?
+			Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
+			Jonny: They seem rather [url="uncoordinated"]uncoordinated[/url] though. They miss the door handles and such.
+			set {questions.q04} = true
+			jump question
+
+		if ({Ooze.apartment} && !{questions.q05}):
+			[signal arg="answer"]
+			player: How does the area look?
+			Jonny: Like a hallway indeed. Some lights, white walls. A very normal hallway.
+			set {questions.q05} = true
+			jump question
+
+		if (({Doppelganger.apartment} || {Parasite.apartment}) && !{questions.q06}):
+			[signal arg="answer"]
+			player: Is there anyone else around?
+			Jonny: Well yes. There is a [url="person"]person[/url] in the hallway.
+			set {questions.q06} = true
+			jump question
+
+		if (({FearOfDeath.apartment} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q07}):
+			[signal arg="answer"]
+			player: How do you feel?
+			Jonny: I myself feel quite well. Thank you for your concern.
+			set {questions.q07} = true
+			jump question
+
+		if ({Analogue.apartment} && !{questions.q08}):
+			[signal arg="answer"]
+			player: Can you hear any static noise or electric buzzing?
+			Jonny: Static noise? No. What a curious question though...
+			set {questions.q08} = true
+			jump question
+
+		if ({Tally.apartment} && !{questions.q09}):
+			[signal arg="answer"]
+			player: Is there light?
+			Jonny: Well, yes of course. How am I to see without light?
+			set {questions.q09} = true
+			jump question
+
+		if ({Parasite.mumbling} && !{questions.q10}):
+			[signal arg="answer"]
+			player: Ask them something. Do they respond?
+			Jonny: They most certainly [url="coherent"]respond[/url], yet it sounds as if they have a lisp.
+			Jonny: I don't think that he reacts to me in any way
+			set {questions.q10} = true
+			jump question
+
+		if ({Doppelganger.mumbling} && !{questions.q11}):
+			[signal arg="answer"]
+			player: Can you make out what they are saying?
+			Jonny: Maybe...
+			do FmodEventMessenger.startFocus()
+			do FmodEventMessenger.playHandOnPhone()
+			do FmodEventMessenger.playMumbling()
+			Jonny: It appears as if they are [url="coherent"]rambling about the door[/url] they try to open.
+			Jonny: Can you hear it on your end?
+			[wait time="4.0"]
+			do FmodEventMessenger.playHandOnPhone()
+			do FmodEventMessenger.stopFocus()
+			set {questions.q11} = true
+			jump question
+
+		if ({Screamer.mumbling} && !{questions.q12}):
+			[signal arg="answer"]
+			player: Are there any other sounds?
+			Jonny: No. Just mumbling. Sounds like a [url="person"]person[/url].
+			set {questions.q12} = true
+			jump question
+
+		if (({Parasite.coherent} || {Parasite.uncoordinated}) && !{questions.q13}):
+			[signal arg="answer"]
+			player: Have you ever seen this person before?
+			Jonny: Yes. Now that I am looking closer, this is my neighbour. Bobby. He seemed very well yesterday.
+			set {questions.q13} = true
+			jump question
+
+		if ({Doppelganger.uncoordinated} && !{questions.q14}):
+			[signal arg="answer"]
+			player: Are there any additional people?
+			Jonny: Indeed not. Me and this person are alone here.
+			set {questions.q14} = true
+			jump question
+
+		if ({Screamer.uncoordinated} && !{questions.q15}):
+			[signal arg="answer"]
+			player: Are you outside?
+			Jonny: No. I am in my [url="apartment"]apartment[/url].
+			set {questions.q15} = true
+			jump question
+	else:
+		if {questions.q00} == false:
+			[signal arg="answer"]
+			set {questions.q00} = true
 	
 	[signal arg="ask"]
-	player: <Empty Text Event>
-	- end call
-		label MonsterSelect
-		- Doppelganger [if {_MonsterSelect.Doppelganger}][else="hide"]
-			player: [instruction on how to deal with a Doppelganger]
-			jump failedAction
-		- Parasite [if {_MonsterSelect.Parasite}][else="hide"]
-			- You are infected.
-				player: [instruction on how to deal with a Parasite infection]
-				jump failedAction
-			- The person you are seeing is infected.
-				player: [instruction on how to deal with someone who is infected by a Parasite]
-				jump solution
-		- Tally [if {_MonsterSelect.Tally}][else="hide"]
-			player: [instruction on how to deal with a Tally]
-			jump failedAction
-		- Analogue [if {_MonsterSelect.Analogue}][else="hide"]
-			player: [instruction on how to deal with a Analogue]
-			jump failedAction
-		- Fear of Death [if {_MonsterSelect.FearOfDeath}][else="hide"]
-			player: [instruction on how to deal with a Fear Of Death]
-			jump failedAction
-		- Screamer [if {_MonsterSelect.Screamer}][else="hide"]
-			player: [instruction on how to deal with a Screamer]
-			jump failedAction
-		- Ooze [if {_MonsterSelect.Ooze}][else="hide"]
-			player: [instruction on how to deal with a Ooze]
-			jump failedAction
-		- Actually, I'm not really sure yet. [if !{_MonsterSelect.timeout}][else="hide"]
-			set {timer} += 1
-			jump question
-		- I have no idea, soo.... good luck?
-			jump end
+	player:
+	[wait time="15" hide_text="false"]
+		#Jonny: Hello? Anyone still there???
+		set {timer} += 1
+		jump question
 
 label failedAction
 Jonny: Of course! I shall do so.
@@ -184,6 +166,7 @@ Jonny: Aaah.
 Jonny: <Empty Text Event>
 Jonny: ............
 do FmodEventMessenger.playHangUpPhoneCaller()
+[wait time="2.0" hide_text="false"]
 (it seems the call got disconnected)
 jump end
 
@@ -196,7 +179,54 @@ Jonny: And I have stomped onto the worm.
 Jonny: Jonny Smith thanks you and A.I.D.  kindly for your service!
 Jonny: I wish you the best regards.
 
-
 label end
-do FmodEventMessenger.stopDroneSound()
 [signal arg="callEnded"]
+[end_timeline]
+
+label Doppelganger
+player: It's a Doppelganger.
+player: Try to stay away from it. And although this will be hard, try to stay away from your acquaintances as well. They will be fine, the creature is currently not harmful.
+player: Lock yourself into a room or closet if nothing else is available. Help is on the way.
+jump failedAction
+
+label Parasite
+player: It's a Parasite.
+player: Please put your phone on speaker. Afterwards, I will play a sound from your phone. The person in front of you will look in pain once I do. Do not worry, they will be fine.
+player: You will see a little worm coming from the nose or mouth of the person. Once it drops to the floor, squeeze it like a bug.
+jump solution
+
+label Tally
+player: It's a Tally.
+player: Stay away from the creature and try to make the area as calm and quiet as possible. Turn off any lights or machines causing noise and carefully leave the area.
+jump failedAction
+
+label Analogue
+player: It's an Analogue.
+player: Okay. Although it might be hard, please turn off and unplug the device it currently resides on. Be quick about it. Afterwards, try to find a spot outside to bury it, so no electricity can pass through it anymore.
+jump failedAction
+
+label FearOfDeath
+player: It's a Fear Of Death.
+player: Everything will be alright. Remain calm. I am here with you.
+player: I will play a sound for you, okay?
+player: Just stay with me. Deep breaths. In and out.
+player: It will be over in a moment. The creature will disappear shortly.
+jump failedAction
+
+label Screamer
+player: It's a Screamer.
+player: Slowly and quietly move away from your current location. Try to avoid the creature. Stay away from its noise. We will handle the rest.
+jump failedAction
+
+label Ooze
+player: It's an Ooze.
+player: Make your way carefully toward the sun or another source of light. Ensure the creature follows you slowly.
+jump failedAction
+
+label timeout
+[signal arg="timeout"]
+player: Ok stay calm, I think I know what it is...
+[wait time="10" hide_text="false"]
+	Jonny: …Hello?
+[wait time="10" hide_text="false"]
+	jump failedAction_timeout
