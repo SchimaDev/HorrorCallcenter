@@ -20,8 +20,6 @@ func _process_custom_fx(char_fx):
 	return true
 
 func _on_chosenWordDictionaryChanged(monster, dictionary):
-	var n = name.split(", ")
-	var chosenMonster = n[0]
-	n.remove_at(0)
-	var chosenWordDictionary = n
+	var chosenWordDictionary = dictionary
+	var chosenMonster = monster
 	setActive = chosenMonster == monster and chosenWordDictionary == dictionary
