@@ -20,6 +20,8 @@ func _process_custom_fx(char_fx):
 	return true
 
 func _on_chosenWordDictionaryChanged(monster, dictionary):
+	if name == null: #TODO got an n is null error here so added this workaround for now
+		return
 	var n = name.split(", ")
 	var chosenMonster = n[0]
 	n.remove_at(0)

@@ -703,7 +703,7 @@ text = "
 
 
 This large, [hint name=Tally, person][url=\"Tally, person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, [hint name=Tally, no people][url=\"Tally, no people\"]less frequented[/url] [/hint] places in [hint name=Tally, apartment, basement, outside][url=\"Tally, apartment, basement, outside\"]urban areas[/url][/hint].
-It’s a mostly [hint name=Tally, quiet]url=\"Tally, quiet\"]quiet[/url][/hint][ and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
+It’s a mostly [hint name=Tally, quiet][url=\"Tally, quiet\"]quiet[/url][/hint] and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -764,7 +764,6 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View5" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View5"]
 position = Vector2(-327.373, -259.592)
@@ -788,7 +787,7 @@ text = "
 
 
 This large, [hint name=Tally, person][url=\"Tally, person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, [hint name=Tally, no people][url=\"Tally, no people\"]less frequented[/url] [/hint] places in [hint name=Tally, apartment, basement, outside][url=\"Tally, apartment, basement, outside\"]urban areas[/url][/hint].
-It’s a mostly [hint name=Tally, quiet]url=\"Tally, quiet\"]quiet[/url][/hint][ and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
+It’s a mostly [hint name=Tally, quiet][url=\"Tally, quiet\"]quiet[/url][/hint] and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -1259,6 +1258,7 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View8" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View8"]
 position = Vector2(-327.373, -259.592)

@@ -1,7 +1,7 @@
 extends Node
 
-var clueBook = []
-var clueDialogue = ""
+var chosenWordDictionary = []
+var chosenWordDialogue = ""
 var chosenMonster = ""
 var reloadQuestions = false
 var dialog = ""
@@ -22,7 +22,7 @@ func _on_dialogic_signal(argument:String):
 
 func handle_url_tag_clicked(clue: String) -> void:
 	print(clue)
-	clueDialogue = clue
+	chosenWordDialogue = clue
 	chosenWordDialogueChanged.emit(chosenWordDialogue)
 	compareWords()
 
@@ -32,7 +32,7 @@ func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
 	chosenMonster = n[0]
 	
 	n.remove_at(0)
-	clueBook = n
+	chosenWordDictionary = n
 	
 	chosenWordDictionaryChanged.emit(chosenMonster, chosenWordDictionary)
 	compareWords()
@@ -41,28 +41,28 @@ func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
 func compareWords():
 	# exception for asking one of the basic question -> selected clue from dialog ignored
 	# connecting ANY dialog clue to "hallucinations" -> any observation could be a hallucination of the caller
-	if chosenMonster == "_Basic" or (clueBook.has("hallucinations") and clueDialogue != ""):
-		clueDialogue = clueBook[0]
+	if chosenMonster == "_Basic" or (chosenWordDictionary.has("hallucinations") and chosenWordDialogue != ""):
+		chosenWordDialogue = chosenWordDictionary[0]
 	
 	# exception for clicking easteregg clue
-	if clueDialogue == "egg":
-		clueBook[0] = clueDialogue
+	if chosenWordDialogue == "egg":
+		chosenWordDictionary[0] = chosenWordDialogue
 		chosenMonster = "_Basic"
 		Dialogic.VAR.timer += 1
 	
 	# confirm choice of which monster it is
 	if chosenMonster == "_MonsterSelect" && monsterSelect:
-		Dialogic.start_timeline(dialog, clueBook[0])
+		Dialogic.start_timeline(dialog, chosenWordDictionary[0])
 		return
 	
 	# entering Monster Selection mode
-	if clueBook.has("monsterSelect"):
+	if chosenWordDictionary.has("monsterSelect"):
 		monsterSelect = !monsterSelect
 		Dialogic.VAR._Basic.monsterSelect = monsterSelect
 		flushClues()
 	# compare clicked clues and set according variable
-	elif clueBook.has(clueDialogue):
-		var v = chosenMonster + "." + clueDialogue
+	elif chosenWordDictionary.has(chosenWordDialogue):
+		var v = chosenMonster + "." + chosenWordDialogue
 		Dialogic.VAR.set_variable(v, true)
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
 		flushClues()
@@ -73,8 +73,8 @@ func compareWords():
 			Dialogic.VAR.timer += 1
 
 func flushClues():
-	clueDialogue = ""
-	clueBook.clear()
-	clueBook.append("")
+	chosenWordDialogue = ""
+	chosenWordDictionary.clear()
+	chosenWordDictionary.append("")
 	chosenMonster = ""
 
