@@ -1,0 +1,221 @@
+
+do FmodEventMessenger.playPickupPhone()
+player: AID Abomination Inquiry Desk, how can I help you?
+Sincubus: Yo, yo, YO, WASSUP!
+Sincubus: We got through to A.I.D. Chat! They'll know what this thing is.
+do FmodEventMessenger.playDroneSound()
+label question
+[signal arg="ask"]
+if {timer} <= 0:
+	[signal arg="answer"]
+	Sincubus: Uh... I see something now. And it's fast... oh frick, okay. Imma dash!! Help?!?!
+	set {_MonsterSelect.timeout} = true
+	jump timeout
+else:
+	set {timer} -= 1
+	
+	if !{_Basic.monsterSelect}:
+		if ({questions.q00}):
+			[signal arg="answer"]
+			set {questions.q00} = !true
+			jump question
+
+		if (({_Basic.sight}) && !{questions.q01}):
+			[signal arg="answer"]
+			player: What do you see?
+			Sincubus: Yo guys! They're asking what I see. Well, what do you see?
+			Sincubus: Exactly Chat! Nothing but my ring light.
+			set {questions.q01} = true
+			jump question
+
+		if ({_Basic.sound}  && !{questions.q02}):
+			[signal arg="answer"]
+			player: What do you hear?
+			Sincubus: I dunno man, sounds whacky. But it's [hint name=loud][url="loud"]hella loud[/url][/hint].
+			Sincubus: If my mic wouldn't have noise suppression you probs wouldn't even hear me.
+			set {questions.q02} = true
+			jump question
+
+		if ({_Basic.location}  && !{questions.q03}):
+			[signal arg="answer"]
+			player: Where are you right now?
+			Sincubus: Just the best place to be at night, right Chat?
+			Sincubus: [hint name=outside][url="outside"]At the Mall. Right outside[/url][/hint], next to the trolly carts.
+			set {questions.q03} = true
+			jump question
+
+		if ({Analogue.loud} && !{questions.q04}):
+			[signal arg="answer"]
+			player: Does it sound like static noise or electric buzzing?
+			Sincubus: Heck yeah. But also kinda like a chainsaw?
+			Sincubus: And then also like a [hint name=voices][url="voices"]screaming child[/url][/hint]! …I hate children.
+			set {questions.q04} = true
+			jump question
+
+		if ({Screamer.loud} && !{questions.q05}):
+			[signal arg="answer"]
+			player: Can you identify where the sound comes from?
+			Sincubus: No clue chief. It's kinda everywhere really.
+			set {questions.q05} = true
+			jump question
+
+		if ({Ooze.loud} && !{questions.q06}):
+			[signal arg="answer"]
+			player: How does the area look?
+			Sincubus: Dunno chief. Looks like a parking lot to me.
+			Sincubus: Chat's been spouting that there's [hint name=moving around][url="moving around"]something moving around[/url][/hint], but I haven't seen anything.
+			set {questions.q06} = true
+			jump question
+
+		if (({Parasite.loud}) && !{questions.q07}):
+			[signal arg="answer"]
+			player: Is there a voice? Do you understand it?
+			Sincubus: There is a voice, yeah. Can you understand it Chat?
+			Sincubus: Nah man, me neither. OH!
+			Sincubus: Voice is gone. Now there's just a [hint name=loud][url="loud"]mechanical noise[/url][/hint].
+			set {questions.q07} = true
+			jump question
+
+		if (({Screamer.voices} || {Parasite.voices}) && !{questions.q08}):
+			[signal arg="answer"]
+			player: Can you make out what they are saying?
+			Sincubus: Chat, what do we think?
+			Sincubus: Yeah man, total gibberish!
+			set {questions.q08} = true
+			jump question
+
+		if (({Screamer.outside} || {Tally.outside}) && !{questions.q09}):
+			[signal arg="answer"]
+			player: Is there anyone else around?
+			Sincubus: Nah chief, just [hint name=egg][url="egg"]Chat[/url][/hint] and me.
+			set {questions.q09} = true
+			jump question
+
+		if (({FearOfDeath.outside} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q10}):
+			[signal arg="answer"]
+			player: How do you feel?
+			Sincubus: Pff, maybe a little [hint name=dizzy][url="dizzy"]dizzy[/url][/hint]?
+			Sincubus: Could be the new energy drinks I tried out. Shout out to Popstar Energy (please sponsor me)!
+			set {questions.q10} = true
+			jump question
+
+		if ({_Basic.egg} && !{questions.q11}):
+			[signal arg="answer"]
+			player: Who or what exactly is Chat?
+			Sincubus: Oh yeah, you're probably a boomer.
+			Sincubus: I am live streaming right now. The chat are my thousands of viewers.
+			Sincubus: They can text and I see what they write.
+			set {questions.q11} = true
+			jump question
+
+		if ({Screamer.moving around} && !{questions.q12}):
+			[signal arg="answer"]
+			player: How fast is it moving around?
+			Sincubus: Chat? How fast is it moving?
+			Sincubus: Chat says kinda quickly. Faster than me for sure.
+			set {questions.q12} = true
+			jump question
+
+		if (({Doppelganger.moving around} || {Parasite.moving around}) && !{questions.q13}):
+			[signal arg="answer"]
+			player: Does it look like a person?
+			Sincubus: Not according to Chat. They say it's more like a weird, long dog.
+			set {questions.q13} = true
+			jump question
+
+		if ({Analogue.dizzy} && !{questions.q14}):
+			[signal arg="answer"]
+			player: Is there a flickering screen of any sort?
+			Sincubus: My cam and phone are working fine.
+			Sincubus: Chat, you can see me, right?
+			Sincubus: ... yep, seems to work.
+			set {questions.q14} = true
+			jump question
+
+		if ({Screamer.dizzy} && !{questions.q15}):
+			[signal arg="answer"]
+			player: How close is it to you?
+			Sincubus: Chat said not that close. So it probably didn't notice me.
+			set {questions.q15} = true
+			jump question
+	else:
+		if {questions.q00} == false:
+			[signal arg="answer"]
+			set {questions.q00} = true
+	
+	[signal arg="ask"]
+	player:
+	[wait time="15" hide_text="false"]
+		set {timer} += 1
+		jump question
+
+label failedAction
+Sincubus: AAAAAAH
+Sincubus: .....
+label failedAction_timeout
+Sincubus: AAAAAAAAAAAAAAAAH!
+do FmodEventMessenger.playHangUpPhoneCaller()
+[wait time="2.0" hide_text="false"]
+(the call got disconnected)
+jump end
+
+label solution
+Sincubus: AAAAAAH
+Sincubus: .....
+Sincubus: gg ez
+do FmodEventMessenger.playHangUpPhoneCaller()
+
+
+label end
+[signal arg="callEnded"]
+[end_timeline]
+
+
+label Doppelganger
+player: It's a Doppelganger.
+player: Try to stay away from it. And although this will be hard, try to stay away from your acquaintances as well. They will be fine, the creature is currently not harmful.
+player: Lock yourself into a room or closet if nothing else is available. Help is on the way.
+jump failedAction
+
+label Parasite
+player: It's a Parasite.
+player: Please put your phone on speaker. Afterwards, I will play a sound from your phone. The person in front of you will look in pain once I do. Do not worry, they will be fine.
+player: You will see a little worm coming from the nose or mouth of the person. Once it drops to the floor, squeeze it like a bug.
+jump failedAction
+
+label Tally
+player: It's a Tally.
+player: Stay away from the creature and try to make the area as calm and quiet as possible. Turn off any lights or machines causing noise and carefully leave the area.
+jump failedAction
+
+label Analogue
+player: It's an Analogue.
+player: Okay. Although it might be hard, please turn off and unplug the device it currently resides on. Be quick about it. Afterwards, try to find a spot outside to bury it, so no electricity can pass through it anymore.
+jump failedAction
+
+label FearOfDeath
+player: It's a Fear Of Death.
+player: Everything will be alright. Remain calm. I am here with you.
+player: I will play a sound for you, okay?
+player: Just stay with me. Deep breaths. In and out.
+player: It will be over in a moment. The creature will disappear shortly.
+jump failedAction
+
+label Screamer
+player: It's a Screamer.
+player: Slowly and quietly move away from your current location. Try to avoid the creature. Stay away from its noise. We will handle the rest.
+jump solution
+
+label Ooze
+player: It's an Ooze.
+player: Make your way carefully toward the sun or another source of light. Ensure the creature follows you slowly.
+jump failedAction
+
+label timeout
+[signal arg="timeout"]
+player: Ok stay calm, I think I know what it is...
+[wait time="10" hide_text="false"]
+	Sincubus: AAAAAAH
+[wait time="10" hide_text="false"]
+	jump failedAction_timeout
+

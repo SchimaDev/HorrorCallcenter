@@ -1,7 +1,8 @@
 extends Node3D
 
 var incomingCall = ""
-var callQueue = ["Lucia_01", "Jonny_01"]
+# dialog_name : question_limit
+var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 7}, {"Sincubus_01": 5}]
 
 @onready var animation_player = $AnimationPlayer
 @onready var shader = $"RootNode/tel fijo".get_surface_override_material(0).next_pass
@@ -26,33 +27,34 @@ func setupRingingPhone() -> void:
 
 func _input(event: InputEvent) -> void:
 	if targeted and event.is_action_released("left_mouse"):
-		if incomingCall == "end":
-			incomingCall = ""
+		if incomingCall.keys()[0] == "end":
+			incomingCall = {"" : 0}
 			Dialogic.end_timeline()
 			animation_player.play_backwards("pickup_phone")
+			Dialogic.VAR.reset()
 			# TODO stop phone beeping
 			FmodEventMessenger.playHangUpPhonePlayer()
 			# queue next call after short delay
 			await get_tree().create_timer(5).timeout
 			if callQueue.size() > 0:
 				incomingCall = callQueue.pop_front()
+				Dialogic.VAR.timer = incomingCall.values()[0]
 				FmodEventMessenger.playRingingPhone()
-		elif incomingCall == "inCall":
+		elif incomingCall.keys()[0] == "inCall":
 			# TODO popou message ask player if they really want to end call now
 			# click phone again to confirm
-			incomingCall = "end"
+			incomingCall = {"end" : 0}
 			print("u sure you wanna end the call now?")
 			await get_tree().create_timer(5).timeout
-			incomingCall = "inCall"
-		elif incomingCall != "":
+			incomingCall = {"inCall" : 0}
+		elif incomingCall.keys()[0] != "":
 			animation_player.play("pickup_phone")
-			Dialogic.VAR.reset()
 			FmodEventMessenger.stopRingingPhone()
-			Dialogic.start(incomingCall)
-			ClickTextEventHandler.dialog = incomingCall
+			Dialogic.start(incomingCall.keys()[0])
+			ClickTextEventHandler.dialog = incomingCall.keys()[0]
 			await get_tree().create_timer(1).timeout
-			incomingCall = "inCall"
+			incomingCall = {"inCall" : 0}
 
 func _on_dialogic_signal(argument):
 	if argument == "callEnded":
-		incomingCall = "end"
+		incomingCall = {"end" : 0}

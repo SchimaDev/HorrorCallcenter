@@ -38,7 +38,6 @@ config/icon="res://art/icon.svg"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
 FmodEventMessenger="*res://scripts/FmodEventMessenger.gd"
-CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -47,11 +46,13 @@ directories/dch_directory={
 "Jonny": "res://dialogue/characters/Jonny.dch",
 "Lucia": "res://dialogue/characters/Lucia.dch",
 "Male voice/test_character": "res://audio/Male voice/test_character.dch",
+"Sincubus": "res://dialogue/characters/Sincubus.dch",
 "player": "res://dialogue/characters/player.dch"
 }
 directories/dtl_directory={
 "Jonny_01": "res://dialogue/Jonny_01.dtl",
 "Lucia_01": "res://dialogue/Lucia_01.dtl",
+"Sincubus_01": "res://dialogue/Sincubus_01.dtl",
 "monster_dialogue": "res://dialogue/monster_dialogue.dtl",
 "monster_test": "res://dialogue/monster_test.dtl",
 "second_dialogue": "res://dialogue/second_dialogue.dtl",
@@ -80,11 +81,14 @@ variables={
 "Analogue": {
 "apartment": false,
 "basement": false,
+"dizzy": false,
 "hallucinations": false,
+"loud": false,
 "standing in corner": false
 },
 "Doppelganger": {
 "apartment": false,
+"moving around": false,
 "mumbling": false,
 "person": false,
 "uncoordinated": false
@@ -92,6 +96,7 @@ variables={
 "FearOfDeath": {
 "apartment": false,
 "basement": false,
+"outside": false,
 "quiet": false,
 "scared": false,
 "standing in corner": false
@@ -100,32 +105,43 @@ variables={
 "Ooze": {
 "apartment": false,
 "basement": false,
+"loud": false,
 "standing in corner": false
 },
 "Parasite": {
 "apartment": false,
 "coherent": false,
 "hallucinations": false,
+"loud": false,
+"moving around": false,
 "mumbling": false,
 "person": false,
-"uncoordinated": false
+"uncoordinated": false,
+"voices": false
 },
 "Screamer": {
+"dizzy": false,
+"loud": false,
+"moving around": false,
 "mumbling": false,
 "no people": false,
+"outside": false,
 "staring": false,
-"uncoordinated": false
+"uncoordinated": false,
+"voices": false
 },
 "Tally": {
 "apartment": false,
 "basement": false,
 "no people": false,
+"outside": false,
 "person": false,
 "quiet": false,
 "standing in corner": false,
 "staring": false
 },
 "_Basic": {
+"egg": false,
 "location": false,
 "monsterSelect": false,
 "sight": false,
@@ -174,6 +190,7 @@ text/autoadvance_enabled=true
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
