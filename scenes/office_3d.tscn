@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://scripts/View.gd" id="14_mn5km"]
 [ext_resource type="Shader" path="res://resources/shaders/interact.gdshader" id="18_t7u8g"]
 [ext_resource type="PackedScene" uid="uid://cqpdhfjujoeti" path="res://art/3D/telephone model/telephone.tscn" id="21_uf1ls"]
-[ext_resource type="Script" path="res://art/3D/telephone model/telephone.gd" id="22_csw6m"]
+[ext_resource type="Script" path="res://scripts/telephone.gd" id="22_csw6m"]
 [ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://gui_in_3d/gui_panel_3d.tscn" id="22_mxmrp"]
 [ext_resource type="PackedScene" uid="uid://dom58wb2hrqoh" path="res://art/3D/All_pack/scenes/Paintings.scn" id="23_3annu"]
 [ext_resource type="PackedScene" uid="uid://bmjxeiqyl8nfo" path="res://art/3D/Models pack psx/scenes/Cube_075.scn" id="24_nxdhs"]
@@ -105,7 +105,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_tyf1i"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hpbon"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -131,7 +131,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_x51gi"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lrhdt"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -160,7 +160,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_tyf1i")
+shadow_mesh = SubResource("ArrayMesh_hpbon")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -381,7 +381,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_x51gi")
+mesh = SubResource("ArrayMesh_lrhdt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)

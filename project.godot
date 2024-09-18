@@ -38,6 +38,7 @@ config/icon="res://art/icon.svg"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
 FmodEventMessenger="*res://scripts/FmodEventMessenger.gd"
+CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -58,7 +59,7 @@ directories/dtl_directory={
 "second_dialogue": "res://dialogue/second_dialogue.dtl",
 "test_dialogue": "res://dialogue/test_dialogue.dtl"
 }
-layout/style_list=["res://dialogue/dialogue_style.tres", "res://dialogue/custom_style.tres"]
+layout/style_list=["res://dialogue/dialogue_style.tres"]
 layout/default_style="res://dialogue/dialogue_style.tres"
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
@@ -190,7 +191,6 @@ text/autoadvance_enabled=true
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]

@@ -45,6 +45,11 @@ func open_history() -> void:
 func close_history() -> void:
 	close_requested.emit()
 
+func clear_history() -> void:
+	simple_history_content.clear()
+	full_event_history_content.clear()
+	already_read_history_content.clear()
+
 #endregion
 
 
