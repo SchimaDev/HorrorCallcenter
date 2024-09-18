@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjgbj3e5uhnr7"]
+[gd_scene load_steps=24 format=3 uid="uid://bjgbj3e5uhnr7"]
 
 [ext_resource type="Texture2D" uid="uid://ba1q2ikxp18v7" path="res://art/3D/bookmesh/BookMesh2_Untitled.png" id="1_fyj0p"]
 [ext_resource type="Texture2D" uid="uid://bp6memi62eyhe" path="res://art/3D/bookmesh/pages/page_0.png" id="2_ars2c"]
 [ext_resource type="Texture2D" uid="uid://drh2r7q63rqlt" path="res://art/3D/bookmesh/pages/page_1.png" id="3_xh315"]
 [ext_resource type="Texture2D" uid="uid://phhoeyufqtkn" path="res://art/3D/bookmesh/book_corner.png" id="4_fmkdm"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/hint_dictionary.gd" id="4_mfcl4"]
 [ext_resource type="Texture2D" uid="uid://dnyh0tt53dv2k" path="res://art/3D/bookmesh/pages/page_empty.png" id="5_hphtm"]
 [ext_resource type="Texture2D" uid="uid://drkyxtview46u" path="res://art/3D/bookmesh/pages/page_2.png" id="5_puh8e"]
 [ext_resource type="Texture2D" uid="uid://c7agrqtr23vyu" path="res://art/3D/bookmesh/pages/page_3.png" id="6_8gkeg"]
@@ -82,6 +83,33 @@ func prevPage():
 	turnPrevPage.emit()
 "
 
+[sub_resource type="RichTextEffect" id="RichTextEffect_ji3vy"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ly83y"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_rg0mv"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_kq5fg"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_hre4k"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_bsfed"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_rkrr1"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ef4uw"]
+script = ExtResource("4_mfcl4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_7mu4k"]
+script = ExtResource("4_mfcl4")
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -141,6 +169,7 @@ text = "
         and waste your callers precious time
 
 "
+custom_effects = [SubResource("RichTextEffect_ji3vy")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View1/Page1"]
@@ -189,6 +218,7 @@ text = "
 
 
 "
+custom_effects = [SubResource("RichTextEffect_ly83y")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View1/Page2"]
@@ -227,6 +257,7 @@ Once you are sure of the situation the caller described and are aware of the typ
 •  [url=\"_Basic, monsterSelect\"]I think I know what you are dealing[/url]
 	[url=\"_Basic, monsterSelect\"]with. It is a …[/url]
 "
+custom_effects = [SubResource("RichTextEffect_rg0mv")]
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View1/Page3"]
 offset_left = 114.842
@@ -277,6 +308,7 @@ text = "
 
 
 "
+custom_effects = [SubResource("RichTextEffect_kq5fg")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View2/Page0"]
@@ -329,6 +361,7 @@ Once you are sure of the situation the caller described and are aware of the typ
 •  [hint name=_Basic, monsterSelect][url=\"_Basic, monsterSelect\"]I think I know what you are dealing[/url][/hint]
 	[hint name=_Basic, monsterSelect][url=\"_Basic, monsterSelect\"]with. It is a …[/url][/hint]
 "
+custom_effects = [SubResource("RichTextEffect_hre4k")]
 
 [node name="Page2" type="Sprite2D" parent="BookMesh2Untitled/View2"]
 position = Vector2(-325.035, 254.802)
@@ -349,6 +382,7 @@ text = "
 
 Doppelgangers are seemingly [hint name=Doppelganger, person][url=\"Doppelganger, person\"]human[/url][/hint] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [hint name=Doppelganger, apartment][url=\"Doppelganger, apartment\"]households[/url][/hint], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened.
 "
+custom_effects = [SubResource("RichTextEffect_bsfed")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View2/Page2"]
@@ -381,6 +415,7 @@ text = "
 Overall Doppelgangers act as human as a monster could. They communicate in [hint name=Doppelganger, mumbling][url=\"Doppelganger, mumbling\"]incoherent muttering[/url][/hint] and their [hint name=Doppelganger, uncoordinated, moving around][url=\"Doppelganger, uncoordinated, moving around\"]movement is rather uncoordinated and inhuman[/url][/hint].
 To get rid of one, let the caller separate it from its victims, and send authorities.
 "
+custom_effects = [SubResource("RichTextEffect_rkrr1")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View2/Page3"]
 offset_left = -169.0
@@ -390,6 +425,7 @@ offset_bottom = 250.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "Danger Rating: ★☆☆☆☆"
+custom_effects = [SubResource("RichTextEffect_ef4uw")]
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View2/Page3"]
 offset_left = 114.842
@@ -427,6 +463,7 @@ text = "
 
 Doppelgangers are seemingly [hint name=Doppelganger, person][url=\"Doppelganger, person\"]human[/url][/hint] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [hint name=Doppelganger, apartment][url=\"Doppelganger, apartment\"]households[/url][/hint], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View3/Page0"]
@@ -459,6 +496,7 @@ text = "
 Overall Doppelgangers act as human as a monster could. They communicate in [hint name=Doppelganger, mumbling][url=\"Doppelganger, mumbling\"]incoherent muttering[/url][/hint] and their [hint name=Doppelganger, uncoordinated, moving around][url=\"Doppelganger, uncoordinated, moving around\"]movement is rather uncoordinated and inhuman[/url][/hint].
 To get rid of one, let the caller separate it from its victims, and send authorities.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page1"]
 offset_left = -169.0
@@ -468,6 +506,7 @@ offset_bottom = 250.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "Danger Rating: ★☆☆☆☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View3/Page1"]
 offset_left = 114.886
@@ -502,6 +541,7 @@ text = "
 Parasites are worm-like creatures that infect [hint name=Parasite, person][url=\"Parasite, person\"]humans[/url][/hint] and take over their bodily functions. An infection begins with general confusion and [hint name=Parasite, hallucinations][url=\"Parasite, hallucinations\"]hallucinations[/url][/hint]. A victim in this phase will exhibit [hint name=Parasite, uncoordinated, moving around][url=\"Parasite, uncoordinated, moving around\"]shaky, uncoordinated movement[/url][/hint], and slightly [hint name=Parasite, mumbling, coherent, voices, loud, one][url=\"Parasite, mumbling, coherent, voices, loud\"]mumbled[/url][/hint] or [hint name=Parasite, mumbling, coherent, voices, loud, two][url=\"Parasite, mumbling, coherent, voices, loud\"]slurred speech[/url][/hint]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself.
 Parasites try to stay where humans are and are often to be found around [hint name=Parasite, apartment][url=\"Parasite, apartment\"]houses[/url][/hint] or other frequently populated buildings.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View3/Page2"]
 offset_left = -214.0
@@ -533,6 +573,7 @@ text = "To remove them from their host, a certain pitch is required to drive the
 Should the caller be infected, caution is advised! Increased influence of the parasite can disable the caller's abilities to act. Calm the caller and advise them to act quickly.
 
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View3/Page3"]
 offset_left = -20.3959
@@ -543,6 +584,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
  ★★★☆☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View3/Page3"]
 offset_left = 114.842
@@ -580,6 +622,7 @@ text = "
 Parasites are worm-like creatures that infect [hint name=Parasite, person][url=\"Parasite, person\"]humans[/url][/hint] and take over their bodily functions. An infection begins with general confusion and [hint name=Parasite, hallucinations][url=\"Parasite, hallucinations\"]hallucinations[/url][/hint]. A victim in this phase will exhibit [hint name=Parasite, uncoordinated, moving around][url=\"Parasite, uncoordinated, moving around\"]shaky, uncoordinated movement[/url][/hint], and slightly [hint name=Parasite, mumbling, coherent, voices, loud, one][url=\"Parasite, mumbling, coherent, voices, loud\"]mumbled[/url][/hint] or [hint name=Parasite, mumbling, coherent, voices, loud, two][url=\"Parasite, mumbling, coherent, voices, loud\"]slurred speech[/url][/hint]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself.
 Parasites try to stay where humans are and are often to be found around [hint name=Parasite, apartment][url=\"Parasite, apartment\"]houses[/url][/hint] or other frequently populated buildings.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View4/Page0"]
 offset_left = -212.0
@@ -611,6 +654,7 @@ text = "To remove them from their host, a certain pitch is required to drive the
 Should the caller be infected, caution is advised! Increased influence of the parasite can disable the caller's abilities to act. Calm the caller and advise them to act quickly.
 
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page1"]
 offset_left = -20.3959
@@ -621,6 +665,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
  ★★★☆☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View4/Page1"]
 offset_left = 114.886
@@ -660,6 +705,7 @@ text = "
 This large, [hint name=Tally, person][url=\"Tally, person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, [hint name=Tally, no people][url=\"Tally, no people\"]less frequented[/url] [/hint] places in [hint name=Tally, apartment, basement, outside][url=\"Tally, apartment, basement, outside\"]urban areas[/url][/hint].
 It’s a mostly [hint name=Tally, quiet]url=\"Tally, quiet\"]quiet[/url][/hint][ and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View4/Page2"]
 offset_left = -209.654
@@ -670,6 +716,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
  ★★☆☆☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View4/Page2"]
 offset_left = -214.0
@@ -699,6 +746,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 To remove it from spaces, let the caller place their phone near them and play them a tune to lure it towards the device. Send authorities, while the Tally is distracted."
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View4/Page3"]
@@ -742,6 +790,7 @@ text = "
 This large, [hint name=Tally, person][url=\"Tally, person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, [hint name=Tally, no people][url=\"Tally, no people\"]less frequented[/url] [/hint] places in [hint name=Tally, apartment, basement, outside][url=\"Tally, apartment, basement, outside\"]urban areas[/url][/hint].
 It’s a mostly [hint name=Tally, quiet]url=\"Tally, quiet\"]quiet[/url][/hint][ and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page0"]
 offset_left = -209.613
@@ -752,6 +801,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
  ★★☆☆☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View5/Page0"]
 offset_left = -213.0
@@ -781,6 +831,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 To remove it from spaces, let the caller place their phone near them and play them a tune to lure it towards the device. Send authorities, while the Tally is distracted."
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View5/Page1"]
@@ -817,6 +868,7 @@ Analogues are very elusive creatures that appear to be made entirely of electric
 It can appear wherever [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing [hint name=Analogue, loud][url=\"Analogue, loud\"]static noises, glitching, buzzing[/url][/hint], or flickering screens.
 Being in the immediate area of an infected device can lead to [hint name=Analogue, dizzy][url=\"Analogue, dizzy\"]dizziness[/url][/hint],[hint name=Analogue, hallucinations][url=\"Analogue, hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View5/Page2"]
@@ -848,6 +900,7 @@ bbcode_enabled = true
 text = "
 The best way to remove an Analogue is to turn off or unplug the infected device it currently resides in as quickly as possible. Trapped in the device, the Analogue can no longer move. The appliance should then be buried in the ground to avoid any more spreading.
 Callers might be hesitant about their own devices. Encourage them that this is the only way to stop the creature. "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View5/Page3"]
 offset_left = -186.666
@@ -858,6 +911,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
 ★★★★☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View5/Page3"]
 offset_left = 113.556
@@ -896,6 +950,7 @@ Analogues are very elusive creatures that appear to be made entirely of electric
 It can appear wherever [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing [hint name=Analogue, loud][url=\"Analogue, loud\"]static noises, glitching, buzzing[/url][/hint], or flickering screens.
 Being in the immediate area of an infected device can lead to [hint name=Analogue, dizzy][url=\"Analogue, dizzy\"]dizziness[/url][/hint],[hint name=Analogue, hallucinations][url=\"Analogue, hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View6/Page0"]
@@ -927,6 +982,7 @@ bbcode_enabled = true
 text = "
 The best way to remove an Analogue is to turn off or unplug the infected device it currently resides in as quickly as possible. Trapped in the device, the Analogue can no longer move. The appliance should then be buried in the ground to avoid any more spreading.
 Callers might be hesitant about their own devices. Encourage them that this is the only way to stop the creature. "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View6/Page1"]
 offset_left = -186.666
@@ -937,6 +993,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
 ★★★★☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View6/Page1"]
 offset_left = 114.886
@@ -983,6 +1040,7 @@ text = "[hint name=_MonsterSelect, FearOfDeath][url=\"_MonsterSelect, FearOfDeat
 
 A very mysterious creature about which not much is known. It can appear [hint name=FearOfDeath, apartment, basement, outside][url=\"FearOfDeath, apartment, basement, outside\"]anywhere[/url][/hint] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View6/Page2"]
@@ -1016,6 +1074,7 @@ It appears as a [hint name=FearOfDeath, quiet][url=\"FearOfDeath, quiet\"]silent
 Exposure to the creature causes [hint name=FearOfDeath, scared][url=\"FearOfDeath, scared\"]paranoia[/url][/hint] and extreme panic attacks that lead to lethal heart attacks within just a few minutes.
 No method against the monster has been found so far. Send the caller away from it and calm them down.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View6/Page3"]
@@ -1066,6 +1125,7 @@ text = "[hint name=_MonsterSelect, FearOfDeath][url=\"_MonsterSelect, FearOfDeat
 
 A very mysterious creature about which not much is known. It can appear [hint name=FearOfDeath, apartment, basement, outside][url=\"FearOfDeath, apartment, basement, outside\"]anywhere[/url][/hint] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View7/Page0"]
@@ -1099,6 +1159,7 @@ It appears as a [hint name=FearOfDeath, quiet][url=\"FearOfDeath, quiet\"]silent
 Exposure to the creature causes [hint name=FearOfDeath, scared][url=\"FearOfDeath, scared\"]paranoia[/url][/hint] and extreme panic attacks that lead to lethal heart attacks within just a few minutes.
 No method against the monster has been found so far. Send the caller away from it and calm them down.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View7/Page1"]
@@ -1136,6 +1197,7 @@ Screamers are, as the name suggests, rather loud, six legged doglike creatures, 
 They are imitating all sorts of sounds, running from [hint name=Screamer, mumbling, voices, loud][url=\"Screamer, mumbling, voices, loud\"]organic screaming, gnawing, or howling[/url][/hint] to [hint name=Screamer, loud][url=\"Screamer, loud\"]unnatural noises, like slashing metal[/url][/hint]. Hearing its screams has a disorientating effect on people that can cause [hint name=Screamer, dizzy][url=\"Screamer, dizzy\"]dizziness[/url][/hint].
 When encountering a Screamer, it’s best to calmly retreat, without drawing its attention.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View7/Page2"]
@@ -1169,6 +1231,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "Should a Screamer become agitated, it will give a very clear warning [hint name=Screamer, staring][url=\"Screamer, staring\"]making direct eye contact[/url][/hint] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View7/Page3"]
 offset_left = -220.888
@@ -1179,6 +1242,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
 ★★★★☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button4" type="Button" parent="BookMesh2Untitled/View7/Page3"]
 offset_left = 113.556
@@ -1217,6 +1281,7 @@ Screamers are, as the name suggests, rather loud, six legged doglike creatures, 
 They are imitating all sorts of sounds, running from [hint name=Screamer, mumbling, voices, loud][url=\"Screamer, mumbling, voices, loud\"]organic screaming, gnawing, or howling[/url][/hint] to [hint name=Screamer, loud][url=\"Screamer, loud\"]unnatural noises, like slashing metal[/url][/hint]. Hearing its screams has a disorientating effect on people that can cause [hint name=Screamer, dizzy][url=\"Screamer, dizzy\"]dizziness[/url][/hint].
 When encountering a Screamer, it’s best to calmly retreat, without drawing its attention.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="BookMesh2Untitled/View8/Page0"]
@@ -1250,6 +1315,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "Should a Screamer become agitated, it will give a very clear warning [hint name=Screamer, staring][url=\"Screamer, staring\"]making direct eye contact[/url][/hint] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page1"]
 offset_left = -220.888
@@ -1260,6 +1326,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
 ★★★★☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button2" type="Button" parent="BookMesh2Untitled/View8/Page1"]
 offset_left = 114.886
@@ -1295,6 +1362,7 @@ text = "
 A small creature that can be found in [hint name=Ooze, apartment, basement][url=\"Ooze, apartment, basement\"]dark places[/url][/hint].
 It is highly corrosive to non-organic materials, often [hint name=Ooze, standing in corner][url=\"Ooze, standing in corner\"]sitting motionless in some corner[/url][/hint], consuming its surroundings with [hint name=Ooze, loud][url=\"Ooze, loud\"]a sharp, sizzling sound[/url][/hint].
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="BookMesh2Untitled/View8/Page2"]
@@ -1306,6 +1374,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center]Danger Rating:
 ★☆☆☆☆"
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
 [node name="Button3" type="Button" parent="BookMesh2Untitled/View8/Page2"]
 offset_left = -215.0
@@ -1336,6 +1405,7 @@ bbcode_enabled = true
 text = "While Oozes only cause light damage to organic substances, it can still lead to fairly painful burns when clinging onto a person.
 Due to their high sunlight sensitivity, the easiest way to remove them is to lure them into direct sunlight.
 "
+custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
 
 [node name="test buttons" type="Control" parent="BookMesh2Untitled"]
