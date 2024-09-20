@@ -3,14 +3,29 @@ player: AID Abomination Inquiry Desk, how can I help you?
 Sincubus: Yo, yo, YO, WASSUP!
 Sincubus: We got through to A.I.D. Chat! They'll know what this thing is.
 do FmodEventMessenger.playDroneSound()
+set {totaltime} = {timer}
 label question
 [signal arg="ask"]
 if {timer} <= 0:
 	[signal arg="answer"]
 	Sincubus: Uh... I see something now. And it's fast... oh frick, okay. Imma dash!! Help?!?!
+	[signal arg="timeout"]
 	set {_MonsterSelect.timeout} = true
 	jump timeout
 else:
+	if ({timer} <= 3*{totaltime}/4 && !{questions.t1}):
+		[signal arg="answer"]
+		Sincubus: Hey, can we hurry this along? I still wanna go to the abandoned junk yard.
+		set {questions.t1} = true
+	if ({timer} <= {totaltime}/2 && !{questions.t2}):
+		[signal arg="answer"]
+		Sincubus: Bruuh, you're taking your time with these questions, aren't ya?
+		set {questions.t2} = true
+	if ({timer} <= {totaltime}/4 && !{questions.t3}):
+		[signal arg="answer"]
+		Sincubus: Chat, these folks at A.I.D. really seem to take their sweet time.
+		set {questions.t3} = true
+	
 	set {timer} -= 1
 	
 	if !{_Basic.monsterSelect}:

@@ -4,14 +4,31 @@ Lucia: Hola? Hello? Is there someone?!
 Lucia: I need help... I... Dios mío, I don’t know what’s happening...
 Lucia: There is [hint name=person][url="person"]somebody[/url][/hint] [hint name=basement][url="basement"]in my basement[/url][/hint].
 do FmodEventMessenger.playDroneSound()
+set {totaltime} = {timer}
 label question
 [signal arg="ask"]
 if {timer} <= 0:
 	[signal arg="answer"]
 	Lucia: Oh no it's coming towards me! What is that thing?!!!
+	[signal arg="timeout"]
 	set {_MonsterSelect.timeout} = true
 	jump timeout
 else:
+	
+	if ({timer} <= 3*{totaltime}/4 && !{questions.t1}):
+		[signal arg="answer"]
+		Lucia: Help please... this is very scary...
+		set {questions.t1} = true
+	if ({timer} <= {totaltime}/2 && !{questions.t2}):
+		[signal arg="answer"]
+		Lucia:  Dios... I don't think I got much time...
+		set {questions.t2} = true
+	if ({timer} <= {totaltime}/4 && !{questions.t3}):
+		[signal arg="answer"]
+		Lucia: Hello...? Are you still there? Please...
+		set {questions.t3} = true
+		
+	[signal arg="ask"]
 	set {timer} -= 1
 	
 	if !{_Basic.monsterSelect}:
