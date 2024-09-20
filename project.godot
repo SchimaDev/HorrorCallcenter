@@ -38,7 +38,6 @@ config/icon="res://art/icon.svg"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
 FmodEventMessenger="*res://scripts/FmodEventMessenger.gd"
-CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -178,9 +177,13 @@ variables={
 "q12": false,
 "q13": false,
 "q14": false,
-"q15": false
+"q15": false,
+"t1": false,
+"t2": false,
+"t3": false
 },
-"timer": 10
+"timer": 10,
+"totaltime": 0
 }
 choices/def_false_behaviour=1
 history/simple_history_enabled=true

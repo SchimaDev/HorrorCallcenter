@@ -17,7 +17,14 @@ func _input(event: InputEvent) -> void:
 		openBookView()
 
 func openBookView():
+	if $Mesh.mesh.surface_get_material(0).next_pass == null:
+		camera.switchView()
+		%AnimationPlayer.play("pickup_papers")
+		return
 	if get_viewport().get_camera_3d() != camera:
 		FmodEventMessenger.openBook.start()
 		camera.switchView()
 		%AnimationPlayer.play("pickup_book")
+
+func disableShader():
+	$Mesh.mesh.surface_get_material(0).next_pass = null

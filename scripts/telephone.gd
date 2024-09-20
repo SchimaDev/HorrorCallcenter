@@ -2,8 +2,10 @@ extends Node3D
 
 var incomingCall = ""
 # dialog_name : question_limit
-var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 8}, {"Sincubus_01": 6}]
+var callQueue = [{"Lucia_01": 10}]
+#var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 8}, {"Sincubus_01": 6}]
 
+signal endDay
 @onready var popup = $Popup
 @onready var history_parent = $"../GUIPanel3D/ScreenViewport"
 @onready var animation_player = $AnimationPlayer
@@ -46,11 +48,13 @@ func _input(event: InputEvent) -> void:
 			FmodEventMessenger.playHangUpPhonePlayer()
 			
 			# queue next call after short delay
-			await get_tree().create_timer(5).timeout
 			if callQueue.size() > 0:
+				await get_tree().create_timer(5).timeout
 				incomingCall = callQueue.pop_front()
 				Dialogic.VAR.timer = incomingCall.values()[0]
 				FmodEventMessenger.playRingingPhone()
+			else:
+				endDay.emit()
 				
 		elif incomingCall.keys()[0] == "inCall":
 			incomingCall = {"end" : 0}
