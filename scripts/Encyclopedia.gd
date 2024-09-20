@@ -7,28 +7,35 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
-#func _on_rich_text_label_meta_clicked(meta):
-	#ClickTextEventHandler.handle_Encyclopedia_url_tag_clicked(meta)
+
 @onready var node_viewport = $SubViewport
 @onready var node_quad = $Armature_001/Skeleton3D/Cube_001
 @onready var node_area = $Armature_001/Skeleton3D/Cube_001/Area3D
 @onready var animation_player = $AnimationPlayer
 @onready var view = $SubViewport/GUI/Control
-#@onready var shader = $Armature_001/Skeleton3D/Cube_001.get_surface_override_material(1).next_pass
-#@export var camera: Camera3D
-#@export var ui: Control
-#
-#var targeted = false: 
-	#set(val):
-		#targeted = val
-		#if targeted:
-			#shader.set_shader_parameter("strength", 0.2)
-		#else:
-			#shader.set_shader_parameter("strength", 0)
+
+signal openBook
+@onready var shader1 = $Armature_001/Skeleton3D/Cube_001.get_surface_override_material(0).next_pass
+@onready var shader2 = $Armature_001/Skeleton3D/Cube_001.get_surface_override_material(1).next_pass
+var targeted = false: 
+	set(val):
+		targeted = val
+		if targeted:
+			shader1.set_shader_parameter("strength", 0.2)
+			shader2.set_shader_parameter("strength", 0.2)
+		else:
+			shader1.set_shader_parameter("strength", 0)
+			shader2.set_shader_parameter("strength", 0)
+
 var page = 0
 var p1 = [0.88, 0.48, 1.85, 0.63]
 var p2 = [2.75, 1.48, 1.85, 0.63]
 var UIscale = p1
+
+func _input(event: InputEvent) -> void:
+	if targeted:
+		if event is InputEventMouseButton:
+			openBook.emit()
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
@@ -57,19 +64,12 @@ func prevPage():
 		UIscale = p1
 		page -= 1	
 
+#region handling of the subviewport input
 func _mouse_entered_area():
 	is_mouse_inside = true
 
-
 func _mouse_exited_area():
 	is_mouse_inside = false
-
-#func _input(event: InputEvent) -> void:
-	#if targeted and get_viewport().get_camera_3d() != camera:
-		#if event is InputEventMouseButton:
-			#FmodEventMessenger.openBook.start()
-			#camera.switchView()
-			#$"../AnimationPlayer".play("pickup_book")
 
 func _unhandled_input(event):
 	# Check if the event is a non-mouse/non-touch event
@@ -145,3 +145,5 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
+
+#endregion
