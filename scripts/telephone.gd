@@ -2,8 +2,9 @@ extends Node3D
 
 var incomingCall = ""
 # dialog_name : question_limit
-var callQueue = [{"Sincubus_01": 50}, {"Jonny_01": 7}, {"Lucia_01": 5}]
+var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 8}, {"Sincubus_01": 6}]
 
+@onready var popup = $Popup
 @onready var history_parent = $"../GUIPanel3D/ScreenViewport"
 @onready var animation_player = $AnimationPlayer
 @onready var shader = $"RootNode/tel fijo".get_surface_override_material(0).next_pass
@@ -31,14 +32,19 @@ func _input(event: InputEvent) -> void:
 	if targeted and event.is_action_released("left_mouse"):
 		
 		if incomingCall.keys()[0] == "end":
+			incomingCall = {"" : 0}
+			hidePopup(0.5)
+			# delete doubled history in monitor
 			if history_parent.get_child_count() > 1:
 				history_parent.get_child(1).clear_history_log()
-			incomingCall = {"" : 0}
+			
 			Dialogic.end_timeline()
 			animation_player.play_backwards("pickup_phone")
 			Dialogic.VAR.reset()
+			
 			# TODO stop phone beeping
 			FmodEventMessenger.playHangUpPhonePlayer()
+			
 			# queue next call after short delay
 			await get_tree().create_timer(5).timeout
 			if callQueue.size() > 0:
@@ -47,11 +53,11 @@ func _input(event: InputEvent) -> void:
 				FmodEventMessenger.playRingingPhone()
 				
 		elif incomingCall.keys()[0] == "inCall":
-			# TODO popou message ask player if they really want to end call now
-			# click phone again to confirm
 			incomingCall = {"end" : 0}
-			print("u sure you wanna end the call now?")
-			await get_tree().create_timer(5).timeout
+			showPopup()
+			await get_tree().create_timer(4).timeout
+			hidePopup(2)
+			await get_tree().create_timer(1).timeout
 			incomingCall = {"inCall" : 0}
 			
 		elif incomingCall.keys()[0] != "":
@@ -65,3 +71,12 @@ func _input(event: InputEvent) -> void:
 func _on_dialogic_signal(argument):
 	if argument == "callEnded":
 		incomingCall = {"end" : 0}
+
+func showPopup():
+	popup.set_self_modulate(Color(Color.WHITE, 0))
+	var tween = get_tree().create_tween()
+	tween.tween_property(popup, "self_modulate", Color(Color.WHITE, 1), 0.5).set_ease(Tween.EASE_IN)
+
+func hidePopup(time):
+	var tween = get_tree().create_tween()
+	tween.tween_property(popup, "self_modulate", Color(Color.WHITE, 0), time).set_ease(Tween.EASE_IN)
