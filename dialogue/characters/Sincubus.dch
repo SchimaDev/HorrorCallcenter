@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.40184, 0.698225, 0.894531, 1),
+"color": Color(0.667236, 0.265625, 1, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -10,7 +10,7 @@
 },
 "default_portrait": "",
 "description": "",
-"display_name": "Jonny",
+"display_name": "Sincubus",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),

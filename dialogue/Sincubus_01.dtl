@@ -1,14 +1,13 @@
 do FmodEventMessenger.playPickupPhone()
 player: AID Abomination Inquiry Desk, how can I help you?
-Lucia: Hola? Hello? Is there someone?!
-Lucia: I need help... I... Dios mío, I don’t know what’s happening...
-Lucia: There is [hint name=person][url="person"]somebody[/url][/hint] [hint name=basement][url="basement"]in my basement[/url][/hint].
+Sincubus: Yo, yo, YO, WASSUP!
+Sincubus: We got through to A.I.D. Chat! They'll know what this thing is.
 do FmodEventMessenger.playDroneSound()
 label question
 [signal arg="ask"]
 if {timer} <= 0:
 	[signal arg="answer"]
-	Lucia: Oh no it's coming towards me! What is that thing?!!!
+	Sincubus: Uh... I see something now. And it's fast... oh frick, okay. Imma dash!! Help?!?!
 	set {_MonsterSelect.timeout} = true
 	jump timeout
 else:
@@ -26,8 +25,8 @@ else:
 				player: (I already asked about that...)
 			else:
 				player: What do you see?
-				Lucia: A [hint name=person][url="person"]person.[/url][/hint] He... looks wrong. Long, with stretched out arms. And no clothes or... anything.
-				Lucia: ... Dios mío...
+				Sincubus: Yo guys! They're asking what I see. Well, what do you see?
+				Sincubus: Exactly Chat! Nothing but my ring light.
 				set {questions.q01} = true
 			set {_Basic.sight} = !true
 			jump question
@@ -38,7 +37,8 @@ else:
 				player: (I already asked about that...)
 			else:
 				player: What do you hear?
-				Lucia: N... nothing. It is [hint name=quiet][url="quiet"]dead quiet...[/url][/hint]
+				Sincubus: I dunno man, sounds whacky. But it's [hint name=loud][url="loud"]hella loud[/url][/hint].
+				Sincubus: If my mic wouldn't have noise suppression you probs wouldn't even hear me.
 				set {questions.q02} = true
 			set {_Basic.sound} = !true
 			jump question
@@ -49,123 +49,158 @@ else:
 				player: (I already asked about that...)
 			else:
 				player: Where are you right now?
-				Lucia: I told you I'm [hint name=basement][url="basement"]in my basement.[/url][/hint]
+				Sincubus: Just the best place to be at night, right Chat?
+				Sincubus: [hint name=outside][url="outside"]At the Mall. Right outside[/url][/hint], next to the trolly carts.
 				set {questions.q03} = true
 			set {_Basic.location} = !true
 			jump question
 
-		if ({Parasite.person} || {Tally.person}):
+		if ({Analogue.loud}):
 			[signal arg="answer"]
 			if ({questions.q04}):
 				player: (I already asked about that...)
 			else:
-				player: What does the Person do?
-				Lucia: It is just [hint name=standing in corner][url="standing in corner"]standing there in the corner....[/url][/hint]
-				Lucia: It doesn’t move. It doesn’t talk. It's just... [hint name=staring][url="staring"]staring at me[/url][/hint]...
-				Lucia: Ooh dios mío, these eyes... so many eyes...
+				player: Does it sound like static noise or electric buzzing?
+				Sincubus: Heck yeah. But also kinda like a chainsaw?
+				Sincubus: And then also like a [hint name=voices][url="voices"]screaming child[/url][/hint]! …I hate children.
 				set {questions.q04} = true
-			set {Parasite.person} = !true
-			set {Tally.person} = !true
+			set {Analogue.loud} = !true
 			jump question
 
-		if ({FearOfDeath.basement} || {FearOfDeath.quiet} || {FearOfDeath.standing in corner} || {FearOfDeath.scared} || {Analogue.hallucinations} || {Parasite.hallucinations}):
+		if ({Screamer.loud}):
 			[signal arg="answer"]
 			if ({questions.q05}):
 				player: (I already asked about that...)
 			else:
-				player: How do you feel
-				Lucia: I... I am scared. VERY scared. Please help me.
-				player: Try to take deep, even breaths. We will figure this out together.
-				Lucia: You... you are right... I need to... stay calm... even if it’s hard...
+				player: Can you identify where the sound comes from?
+				Sincubus: No clue chief. It's kinda everywhere really.
 				set {questions.q05} = true
-			set {FearOfDeath.basement} = !true
-			set {FearOfDeath.quiet} = !true
-			set {FearOfDeath.standing in corner} = !true
-			set {FearOfDeath.scared} = !true
-			set {Analogue.hallucinations} = !true
-			set {Parasite.hallucinations} = !true
+			set {Screamer.loud} = !true
 			jump question
 
-		if ({Ooze.basement} || {Ooze.standing in corner}):
+		if ({Ooze.loud}):
 			[signal arg="answer"]
 			if ({questions.q06}):
 				player: (I already asked about that...)
 			else:
 				player: How does the area look?
-				Lucia: As always? Dusty boxes left and right, a flickering ceiling lamp at the top and an old rug on the ground. It is a [hint name=basement][url="basement"]basement[/url][/hint] after all...
+				Sincubus: Dunno chief. Looks like a parking lot to me.
+				Sincubus: Chat's been spouting that there's [hint name=moving around][url="moving around"]something moving around[/url][/hint], but I haven't seen anything.
 				set {questions.q06} = true
-			set {Ooze.basement} = !true
-			set {Ooze.standing in corner} = !true
+			set {Ooze.loud} = !true
 			jump question
 
-		if ({Analogue.basement}):
+		if ({Parasite.loud}):
 			[signal arg="answer"]
 			if ({questions.q07}):
 				player: (I already asked about that...)
 			else:
-				player: Can you hear any static noise or electric buzzing?
-				Lucia: No. Not that I can hear... it's [hint name=quiet][url="quiet"]very quiet.[/url][/hint]
+				player: Is there a voice? Do you understand it?
+				Sincubus: There is a [hint name=voices][url="voices"]voice[/url][/hint], yeah. Can you understand it Chat?
+				Sincubus: Nah man, me neither. OH!
+				Sincubus: Voice is gone. Now there's just a [hint name=loud][url="loud"]mechanical noise[/url][/hint].
 				set {questions.q07} = true
-			set {Analogue.basement} = !true
+			set {Parasite.loud} = !true
 			jump question
 
-		if ({Tally.basement} || {Tally.standing in corner} || {Tally.staring} || {Tally.no people}):
+		if (({Screamer.voices} || {Parasite.voices})):
 			[signal arg="answer"]
 			if ({questions.q08}):
 				player: (I already asked about that...)
 			else:
-				player: Is there light?
-				Lucia: Sí, the ceiling light is on.
+				player: Can you make out what they are saying?
+				Sincubus: Chat, what do we think?
+				Sincubus: Yeah man, total gibberish!
 				set {questions.q08} = true
-			set {Tally.basement} = !true
-			set {Tally.standing in corner} = !true
-			set {Tally.staring} = !true
-			set {Tally.no people} = !true
+			set {Screamer.voices} = !true
+			set {Parasite.voices} = !true
 			jump question
 
-		if ({Tally.quiet}):
+		if (({Screamer.outside} || {Tally.outside})):
 			[signal arg="answer"]
 			if ({questions.q09}):
 				player: (I already asked about that...)
 			else:
-				player: Is there any sound at all?
-				Lucia: No. [hint name=quiet][/hint][url="quiet"]There is absolutely nothing.[/url]
+				player: Is there anyone else around?
+				Sincubus: Nah chief, just [hint name=egg][url="egg"]Chat[/url][/hint] and me.
 				set {questions.q09} = true
-			set {Tally.quiet} = !true
+			set {Screamer.outside} = !true
+			set {Tally.outside} = !true
 			jump question
 
-		if ({Doppelganger.person}):
+		if (({FearOfDeath.outside} || {Analogue.hallucinations} || {Parasite.hallucinations})):
 			[signal arg="answer"]
 			if ({questions.q10}):
 				player: (I already asked about that...)
 			else:
-				player: Are there any additional people?
-				Lucia: Not really. I'm the only one here. I've [hint name=no people][url="no people"]never seen anyone else down here.[/url][/hint]
+				player: How do you feel?
+				Sincubus: Pff, maybe a little [hint name=dizzy][url="dizzy"]dizzy[/url][/hint]?
+				Sincubus: Could be the new energy drinks I tried out. Shout out to Popstar Energy (please sponsor me)!
 				set {questions.q10} = true
-			set {Doppelganger.person} = !true
+			set {FearOfDeath.outside} = !true
+			set {Analogue.hallucinations} = !true
+			set {Parasite.hallucinations} = !true
 			jump question
 
-		if ({Analogue.standing in corner}):
+		if ({_Basic.egg}):
 			[signal arg="answer"]
 			if ({questions.q11}):
 				player: (I already asked about that...)
 			else:
-				player: Is there a flickering screen of any sort?
-				Lucia: A screen...? No. Again, there is a [hint name=person][url="person"]person[/url][/hint] in front of me.
+				player: Who or what exactly is Chat?
+				Sincubus: Oh yeah, you're probably a boomer.
+				Sincubus: I am live streaming right now. The chat are my thousands of viewers.
+				Sincubus: They can text and I see what they write.
 				set {questions.q11} = true
-			set {Analogue.standing in corner} = !true
+			set {_Basic.egg} = !true
 			jump question
 
-		if ({Screamer.staring} || {Screamer.no people}):
+		if ({Screamer.moving around}):
 			[signal arg="answer"]
 			if ({questions.q12}):
 				player: (I already asked about that...)
 			else:
-				player: Are you outside?
-				Lucia: No...? I told you I'm in my [hint name=basement][url="basement"]basement.[/url][/hint]
+				player: How fast is it moving around?
+				Sincubus: Chat? How fast is it moving?
+				Sincubus: Chat says kinda quickly. Faster than me for sure.
 				set {questions.q12} = true
-			set {Screamer.staring} = !true
-			set {Screamer.no people} = !true
+			set {Screamer.moving around} = !true
+			jump question
+
+		if ({Doppelganger.moving around} || {Parasite.moving around}):
+			[signal arg="answer"]
+			if ({questions.q13}):
+				player: (I already asked about that...)
+			else:
+				player: Does it look like a person?
+				Sincubus: Not according to Chat. They say it's more like a weird, long dog.
+				set {questions.q13} = true
+			set {Doppelganger.moving around} = !true
+			set {Parasite.moving around} = !true
+			jump question
+
+		if ({Analogue.dizzy}):
+			[signal arg="answer"]
+			if ({questions.q14}):
+				player: (I already asked about that...)
+			else:
+				player: Is there a flickering screen of any sort?
+				Sincubus: My cam and phone are working fine.
+				Sincubus: Chat, you can see me, right?
+				Sincubus: ... yep, seems to work.
+				set {questions.q14} = true
+			set {Analogue.dizzy} = !true
+			jump question
+
+		if ({Screamer.dizzy}):
+			[signal arg="answer"]
+			if ({questions.q15}):
+				player: (I already asked about that...)
+			else:
+				player: How close is it to you?
+				Sincubus: Chat said not that close. So it probably didn't notice me.
+				set {questions.q15} = true
+			set {Screamer.dizzy} = !true
 			jump question
 	else:
 		if {questions.q00} == false:
@@ -179,29 +214,26 @@ else:
 		jump question
 
 label failedAction
-Lucia: Okay. Give me a moment.
-Lucia: .....
+Sincubus: AAAAAAH
+Sincubus: .....
 label failedAction_timeout
-Lucia: I... oh god... It's coming toward me... WHY IS IT COMING TOWARD ME?!
-Lucia: What do I do, oh dios mío, what do I do?!?!
-Lucia: AAAAAAAAAAAAAAAAH!
+Sincubus: AAAAAAAAAAAAAAAAH!
 do FmodEventMessenger.playHangUpPhoneCaller()
 [wait time="2.0" hide_text="false"]
-(it seems the call got disconnected)
+(the call got disconnected)
 jump end
 
 label solution
-Lucia: Okay. Give me a moment.
-Lucia: .....
-Lucia: That... seemed to have worked.
-Lucia: Oh muchas gracias, thank you SO MUCH!
-Lucia: I don’t know how I can thank you. You saved me!
-Lucia: Just... Gracias! I... I’m Lucia. Lucia Garcia.
-Lucia: You saved my life. Again, thank you.  Adiós
+Sincubus: AAAAAAH
+Sincubus: .....
+Sincubus: gg ez
+do FmodEventMessenger.playHangUpPhoneCaller()
+
 
 label end
 [signal arg="callEnded"]
 [end_timeline]
+
 
 label Doppelganger
 player: It's a Doppelganger.
@@ -218,7 +250,7 @@ jump failedAction
 label Tally
 player: It's a Tally.
 player: Stay away from the creature and try to make the area as calm and quiet as possible. Turn off any lights or machines causing noise and carefully leave the area.
-jump solution
+jump failedAction
 
 label Analogue
 player: It's an Analogue.
@@ -236,7 +268,7 @@ jump failedAction
 label Screamer
 player: It's a Screamer.
 player: Slowly and quietly move away from your current location. Try to avoid the creature. Stay away from its noise. We will handle the rest.
-jump failedAction
+jump solution
 
 label Ooze
 player: It's an Ooze.
@@ -247,6 +279,6 @@ label timeout
 [signal arg="timeout"]
 player: Ok stay calm, I think I know what it is...
 [wait time="10" hide_text="false"]
-	Lucia: PLease!!! Somebody!!
+	Sincubus: AAAAAAH
 [wait time="10" hide_text="false"]
 	jump failedAction_timeout

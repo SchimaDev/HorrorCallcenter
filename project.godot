@@ -47,17 +47,19 @@ directories/dch_directory={
 "Jonny": "res://dialogue/characters/Jonny.dch",
 "Lucia": "res://dialogue/characters/Lucia.dch",
 "Male voice/test_character": "res://audio/Male voice/test_character.dch",
+"Sincubus": "res://dialogue/characters/Sincubus.dch",
 "player": "res://dialogue/characters/player.dch"
 }
 directories/dtl_directory={
 "Jonny_01": "res://dialogue/Jonny_01.dtl",
 "Lucia_01": "res://dialogue/Lucia_01.dtl",
+"Sincubus_01": "res://dialogue/Sincubus_01.dtl",
 "monster_dialogue": "res://dialogue/monster_dialogue.dtl",
 "monster_test": "res://dialogue/monster_test.dtl",
 "second_dialogue": "res://dialogue/second_dialogue.dtl",
 "test_dialogue": "res://dialogue/test_dialogue.dtl"
 }
-layout/style_list=["res://dialogue/dialogue_style.tres", "res://dialogue/custom_style.tres"]
+layout/style_list=["res://dialogue/dialogue_style.tres"]
 layout/default_style="res://dialogue/dialogue_style.tres"
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
@@ -80,11 +82,14 @@ variables={
 "Analogue": {
 "apartment": false,
 "basement": false,
+"dizzy": false,
 "hallucinations": false,
+"loud": false,
 "standing in corner": false
 },
 "Doppelganger": {
 "apartment": false,
+"moving around": false,
 "mumbling": false,
 "person": false,
 "uncoordinated": false
@@ -92,6 +97,7 @@ variables={
 "FearOfDeath": {
 "apartment": false,
 "basement": false,
+"outside": false,
 "quiet": false,
 "scared": false,
 "standing in corner": false
@@ -100,32 +106,43 @@ variables={
 "Ooze": {
 "apartment": false,
 "basement": false,
+"loud": false,
 "standing in corner": false
 },
 "Parasite": {
 "apartment": false,
 "coherent": false,
 "hallucinations": false,
+"loud": false,
+"moving around": false,
 "mumbling": false,
 "person": false,
-"uncoordinated": false
+"uncoordinated": false,
+"voices": false
 },
 "Screamer": {
+"dizzy": false,
+"loud": false,
+"moving around": false,
 "mumbling": false,
 "no people": false,
+"outside": false,
 "staring": false,
-"uncoordinated": false
+"uncoordinated": false,
+"voices": false
 },
 "Tally": {
 "apartment": false,
 "basement": false,
 "no people": false,
+"outside": false,
 "person": false,
 "quiet": false,
 "standing in corner": false,
 "staring": false
 },
 "_Basic": {
+"egg": false,
 "location": false,
 "monsterSelect": false,
 "sight": false,

@@ -37,27 +37,37 @@ func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
 	chosenWordDictionaryChanged.emit(chosenMonster, chosenWordDictionary)
 	compareWords()
 
+# compare clicked clue from dialog and book
 func compareWords():
-	if chosenWordDictionary.has("hallucinations"):
-		chosenWordDialogue = "hallucinations"
-	
-	if chosenMonster == "_Basic":
+	# exception for asking one of the basic question -> selected clue from dialog ignored
+	# connecting ANY dialog clue to "hallucinations" -> any observation could be a hallucination of the caller
+	if chosenMonster == "_Basic" or (chosenWordDictionary.has("hallucinations") and chosenWordDialogue != ""):
 		chosenWordDialogue = chosenWordDictionary[0]
 	
+	# exception for clicking easteregg clue
+	if chosenWordDialogue == "egg":
+		chosenWordDictionary[0] = chosenWordDialogue
+		chosenMonster = "_Basic"
+		Dialogic.VAR.timer += 1
+	
+	# confirm choice of which monster it is
 	if chosenMonster == "_MonsterSelect" && monsterSelect:
 		Dialogic.start_timeline(dialog, chosenWordDictionary[0])
 		return
 	
+	# entering Monster Selection mode
 	if chosenWordDictionary.has("monsterSelect"):
 		monsterSelect = !monsterSelect
 		Dialogic.VAR._Basic.monsterSelect = monsterSelect
 		flushClues()
+	# compare clicked clues and set according variable
 	elif chosenWordDictionary.has(chosenWordDialogue):
 		var v = chosenMonster + "." + chosenWordDialogue
 		Dialogic.VAR.set_variable(v, true)
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
 		flushClues()
 	
+	# skip in-between dialog waiting time
 	if reloadQuestions:
 			Dialogic.start_timeline(dialog, "question")
 			Dialogic.VAR.timer += 1

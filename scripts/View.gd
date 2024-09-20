@@ -13,8 +13,11 @@ var targeted = false:
 
 
 func _input(event: InputEvent) -> void:
-	if targeted and get_viewport().get_camera_3d() != camera:
-		if event is InputEventMouseButton:
-			FmodEventMessenger.openBook.start()
-			camera.switchView()
-			$"../AnimationPlayer".play("pickup_book")
+	if targeted and event is InputEventMouseButton:
+		openBookView()
+
+func openBookView():
+	if get_viewport().get_camera_3d() != camera:
+		FmodEventMessenger.openBook.start()
+		camera.switchView()
+		%AnimationPlayer.play("pickup_book")

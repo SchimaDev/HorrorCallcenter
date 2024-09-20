@@ -21,129 +21,196 @@ else:
 			set {questions.q00} = !true
 			jump question
 
-		if (({_Basic.sight}) && !{questions.q01}):
+		if ({_Basic.sight}):
 			[signal arg="answer"]
-			player: What do you see?
-			Jonny: A [hint name=person][url="person"]person[/url][/hint]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
-			set {questions.q01} = true
+			if ({questions.q01}):
+				player: (I already asked about that...)
+			else:
+				player: What do you see?
+				Jonny: A [hint name=person][url="person"]person[/url][/hint]. Walking about in the hallway of my apartment complex. Half drunken and somewhat out of it.
+				set {questions.q01} = true
+			set {_Basic.sight} = !true
 			jump question
 
-		if ({_Basic.sound}  && !{questions.q02}):
+		if ({_Basic.sound}):
 			[signal arg="answer"]
-			player: What do you hear?
-			Jonny: Well, he walks (or rather stomps...) around the house aimlessly. It would not surprise me if even you were to hear it.
-			Jonny: Despite that, he also appears to be saying... something?
-			Jonny: However, to me, he's just [hint name=mumbling][url="mumbling"]mumbling[/url][/hint] and rambling utter nonsense.
-			Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
-			do FmodEventMessenger.startFocus()
-			do FmodEventMessenger.playHandOnPhone()
-			do FmodEventMessenger.playMumbling()
-			# [wait time="6.0"]
-			do FmodEventMessenger.playHandOnPhone()
-			do FmodEventMessenger.stopFocus()
-			Jonny: I have never heard someone speak like that before, may it be a different language perhaps?
-			set {questions.q02} = true
+			if ({questions.q02}):
+				player: (I already asked about that...)
+			else:
+				player: What do you hear?
+				Jonny: Well, he walks (or rather stomps...) around the house aimlessly. It would not surprise me if even you were to hear it.
+				Jonny: Despite that, he also appears to be saying... something?
+				Jonny: However, to me, he's just [hint name=mumbling][url="mumbling"]mumbling[/url][/hint] and rambling utter nonsense.
+				Jonny: I am not certain if you can hear this on your end... Let me get a bit closer...
+				do FmodEventMessenger.startFocus()
+				do FmodEventMessenger.playHandOnPhone()
+				do FmodEventMessenger.playMumbling()
+				# [wait time="6.0"]
+				do FmodEventMessenger.playHandOnPhone()
+				do FmodEventMessenger.stopFocus()
+				Jonny: I have never heard someone speak like that before, may it be a different language perhaps?
+				set {questions.q02} = true
+			set {_Basic.sound} = !true
 			jump question
 
-		if ({_Basic.location}  && !{questions.q03}):
+		if ({_Basic.location}):
 			[signal arg="answer"]
-			player: Where are you right now?
-			Jonny: I am currently residing in my [hint name=apartment][url="apartment"]apartment[/url][/hint]. Which makes this especially peculiar.
-			set {questions.q03} = true
+			if ({questions.q03}):
+				player: (I already asked about that...)
+			else:
+				player: Where are you right now?
+				Jonny: I am currently residing in my [hint name=apartment][url="apartment"]apartment[/url][/hint]. Which makes this especially peculiar.
+				set {questions.q03} = true
+			set {_Basic.location} = !true
 			jump question
 
-		if (({Doppelganger.person} || {Parasite.person} || {Tally.person}) && !{questions.q04}):
+		if ({Doppelganger.person} || {Parasite.person} || {Tally.person}):
 			[signal arg="answer"]
-			player: What does the Person do?
-			Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
-			Jonny: They seem rather [hint name=uncoordinated][url="uncoordinated"]uncoordinated[/url][/hint] though. They miss the door handles and such.
-			set {questions.q04} = true
+			if ({questions.q04}):
+				player: (I already asked about that...)
+			else:
+				player: What does the Person do?
+				Jonny: They appear to ramble. Trying to grasp doors, objects and other such things.
+				Jonny: They seem rather [hint name=uncoordinated][url="uncoordinated"]uncoordinated[/url][/hint] though. They miss the door handles and such.
+				set {questions.q04} = true
+			set {Doppelganger.person} = !true
+			set {Parasite.person} = !true
+			set {Tally.person} = !true
 			jump question
 
-		if ({Ooze.apartment} && !{questions.q05}):
+		if ({Ooze.apartment}):
 			[signal arg="answer"]
-			player: How does the area look?
-			Jonny: Like a hallway indeed. Some lights, white walls. A very normal hallway.
-			set {questions.q05} = true
+			if ({questions.q05}):
+				player: (I already asked about that...)
+			else:
+				player: How does the area look?
+				Jonny: Like a hallway indeed. Some lights, white walls. A very normal hallway.
+				set {questions.q05} = true
+			set {Ooze.apartment} = !true
 			jump question
 
-		if (({Doppelganger.apartment} || {Parasite.apartment}) && !{questions.q06}):
+		if ({Doppelganger.apartment} || {Parasite.apartment}):
 			[signal arg="answer"]
-			player: Is there anyone else around?
-			Jonny: Well yes. There is a [hint name=person][url="person"]person[/url][/hint] in the hallway.
-			set {questions.q06} = true
+			if ({questions.q06}):
+				player: (I already asked about that...)
+			else:
+				player: Is there anyone else around?
+				Jonny: Well yes. There is a [hint name=person][url="person"]person[/url][/hint] in the hallway.
+				set {questions.q06} = true
+			set {Doppelganger.apartment} = !true
+			set {Parasite.apartment} = !true
 			jump question
 
-		if (({FearOfDeath.apartment} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q07}):
+		if ({FearOfDeath.apartment} || {Analogue.hallucinations} || {Parasite.hallucinations}):
 			[signal arg="answer"]
-			player: How do you feel?
-			Jonny: I myself feel quite well. Thank you for your concern.
-			set {questions.q07} = true
+			if ({questions.q07}):
+				player: (I already asked about that...)
+			else:
+				player: How do you feel?
+				Jonny: I myself feel quite well. Thank you for your concern.
+				set {questions.q07} = true
+			set {FearOfDeath.apartment} = !true
+			set {Analogue.hallucinations} = !true
+			set {Parasite.hallucinations} = !true
 			jump question
 
-		if ({Analogue.apartment} && !{questions.q08}):
+		if ({Analogue.apartment}):
 			[signal arg="answer"]
-			player: Can you hear any static noise or electric buzzing?
-			Jonny: Static noise? No. What a curious question though...
-			set {questions.q08} = true
+			if ({questions.q08}):
+				player: (I already asked about that...)
+			else:
+				player: Can you hear any static noise or electric buzzing?
+				Jonny: Static noise? No. What a curious question though...
+				set {questions.q08} = true
+			set {Analogue.apartment} = !true
 			jump question
 
-		if ({Tally.apartment} && !{questions.q09}):
+		if ({Tally.apartment}):
 			[signal arg="answer"]
-			player: Is there light?
-			Jonny: Well, yes of course. How am I to see without light?
-			set {questions.q09} = true
+			if ({questions.q09}):
+				player: (I already asked about that...)
+			else:
+				player: Is there light?
+				Jonny: Well, yes of course. How am I to see without light?
+				set {questions.q09} = true
+			set {Tally.apartment} = !true
 			jump question
 
-		if ({Parasite.mumbling} && !{questions.q10}):
+		if ({Parasite.mumbling}):
 			[signal arg="answer"]
-			player: Ask them something. Do they respond?
-			Jonny: They most certainly [hint name=coherent][url="coherent"]respond[/url][/hint], yet it sounds as if they have a lisp.
-			Jonny: I don't think that he reacts to me in any way
-			set {questions.q10} = true
+			if ({questions.q10}):
+				player: (I already asked about that...)
+			else:
+				player: Ask them something. Do they respond?
+				Jonny: They most certainly [hint name=coherent][url="coherent"]respond[/url][/hint], yet it sounds very unclear.
+				Jonny: Like the slurred mumblings of a drunk person.
+				set {questions.q10} = true
+			set {Parasite.mumbling} = !true
 			jump question
 
-		if ({Doppelganger.mumbling} && !{questions.q11}):
+		if ({Doppelganger.mumbling}):
 			[signal arg="answer"]
-			player: Can you make out what they are saying?
-			Jonny: Maybe...
-			do FmodEventMessenger.startFocus()
-			do FmodEventMessenger.playHandOnPhone()
-			do FmodEventMessenger.playMumbling()
-			Jonny: It appears as if they are [hint name=coherent][url="coherent"]rambling about the door[/url][/hint] they try to open.
-			Jonny: Can you hear it on your end?
-			[wait time="4.0"]
-			do FmodEventMessenger.playHandOnPhone()
-			do FmodEventMessenger.stopFocus()
-			set {questions.q11} = true
+			if ({questions.q11}):
+				player: (I already asked about that...)
+			else:
+				player: Can you make out what they are saying?
+				Jonny: Maybe...
+				do FmodEventMessenger.startFocus()
+				do FmodEventMessenger.playHandOnPhone()
+				do FmodEventMessenger.playMumbling()
+				Jonny: It appears as if they are [hint name=coherent][url="coherent"]rambling about the door[/url][/hint] they are trying to open.
+				Jonny: Can you hear it on your end?
+				[wait time="4.0"]
+				do FmodEventMessenger.playHandOnPhone()
+				do FmodEventMessenger.stopFocus()
+				Jonny: It's quite difficult to make out the words.
+				set {questions.q11} = true
+			set {Doppelganger.mumbling} = !true
 			jump question
 
-		if ({Screamer.mumbling} && !{questions.q12}):
+		if ({Screamer.mumbling}):
 			[signal arg="answer"]
-			player: Are there any other sounds?
-			Jonny: No. Just mumbling. Sounds like a [hint name=person][url="person"]person[/url][/hint].
-			set {questions.q12} = true
+			if ({questions.q12}):
+				player: (I already asked about that...)
+			else:
+				player: Are there any other sounds?
+				Jonny: No. Just mumbling. Sounds like a [hint name=person][url="person"]person[/url][/hint].
+				set {questions.q12} = true
+			set {Screamer.mumbling} = !true
 			jump question
 
-		if (({Parasite.coherent} || {Parasite.uncoordinated}) && !{questions.q13}):
+		if ({Parasite.coherent} || {Parasite.uncoordinated}):
 			[signal arg="answer"]
-			player: Have you ever seen this person before?
-			Jonny: Yes. Now that I am looking closer, this is my neighbour. Bobby. He seemed very well yesterday.
-			set {questions.q13} = true
+			if ({questions.q13}):
+				player: (I already asked about that...)
+			else:
+				player: Have you ever seen this person before?
+				Jonny: Yes. Now that I am looking closer, this is my neighbour. Bobby. He seemed very well yesterday.
+				set {questions.q13} = true
+			set {Parasite.coherent} = !true
+			set {Parasite.uncoordinated} = !true
 			jump question
 
-		if ({Doppelganger.uncoordinated} && !{questions.q14}):
+		if ({Doppelganger.uncoordinated}):
 			[signal arg="answer"]
-			player: Are there any additional people?
-			Jonny: Indeed not. Me and this person are alone here.
-			set {questions.q14} = true
+			if ({questions.q14}):
+				player: (I already asked about that...)
+			else:
+				player: Are there any additional people?
+				Jonny: Indeed not. Me and this person are alone here.
+				set {questions.q14} = true
+			set {Doppelganger.uncoordinated} = !true
 			jump question
 
-		if ({Screamer.uncoordinated} && !{questions.q15}):
+		if ({Screamer.uncoordinated}):
 			[signal arg="answer"]
-			player: Are you outside?
-			Jonny: No. I am in my [hint name=apartment][url="apartment"]apartment[/url][/hint].
-			set {questions.q15} = true
+			if ({questions.q15}):
+				player: (I already asked about that...)
+			else:
+				player: Are you outside?
+				Jonny: No. I am in my [hint name=apartment][url="apartment"]apartment[/url][/hint].
+				set {questions.q15} = true
+			set {Screamer.uncoordinated} = !true
 			jump question
 	else:
 		if {questions.q00} == false:
@@ -153,7 +220,6 @@ else:
 	[signal arg="ask"]
 	player:
 	[wait time="15" hide_text="false"]
-		#Jonny: Hello? Anyone still there???
 		set {timer} += 1
 		jump question
 
@@ -230,4 +296,3 @@ player: Ok stay calm, I think I know what it is...
 	Jonny: …Hello?
 [wait time="10" hide_text="false"]
 	jump failedAction_timeout
-
