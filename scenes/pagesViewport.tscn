@@ -764,6 +764,7 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View5" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View5"]
 position = Vector2(-327.373, -259.592)
@@ -864,7 +865,7 @@ text = "
 [hint name=_MonsterSelect, Analogue][url=\"_MonsterSelect, Analogue\"][center][b]ANALOGUE[/b][/center][/url][/hint]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity.
-It can appear wherever [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing [hint name=Analogue, loud][url=\"Analogue, loud\"]static noises, glitching, buzzing[/url][/hint], or flickering screens.
+It can appear [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]wherever electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing [hint name=Analogue, loud][url=\"Analogue, loud\"]static noises, glitching, buzzing[/url][/hint], or flickering screens.
 Being in the immediate area of an infected device can lead to [hint name=Analogue, dizzy][url=\"Analogue, dizzy\"]dizziness[/url][/hint],[hint name=Analogue, hallucinations][url=\"Analogue, hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
@@ -946,7 +947,7 @@ text = "
 [hint name=_MonsterSelect, Analogue][url=\"_MonsterSelect, Analogue\"][center][b]ANALOGUE[/b][/center][/url][/hint]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity.
-It can appear wherever [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing [hint name=Analogue, loud][url=\"Analogue, loud\"]static noises, glitching, buzzing[/url][/hint], or flickering screens.
+It can appear [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]wherever electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing [hint name=Analogue, loud][url=\"Analogue, loud\"]static noises, glitching, buzzing[/url][/hint], or flickering screens.
 Being in the immediate area of an infected device can lead to [hint name=Analogue, dizzy][url=\"Analogue, dizzy\"]dizziness[/url][/hint],[hint name=Analogue, hallucinations][url=\"Analogue, hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
@@ -1192,7 +1193,7 @@ text = "
 [hint name=_MonsterSelect, Screamer][url=\"_MonsterSelect, Screamer\"][center][b]SCREAMER[/b][/center][/url][/hint]
 
 
-Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer, no people][url=\"Screamer, no people\"]deserted[/url][/hint] spaces [hint name=Screamer, outside][url=\"Screamer, outside\"]outdoor[/url][/hint], scurrying the area with seemingly [hint name=Screamer, uncoordinated, moving around][url=\"Screamer, uncoordinated, moving around\"]no purpose[/url][/hint].
+Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer, no people][url=\"Screamer, no people\"]deserted[/url][/hint] spaces [hint name=Screamer, outside][url=\"Screamer, outside\"]outdoor[/url][/hint], [hint name=Screamer, uncoordinated, moving around][url=\"Screamer, uncoordinated, moving around\"]scurrying around[/url][/hint] the area with seemingly no purpose.
 They are imitating all sorts of sounds, running from [hint name=Screamer, mumbling, voices, loud][url=\"Screamer, mumbling, voices, loud\"]organic screaming, gnawing, or howling[/url][/hint] to [hint name=Screamer, loud][url=\"Screamer, loud\"]unnatural noises, like slashing metal[/url][/hint]. Hearing its screams has a disorientating effect on people that can cause [hint name=Screamer, dizzy][url=\"Screamer, dizzy\"]dizziness[/url][/hint].
 When encountering a Screamer, it’s best to calmly retreat, without drawing its attention.
 "
@@ -1258,7 +1259,6 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View8" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View8"]
 position = Vector2(-327.373, -259.592)
@@ -1277,7 +1277,7 @@ text = "
 [hint name=_MonsterSelect, Screamer][url=\"_MonsterSelect, Screamer\"][center][b]SCREAMER[/b][/center][/url][/hint]
 
 
-Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer, no people][url=\"Screamer, no people\"]deserted[/url][/hint] spaces [hint name=Screamer, outside][url=\"Screamer, outside\"]outdoor[/url][/hint], scurrying the area with seemingly [hint name=Screamer, uncoordinated, moving around][url=\"Screamer, uncoordinated, moving around\"]no purpose[/url][/hint].
+Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer, no people][url=\"Screamer, no people\"]deserted[/url][/hint] spaces [hint name=Screamer, outside][url=\"Screamer, outside\"]outdoor[/url][/hint], [hint name=Screamer, uncoordinated, moving around][url=\"Screamer, uncoordinated, moving around\"]scurrying around[/url][/hint] the area with seemingly no purpose.
 They are imitating all sorts of sounds, running from [hint name=Screamer, mumbling, voices, loud][url=\"Screamer, mumbling, voices, loud\"]organic screaming, gnawing, or howling[/url][/hint] to [hint name=Screamer, loud][url=\"Screamer, loud\"]unnatural noises, like slashing metal[/url][/hint]. Hearing its screams has a disorientating effect on people that can cause [hint name=Screamer, dizzy][url=\"Screamer, dizzy\"]dizziness[/url][/hint].
 When encountering a Screamer, it’s best to calmly retreat, without drawing its attention.
 "
@@ -1359,7 +1359,7 @@ text = "
 [hint name=_MonsterSelect, Ooze][url=\"_MonsterSelect, Ooze\"][center][b]OOZE[/b][/center][/url][/hint]
 
 
-A small creature that can be found in [hint name=Ooze, apartment, basement][url=\"Ooze, apartment, basement\"]dark places[/url][/hint].
+A small creature that can be found in [hint name=Ooze, apartment, basement][url=\"Ooze, apartment, basement\"]dark rooms[/url][/hint].
 It is highly corrosive to non-organic materials, often [hint name=Ooze, standing in corner][url=\"Ooze, standing in corner\"]sitting motionless in some corner[/url][/hint], consuming its surroundings with [hint name=Ooze, loud][url=\"Ooze, loud\"]a sharp, sizzling sound[/url][/hint].
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]

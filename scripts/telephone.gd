@@ -2,7 +2,7 @@ extends Node3D
 
 var incomingCall = ""
 # dialog_name : question_limit
-var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 7}, {"Sincubus_01": 5}]
+var callQueue = [{"Sincubus_01": 50}, {"Jonny_01": 7}, {"Lucia_01": 5}]
 
 @onready var history_parent = $"../GUIPanel3D/ScreenViewport"
 @onready var animation_player = $AnimationPlayer
@@ -21,6 +21,7 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	setupRingingPhone()
 	incomingCall = callQueue.pop_front()
+	Dialogic.VAR.timer = incomingCall.values()[0]
 
 func setupRingingPhone() -> void:
 	FmodEventMessenger.ringingPhone.set_3d_attributes(self.global_transform)

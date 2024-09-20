@@ -1,4 +1,3 @@
-
 do FmodEventMessenger.playPickupPhone()
 player: AID Abomination Inquiry Desk, how can I help you?
 Sincubus: Yo, yo, YO, WASSUP!
@@ -20,123 +19,188 @@ else:
 			set {questions.q00} = !true
 			jump question
 
-		if (({_Basic.sight}) && !{questions.q01}):
+		if ({_Basic.sight}):
 			[signal arg="answer"]
-			player: What do you see?
-			Sincubus: Yo guys! They're asking what I see. Well, what do you see?
-			Sincubus: Exactly Chat! Nothing but my ring light.
-			set {questions.q01} = true
+			if ({questions.q01}):
+				player: (I already asked about that...)
+			else:
+				player: What do you see?
+				Sincubus: Yo guys! They're asking what I see. Well, what do you see?
+				Sincubus: Exactly Chat! Nothing but my ring light.
+				set {questions.q01} = true
+			set {_Basic.sight} = !true
 			jump question
 
-		if ({_Basic.sound}  && !{questions.q02}):
+		if ({_Basic.sound}):
 			[signal arg="answer"]
-			player: What do you hear?
-			Sincubus: I dunno man, sounds whacky. But it's [hint name=loud][url="loud"]hella loud[/url][/hint].
-			Sincubus: If my mic wouldn't have noise suppression you probs wouldn't even hear me.
-			set {questions.q02} = true
+			if ({questions.q02}):
+				player: (I already asked about that...)
+			else:
+				player: What do you hear?
+				Sincubus: I dunno man, sounds whacky. But it's [hint name=loud][url="loud"]hella loud[/url][/hint].
+				Sincubus: If my mic wouldn't have noise suppression you probs wouldn't even hear me.
+				set {questions.q02} = true
+			set {_Basic.sound} = !true
 			jump question
 
-		if ({_Basic.location}  && !{questions.q03}):
+		if ({_Basic.location}):
 			[signal arg="answer"]
-			player: Where are you right now?
-			Sincubus: Just the best place to be at night, right Chat?
-			Sincubus: [hint name=outside][url="outside"]At the Mall. Right outside[/url][/hint], next to the trolly carts.
-			set {questions.q03} = true
+			if ({questions.q03}):
+				player: (I already asked about that...)
+			else:
+				player: Where are you right now?
+				Sincubus: Just the best place to be at night, right Chat?
+				Sincubus: [hint name=outside][url="outside"]At the Mall. Right outside[/url][/hint], next to the trolly carts.
+				set {questions.q03} = true
+			set {_Basic.location} = !true
 			jump question
 
-		if ({Analogue.loud} && !{questions.q04}):
+		if ({Analogue.loud}):
 			[signal arg="answer"]
-			player: Does it sound like static noise or electric buzzing?
-			Sincubus: Heck yeah. But also kinda like a chainsaw?
-			Sincubus: And then also like a [hint name=voices][url="voices"]screaming child[/url][/hint]! …I hate children.
-			set {questions.q04} = true
+			if ({questions.q04}):
+				player: (I already asked about that...)
+			else:
+				player: Does it sound like static noise or electric buzzing?
+				Sincubus: Heck yeah. But also kinda like a chainsaw?
+				Sincubus: And then also like a [hint name=voices][url="voices"]screaming child[/url][/hint]! …I hate children.
+				set {questions.q04} = true
+			set {Analogue.loud} = !true
 			jump question
 
-		if ({Screamer.loud} && !{questions.q05}):
+		if ({Screamer.loud}):
 			[signal arg="answer"]
-			player: Can you identify where the sound comes from?
-			Sincubus: No clue chief. It's kinda everywhere really.
-			set {questions.q05} = true
+			if ({questions.q05}):
+				player: (I already asked about that...)
+			else:
+				player: Can you identify where the sound comes from?
+				Sincubus: No clue chief. It's kinda everywhere really.
+				set {questions.q05} = true
+			set {Screamer.loud} = !true
 			jump question
 
-		if ({Ooze.loud} && !{questions.q06}):
+		if ({Ooze.loud}):
 			[signal arg="answer"]
-			player: How does the area look?
-			Sincubus: Dunno chief. Looks like a parking lot to me.
-			Sincubus: Chat's been spouting that there's [hint name=moving around][url="moving around"]something moving around[/url][/hint], but I haven't seen anything.
-			set {questions.q06} = true
+			if ({questions.q06}):
+				player: (I already asked about that...)
+			else:
+				player: How does the area look?
+				Sincubus: Dunno chief. Looks like a parking lot to me.
+				Sincubus: Chat's been spouting that there's [hint name=moving around][url="moving around"]something moving around[/url][/hint], but I haven't seen anything.
+				set {questions.q06} = true
+			set {Ooze.loud} = !true
 			jump question
 
-		if (({Parasite.loud}) && !{questions.q07}):
+		if ({Parasite.loud}):
 			[signal arg="answer"]
-			player: Is there a voice? Do you understand it?
-			Sincubus: There is a voice, yeah. Can you understand it Chat?
-			Sincubus: Nah man, me neither. OH!
-			Sincubus: Voice is gone. Now there's just a [hint name=loud][url="loud"]mechanical noise[/url][/hint].
-			set {questions.q07} = true
+			if ({questions.q07}):
+				player: (I already asked about that...)
+			else:
+				player: Is there a voice? Do you understand it?
+				Sincubus: There is a [hint name=voices][url="voices"]voice[/url][/hint], yeah. Can you understand it Chat?
+				Sincubus: Nah man, me neither. OH!
+				Sincubus: Voice is gone. Now there's just a [hint name=loud][url="loud"]mechanical noise[/url][/hint].
+				set {questions.q07} = true
+			set {Parasite.loud} = !true
 			jump question
 
-		if (({Screamer.voices} || {Parasite.voices}) && !{questions.q08}):
+		if (({Screamer.voices} || {Parasite.voices})):
 			[signal arg="answer"]
-			player: Can you make out what they are saying?
-			Sincubus: Chat, what do we think?
-			Sincubus: Yeah man, total gibberish!
-			set {questions.q08} = true
+			if ({questions.q08}):
+				player: (I already asked about that...)
+			else:
+				player: Can you make out what they are saying?
+				Sincubus: Chat, what do we think?
+				Sincubus: Yeah man, total gibberish!
+				set {questions.q08} = true
+			set {Screamer.voices} = !true
+			set {Parasite.voices} = !true
 			jump question
 
-		if (({Screamer.outside} || {Tally.outside}) && !{questions.q09}):
+		if (({Screamer.outside} || {Tally.outside})):
 			[signal arg="answer"]
-			player: Is there anyone else around?
-			Sincubus: Nah chief, just [hint name=egg][url="egg"]Chat[/url][/hint] and me.
-			set {questions.q09} = true
+			if ({questions.q09}):
+				player: (I already asked about that...)
+			else:
+				player: Is there anyone else around?
+				Sincubus: Nah chief, just [hint name=egg][url="egg"]Chat[/url][/hint] and me.
+				set {questions.q09} = true
+			set {Screamer.outside} = !true
+			set {Tally.outside} = !true
 			jump question
 
-		if (({FearOfDeath.outside} || {Analogue.hallucinations} || {Parasite.hallucinations}) && !{questions.q10}):
+		if (({FearOfDeath.outside} || {Analogue.hallucinations} || {Parasite.hallucinations})):
 			[signal arg="answer"]
-			player: How do you feel?
-			Sincubus: Pff, maybe a little [hint name=dizzy][url="dizzy"]dizzy[/url][/hint]?
-			Sincubus: Could be the new energy drinks I tried out. Shout out to Popstar Energy (please sponsor me)!
-			set {questions.q10} = true
+			if ({questions.q10}):
+				player: (I already asked about that...)
+			else:
+				player: How do you feel?
+				Sincubus: Pff, maybe a little [hint name=dizzy][url="dizzy"]dizzy[/url][/hint]?
+				Sincubus: Could be the new energy drinks I tried out. Shout out to Popstar Energy (please sponsor me)!
+				set {questions.q10} = true
+			set {FearOfDeath.outside} = !true
+			set {Analogue.hallucinations} = !true
+			set {Parasite.hallucinations} = !true
 			jump question
 
-		if ({_Basic.egg} && !{questions.q11}):
+		if ({_Basic.egg}):
 			[signal arg="answer"]
-			player: Who or what exactly is Chat?
-			Sincubus: Oh yeah, you're probably a boomer.
-			Sincubus: I am live streaming right now. The chat are my thousands of viewers.
-			Sincubus: They can text and I see what they write.
-			set {questions.q11} = true
+			if ({questions.q11}):
+				player: (I already asked about that...)
+			else:
+				player: Who or what exactly is Chat?
+				Sincubus: Oh yeah, you're probably a boomer.
+				Sincubus: I am live streaming right now. The chat are my thousands of viewers.
+				Sincubus: They can text and I see what they write.
+				set {questions.q11} = true
+			set {_Basic.egg} = !true
 			jump question
 
-		if ({Screamer.moving around} && !{questions.q12}):
+		if ({Screamer.moving around}):
 			[signal arg="answer"]
-			player: How fast is it moving around?
-			Sincubus: Chat? How fast is it moving?
-			Sincubus: Chat says kinda quickly. Faster than me for sure.
-			set {questions.q12} = true
+			if ({questions.q12}):
+				player: (I already asked about that...)
+			else:
+				player: How fast is it moving around?
+				Sincubus: Chat? How fast is it moving?
+				Sincubus: Chat says kinda quickly. Faster than me for sure.
+				set {questions.q12} = true
+			set {Screamer.moving around} = !true
 			jump question
 
-		if (({Doppelganger.moving around} || {Parasite.moving around}) && !{questions.q13}):
+		if ({Doppelganger.moving around} || {Parasite.moving around}):
 			[signal arg="answer"]
-			player: Does it look like a person?
-			Sincubus: Not according to Chat. They say it's more like a weird, long dog.
-			set {questions.q13} = true
+			if ({questions.q13}):
+				player: (I already asked about that...)
+			else:
+				player: Does it look like a person?
+				Sincubus: Not according to Chat. They say it's more like a weird, long dog.
+				set {questions.q13} = true
+			set {Doppelganger.moving around} = !true
+			set {Parasite.moving around} = !true
 			jump question
 
-		if ({Analogue.dizzy} && !{questions.q14}):
+		if ({Analogue.dizzy}):
 			[signal arg="answer"]
-			player: Is there a flickering screen of any sort?
-			Sincubus: My cam and phone are working fine.
-			Sincubus: Chat, you can see me, right?
-			Sincubus: ... yep, seems to work.
-			set {questions.q14} = true
+			if ({questions.q14}):
+				player: (I already asked about that...)
+			else:
+				player: Is there a flickering screen of any sort?
+				Sincubus: My cam and phone are working fine.
+				Sincubus: Chat, you can see me, right?
+				Sincubus: ... yep, seems to work.
+				set {questions.q14} = true
+			set {Analogue.dizzy} = !true
 			jump question
 
-		if ({Screamer.dizzy} && !{questions.q15}):
+		if ({Screamer.dizzy}):
 			[signal arg="answer"]
-			player: How close is it to you?
-			Sincubus: Chat said not that close. So it probably didn't notice me.
-			set {questions.q15} = true
+			if ({questions.q15}):
+				player: (I already asked about that...)
+			else:
+				player: How close is it to you?
+				Sincubus: Chat said not that close. So it probably didn't notice me.
+				set {questions.q15} = true
+			set {Screamer.dizzy} = !true
 			jump question
 	else:
 		if {questions.q00} == false:
@@ -218,4 +282,3 @@ player: Ok stay calm, I think I know what it is...
 	Sincubus: AAAAAAH
 [wait time="10" hide_text="false"]
 	jump failedAction_timeout
-
