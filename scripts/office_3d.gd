@@ -9,7 +9,6 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	$"DeskCamera/Highlight Ray".enabled = true
 
 
-
 func _on_telephone_end_day():
-	$AnimationPlayer.play("fade_in_between")
 	$Monitor.disableShader()
+	$AnimationPlayer.play("fade_in_between")

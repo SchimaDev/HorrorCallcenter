@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://syhj0k5qflvo"]
+[gd_scene load_steps=66 format=3 uid="uid://syhj0k5qflvo"]
 
 [ext_resource type="Script" path="res://scripts/office_3d.gd" id="1_4mcyp"]
 [ext_resource type="Shader" path="res://resources/shaders/pixelation.gdshader" id="1_fkef8"]
@@ -33,6 +33,8 @@
 [ext_resource type="PackedScene" uid="uid://hm6a51axjw87" path="res://art/3D/All_pack/scenes/Book_01.scn" id="31_b7lp1"]
 [ext_resource type="PackedScene" uid="uid://bx035mu8bb2jc" path="res://art/3D/All_pack/scenes/Book_02.scn" id="32_sxrlq"]
 [ext_resource type="PackedScene" uid="uid://byi76v6c7usc7" path="res://art/3D/All_pack/scenes/Book_03.scn" id="33_agrkp"]
+[ext_resource type="Script" path="res://scenes/results.gd" id="34_qjsrs"]
+[ext_resource type="Texture2D" uid="uid://didgkfeiao54" path="res://art/3D/bookmesh/pages/page_texture.png" id="35_24n65"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4ifuj"]
 resource_local_to_scene = true
@@ -80,7 +82,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2gedi"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_cpmow"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -106,7 +108,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3gjc0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_l800u"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -135,7 +137,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_2gedi")
+shadow_mesh = SubResource("ArrayMesh_cpmow")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -300,6 +302,30 @@ tracks/12/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Book:process_mode")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("results:process_mode")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
 
 [sub_resource type="Animation" id="Animation_1l3gn"]
 resource_name = "fade_in"
@@ -315,34 +341,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.615686), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_8itpd"]
-resource_name = "pickup_book"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Book:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.757119, 1.55841, 1.39062), Vector3(-0.544, 2.064, 0.986)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Book:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.5708, -3.61283, 0), Vector3(-0.00349064, -3.03687, -0.0174533)]
 }
 
 [sub_resource type="Animation" id="Animation_de8th"]
@@ -408,10 +406,34 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Book:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("results:process_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
 
 [sub_resource type="Animation" id="Animation_rjswk"]
 resource_name = "pickup_papers"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -422,7 +444,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.232865, 0.0640945, 0.0193632), Vector3(-1.04695, 0.158133, 0.596917)]
+"values": [Vector3(-0.0202591, 0.25038, 0.0194211), Vector3(-1.06274, -0.0359023, 0.604986)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -434,7 +456,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-2.05532e-05, -2.51766e-05, 0.155613), Vector3(1.4558, -1.5708, -1.45555)]
+"values": [Vector3(-2.05533e-05, -2.51766e-05, 0.155613), Vector3(1.46509, 1.71147, 1.80604)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -446,7 +468,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.130368, 0.0426971, 0.00973701), Vector3(-0.988188, 0.16098, 0.612561)]
+"values": [Vector3(0.0822377, 0.228983, 0.00979543), Vector3(-1.00434, 0.0311842, 0.611098)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -458,7 +480,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(2.69958e-06, 2.77488e-06, -0.0185179), Vector3(1.45581, -1.57085, -1.50713)]
+"values": [Vector3(2.69943e-06, 2.77499e-06, -0.0185179), Vector3(1.46509, 1.71146, 1.7545)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -470,7 +492,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 2.38419e-07), Vector3(-0.909221, 0.162404, 0.596936)]
+"values": [Vector3(0.212605, 0.186285, 5.8651e-05), Vector3(-0.925877, 0.0659485, 0.590252)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -482,7 +504,31 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1.45582, -1.57093, -1.5681)]
+"values": [Vector3(-1.16415e-10, 3.09229e-11, -2.98024e-08), Vector3(1.46509, 1.71146, 1.69361)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Book:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.757, 1.558, 1.391), Vector3(-0.544, 2.064, 0.986)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Book:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.61283, 0), Vector3(-0.00349069, -3.03687, -0.0174533)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iudar"]
@@ -490,8 +536,7 @@ _data = {
 "RESET": SubResource("Animation_jf0ib"),
 "fade_in": SubResource("Animation_1l3gn"),
 "fade_in_between": SubResource("Animation_de8th"),
-"pickup_book": SubResource("Animation_8itpd"),
-"pickup_papers": SubResource("Animation_rjswk")
+"pickup_book": SubResource("Animation_rjswk")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jltx"]
@@ -522,14 +567,38 @@ size = Vector2(20, 20)
 [sub_resource type="QuadMesh" id="QuadMesh_jbjyj"]
 size = Vector2(0.75, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5p2d4"]
+render_priority = 0
+shader = ExtResource("18_t7u8g")
+shader_parameter/strength = null
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgfwr"]
-albedo_color = Color(0, 1, 1, 1)
+next_pass = SubResource("ShaderMaterial_5p2d4")
+no_depth_test = true
+albedo_texture = ExtResource("35_24n65")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0ftv"]
+render_priority = 0
+shader = ExtResource("18_t7u8g")
+shader_parameter/strength = null
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttqk1"]
-albedo_color = Color(1, 0, 1, 1)
+next_pass = SubResource("ShaderMaterial_u0ftv")
+no_depth_test = true
+albedo_texture = ExtResource("35_24n65")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hsajn"]
+render_priority = 0
+shader = ExtResource("18_t7u8g")
+shader_parameter/strength = null
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w73x3"]
-albedo_color = Color(1, 1, 0, 1)
+next_pass = SubResource("ShaderMaterial_hsajn")
+no_depth_test = true
+albedo_texture = ExtResource("35_24n65")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vie8e"]
+size = Vector3(1.09399, 1.16833, 0.212463)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0.000279502, 0.000144524, -0.000279523, 1, 0.000151104, -0.000144482, -0.000151144, 1, 0, 0, 0)
@@ -637,7 +706,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_3gjc0")
+mesh = SubResource("ArrayMesh_l800u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
@@ -758,33 +827,52 @@ transform = Transform3D(1, 3.20561e-11, 1.45519e-11, 9.76996e-12, -1, 8.74279e-0
 mesh = SubResource("PlaneMesh_8wymt")
 skeleton = NodePath("../..")
 
-[node name="results" type="Node3D" parent="."]
+[node name="results" type="Area3D" parent="."]
+process_mode = 4
 transform = Transform3D(-0.511728, 0.0590977, -0.000208947, -0.000226352, -0.000138686, 0.515129, 0.0590978, 0.511729, 0.000163739, -0.957947, 1.56998, 1.07496)
 visible = false
+collision_layer = 2
+script = ExtResource("34_qjsrs")
 
 [node name="paper" type="MeshInstance3D" parent="results"]
-transform = Transform3D(0.98796, -0.15471, 0, 0.15471, 0.987957, 0, 0, 0, 1, -0.232865, 0.0640945, 0.0193632)
+transform = Transform3D(0.987957, -0.154709, 0, 0.15471, 0.987953, 0, 0, 0, 0.999996, -0.232865, 0.0640945, 0.0193632)
+sorting_offset = 3.0
+sorting_use_aabb_center = false
 mesh = SubResource("QuadMesh_jbjyj")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tgfwr")
 
 [node name="paper2" type="MeshInstance3D" parent="results"]
-transform = Transform3D(0.999829, 0.0185168, 2.77488e-06, -0.0185168, 0.999828, -2.69958e-06, -2.82439e-06, 2.64774e-06, 1, -0.130368, 0.0426971, 0.00973701)
+transform = Transform3D(0.999824, 0.0185168, 2.77487e-06, -0.0185168, 0.999824, -2.69957e-06, -2.82438e-06, 2.64772e-06, 0.999998, -0.130368, 0.0426971, 0.00973701)
+sorting_offset = 2.0
+sorting_use_aabb_center = false
 mesh = SubResource("QuadMesh_jbjyj")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ttqk1")
 
 [node name="paper3" type="MeshInstance3D" parent="results"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.38419e-07)
+transform = Transform3D(0.999995, 0, 0, 0, 0.999995, 0, 0, 0, 0.999997, 0, 0, 2.38419e-07)
+sorting_offset = 1.0
+sorting_use_aabb_center = false
 mesh = SubResource("QuadMesh_jbjyj")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_w73x3")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="results"]
+transform = Transform3D(1, 7.45059e-09, -1.54487e-08, -7.45059e-09, 1, 1.48581e-08, 1.54487e-08, -1.48581e-08, 1, -0.153312, 0.061934, 0.0750401)
+shape = SubResource("BoxShape3D_vie8e")
+
 [connection signal="openBook" from="Book" to="Monitor" method="openBookView"]
+[connection signal="view_entered" from="Monitor/Camera" to="Book" method="_on_camera_view_entered"]
 [connection signal="view_entered" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_entered"]
+[connection signal="view_exited" from="Monitor/Camera" to="Book" method="_on_camera_view_exited"]
 [connection signal="view_exited" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_exited"]
+[connection signal="view_exited" from="Monitor/Camera" to="results" method="_on_camera_view_exited"]
+[connection signal="pressed" from="Monitor/UI/Button" to="Book" method="_on_camera_view_exited"]
 [connection signal="pressed" from="Monitor/UI/Button" to="Monitor/Camera" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Monitor/UI/Button" to="results" method="_on_button_pressed"]
 [connection signal="endDay" from="Telephone" to="." method="_on_telephone_end_day"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="changeView" from="results" to="Monitor" method="openBookView"]
 
 [editable path="GUIPanel3D"]
