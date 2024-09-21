@@ -211,6 +211,7 @@ label solution
 Lucia: Okay. Give me a moment.
 Lucia: .....
 Lucia: That... seemed to have worked.
+[signal arg="success"]
 Lucia: Oh muchas gracias, thank you SO MUCH!
 Lucia: I don’t know how I can thank you. You saved me!
 Lucia: Just... Gracias! I... I’m Lucia. Lucia Garcia.

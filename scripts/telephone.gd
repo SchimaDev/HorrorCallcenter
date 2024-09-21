@@ -3,6 +3,8 @@ extends Node3D
 var incomingCall = ""
 # dialog_name : question_limit
 var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 8}, {"Sincubus_01": 6}]
+var results = []
+var currentResult = false
 
 signal endDay
 @onready var popup = $Popup
@@ -43,6 +45,10 @@ func _input(event: InputEvent) -> void:
 			animation_player.play_backwards("pickup_phone")
 			Dialogic.VAR.reset()
 			
+			# record success/failure of call
+			results.append(currentResult)
+			currentResult = false
+			
 			# TODO stop phone beeping
 			FmodEventMessenger.playHangUpPhonePlayer()
 			
@@ -54,6 +60,8 @@ func _input(event: InputEvent) -> void:
 				FmodEventMessenger.playRingingPhone()
 			else:
 				endDay.emit()
+				$"../results".showResults(results)
+				print(results)
 				
 		elif incomingCall.keys()[0] == "inCall":
 			incomingCall = {"end" : 0}
@@ -73,6 +81,8 @@ func _input(event: InputEvent) -> void:
 func _on_dialogic_signal(argument):
 	if argument == "callEnded":
 		incomingCall = {"end" : 0}
+	if argument == "success":
+		currentResult = true
 
 func showPopup():
 	popup.set_self_modulate(Color(Color.WHITE, 0))
