@@ -2,8 +2,7 @@ extends Node3D
 
 var incomingCall = ""
 # dialog_name : question_limit
-var callQueue = [{"Lucia_01": 10}]
-#var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 8}, {"Sincubus_01": 6}]
+var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 8}, {"Sincubus_01": 6}]
 
 signal endDay
 @onready var popup = $Popup
@@ -69,7 +68,6 @@ func _input(event: InputEvent) -> void:
 			FmodEventMessenger.stopRingingPhone()
 			Dialogic.start(incomingCall.keys()[0])
 			ClickTextEventHandler.dialog = incomingCall.keys()[0]
-			await get_tree().create_timer(1).timeout
 			incomingCall = {"inCall" : 0}
 
 func _on_dialogic_signal(argument):
