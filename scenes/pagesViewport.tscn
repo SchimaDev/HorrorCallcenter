@@ -250,12 +250,12 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 Try to learn about your caller. It is important to know the basic information about their location and current circumstances. For that reason, it is advisable to ask one of the following questions at the beginning of each call:
-•  [hint name=_Basic, sight][url=\"_Basic, sight\"]What do you see?[/url][/hint]
-•  [hint name=_Basic, sound][url=\"_Basic, sound\"]What do you hear?[/url][/hint]
-•  [hint name=_Basic, location][url=\"_Basic, location\"]Where are you right now?[/url][/hint]
+•  [hint name=_Basic,sight][url=\"_Basic,sight\"]What do you see?[/url][/hint]
+•  [hint name=_Basic,sound][url=\"_Basic,sound\"]What do you hear?[/url][/hint]
+•  [hint name=_Basic,location][url=\"_Basic,location\"]Where are you right now?[/url][/hint]
 Once you are sure of the situation the caller described and are aware of the type of monster you have to handle, inform them what they have to do.
-•  [hint name=_Basic, monsterSelect][url=\"_Basic, monsterSelect\"]I think I know what you are dealing[/url][/hint]
-	[hint name=_Basic, monsterSelect][url=\"_Basic, monsterSelect\"]with. It is a …[/url][/hint]
+•  [hint name=_Basic,monsterSelect][url=\"_Basic,monsterSelect\"]I think I know what you are dealing[/url][/hint]
+	[hint name=_Basic,monsterSelect][url=\"_Basic,monsterSelect\"]with. It is a …[/url][/hint]
 "
 custom_effects = [SubResource("RichTextEffect_rg0mv")]
 
@@ -354,12 +354,12 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 Try to learn about your caller. It is important to know the basic information about their location and current circumstances. For that reason, it is advisable to ask one of the following questions at the beginning of each call:
-•  [hint name=_Basic, sight][url=\"_Basic, sight\"]What do you see?[/url][/hint]
-•  [hint name=_Basic, sound][url=\"_Basic, sound\"]What do you hear?[/url][/hint]
-•  [hint name=_Basic, location][url=\"_Basic, location\"]Where are you right now?[/url][/hint]
+•  [hint name=_Basic,sight][url=\"_Basic,sight\"]What do you see?[/url][/hint]
+•  [hint name=_Basic,sound][url=\"_Basic,sound\"]What do you hear?[/url][/hint]
+•  [hint name=_Basic,location][url=\"_Basic,location\"]Where are you right now?[/url][/hint]
 Once you are sure of the situation the caller described and are aware of the type of monster you have to handle, inform them what they have to do.
-•  [hint name=_Basic, monsterSelect][url=\"_Basic, monsterSelect\"]I think I know what you are dealing[/url][/hint]
-	[hint name=_Basic, monsterSelect][url=\"_Basic, monsterSelect\"]with. It is a …[/url][/hint]
+•  [hint name=_Basic,monsterSelect][url=\"_Basic,monsterSelect\"]I think I know what you are dealing[/url][/hint]
+	[hint name=_Basic,monsterSelect][url=\"_Basic,monsterSelect\"]with. It is a …[/url][/hint]
 "
 custom_effects = [SubResource("RichTextEffect_hre4k")]
 
@@ -377,10 +377,10 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Doppelganger][url=\"_MonsterSelect, Doppelganger\"][center][b]DOPPELGANGER[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Doppelganger][url=\"_MonsterSelect,Doppelganger\"][center][b]DOPPELGANGER[/b][/center][/url][/hint]
 
 
-Doppelgangers are seemingly [hint name=Doppelganger, person][url=\"Doppelganger, person\"]human[/url][/hint] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [hint name=Doppelganger, apartment][url=\"Doppelganger, apartment\"]households[/url][/hint], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened.
+Doppelgangers are seemingly [hint name=\"Doppelganger,person\"][url=\"Doppelganger,person\"]human[/url][/hint] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [hint name=Doppelganger,apartment][url=\"Doppelganger,apartment\"]households[/url][/hint], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened.
 "
 custom_effects = [SubResource("RichTextEffect_bsfed")]
 metadata/_edit_use_anchors_ = true
@@ -412,7 +412,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-Overall Doppelgangers act as human as a monster could. They communicate in [hint name=Doppelganger, mumbling][url=\"Doppelganger, mumbling\"]incoherent muttering[/url][/hint] and their [hint name=Doppelganger, uncoordinated][url=\"Doppelganger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url][/hint].
+Overall Doppelgangers act as human as a monster could. They communicate in [hint name=Doppelganger,mumbling][url=\"Doppelganger,mumbling\"]incoherent muttering[/url][/hint] and their [hint name=Doppelganger,uncoordinated][url=\"Doppelganger,uncoordinated\"]movement is rather uncoordinated and inhuman[/url][/hint].
 To get rid of one, let the caller separate it from its victims, and send authorities.
 "
 custom_effects = [SubResource("RichTextEffect_rkrr1")]
@@ -442,7 +442,6 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View3" type="Node2D" parent="BookMesh2Untitled"]
-visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View3"]
 position = Vector2(-327.373, -258.004)
@@ -458,10 +457,10 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Doppelganger][url=\"_MonsterSelect, Doppelganger\"][center][b]DOPPELGANGER[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Doppelganger][url=\"_MonsterSelect,Doppelganger\"][center][b]DOPPELGANGER[/b][/center][/url][/hint]
 
 
-Doppelgangers are seemingly [hint name=Doppelganger, person][url=\"Doppelganger, person\"]human[/url][/hint] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [hint name=Doppelganger, apartment][url=\"Doppelganger, apartment\"]households[/url][/hint], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened.
+Doppelgangers are seemingly [hint name=Doppelganger,person][url=\"Doppelganger,person\"]human[/url][/hint] and act like us too. They are passive creatures that  try to survive by conning humans into caring for it. One can find them often in grieving [hint name=Doppelganger,apartment][url=\"Doppelganger,apartment\"]households[/url][/hint], since imitating a deceased is easier than a living human. To achieve the perfect disguise, it  confuses and alters the minds of the humans around it. It makes them believe to be their loved ones. Victims become unaware of their death due to the Doppelgangers aura. Thereafter, it uses its victims to provide it with food and protection, should it be threatened.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
@@ -493,7 +492,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-Overall Doppelgangers act as human as a monster could. They communicate in [hint name=Doppelganger, mumbling][url=\"Doppelganger, mumbling\"]incoherent muttering[/url][/hint] and their [hint name=Doppelganger, uncoordinated][url=\"Doppelganger, uncoordinated\"]movement is rather uncoordinated and inhuman[/url][/hint].
+Overall Doppelgangers act as human as a monster could. They communicate in [hint name=Doppelganger,mumbling][url=\"Doppelganger,mumbling\"]incoherent muttering[/url][/hint] and their [hint name=Doppelganger,uncoordinated][url=\"Doppelganger,uncoordinated\"]movement is rather uncoordinated and inhuman[/url][/hint].
 To get rid of one, let the caller separate it from its victims, and send authorities.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
@@ -536,10 +535,10 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Parasite][url=\"_MonsterSelect, Parasite\"][center][b]PARASITE[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Parasite][url=\"_MonsterSelect,Parasite\"][center][b]PARASITE[/b][/center][/url][/hint]
 
-Parasites are worm-like creatures that infect [hint name=Parasite, person][url=\"Parasite, person\"]humans[/url][/hint] and take over their bodily functions. An infection begins with general confusion and [hint name=Parasite, hallucinations][url=\"Parasite, hallucinations\"]hallucinations[/url][/hint]. A victim in this phase will exhibit [hint name=Parasite, uncoordinated][url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url][/hint], and slightly [hint name=Parasite, mumbling, coherent, one][url=\"Parasite, mumbling, coherent, two\"]mumbled[/url][/hint] or [hint name=Parasite, mumbling, coherent][url=\"Parasite, mumbling, coherent\"]slurred speech[/url][/hint]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself.
-Parasites try to stay where humans are and are often to be found around [hint name=Parasite, apartment][url=\"Parasite, apartment\"]houses[/url][/hint] or other frequently populated buildings.
+Parasites are worm-like creatures that infect [hint name=Parasite,person][url=\"Parasite,person\"]humans[/url][/hint] and take over their bodily functions. An infection begins with general confusion and [hint name=Parasite,hallucinations][url=\"Parasite,hallucinations\"]hallucinations[/url][/hint]. A victim in this phase will exhibit [hint name=Parasite,uncoordinated][url=\"Parasite,uncoordinated\"]shaky, uncoordinated movement[/url][/hint], and slightly [hint name=Parasite,mumbling,coherent,one][url=\"Parasite, mumbling,coherent,one\"]mumbled[/url][/hint] or [hint name=Parasite,mumbling,coherent,two][url=\"Parasite, mumbling, coherent,two\"]slurred speech[/url][/hint]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself.
+Parasites try to stay where humans are and are often to be found around [hint name=Parasite,apartment][url=\"Parasite,apartment\"]houses[/url][/hint] or other frequently populated buildings.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -617,10 +616,10 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Parasite][url=\"_MonsterSelect, Parasite\"][center][b]PARASITE[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Parasite][url=\"_MonsterSelect,Parasite\"][center][b]PARASITE[/b][/center][/url][/hint]
 
-Parasites are worm-like creatures that infect [hint name=Parasite, person][url=\"Parasite, person\"]humans[/url][/hint] and take over their bodily functions. An infection begins with general confusion and [hint name=Parasite, hallucinations][url=\"Parasite, hallucinations\"]hallucinations[/url][/hint]. A victim in this phase will exhibit [hint name=Parasite, uncoordinated][url=\"Parasite, uncoordinated\"]shaky, uncoordinated movement[/url][/hint], and slightly [hint name=Parasite, mumbling, coherent, one][url=\"Parasite, mumbling, coherent, two\"]mumbled[/url][/hint] or [hint name=Parasite, mumbling, coherent][url=\"Parasite, mumbling, coherent\"]slurred speech[/url][/hint]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself.
-Parasites try to stay where humans are and are often to be found around [hint name=Parasite, apartment][url=\"Parasite, apartment\"]houses[/url][/hint] or other frequently populated buildings.
+Parasites are worm-like creatures that infect [hint name=Parasite,person][url=\"Parasite,person\"]humans[/url][/hint] and take over their bodily functions. An infection begins with general confusion and [hint name=Parasite,hallucinations][url=\"Parasite,hallucinations\"]hallucinations[/url][/hint]. A victim in this phase will exhibit [hint name=Parasite,uncoordinated][url=\"Parasite,uncoordinated\"]shaky, uncoordinated movement[/url][/hint], and slightly [hint name=Parasite,mumbling,coherent,one][url=\"Parasite, mumbling,coherent,one\"]mumbled[/url][/hint] or [hint name=Parasite,mumbling,coherent,two][url=\"Parasite, mumbling, coherent,two\"]slurred speech[/url][/hint]. Longer exposure gives the Parasite stronger control over its host, leading to a gradual loss of control over movement, until the parasite eventually causes the victim to inflict wounds upon themself.
+Parasites try to stay where humans are and are often to be found around [hint name=Parasite,apartment][url=\"Parasite,apartment\"]houses[/url][/hint] or other frequently populated buildings.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -695,15 +694,15 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-     	[hint name=_MonsterSelect, Tally][url=\"_MonsterSelect, Tally\"][b]TALLY[/b][/url][/hint]
+     	[hint name=_MonsterSelect,Tally][url=\"_MonsterSelect,Tally\"][b]TALLY[/b][/url][/hint]
 
 
 
 
 
 
-This large, [hint name=Tally, person][url=\"Tally, person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, less [hint name=Tally, no people][url=\"Tally, no people\"]frequented[/url] [/hint] places in [hint name=Tally, apartment, basement][url=\"Tally, apartment, basement\"]urban areas[/url][/hint].
-It’s a mostly [hint name=Tally, quiet]url=\"Tally, quiet\"]quiet[/url][/hint][ and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
+This large, [hint name=Tally,person][url=\"Tally,person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, less [hint name=Tally,no_people][url=\"Tally,no_people\"]frequented[/url] [/hint] places in [hint name=Tally,apartment,basement][url=\"Tally,apartment,basement\"]urban areas[/url][/hint].
+It’s a mostly [hint name=Tally,quiet][url=\"Tally,quiet\"]quiet[/url][/hint] and harmless creature that spends most of its time motionless [hint name=Tally,standing_in_corner][url=\"Tally,standing_in_corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally,staring][url=\"Tally,staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -780,15 +779,15 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-     	[hint name=_MonsterSelect, Tally][url=\"_MonsterSelect, Tally\"][b]TALLY[/b][/url][/hint]
+     	[hint name=_MonsterSelect,Tally][url=\"_MonsterSelect,Tally\"][b]TALLY[/b][/url][/hint]
 
 
 
 
 
 
-This large, [hint name=Tally, person][url=\"Tally, person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, less [hint name=Tally, no people][url=\"Tally, no people\"]frequented[/url] [/hint] places in [hint name=Tally, apartment, basement][url=\"Tally, apartment, basement\"]urban areas[/url][/hint].
-It’s a mostly [hint name=Tally, quiet]url=\"Tally, quiet\"]quiet[/url][/hint][ and harmless creature that spends most of its time motionless [hint name=Tally, standing in corner][url=\"Tally, standing in corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally, staring][url=\"Tally, staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
+This large, [hint name=Tally,person][url=\"Tally,person\"]humanoid[/url][/hint] creature, with void as skin and eyes over their body, prefers the darker, less [hint name=Tally,no_people][url=\"Tally,no_people\"]frequented[/url] [/hint] places in [hint name=Tally,apartment,basement][url=\"Tally,apartment,basement\"]urban areas[/url][/hint].
+It’s a mostly [hint name=Tally,quiet][url=\"Tally,quiet\"]quiet[/url][/hint] and harmless creature that spends most of its time motionless [hint name=Tally,standing_in_corner][url=\"Tally,standing_in_corner\"]in corners[/url][/hint], where it can oversee its surroundings. Yet once agitated, Tallies can get rather aggressive, [hint name=Tally,staring][url=\"Tally,staring\"]staring intently at the intruder[/url][/hint] or slowly following them around.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -862,11 +861,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Analogue][url=\"_MonsterSelect, Analogue\"][center][b]ANALOGUE[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Analogue][url=\"_MonsterSelect,Analogue\"][center][b]ANALOGUE[/b][/center][/url][/hint]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity.
-It can appear wherever [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
-Being in the immediate area of an infected device can lead to dizziness,[hint name=Analogue, hallucinations][url=\"Analogue, hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
+It can appear wherever [hint name=Analogue,apartment,basement][url=\"Analogue,apartment,basement\"]electronics are nearby[/url][/hint], [hint name=Analogue,standing_in_corner][url=\"Analogue,standing_in_corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
+Being in the immediate area of an infected device can lead to dizziness,[hint name=Analogue,hallucinations][url=\"Analogue,hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
@@ -944,11 +943,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Analogue][url=\"_MonsterSelect, Analogue\"][center][b]ANALOGUE[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Analogue][url=\"_MonsterSelect,Analogue\"][center][b]ANALOGUE[/b][/center][/url][/hint]
 
 Analogues are very elusive creatures that appear to be made entirely of electricity.
-It can appear wherever [hint name=Analogue, apartment, basement][url=\"Analogue, apartment, basement\"]electronics are nearby[/url][/hint], [hint name=Analogue, standing in corner][url=\"Analogue, standing in corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
-Being in the immediate area of an infected device can lead to dizziness,[hint name=Analogue, hallucinations][url=\"Analogue, hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
+It can appear wherever [hint name=Analogue,apartment,basement][url=\"Analogue,apartment,basement\"]electronics are nearby[/url][/hint], [hint name=Analogue,standing_in_corner][url=\"Analogue,standing_in_corner\"]inhabiting electrical devices[/url][/hint], and can travel from object to object through electrical connections, causing static noises, glitching, buzzing, or flickering screens.
+Being in the immediate area of an infected device can lead to dizziness,[hint name=Analogue,hallucinations][url=\"Analogue,hallucinations\"]hallucinations[/url][/hint], and eventually strong suicidal thoughts.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
@@ -1025,7 +1024,7 @@ offset_bottom = 246.559
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[hint name=_MonsterSelect, FearOfDeath][url=\"_MonsterSelect, FearOfDeath\"][center][b]FEAR OF DEATH[/b][/center][/url][/hint]
+text = "[hint name=_MonsterSelect,FearOfDeath][url=\"_MonsterSelect,FearOfDeath\"][center][b]FEAR OF DEATH[/b][/center][/url][/hint]
 
 
 
@@ -1038,7 +1037,7 @@ text = "[hint name=_MonsterSelect, FearOfDeath][url=\"_MonsterSelect, FearOfDeat
 
 [center]Danger Rating: ★★★★★[/center]
 
-A very mysterious creature about which not much is known. It can appear [hint name=FearOfDeath, apartment, basement][url=\"FearOfDeath, apartment, basement\"]anywhere[/url][/hint] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
+A very mysterious creature about which not much is known. It can appear [hint name=FearOfDeath,apartment,basement][url=\"FearOfDeath,apartment,basement\"]anywhere[/url][/hint] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
@@ -1070,8 +1069,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-It appears as a [hint name=FearOfDeath, quiet][url=\"FearOfDeath, quiet\"]silent[/url][/hint], [hint name=FearOfDeath, standing in corner][url=\"FearOfDeath, standing in corner\"]motionless[/url][/hint] shape, resembling a black hole.
-Exposure to the creature causes [hint name=FearOfDeath, scared][url=\"FearOfDeath, scared\"]paranoia[/url][/hint] and extreme panic attacks that lead to lethal heart attacks within just a few minutes.
+It appears as a [hint name=FearOfDeath,quiet][url=\"FearOfDeath,quiet\"]silent[/url][/hint], [hint name=FearOfDeath,standing_in_corner][url=\"FearOfDeath,standing_in_corner\"]motionless[/url][/hint] shape, resembling a black hole.
+Exposure to the creature causes [hint name=FearOfDeath,scared][url=\"FearOfDeath,scared\"]paranoia[/url][/hint] and extreme panic attacks that lead to lethal heart attacks within just a few minutes.
 No method against the monster has been found so far. Send the caller away from it and calm them down.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
@@ -1110,7 +1109,7 @@ offset_bottom = 246.559
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[hint name=_MonsterSelect, FearOfDeath][url=\"_MonsterSelect, FearOfDeath\"][center][b]FEAR OF DEATH[/b][/center][/url][/hint]
+text = "[hint name=_MonsterSelect,FearOfDeath][url=\"_MonsterSelect,FearOfDeath\"][center][b]FEAR OF DEATH[/b][/center][/url][/hint]
 
 
 
@@ -1123,7 +1122,7 @@ text = "[hint name=_MonsterSelect, FearOfDeath][url=\"_MonsterSelect, FearOfDeat
 
 [center]Danger Rating: ★★★★★[/center]
 
-A very mysterious creature about which not much is known. It can appear [hint name=FearOfDeath, apartment, basement][url=\"FearOfDeath, apartment, basement\"]anywhere[/url][/hint] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
+A very mysterious creature about which not much is known. It can appear [hint name=FearOfDeath,apartment,basement][url=\"FearOfDeath,apartment,basement\"]anywhere[/url][/hint] without a warning, and disappears just as suddenly again, making it difficult to study. Therefore, not much is known about it.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
@@ -1155,8 +1154,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-It appears as a [hint name=FearOfDeath, quiet][url=\"FearOfDeath, quiet\"]silent[/url][/hint], [hint name=FearOfDeath, standing in corner][url=\"FearOfDeath, standing in corner\"]motionless[/url][/hint] shape, resembling a black hole.
-Exposure to the creature causes [hint name=FearOfDeath, scared][url=\"FearOfDeath, scared\"]paranoia[/url][/hint] and extreme panic attacks that lead to lethal heart attacks within just a few minutes.
+It appears as a [hint name=FearOfDeath,quiet][url=\"FearOfDeath,quiet\"]silent[/url][/hint], [hint name=FearOfDeath,standing_in_corner][url=\"FearOfDeath,standing_in_corner\"]motionless[/url][/hint] shape, resembling a black hole.
+Exposure to the creature causes [hint name=FearOfDeath,scared][url=\"FearOfDeath,scared\"]paranoia[/url][/hint] and extreme panic attacks that lead to lethal heart attacks within just a few minutes.
 No method against the monster has been found so far. Send the caller away from it and calm them down.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
@@ -1190,11 +1189,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Screamer][url=\"_MonsterSelect, Screamer\"][center][b]SCREAMER[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Screamer][url=\"_MonsterSelect,Screamer\"][center][b]SCREAMER[/b][/center][/url][/hint]
 
 
-Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer, no people][url=\"Screamer, no people\"]deserted[/url][/hint] spaces outdoors,  scurrying the area with seemingly [hint name=Screamer, uncoordinated][url=\"Screamer, uncoordinated\"]no purpose[/url][/hint].
-They are imitating all sorts of sounds, running from [hint name=Screamer, mumbling][url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url][/hint] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
+Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer,no_people][url=\"Screamer,no_people\"]deserted[/url][/hint] spaces outdoors, scurrying the area with seemingly [hint name=Screamer,uncoordinated][url=\"Screamer,uncoordinated\"]no purpose[/url][/hint].
+They are imitating all sorts of sounds, running from [hint name=Screamer,mumbling][url=\"Screamer,mumbling\"]organic screaming, gnawing, or howling[/url][/hint] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
 When encountering a Screamer, it’s best to calmly retreat, without drawing its attention.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
@@ -1229,7 +1228,7 @@ offset_bottom = 234.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "Should a Screamer become agitated, it will give a very clear warning [hint name=Screamer, staring][url=\"Screamer, staring\"]making direct eye contact[/url][/hint] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible.
+text = "Should a Screamer become agitated, it will give a very clear warning [hint name=Screamer,staring][url=\"Screamer,staring\"]making direct eye contact[/url][/hint] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -1259,6 +1258,7 @@ clip_text = true
 vertical_icon_alignment = 2
 
 [node name="View8" type="Node2D" parent="BookMesh2Untitled"]
+visible = false
 
 [node name="Page0" type="Sprite2D" parent="BookMesh2Untitled/View8"]
 position = Vector2(-327.373, -259.592)
@@ -1274,11 +1274,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Screamer][url=\"_MonsterSelect, Screamer\"][center][b]SCREAMER[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Screamer][url=\"_MonsterSelect,Screamer\"][center][b]SCREAMER[/b][/center][/url][/hint]
 
 
-Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer, no people][url=\"Screamer, no people\"]deserted[/url][/hint] spaces outdoors,  scurrying the area with seemingly [hint name=Screamer, uncoordinated][url=\"Screamer, uncoordinated\"]no purpose[/url][/hint].
-They are imitating all sorts of sounds, running from [hint name=Screamer, mumbling][url=\"Screamer, mumbling\"]organic screaming, gnawing, or howling[/url][/hint] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
+Screamers are, as the name suggests, rather loud, six legged doglike creatures, appearing in loud and [hint name=Screamer,no_people][url=\"Screamer,no_people\"]deserted[/url][/hint] spaces outdoors, scurrying the area with seemingly [hint name=Screamer,uncoordinated][url=\"Screamer,uncoordinated\"]no purpose[/url][/hint].
+They are imitating all sorts of sounds, running from [hint name=Screamer,mumbling][url=\"Screamer,mumbling\"]organic screaming, gnawing, or howling[/url][/hint] to unnatural noises, like slashing metal. Hearing its screams has a disorientating effect on people that can cause dizziness.
 When encountering a Screamer, it’s best to calmly retreat, without drawing its attention.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
@@ -1313,7 +1313,7 @@ offset_bottom = 4.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "Should a Screamer become agitated, it will give a very clear warning [hint name=Screamer, staring][url=\"Screamer, staring\"]making direct eye contact[/url][/hint] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible.
+text = "Should a Screamer become agitated, it will give a very clear warning [hint name=Screamer,staring][url=\"Screamer,staring\"]making direct eye contact[/url][/hint] and a much quieter, low growling sound. The only chance of survival in this scenario is to evacuate the area immediately. Send authorities as quickly as possible.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 
@@ -1356,11 +1356,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[hint name=_MonsterSelect, Ooze][url=\"_MonsterSelect, Ooze\"][center][b]OOZE[/b][/center][/url][/hint]
+[hint name=_MonsterSelect,Ooze][url=\"_MonsterSelect,Ooze\"][center][b]OOZE[/b][/center][/url][/hint]
 
 
-A small creature that can be found in [hint name=Ooze, apartment, basement][url=\"Ooze, apartment, basement\"]dark buildings[/url][/hint].
-It is highly corrosive to non-organic materials, often [hint name=Ooze, standing in corner][url=\"Ooze, standing in corner\"]sitting motionless in some corner[/url][/hint], consuming its surroundings with a sharp, sizzling sound.
+A small creature that can be found in [hint name=Ooze,apartment,basement][url=\"Ooze,apartment,basement\"]dark buildings[/url][/hint].
+It is highly corrosive to non-organic materials, often [hint name=Ooze,standing_in_corner][url=\"Ooze,standing_in_corner\"]sitting motionless in some corner[/url][/hint], consuming its surroundings with a sharp, sizzling sound.
 "
 custom_effects = [SubResource("RichTextEffect_7mu4k")]
 metadata/_edit_use_anchors_ = true
