@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://scripts/View.gd" id="14_mn5km"]
 [ext_resource type="Shader" path="res://resources/shaders/interact.gdshader" id="18_t7u8g"]
 [ext_resource type="PackedScene" uid="uid://cqpdhfjujoeti" path="res://art/3D/telephone model/telephone.tscn" id="21_uf1ls"]
-[ext_resource type="Script" path="res://art/3D/telephone model/telephone.gd" id="22_csw6m"]
+[ext_resource type="Script" path="res://scripts/telephone.gd" id="22_csw6m"]
 [ext_resource type="PackedScene" uid="uid://dvl383ispakmn" path="res://gui_in_3d/gui_panel_3d.tscn" id="22_mxmrp"]
 [ext_resource type="PackedScene" uid="uid://dom58wb2hrqoh" path="res://art/3D/All_pack/scenes/Paintings.scn" id="23_3annu"]
 [ext_resource type="PackedScene" uid="uid://bmjxeiqyl8nfo" path="res://art/3D/Models pack psx/scenes/Cube_075.scn" id="24_nxdhs"]
@@ -105,7 +105,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_277y0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_i83ia"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -131,7 +131,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7y5mm"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fjjsm"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -160,7 +160,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_277y0")
+shadow_mesh = SubResource("ArrayMesh_i83ia")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -381,7 +381,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_7y5mm")
+mesh = SubResource("ArrayMesh_fjjsm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
@@ -410,7 +410,23 @@ script = ExtResource("22_csw6m")
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_6de2t")
 
+[node name="Popup" type="RichTextLabel" parent="Telephone"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -974.0
+offset_top = -312.0
+offset_right = -586.0
+offset_bottom = -266.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Are you sure you want to end the call right now?"
+fit_content = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_iudar")
 }
@@ -462,6 +478,7 @@ transform = Transform3D(-0.033905, -2.13607e-11, 0.799281, 0, 0.8, 2.68301e-11, 
 [node name="Table_05" parent="deco_furniture" instance=ExtResource("1_rqf7g")]
 transform = Transform3D(2, -3.88489e-11, -2.91038e-11, 1.95399e-11, 2, 0, -2.91038e-11, 0, 2, -0.747545, 1.517, 1.23677)
 
+[connection signal="openBook" from="Book" to="Monitor" method="openBookView"]
 [connection signal="view_entered" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_entered"]
 [connection signal="view_exited" from="Monitor/Camera" to="DeskCamera/Highlight Ray" method="_on_camera_view_exited"]
 [connection signal="pressed" from="Monitor/UI/Button" to="Monitor/Camera" method="_on_exit_button_pressed"]

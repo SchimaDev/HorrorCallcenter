@@ -25,7 +25,7 @@ func _on_exit_button_pressed() -> void:
 		FmodEventMessenger.closeBook.start()
 		CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
 		ui.visible = false
-		$"../../AnimationPlayer".play_backwards("pickup_book")
+		%AnimationPlayer.play_backwards("pickup_book")
 		emit_signal("view_exited")
 
 func _input(_event):

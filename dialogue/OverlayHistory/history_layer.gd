@@ -49,6 +49,15 @@ func get_history_box() -> ScrollContainer:
 func get_history_log() -> VBoxContainer:
 	return %HistoryLog
 
+func clear_history_log():
+	DialogicUtil.autoload().get(&'History').clear_history()
+
+	var node = %HistoryLog
+
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free() 
+
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -61,6 +70,8 @@ func _ready() -> void:
 func _started() -> void:
 	var currentScene = get_tree().current_scene
 	var newParent = currentScene.find_child("ScreenViewport")
+	if newParent.get_child_count() > 1:
+		queue_free()
 	reparent(newParent)
 	Dialogic.History.open_requested.emit()
 	pass
