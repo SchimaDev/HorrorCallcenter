@@ -22,11 +22,25 @@ func _on_transition_3d_finished(_from: Camera3D, to: Camera3D, _duration: float)
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func _on_exit_button_pressed() -> void:
+	if Dialogic.VAR.Tutorial.deskViewUnlocked:
 		FmodEventMessenger.closeBook.start()
+		_check_tutorial_timeline()
 		CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
 		ui.visible = false
 		%AnimationPlayer.play_backwards("pickup_book")
 		emit_signal("view_exited")
+		
+func _check_tutorial_timeline():
+	if !Dialogic.VAR.Tutorial.tutorialCompleted && Dialogic.VAR.Tutorial.deskViewUnlocked:
+		if !Dialogic.VAR.Tutorial.computerClosed:
+			Dialogic.VAR.Tutorial.computerClosed = true
+			Dialogic.start_timeline("Supervisor_01", "computerClosed")
+			return
+			
+		if !Dialogic.VAR.Tutorial.bookClosed:
+			Dialogic.VAR.Tutorial.bookClosed = true
+			Dialogic.start_timeline("Supervisor_01", "bookClosed")
+			return
 
 func _input(_event):
 	if Input.is_action_just_pressed("exit_view") && ui.visible:

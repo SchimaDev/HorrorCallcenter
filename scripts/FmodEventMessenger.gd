@@ -93,6 +93,9 @@ func playHangUpPhonePlayer():
 	
 func playHangUpPhoneCaller():
 	hangupPhoneCaller.start()
+
+func stopHangUpPhoneCaller():
+	hangupPhoneCaller.stop(0)
 	
 func playPickupPhone():
 	pickupPhone.start()

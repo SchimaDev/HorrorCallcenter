@@ -6,14 +6,14 @@ extends StaticBody3D
 var targeted = false: 
 	set(val):
 		targeted = val
-		if targeted:
+		if targeted and Dialogic.VAR.Tutorial.computerUnlocked:
 			shader.set_shader_parameter("strength", 0.2)
 		else:
 			shader.set_shader_parameter("strength", 0)
 
 
 func _input(event: InputEvent) -> void:
-	if targeted and event is InputEventMouseButton:
+	if targeted and event is InputEventMouseButton and Dialogic.VAR.Tutorial.computerUnlocked:
 		openBookView()
 
 func openBookView():
@@ -21,3 +21,14 @@ func openBookView():
 		FmodEventMessenger.openBook.start()
 		camera.switchView()
 		%AnimationPlayer.play("pickup_book")
+		
+		# check if tutorial variable has been set
+		if !Dialogic.VAR.Tutorial.tutorialCompleted:
+			if !Dialogic.VAR.Tutorial.computerClicked:
+				Dialogic.VAR.Tutorial.computerClicked = true
+				Dialogic.start_timeline("Supervisor_01", "computerClicked")
+				return
+			if !Dialogic.VAR.Tutorial.bookClicked:
+				Dialogic.VAR.Tutorial.bookClicked = true
+				Dialogic.start_timeline("Supervisor_01", "bookClicked")
+				return

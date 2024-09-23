@@ -1,0 +1,81 @@
+do FmodEventMessenger.playPickupPhone()
+set {Tutorial.deskViewUnlocked} = true
+
+Supervisor: This is your supervisor. Welcome to your first day.
+Supervisor: I’m here to make sure your equipment is functioning properly, and that you understand the protocols before we start. No room for mistakes in this line of work.
+Supervisor: Understood?
+player: Yes.
+Supervisor: Good. Let’s begin by checking your setup.
+Supervisor: There should be a computer and a book in front of you. We’ll start with the computer.
+Supervisor: It’s equipped with an automated transcription tool that logs every word of the conversations you’ll have with callers.
+Supervisor: This tool is vital for tracking patterns and identifying threats. You won’t have time to rely on memory when things get serious.
+Supervisor: Can you confirm it’s working?
+set {Tutorial.computerUnlocked} = true
+Narrator: *Click on the computer monitor to proceed.*
+[end_timeline]
+
+label computerClicked
+set {Tutorial.deskViewUnlocked} = !true
+player: Alright, checking it now...
+Narrator: *This is your personal computer. It records all conversations with distressed callers.*
+Narrator: *Scroll through the history by moving your mouse over the screen and using the scroll wheel.*
+Narrator: *During calls, keep an eye on the conversation log for clues to identify the anomaly.*
+Narrator: *For now, let's return to our previous "desk view" and confirm that the computer is working*
+Narrator: *Press "Esc" or click the button in the upper-left corner.*
+set {Tutorial.deskViewUnlocked} = true
+[end_timeline]
+
+label computerClosed
+set {Tutorial.computerUnlocked} = !true
+player: It’s working fine.
+Supervisor: Good. That’s one thing sorted.
+Supervisor: Now, let’s talk about the compendium. Normally, you’d use the computer for everything, but we’ve had a recent... incident.
+Supervisor: Some anomaly wiped our virtual database clean. The engineers are working on it, but for now, we’re stuck using the manual. The book.
+Supervisor: It should be on your desk. See it?
+Narrator: *Click on the book to proceed.*
+set {Tutorial.bookUnlocked} = true
+[end_timeline]
+
+label bookClicked
+set {Tutorial.deskViewUnlocked} = !true
+player: Yeah, I see it.
+Supervisor: Good. Go over it carefully.
+Narrator: *This is your compendium. It’s essential for matching the keywords from your calls with documented anomalies.*
+Narrator: *To flip the pages, click on the folded corners.*
+Narrator: *The first two pages contain an introduction and default questions you can ask.*
+Narrator: *Choose one of the default questions to proceed.*
+[end_timeline]
+
+label questionClicked
+player: Okay.
+Narrator: *These questions are your starting point for every conversation.*
+Narrator: *As you gather information, you’ll need to connect the clues to narrow down which anomaly you’re dealing with.*
+Narrator: *Later pages provide details on known anomalies, marked with highlighted keywords.*
+Narrator: *To match keywords, click on the highlighted words in both the conversation log and the compendium.*
+Narrator: *Start by selecting the [hint name=person][url="person"]human[/url][/hint] keyword to continue.*
+[end_timeline]
+
+label keywordClicked
+player: Understood.
+Narrator: *Correctly matching keywords will reveal new information and keep the conversation moving.*
+Narrator: *But be cautious—wrong matches could waste valuable time.*
+Narrator: *There’s no ticking clock, but the situation can escalate fast if you miss key details.*
+Narrator: *When you’re confident, you can give your final verdict on the anomaly. Select the anomaly’s name to make your call.*
+[end_timeline]
+
+label monsterSelectClicked
+player: Got it.
+Narrator: *Once you’ve locked in your decision, there’s no going back. The protocol will initiate, and the call will end.*
+Narrator: *To proceed, return to your desk view by pressing "Esc" or the button in the upper-left corner.*
+set {Tutorial.deskViewUnlocked} = true
+[end_timeline]
+
+label bookClosed
+player: I’m ready.
+Supervisor: Alright. I’ll finish the paperwork on my end, and you’ll get your clearance shortly.
+Supervisor: Welcome to the team. And remember—this job isn’t for everyone. Stay focused, listen carefully, and don’t let your guard down.
+Narrator: *Don't forget to put down the phone to end a call*
+[signal arg="callEnded"]
+do FmodEventMessenger.playHangUpPhoneCaller()
+do FmodEventMessenger.stopDroneSound()
+[end_timeline]

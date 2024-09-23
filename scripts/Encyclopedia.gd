@@ -20,7 +20,7 @@ signal openBook
 var targeted = false: 
 	set(val):
 		targeted = val
-		if targeted:
+		if targeted and Dialogic.VAR.Tutorial.bookUnlocked:
 			shader1.set_shader_parameter("strength", 0.2)
 			shader2.set_shader_parameter("strength", 0.2)
 		else:
@@ -33,7 +33,7 @@ var p2 = [2.75, 1.48, 1.85, 0.63]
 var UIscale = p1
 
 func _input(event: InputEvent) -> void:
-	if targeted:
+	if targeted and Dialogic.VAR.Tutorial.bookUnlocked:
 		if event is InputEventMouseButton:
 			openBook.emit()
 

@@ -2,7 +2,7 @@ extends Node3D
 
 var incomingCall = ""
 # dialog_name : question_limit
-var callQueue = [{"Sincubus_01": 50}, {"Jonny_01": 7}, {"Lucia_01": 5}]
+var callQueue = [{"Supervisor_01": 500}, {"Sincubus_01": 50}, {"Jonny_01": 7}, {"Lucia_01": 5}]
 
 @onready var history_parent = $"../GUIPanel3D/ScreenViewport"
 @onready var animation_player = $AnimationPlayer
@@ -33,11 +33,19 @@ func _input(event: InputEvent) -> void:
 		if incomingCall.keys()[0] == "end":
 			if history_parent.get_child_count() > 1:
 				history_parent.get_child(1).clear_history_log()
-			incomingCall = {"" : 0}
+			
 			Dialogic.end_timeline()
-			animation_player.play_backwards("pickup_phone")
 			Dialogic.VAR.reset()
+
+			Dialogic.VAR.set_variable("Tutorial.deskViewUnlocked", true)
+			Dialogic.VAR.set_variable("Tutorial.bookUnlocked", true)
+			Dialogic.VAR.set_variable("Tutorial.computerUnlocked", true)
+			Dialogic.VAR.set_variable("Tutorial.tutorialCompleted", true)
+
+			incomingCall = {"" : 0}
+			animation_player.play_backwards("pickup_phone")
 			# TODO stop phone beeping
+			FmodEventMessenger.stopHangUpPhoneCaller()
 			FmodEventMessenger.playHangUpPhonePlayer()
 			# queue next call after short delay
 			await get_tree().create_timer(5).timeout

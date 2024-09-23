@@ -15,6 +15,13 @@ else:
 	set {timer} -= 1
 	
 	if !{_Basic.monsterSelect}:
+
+		if {wrongConnection} == true:
+			[signal arg="answer"]
+			set {wrongConnection} = !true
+			player: {wrongConnectionString}
+			jump question
+
 		if ({questions.q00}):
 			[signal arg="answer"]
 			set {questions.q00} = !true
@@ -173,9 +180,9 @@ else:
 			set {questions.q00} = true
 	
 	[signal arg="ask"]
-	player:
-	[wait time="15" hide_text="false"]
-		set {timer} += 1
+	[wait time="1.0" hide_text="false"]
+		Lucia: Hello? Anyone still there???
+		set {timer} -= 1
 		jump question
 
 label failedAction
@@ -246,7 +253,7 @@ jump failedAction
 label timeout
 [signal arg="timeout"]
 player: Ok stay calm, I think I know what it is...
-[wait time="10" hide_text="false"]
-	Lucia: PLease!!! Somebody!!
-[wait time="10" hide_text="false"]
-	jump failedAction_timeout
+[wait time="10.0" hide_text="false"]
+Lucia: PLease!!! Somebody!!
+[wait time="10.0" hide_text="false"]
+jump failedAction_timeout
