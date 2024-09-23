@@ -55,13 +55,18 @@ func compareWords():
 	# confirm choice of which monster it is
 	if chosenMonster == "_MonsterSelect" && monsterSelect:
 		Dialogic.start_timeline(dialog, chosenWordDictionary[0])
+		flushClues()
+		monsterSelect = false
+		Dialogic.VAR._Basic.monsterSelect = monsterSelect
 		return
 	
 	# entering Monster Selection mode
 	if chosenWordDictionary.has("monsterSelect"):
 		monsterSelect = !monsterSelect
 		Dialogic.VAR._Basic.monsterSelect = monsterSelect
-		flushClues()
+		if !monsterSelect:
+			flushClues()
+		return
 	# compare clicked clues and set according variable
 	elif chosenWordDictionary.has(chosenWordDialogue):
 		var v = chosenMonster + "." + chosenWordDialogue
