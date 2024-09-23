@@ -100,7 +100,7 @@ else:
 			else:
 				player: How does the area look?
 				Sincubus: Dunno chief. Looks like a parking lot to me.
-				Sincubus: Chat's been spouting that there's [hint name=moving around][url="moving around"]something moving around[/url][/hint], but I haven't seen anything.
+				Sincubus: Chat's been spouting that there's [hint name=moving_around][url="moving_around"]something moving around[/url][/hint], but I haven't seen anything.
 				set {questions.q06} = true
 			set {Ooze.loud} = !true
 			jump question
@@ -170,7 +170,7 @@ else:
 			set {_Basic.egg} = !true
 			jump question
 
-		if ({Screamer.moving around}):
+		if ({Screamer.moving_around}):
 			[signal arg="answer"]
 			if ({questions.q12}):
 				player: (I already asked about that...)
@@ -179,10 +179,10 @@ else:
 				Sincubus: Chat? How fast is it moving?
 				Sincubus: Chat says kinda quickly. Faster than me for sure.
 				set {questions.q12} = true
-			set {Screamer.moving around} = !true
+			set {Screamer.moving_around} = !true
 			jump question
 
-		if ({Doppelganger.moving around} || {Parasite.moving around}):
+		if ({Doppelganger.moving_around} || {Parasite.moving around}):
 			[signal arg="answer"]
 			if ({questions.q13}):
 				player: (I already asked about that...)
@@ -190,7 +190,7 @@ else:
 				player: Does it look like a person?
 				Sincubus: Not according to Chat. They say it's more like a weird, long dog.
 				set {questions.q13} = true
-			set {Doppelganger.moving around} = !true
+			set {Doppelganger.moving_around} = !true
 			set {Parasite.moving around} = !true
 			jump question
 
