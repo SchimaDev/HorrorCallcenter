@@ -18,7 +18,7 @@ var targeted = false:
 			shader2.albedo_color = Color.ANTIQUE_WHITE
 			shader3.albedo_color = Color.ANTIQUE_WHITE
 signal changeView
-var page = 1
+var page = 0
 
 func _ready():
 	shader1.albedo_color = Color.ANTIQUE_WHITE
@@ -38,17 +38,17 @@ func nextPage():
 	if page >= 3:
 		return
 	else:
-		var flip = "flip"+ str(page)
 		page += 1
+		var flip = "flip"+ str(page)
 		%AnimationPlayer.play(flip)
 		FmodEventMessenger.turnPage.start();
 
 func prevPage():
-	if page <= 1:
+	if page <= 0:
 		return
 	else:
-		page -= 1
 		var flip = "flip"+ str(page)
+		page -= 1
 		%AnimationPlayer.play_backwards(flip)
 		FmodEventMessenger.turnPage.start();
 
