@@ -34,8 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://bx035mu8bb2jc" path="res://art/3D/All_pack/scenes/Book_02.scn" id="32_sxrlq"]
 [ext_resource type="PackedScene" uid="uid://byi76v6c7usc7" path="res://art/3D/All_pack/scenes/Book_03.scn" id="33_agrkp"]
 [ext_resource type="Script" path="res://scenes/results.gd" id="34_qjsrs"]
-[ext_resource type="Texture2D" path="res://art/3D/bookmesh/pages/page_texture.png" id="35_24n65"]
-[ext_resource type="Texture2D" path="res://art/3D/bookmesh/pages/page_texture_EXAMPLE.png" id="35_trkkt"]
+[ext_resource type="Texture2D" uid="uid://didgkfeiao54" path="res://art/3D/bookmesh/pages/page_texture.png" id="35_24n65"]
+[ext_resource type="Texture2D" uid="uid://b1stapmhp7gi3" path="res://art/3D/bookmesh/pages/page_texture_EXAMPLE.png" id="35_trkkt"]
 [ext_resource type="Texture2D" uid="uid://bypt5i12ninwl" path="res://art/3D/bookmesh/pages/end.png" id="37_inlgd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4ifuj"]
@@ -84,7 +84,7 @@ cull_mode = 2
 albedo_texture = ExtResource("7_0cfwb")
 roughness = 0.0764706
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_sq5td"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yg15r"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.289951, -0.246563, -0.246563, 0.558589, 0.503859, 0.493126),
@@ -110,7 +110,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i0qmc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ikosy"]
 resource_local_to_scene = true
 resource_name = "Cube.341"
 _surfaces = [{
@@ -139,7 +139,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 252, 255, 253, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 252, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_sq5td")
+shadow_mesh = SubResource("ArrayMesh_yg15r")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_td1q7"]
 
@@ -1265,7 +1265,7 @@ ui = NodePath("../UI")
 
 [node name="Mesh" parent="Monitor" instance=ExtResource("2_ck4js")]
 transform = Transform3D(0.46577, 0, -1.42585, 0, 1.5, 0, 1.42585, 0, 0.46577, 0.0340815, 1.87315, 1.47446)
-mesh = SubResource("ArrayMesh_i0qmc")
+mesh = SubResource("ArrayMesh_ikosy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor"]
 transform = Transform3D(0.232885, 0, -0.712925, 0, 0.75, 0, 0.712925, 0, 0.232885, 0.0340815, 1.87315, 1.47446)
