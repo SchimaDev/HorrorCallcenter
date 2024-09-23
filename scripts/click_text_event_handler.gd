@@ -92,7 +92,7 @@ func compareWords():
 		Dialogic.VAR._MonsterSelect.set(chosenMonster, true)
 		flushClues()
 		
-	if !chosenWordDictionary.has(chosenWordDialogue) && chosenWordDialogue != "":
+	if chosenWordDictionary[0]!="" and chosenWordDialogue!="" and !chosenWordDictionary.has(chosenWordDialogue):
 		if Dialogic.VAR.Tutorial.tutorialCompleted:
 			# Create a list of possible dialogues
 			var wrong_connection_responses = [

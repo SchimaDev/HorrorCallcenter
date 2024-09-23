@@ -69,21 +69,23 @@ func _input(event: InputEvent) -> void:
 			if !Dialogic.VAR.Tutorial.tutorialCompleted:
 				incomingCall = {"tutorialSkip" : 0}
 				await get_tree().create_timer(1).timeout
-				incomingCall = {"inCall" : 0}
+				if incomingCall.keys()[0] == "tutorialSkip":
+					incomingCall = {"inCall" : 0}
 				return
 			incomingCall = {"end" : 0}
 			showPopup()
 			await get_tree().create_timer(4).timeout
 			hidePopup(2)
 			await get_tree().create_timer(1).timeout
-			incomingCall = {"inCall" : 0}
+			if incomingCall.keys()[0] == "end":
+				incomingCall = {"inCall" : 0}
 		
 		elif incomingCall.keys()[0] == "tutorialSkip":
 			if !Dialogic.VAR.Tutorial.tutorialCompleted:
 				incomingCall = {"end" : 0}
 				await get_tree().create_timer(1).timeout
-				incomingCall = {"inCall" : 0}
-				return
+				if incomingCall.keys()[0] == "end":
+					incomingCall = {"inCall" : 0}
 		
 		elif incomingCall.keys()[0] != "":
 			animation_player.play("pickup_phone")
