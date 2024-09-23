@@ -226,6 +226,7 @@ Lucia: You saved my life. Again, thank you.  Adiós
 
 label end
 [signal arg="callEnded"]
+do FmodEventMessenger.stopDroneSound()
 [end_timeline]
 
 label Doppelganger

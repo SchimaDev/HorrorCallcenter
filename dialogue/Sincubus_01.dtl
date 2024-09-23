@@ -252,9 +252,9 @@ Sincubus: gg ez
 [signal arg="success"]
 do FmodEventMessenger.playHangUpPhoneCaller()
 
-
 label end
 [signal arg="callEnded"]
+do FmodEventMessenger.stopDroneSound()
 [end_timeline]
 
 

@@ -269,6 +269,7 @@ Jonny: I wish you the best regards.
 
 label end
 [signal arg="callEnded"]
+do FmodEventMessenger.stopDroneSound()
 [end_timeline]
 
 label Doppelganger
@@ -318,4 +319,3 @@ player: Ok stay calm, I think I know what it is...
 	Jonny: …Hello?
 [wait time="10" hide_text="false"]
 	jump failedAction_timeout
-

@@ -20,7 +20,8 @@ func openBookView():
 	if get_viewport().get_camera_3d() != camera:
 		FmodEventMessenger.openBook.start()
 		camera.switchView()
-		%AnimationPlayer.play("pickup_book")
+		if Dialogic.VAR.Tutorial.bookUnlocked:
+			%AnimationPlayer.play("pickup_book")
 		
 		# check if tutorial variable has been set
 		if !Dialogic.VAR.Tutorial.tutorialCompleted:

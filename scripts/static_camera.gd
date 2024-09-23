@@ -27,9 +27,10 @@ func _on_exit_button_pressed() -> void:
 		_check_tutorial_timeline()
 		CameraShifter.transition_to_requested_camera_3d(self, targetCamera, 1)
 		ui.visible = false
-		%AnimationPlayer.play_backwards("pickup_book")
+		if Dialogic.VAR.Tutorial.bookUnlocked:
+			%AnimationPlayer.play_backwards("pickup_book")
 		emit_signal("view_exited")
-		
+
 func _check_tutorial_timeline():
 	if !Dialogic.VAR.Tutorial.tutorialCompleted && Dialogic.VAR.Tutorial.deskViewUnlocked:
 		if !Dialogic.VAR.Tutorial.computerClosed:

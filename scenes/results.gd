@@ -60,6 +60,6 @@ func _on_visibility_changed():
 	$UI.visible = visible
 
 func showResults(results):
-	shader1.albedo_texture = PAGE_TEXTURE if results[0] else PAGE_TEXTURE_EXAMPLE
-	shader2.albedo_texture = PAGE_TEXTURE if results[1] else PAGE_TEXTURE_EXAMPLE
-	shader3.albedo_texture = PAGE_TEXTURE if results[2] else PAGE_TEXTURE_EXAMPLE
+	shader1.albedo_texture = PAGE_TEXTURE if results[1] else PAGE_TEXTURE_EXAMPLE
+	shader2.albedo_texture = PAGE_TEXTURE if results[2] else PAGE_TEXTURE_EXAMPLE
+	shader3.albedo_texture = PAGE_TEXTURE if results[3] else PAGE_TEXTURE_EXAMPLE

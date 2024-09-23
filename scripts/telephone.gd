@@ -14,7 +14,7 @@ signal endDay
 var targeted = false: 
 	set(val):
 		targeted = val
-		if targeted:
+		if targeted and Dialogic.VAR.Tutorial.tutorialCompleted:
 			shader.set_shader_parameter("strength", 0.2)
 		else:
 			shader.set_shader_parameter("strength", 0)
@@ -41,13 +41,9 @@ func _input(event: InputEvent) -> void:
 			if history_parent.get_child_count() > 1:
 				history_parent.get_child(1).clear_history_log()
 			
+			ClickTextEventHandler.flushClues()
 			Dialogic.end_timeline()
 			Dialogic.VAR.reset()
-
-			Dialogic.VAR.set_variable("Tutorial.deskViewUnlocked", true)
-			Dialogic.VAR.set_variable("Tutorial.bookUnlocked", true)
-			Dialogic.VAR.set_variable("Tutorial.computerUnlocked", true)
-			Dialogic.VAR.set_variable("Tutorial.tutorialCompleted", true)
 
 			animation_player.play_backwards("pickup_phone")
 			# record success/failure of call
@@ -70,13 +66,25 @@ func _input(event: InputEvent) -> void:
 				print(results)
 				
 		elif incomingCall.keys()[0] == "inCall":
+			if !Dialogic.VAR.Tutorial.tutorialCompleted:
+				incomingCall = {"tutorialSkip" : 0}
+				await get_tree().create_timer(1).timeout
+				incomingCall = {"inCall" : 0}
+				return
 			incomingCall = {"end" : 0}
 			showPopup()
 			await get_tree().create_timer(4).timeout
 			hidePopup(2)
 			await get_tree().create_timer(1).timeout
 			incomingCall = {"inCall" : 0}
-			
+		
+		elif incomingCall.keys()[0] == "tutorialSkip":
+			if !Dialogic.VAR.Tutorial.tutorialCompleted:
+				incomingCall = {"end" : 0}
+				await get_tree().create_timer(1).timeout
+				incomingCall = {"inCall" : 0}
+				return
+		
 		elif incomingCall.keys()[0] != "":
 			animation_player.play("pickup_phone")
 			FmodEventMessenger.stopRingingPhone()

@@ -21,6 +21,9 @@ func _on_dialogic_signal(argument:String):
 		reloadQuestions = false
 	elif argument == "timeout":
 		monsterSelect = true
+	elif argument == "tutorial_selectMonster":
+		monsterSelect = !monsterSelect
+		Dialogic.VAR._Basic.monsterSelect = monsterSelect
 
 func handle_url_tag_clicked(clue: String) -> void:
 	print(clue)
@@ -93,16 +96,16 @@ func compareWords():
 		if Dialogic.VAR.Tutorial.tutorialCompleted:
 			# Create a list of possible dialogues
 			var wrong_connection_responses = [
-				"*That doesn’t seem right. I should double-check those connections.*",
-				"*Hmm, I don’t think I got that right. Maybe I missed something.*",
-				"*Nope, that doesn’t fit. I need to try another option.*",
-				"*Those don’t seem to match up. I’ll need to rethink this.*",
-				"*That doesn’t look correct. Let me review the clues again.*",
-				"*I’m sure I’ve made a wrong connection here. Time to go back to the notes.*",
-				"*This doesn’t add up. I must’ve missed a key detail.*",
-				"*That’s not right. Maybe the compendium has something I overlooked.*",
-				"*I’ve made a mistake here. I need to reassess the situation.*",
-				"*That connection doesn’t work. I should focus more on the anomaly’s traits.*"
+				"[i]*That doesn’t seem right. I should double-check those connections.*[/i]",
+				"[i]*Hmm, I don’t think I got that right. Maybe I missed something.*[/i]",
+				"[i]*Nope, that doesn’t fit. I need to try another option.*[/i]",
+				"[i]*Those don’t seem to match up. I’ll need to rethink this.*[/i]",
+				"[i]*That doesn’t look correct. Let me review the clues again.*[/i]",
+				"[i]*I’m sure I’ve made a wrong connection here. Time to go back to the notes.*[/i]",
+				"[i]*This doesn’t add up. I must’ve missed a key detail.*[/i]",
+				"[i]*That’s not right. Maybe the compendium has something I overlooked.*[/i]",
+				"[i]*I’ve made a mistake here. I need to reassess the situation.*[/i]",
+				"[i]*That connection doesn’t work. I should focus more on the anomaly’s traits.*[/i]"
 			]
 			# Pick a random dialogue
 			var random_dialogue = wrong_connection_responses[randi() % wrong_connection_responses.size()]
