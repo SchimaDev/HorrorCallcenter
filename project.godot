@@ -38,6 +38,7 @@ config/icon="res://art/icon.svg"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 ClickTextEventHandler="*res://scripts/click_text_event_handler.gd"
 FmodEventMessenger="*res://scripts/FmodEventMessenger.gd"
+CameraShifter="*res://addons/camera-shifter/global_camera_transition.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
