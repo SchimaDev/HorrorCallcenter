@@ -15,7 +15,7 @@ func _process_custom_fx(char_fx):
 	name = char_fx.env.get("name")
 	setActive = name == ClickTextEventHandler.chosenWordDialogue
 	if setActive:
-		char_fx.color = Color.CYAN
+		char_fx.color = Color.DIM_GRAY
 	else:
 		char_fx.color = Color.WHITE
 	return true

@@ -61,6 +61,10 @@ func compareWords():
 	if chosenMonster == "_MonsterSelect" && monsterSelect:
 		if Dialogic.VAR.Tutorial.tutorialCompleted:
 			Dialogic.start_timeline(dialog, chosenWordDictionary[0])
+			flushClues()
+			monsterSelect = false
+			Dialogic.VAR._Basic.monsterSelect = monsterSelect
+			return
 		else:
 			if Dialogic.VAR.Tutorial.questionClicked and Dialogic.VAR.Tutorial.keywordClicked and !Dialogic.VAR.Tutorial.monsterSelectClicked:
 				Dialogic.VAR.set_variable("Tutorial.monsterSelectClicked", true);
@@ -70,10 +74,11 @@ func compareWords():
 	if chosenWordDictionary.has("monsterSelect"):
 		monsterSelect = !monsterSelect
 		Dialogic.VAR._Basic.monsterSelect = monsterSelect
-		flushClues()
-
-	# compare clicked clues and set according variable	
-	if chosenWordDictionary.has(chosenWordDialogue):
+		if !monsterSelect:
+			flushClues()
+		return
+	# compare clicked clues and set according variable
+	elif chosenWordDictionary.has(chosenWordDialogue):
 		if !Dialogic.VAR.Tutorial.tutorialCompleted:
 			if Dialogic.VAR.Tutorial.questionClicked and !Dialogic.VAR.Tutorial.keywordClicked :
 				Dialogic.VAR.set_variable("Tutorial.keywordClicked", true);

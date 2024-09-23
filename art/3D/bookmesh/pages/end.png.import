@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyh0tt53dv2k"
-path.s3tc="res://.godot/imported/page_empty.png-bca9637570c041e3f7e80a4f3544c4aa.s3tc.ctex"
+uid="uid://bypt5i12ninwl"
+path.s3tc="res://.godot/imported/end.png-c06ef227a0863bc5782880663dde53d2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/3D/bookmesh/pages/page_empty.png"
-dest_files=["res://.godot/imported/page_empty.png-bca9637570c041e3f7e80a4f3544c4aa.s3tc.ctex"]
+source_file="res://art/3D/bookmesh/pages/end.png"
+dest_files=["res://.godot/imported/end.png-c06ef227a0863bc5782880663dde53d2.s3tc.ctex"]
 
 [params]
 

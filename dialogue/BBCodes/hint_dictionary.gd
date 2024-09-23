@@ -23,9 +23,9 @@ func _process_custom_fx(char_fx):
 		setActive = false
 		
 	if setActive:
-		char_fx.color = Color.CYAN
-	else:
 		char_fx.color = Color.WHITE
+	else:
+		char_fx.color = Color.BLACK
 	return true
 
 func _on_chosenWordDictionaryChanged(monster, dictionary):

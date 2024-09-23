@@ -32,3 +32,6 @@ func openBookView():
 				Dialogic.VAR.Tutorial.bookClicked = true
 				Dialogic.start_timeline("Supervisor_01", "bookClicked")
 				return
+
+func disableShader():
+	$Mesh.mesh.surface_get_material(0).next_pass = null

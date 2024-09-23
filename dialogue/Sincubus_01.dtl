@@ -249,6 +249,7 @@ label solution
 Sincubus: AAAAAAH
 Sincubus: .....
 Sincubus: gg ez
+[signal arg="success"]
 do FmodEventMessenger.playHangUpPhoneCaller()
 
 
