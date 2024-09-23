@@ -21,3 +21,6 @@ func openBookView():
 		FmodEventMessenger.openBook.start()
 		camera.switchView()
 		%AnimationPlayer.play("pickup_book")
+
+func disableShader():
+	$Mesh.mesh.surface_get_material(0).next_pass = null

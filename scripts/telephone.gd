@@ -3,7 +3,10 @@ extends Node3D
 var incomingCall = ""
 # dialog_name : question_limit
 var callQueue = [{"Lucia_01": 10}, {"Jonny_01": 8}, {"Sincubus_01": 6}]
+var results = []
+var currentResult = false
 
+signal endDay
 @onready var popup = $Popup
 @onready var history_parent = $"../GUIPanel3D/ScreenViewport"
 @onready var animation_player = $AnimationPlayer
@@ -42,15 +45,23 @@ func _input(event: InputEvent) -> void:
 			animation_player.play_backwards("pickup_phone")
 			Dialogic.VAR.reset()
 			
+			# record success/failure of call
+			results.append(currentResult)
+			currentResult = false
+			
 			# TODO stop phone beeping
 			FmodEventMessenger.playHangUpPhonePlayer()
 			
 			# queue next call after short delay
-			await get_tree().create_timer(5).timeout
 			if callQueue.size() > 0:
+				await get_tree().create_timer(5).timeout
 				incomingCall = callQueue.pop_front()
 				Dialogic.VAR.timer = incomingCall.values()[0]
 				FmodEventMessenger.playRingingPhone()
+			else:
+				endDay.emit()
+				$"../results".showResults(results)
+				print(results)
 				
 		elif incomingCall.keys()[0] == "inCall":
 			incomingCall = {"end" : 0}
@@ -65,12 +76,13 @@ func _input(event: InputEvent) -> void:
 			FmodEventMessenger.stopRingingPhone()
 			Dialogic.start(incomingCall.keys()[0])
 			ClickTextEventHandler.dialog = incomingCall.keys()[0]
-			await get_tree().create_timer(1).timeout
 			incomingCall = {"inCall" : 0}
 
 func _on_dialogic_signal(argument):
 	if argument == "callEnded":
 		incomingCall = {"end" : 0}
+	if argument == "success":
+		currentResult = true
 
 func showPopup():
 	popup.set_self_modulate(Color(Color.WHITE, 0))

@@ -33,8 +33,7 @@ var p2 = [2.75, 1.48, 1.85, 0.63]
 var UIscale = p1
 
 func _input(event: InputEvent) -> void:
-	if targeted:
-		if event is InputEventMouseButton:
+	if targeted and event is InputEventMouseButton:
 			openBook.emit()
 
 func _ready():

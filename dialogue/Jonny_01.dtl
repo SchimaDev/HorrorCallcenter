@@ -256,6 +256,7 @@ Jonny: Of course! I shall do so.
 Jonny: .....
 Jonny: Oh... very interesting.
 Jonny: It appears to have worked. My friend over here has collapsed onto the ground.
+[signal arg="success"]
 Jonny: And I have stomped onto the worm.
 Jonny: Jonny Smith thanks you and A.I.D.  kindly for your service!
 Jonny: I wish you the best regards.
