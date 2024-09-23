@@ -29,6 +29,13 @@ else:
 	set {timer} -= 1
 	
 	if !{_Basic.monsterSelect}:
+
+		if {wrongConnection} == true:
+			[signal arg="answer"]
+			set {wrongConnection} = !true
+			player: {wrongConnectionString}
+			jump question
+			
 		if ({questions.q00}):
 			[signal arg="answer"]
 			set {questions.q00} = !true
