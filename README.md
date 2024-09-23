@@ -76,14 +76,15 @@ _No Controller Support_
 ## Used Assets
 
 ### 3D Models
-- **Monster Portraits** by Molomoot
-- **Book 3D Model + Animation** by alexalphagame1-9-9-5
-- **Phone 3D Model** by alixor22
-- **PSX 3D Models** by elbolilloduro
+- **Book 3D Model + Animation** by [alexalphagame1-9-9-5](https://www.cgtrader.com/free-3d-models/furniture/other/model-anim-low-poly-book)
+- **Phone 3D Model** by [alixor22](https://www.cgtrader.com/items/4398240/download-page)
+- **PSX 3D Models** by [elbolilloduro](https://elbolilloduro.itch.io/paquete-de-modelos-psx-3)
 
 ### Images
-- **Newspaper Photograph** "Abandoned Supermarket Trolleys" by Tahnia Roberts
-- **Newspaper Photograph** "Abandoned Mall" by AdequateEggplant69
+- **Monster Portraits** by [Molomoot](https://molomoot.itch.io/weird-lil-guys)
+- **Newspaper Photograph** "Abandoned Supermarket Trolleys" by [Tahnia Roberts](https://www.tahniaroberts.com/abandoned-shopping-trolleys/)
+- **Newspaper Photograph** "Abandoned Mall" by [AdequateEggplant69](https://www.reddit.com/r/blackandwhite/comments/14v45j0/abandoned_mall/)
+
 
 ### Audio
 - [Sound by robotjay](https://freesound.org/people/robotjay/sounds/275163/)
