@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.gd" id="1_dgoja"]
 [ext_resource type="Script" path="res://dialogue/BBCodes/Rain.gd" id="2_84mj8"]
-[ext_resource type="Script" path="res://dialogue/BBCodes/option.gd" id="3_72ai4"]
+[ext_resource type="Script" path="res://dialogue/BBCodes/hint_dialogue.gd" id="3_72ai4"]
 [ext_resource type="Script" path="res://dialogue/BBCodes/ColorMod.gd" id="4_qe22v"]
 [ext_resource type="Script" path="res://dialogue/BBCodes/Cuss.gd" id="5_1s4fe"]
 [ext_resource type="Script" path="res://dialogue/BBCodes/Woo.gd" id="6_xcgmh"]

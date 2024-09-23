@@ -19,6 +19,8 @@ func _on_dialogic_signal(argument:String):
 		reloadQuestions = true
 	elif argument == "answer":
 		reloadQuestions = false
+	elif argument == "timeout":
+		monsterSelect = true
 
 func handle_url_tag_clicked(clue: String) -> void:
 	print(clue)
@@ -28,7 +30,7 @@ func handle_url_tag_clicked(clue: String) -> void:
 
 func handle_Encyclopedia_url_tag_clicked(clue: String) -> void:
 	print(clue)
-	var n = clue.split(", ")
+	var n = clue.split(",")
 	chosenMonster = n[0]
 	
 	n.remove_at(0)

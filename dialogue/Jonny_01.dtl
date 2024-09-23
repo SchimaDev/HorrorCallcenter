@@ -4,14 +4,29 @@ Jonny: Good day Sir...? Ma’am...? Hello!
 do FmodEventMessenger.playFootsteps()
 Jonny: For you see. I have found myself in a rather odd situation.
 do FmodEventMessenger.playDroneSound()
+set {totaltime} = {timer}
 label question
 [signal arg="ask"]
 if {timer} <= 0:
 	[signal arg="answer"]
 	Jonny: Oh my, he seems to be approaching me rapidly now. What should I do?
+	[signal arg="timeout"]
 	set {_MonsterSelect.timeout} = true
 	jump timeout
 else:
+	if ({timer} <= 3*{totaltime}/4 && !{questions.t1}):
+		[signal arg="answer"]
+		Jonny: How about we hurry up this conversation while the creature is not attacking me.
+		set {questions.t1} = true
+	if ({timer} <= {totaltime}/2 && !{questions.t2}):
+		[signal arg="answer"]
+		Jonny: Curious. You seem to take your time. I am getting slightly disturbed.
+		set {questions.t2} = true
+	if ({timer} <= {totaltime}/4 && !{questions.t3}):
+		[signal arg="answer"]
+		Jonny: Huh. Peculiar. It appears that they are acting more uneasy. If I am to do something or run, there is little time left.
+		set {questions.t3} = true
+	
 	do FmodEventMessenger.playFootsteps()
 	set {timer} -= 1
 

@@ -1,18 +1,27 @@
-@tool
+#@tool
 extends RichTextEffect
 class_name HintDictionaryRichTextEffect
 
 
 # Syntax: [option][/option]
+var firstWordChosen = false
 var bbcode = "hint"
 var setActive: bool=false
-var name
+#var chosenMonster
+#var chosenWordDictionary
 
 func _init() -> void:
 	ClickTextEventHandler.chosenWordDictionaryChanged.connect(_on_chosenWordDictionaryChanged)
 
 func _process_custom_fx(char_fx):
-	name = char_fx.env.get("name")
+	var name = char_fx.env.get("name")
+	if !name.is_empty() and firstWordChosen:
+		var name_chosenMonster = name[0]
+		var name_chosenWordDictionary = name[1]
+		setActive = name_chosenMonster == ClickTextEventHandler.chosenMonster and name_chosenWordDictionary == ClickTextEventHandler.chosenWordDictionary[0]
+	else:
+		setActive = false
+		
 	if setActive:
 		char_fx.color = Color.CYAN
 	else:
@@ -20,10 +29,6 @@ func _process_custom_fx(char_fx):
 	return true
 
 func _on_chosenWordDictionaryChanged(monster, dictionary):
-	if name == null: #TODO got an n is null error here so added this workaround for now
-		return
-	var n = name.split(", ")
-	var chosenMonster = n[0]
-	n.remove_at(0)
-	var chosenWordDictionary = n
-	setActive = chosenMonster == monster and chosenWordDictionary == dictionary
+	firstWordChosen = true
+	#var chosenMonster = monster
+	#var chosenWordDictionary = dictionary
