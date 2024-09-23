@@ -217,6 +217,7 @@ text/absolute_autopauses=true
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -225,7 +226,7 @@ project/assembly_name="Horror Callcenter"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/fmod/plugin.cfg")
+enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [file_customization]
 

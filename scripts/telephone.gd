@@ -36,6 +36,7 @@ func _input(event: InputEvent) -> void:
 		
 		if incomingCall.keys()[0] == "end":
 			incomingCall = {"" : 0}
+			FmodEventMessenger.stopDroneSound()
 			hidePopup(0.5)
 			# delete doubled history in monitor
 			if history_parent.get_child_count() > 1:
