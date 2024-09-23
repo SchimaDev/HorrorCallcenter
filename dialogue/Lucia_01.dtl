@@ -84,7 +84,7 @@ else:
 				player: (I already asked about that...)
 			else:
 				player: What does the Person do?
-				Lucia: It is just [hint name=standing in corner][url="standing in corner"]standing there in the corner....[/url][/hint]
+				Lucia: It is just [hint name=standing_in_corner][url="standing_in_corner"]standing there in the corner....[/url][/hint]
 				Lucia: It doesn’t move. It doesn’t talk. It's just... [hint name=staring][url="staring"]staring at me[/url][/hint]...
 				Lucia: Ooh dios mío, these eyes... so many eyes...
 				set {questions.q04} = true
@@ -92,7 +92,7 @@ else:
 			set {Tally.person} = !true
 			jump question
 
-		if ({FearOfDeath.basement} || {FearOfDeath.quiet} || {FearOfDeath.standing in corner} || {FearOfDeath.scared} || {Analogue.hallucinations} || {Parasite.hallucinations}):
+		if ({FearOfDeath.basement} || {FearOfDeath.quiet} || {FearOfDeath.standing_in_corner} || {FearOfDeath.scared} || {Analogue.hallucinations} || {Parasite.hallucinations}):
 			[signal arg="answer"]
 			if ({questions.q05}):
 				player: (I already asked about that...)
@@ -104,13 +104,13 @@ else:
 				set {questions.q05} = true
 			set {FearOfDeath.basement} = !true
 			set {FearOfDeath.quiet} = !true
-			set {FearOfDeath.standing in corner} = !true
+			set {FearOfDeath.standing_in_corner} = !true
 			set {FearOfDeath.scared} = !true
 			set {Analogue.hallucinations} = !true
 			set {Parasite.hallucinations} = !true
 			jump question
 
-		if ({Ooze.basement} || {Ooze.standing in corner}):
+		if ({Ooze.basement} || {Ooze.standing_in_corner}):
 			[signal arg="answer"]
 			if ({questions.q06}):
 				player: (I already asked about that...)
@@ -119,7 +119,7 @@ else:
 				Lucia: As always? Dusty boxes left and right, a flickering ceiling lamp at the top and an old rug on the ground. It is a [hint name=basement][url="basement"]basement[/url][/hint] after all...
 				set {questions.q06} = true
 			set {Ooze.basement} = !true
-			set {Ooze.standing in corner} = !true
+			set {Ooze.standing_in_corner} = !true
 			jump question
 
 		if ({Analogue.basement}):
@@ -133,7 +133,7 @@ else:
 			set {Analogue.basement} = !true
 			jump question
 
-		if ({Tally.basement} || {Tally.standing in corner} || {Tally.staring} || {Tally.no people}):
+		if ({Tally.basement} || {Tally.standing_in_corner} || {Tally.staring} || {Tally.no people}):
 			[signal arg="answer"]
 			if ({questions.q08}):
 				player: (I already asked about that...)
@@ -142,7 +142,7 @@ else:
 				Lucia: Sí, the ceiling light is on.
 				set {questions.q08} = true
 			set {Tally.basement} = !true
-			set {Tally.standing in corner} = !true
+			set {Tally.standing_in_corner} = !true
 			set {Tally.staring} = !true
 			set {Tally.no people} = !true
 			jump question
@@ -157,13 +157,6 @@ else:
 				set {questions.q09} = true
 			set {Tally.quiet} = !true
 			jump question
-		
-		if ({Doppelganger.person} && !{questions.q10}):
-			[signal arg="answer"]
-			player: Are there any additional people?
-			Lucia: Not really. I'm the only one here. I've [hint name=no_people][url="no_people"]never seen anyone else down here.[/url][/hint]
-			set {questions.q10} = true
-			jump question
 
 		if ({Doppelganger.person}):
 			[signal arg="answer"]
@@ -171,12 +164,12 @@ else:
 				player: (I already asked about that...)
 			else:
 				player: Are there any additional people?
-				Lucia: Not really. I'm the only one here. I've [hint name=no people][url="no people"]never seen anyone else down here.[/url][/hint]
+				Lucia: Not really. I'm the only one here. I've [hint name=no_people][url="no_people"]never seen anyone else down here.[/url][/hint]
 				set {questions.q10} = true
 			set {Doppelganger.person} = !true
 			jump question
 
-		if ({Analogue.standing in corner}):
+		if ({Analogue.standing_in_corner}):
 			[signal arg="answer"]
 			if ({questions.q11}):
 				player: (I already asked about that...)
@@ -184,7 +177,7 @@ else:
 				player: Is there a flickering screen of any sort?
 				Lucia: A screen...? No. Again, there is a [hint name=person][url="person"]person[/url][/hint] in front of me.
 				set {questions.q11} = true
-			set {Analogue.standing in corner} = !true
+			set {Analogue.standing_in_corner} = !true
 			jump question
 
 		if ({Screamer.staring} || {Screamer.no people}):
@@ -204,11 +197,6 @@ else:
 			set {questions.q00} = true
 	
 	[signal arg="ask"]
-	player: <Empty Text Event>
-	[wait time="15.0" hide_text="false"]
-	# #Lucia: Hello? Anyone still there???
-	set {timer} += 1
-	jump question
 	player:
 	[wait time="15" hide_text="false"]
 		set {timer} += 1
@@ -282,10 +270,6 @@ jump failedAction
 label timeout
 [signal arg="timeout"]
 player: Ok stay calm, I think I know what it is...
-[wait time="10.0" hide_text="false"]
-Lucia: PLease!!! Somebody!!
-[wait time="10.0" hide_text="false"]
-jump failedAction_timeout
 [wait time="10" hide_text="false"]
 	Lucia: PLease!!! Somebody!!
 [wait time="10" hide_text="false"]
