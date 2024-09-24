@@ -31,7 +31,6 @@ DSP/dsp_buffer_count=4
 config/name="Horror Callcenter"
 run/main_scene="res://scenes/office_3d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://art/icon.svg"
 
 [autoload]
 
@@ -226,7 +225,7 @@ project/assembly_name="Horror Callcenter"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/camera-shifter/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/fmod/plugin.cfg")
 
 [file_customization]
 
