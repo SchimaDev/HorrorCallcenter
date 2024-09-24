@@ -1,7 +1,7 @@
 ## Compiled Build
 
 You can download the compiled build of the game from the following link:  
-[Download Compiled Build (Windows)](https://drive.google.com/file/d/17Tt5LvOKnzVleGYw](https://github.com/SchimaDev/HorrorCallcenter/releases/tag/demo)
+[Download Compiled Build (Windows)](https://github.com/SchimaDev/HorrorCallcenter/releases/tag/demo)
 
 ## Software and Frameworks
 
